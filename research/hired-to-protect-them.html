@@ -1,0 +1,757 @@
+<title>Hired to Protect Them</title>
+<style>
+  :root {
+    --ground: #E6E9E3;
+    --card: #F8F9F5;
+    --card-2: #F1F3ED;
+    --ink: #16211F;
+    --muted: #5A665F;
+    --line: #CFD6CD;
+    --line-soft: #E0E5DD;
+    --accent: #B0641A;
+    --accent-ink: #8A4E14;
+    --teal: #2C6459;
+    --shadow: 0 1px 2px rgba(22,33,31,.06), 0 8px 24px -12px rgba(22,33,31,.18);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0C1413;
+      --card: #141F1D;
+      --card-2: #182523;
+      --ink: #E6EBE5;
+      --muted: #94A39C;
+      --line: #26332F;
+      --line-soft: #1D2A28;
+      --accent: #E9A155;
+      --accent-ink: #F0B978;
+      --teal: #63A697;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0C1413;
+    --card: #141F1D;
+    --card-2: #182523;
+    --ink: #E6EBE5;
+    --muted: #94A39C;
+    --line: #26332F;
+    --line-soft: #1D2A28;
+    --accent: #E9A155;
+    --accent-ink: #F0B978;
+    --teal: #63A697;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.7);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ---------- masthead ---------- */
+
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 64px 0 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin: 0;
+  }
+  h1 {
+    font-family: "Hoefler Text", Baskerville, "Palatino Linotype", Palatino, Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(2.6rem, 6.5vw, 4.4rem);
+    line-height: 1.02;
+    letter-spacing: -.015em;
+    text-wrap: balance;
+    margin: 0;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--accent-ink);
+  }
+  .dek {
+    max-width: 62ch;
+    font-size: 1.075rem;
+    color: var(--muted);
+    margin: 0;
+  }
+  .dek strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- the five beats ---------- */
+
+  .spine {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 12px 0 4px;
+  }
+  .beat {
+    background: var(--card);
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .beat b {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    color: var(--accent-ink);
+  }
+  .beat span { font-size: .875rem; line-height: 1.45; color: var(--muted); }
+  .beat span i { font-style: normal; color: var(--ink); font-weight: 600; }
+
+  /* ---------- sections ---------- */
+
+  section { padding-top: 56px; }
+  .sec-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 12px 16px;
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-family: "Hoefler Text", Baskerville, "Palatino Linotype", Palatino, Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(1.65rem, 3.2vw, 2.15rem);
+    letter-spacing: -.01em;
+    margin: 0;
+  }
+  .count {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 3px 8px;
+  }
+  .sec-note {
+    max-width: 68ch;
+    color: var(--muted);
+    font-size: .95rem;
+    margin: 0 0 24px;
+  }
+
+  /* ---------- cards ---------- */
+
+  .cards { display: flex; flex-direction: column; gap: 16px; }
+
+  .card {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 22px;
+    background: var(--card);
+    border: 1px solid var(--line-soft);
+    border-radius: 4px;
+    padding: 18px;
+    box-shadow: var(--shadow);
+  }
+  .card.top { border-color: var(--accent); }
+
+  .cover {
+    position: relative;
+    border-radius: 3px;
+    overflow: hidden;
+    align-self: start;
+    aspect-ratio: 2 / 3;
+    background: #0d1416;
+  }
+  .cover svg { display: block; width: 100%; height: 100%; }
+  .cover .plate {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 22px 9px 9px;
+    background: linear-gradient(to top, rgba(6,10,11,.92), rgba(6,10,11,0));
+    color: #F4F1EC;
+  }
+  .cover .plate b {
+    display: block;
+    font-family: "Hoefler Text", Baskerville, "Palatino Linotype", Palatino, Georgia, serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+  .cover .plate span {
+    display: block;
+    margin-top: 3px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 9px;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: rgba(244,241,236,.72);
+  }
+  .rank {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 21px;
+    height: 21px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(6,10,11,.6);
+    color: #F4F1EC;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+
+  .body { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .title-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; }
+  h3 {
+    font-family: "Hoefler Text", Baskerville, "Palatino Linotype", Palatino, Georgia, serif;
+    font-weight: 400;
+    font-size: 1.35rem;
+    letter-spacing: -.005em;
+    margin: 0;
+  }
+  .native { font-size: .9rem; color: var(--muted); }
+  .meta {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px;
+    letter-spacing: .06em;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+  }
+  .meta .flag { color: var(--ink); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+  p.plot { margin: 0; font-size: .95rem; }
+  p.plot em { font-style: normal; color: var(--accent-ink); font-weight: 600; }
+  .caveat {
+    margin: 0;
+    font-size: .875rem;
+    color: var(--muted);
+    border-left: 2px solid var(--line);
+    padding-left: 12px;
+  }
+  .caveat b { color: var(--ink); font-weight: 600; }
+
+  .beats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 2px;
+    padding: 0;
+    list-style: none;
+  }
+  .beats li {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 10px;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    padding: 3px 8px 3px 6px;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .beats li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+  }
+  .beats li.yes { color: var(--teal); border-color: color-mix(in srgb, var(--teal) 40%, transparent); }
+  .beats li.yes::before { background: var(--teal); border-color: var(--teal); }
+  .beats li.part::before { background: linear-gradient(to right, currentColor 50%, transparent 50%); }
+  .beats li.no { opacity: .55; }
+  .beats li.no::before { border-style: dashed; }
+
+  /* ---------- callout ---------- */
+
+  .callout {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: var(--card-2);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 3px;
+    padding: 16px 18px;
+    margin: 28px 0 0;
+  }
+  .callout b { font-size: .95rem; }
+  .callout p { margin: 0; font-size: .93rem; color: var(--muted); max-width: 70ch; }
+
+  /* ---------- sources ---------- */
+
+  .sources { padding-top: 56px; }
+  .sources ul {
+    columns: 2;
+    column-gap: 32px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: .88rem;
+  }
+  .sources li { break-inside: avoid; margin-bottom: 6px; color: var(--muted); }
+  a { color: var(--accent-ink); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  .colophon {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: .85rem;
+    color: var(--muted);
+    max-width: 72ch;
+  }
+
+  @media (max-width: 640px) {
+    .card { grid-template-columns: 104px 1fr; gap: 16px; padding: 14px; }
+    .sources ul { columns: 1; }
+    .masthead { padding-top: 44px; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">Trope study · global television</p>
+    <h1>Hired to protect them,<br><em>kept</em> for good</h1>
+    <p class="dek">
+      One premise, told everywhere: a dangerous, competent man attaches himself to a woman's household
+      as bodyguard, minder or nanny. <strong>Her children want him gone.</strong> Something tries to hurt them,
+      he stands in the way, and by the end the kids call him theirs and she does too.
+      Nineteen shows below, sorted by how completely each one actually delivers the beat you're asking for —
+      the near-perfect fits first, the famous near-misses last, with the traps flagged.
+    </p>
+
+    <div class="spine">
+      <div class="beat"><b>01 · ARRIVAL</b><span>He's hired, assigned or simply moves in next door. <i>Nobody wants him.</i></span></div>
+      <div class="beat"><b>02 · RESISTANCE</b><span>The kids run the sabotage campaign. She keeps him for practical reasons.</span></div>
+      <div class="beat"><b>03 · PROOF</b><span>The threat arrives. <i>He puts his body between it and them.</i></span></div>
+      <div class="beat"><b>04 · TURN</b><span>The children adopt him first. The mother is always last to admit it.</span></div>
+      <div class="beat"><b>05 · FAMILY</b><span>Marriage, or a shot of the four of them leaving together.</span></div>
+    </div>
+  </header>
+
+  <section id="core">
+    <div class="sec-head">
+      <h2>The close matches</h2>
+      <span class="count">9 shows · all beats</span>
+    </div>
+    <p class="sec-note">
+      Every title here has the protector, the hostile kids, the mother-or-wife romance and a happy landing.
+      Ranked by how central the guarding is to the love story.
+    </p>
+    <div class="cards" id="core-cards"></div>
+
+    <div class="callout">
+      <b>Start with My Secret, Terrius.</b>
+      <p>
+        It is the purest version of what you described and the easiest to get hold of — 32 episodes on Netflix in most
+        regions. If you want the marathon version instead, Sen Anlat Karadeniz gives you three seasons of the same
+        emotional engine, and Amores Verdaderos gives you 181.
+      </p>
+    </div>
+  </section>
+
+  <section id="flipped">
+    <div class="sec-head">
+      <h2>Same story, roles reversed</h2>
+      <span class="count">5 shows · she guards</span>
+    </div>
+    <p class="sec-note">
+      The trope's other half, and where Asian television has produced its biggest hits: a woman takes the
+      protector or carer job in a widower's house, the children freeze her out, the father falls last.
+      Worth knowing because the beats land identically.
+    </p>
+    <div class="cards" id="flipped-cards"></div>
+  </section>
+
+  <section id="near">
+    <div class="sec-head">
+      <h2>Famous, but check the ending first</h2>
+      <span class="count">5 shows · partial fit</span>
+    </div>
+    <p class="sec-note">
+      These come up in every search for this premise. Each one breaks a beat you asked for — usually the last one.
+    </p>
+    <div class="cards" id="near-cards"></div>
+  </section>
+
+  <section class="sources">
+    <div class="sec-head"><h2>Sources</h2></div>
+    <ul>
+      <li><a href="https://asianwiki.com/My_Secret,_Terrius">AsianWiki — My Secret, Terrius</a></li>
+      <li><a href="https://www.kdramalove.com/Terius.html">KdramaLove — Terius Behind Me review</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Sen_Anlat_Karadeniz">Wikipedia — Sen Anlat Karadeniz</a></li>
+      <li><a href="https://www.dailysabah.com/arts/cinema/powerful-turkish-series-highlights-how-strong-women-fight-abuse">Daily Sabah — on Sen Anlat Karadeniz</a></li>
+      <li><a href="https://www.imdb.com/title/tt2320524/plotsummary/">IMDb — Amores Verdaderos plot</a></li>
+      <li><a href="http://caraycaray.blogspot.com/2013/07/amores-verdaderos-thursday-july-25-cap.html">Caray, Caray! — Amores Verdaderos finale recap</a></li>
+      <li><a href="https://www.tvynovelas.com/telenovelas/daniel-arenas-vuelve-con-guardian-de-mi-corazon-a-las-telenovelas-de-televisaunivision">TVyNovelas — Guardián de mi corazón remake</a></li>
+      <li><a href="https://es.wikipedia.org/wiki/Amor_en_custodia_(telenovela_mexicana)">Wikipedia — Amor en custodia</a></li>
+      <li><a href="https://mydramalist.com/688065-the-bodyguard">MyDramaList — The Bodyguard (1997, Japan)</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Na_Bole_Tum_Na_Maine_Kuch_Kaha">Wikipedia — Na Bole Tum Na Maine Kuch Kaha</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Ek_Vivah_Aisa_Bhi_(TV_series)">Wikipedia — Ek Vivah Aisa Bhi</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Manny_(TV_series)">Wikipedia — Manny</a></li>
+      <li><a href="https://dramabeans.com/2011/04/manny-episodes-1-2/">Dramabeans — Manny episodes 1–2</a></li>
+      <li><a href="https://dramabeans.com/2016/04/marriage-contract-episode-16-final/">Dramabeans — Marriage Contract finale</a></li>
+      <li><a href="https://asianwiki.com/Marriage_Contract">AsianWiki — Marriage Contract</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Be_Careful_with_My_Heart">Wikipedia — Be Careful with My Heart</a></li>
+      <li><a href="https://starmometer.com/2014/09/26/be-careful-with-my-heart-to-air-happy-ever-after-ending-this-november/">Starmometer — Be Careful with My Heart ending</a></li>
+      <li><a href="https://www.viki.com/tv/38881c-cute-bodyguard">Viki — Cute Bodyguard</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Down_with_Love_(TV_series)">Wikipedia — Down with Love</a></li>
+      <li><a href="https://asianwiki.com/The_Suspicious_Housekeeper">AsianWiki — The Suspicious Housekeeper</a></li>
+      <li><a href="https://mydramalist.com/695729-my-lovely-bodyguard">MyDramaList — My Lovely Bodyguard</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Bodyguard_(British_TV_series)">Wikipedia — Bodyguard (BBC)</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Loving,_Never_Forgetting">Wikipedia — Loving, Never Forgetting</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Paradise_(1988_TV_series)">Wikipedia — Paradise / Guns of Paradise</a></li>
+      <li><a href="https://dizilah.com/news/yeni-hayat-episode-1-review">Dizilah — Yeni Hayat</a></li>
+    </ul>
+    <p class="colophon">
+      <b>About the covers.</b> The artwork on each card was drawn for this page — flat duotone panels keyed to each
+      show's setting and palette. Official posters could not be embedded: this page is served under a policy that
+      blocks images from outside hosts, so every real poster would have rendered as a broken box. The source link on
+      each title goes to the show's database page, where the official art lives.
+    </p>
+  </section>
+</div>
+
+<script>
+  const SHOWS = {
+    core: [
+      {
+        title: "My Secret, Terrius",
+        native: "내 뒤에 테리우스",
+        country: "South Korea", year: "2018", eps: "32 eps", net: "MBC",
+        url: "https://asianwiki.com/My_Secret,_Terrius",
+        art: { a: "#101C2E", b: "#2A4468", accent: "#E8A93F", motif: "city" },
+        plot: "A widowed office worker with five-year-old twins hires the unemployed neighbour across the hall as a babysitter. He is a black-ops NIS agent in hiding, and her husband was murdered by the conspiracy he has been chasing. <em>He minds the children by day and dismantles an international arms plot by night</em>, and the twins go from testing him to refusing to sleep without him.",
+        caveat: "<b>Note:</b> the romance is deliberately understated — no wedding, but the finale plants the four of them as a family and every look between them means it.",
+        beats: [2,2,2,2,2]
+      },
+      {
+        title: "Sen Anlat Karadeniz",
+        native: "Lifeline · Turkey",
+        country: "Turkey", year: "2018–19", eps: "3 seasons", net: "ATV",
+        url: "https://en.wikipedia.org/wiki/Sen_Anlat_Karadeniz",
+        art: { a: "#0B2B2E", b: "#17544F", accent: "#E4762C", motif: "waves" },
+        plot: "Nefes escapes a violent husband with her son Yiğit and lands in a Black Sea village, where the hot-tempered Tahir Kaleli appoints himself her wall. He marries her first to shield her name and falls in love with her later. <em>Yiğit spends a season deciding whether this loud stranger is a threat or a father</em>, then decides.",
+        caveat: "<b>Ending:</b> genuinely happy — Tahir survives, they have a daughter, Nefes starts law school to defend abused women. Season 1 is the great one; the later seasons stretch.",
+        beats: [2,2,2,2,2]
+      },
+      {
+        title: "Amores Verdaderos",
+        native: "True Love",
+        country: "Mexico", year: "2012–13", eps: "181 eps", net: "Televisa",
+        url: "https://www.imdb.com/title/tt2320524/plotsummary/",
+        art: { a: "#2B1030", b: "#6D1F45", accent: "#E8B44A", motif: "rays" },
+        plot: "Victoria Balvanera survives a kidnapping attempt and hires her gardener — a former policeman — as her personal bodyguard. She is not a widow but a wife, trapped in a marriage of convenience to a serial cheat. <em>Her spoiled teenagers treat him as staff before they start treating him as the only adult in the house.</em>",
+        caveat: "<b>Ending:</b> divorce, exoneration, and a wedding. Note this is the telenovela version of your premise, so budget 181 episodes. A remake, <i>Guardián de mi corazón</i>, is in production for 2026.",
+        beats: [2,2,2,2,2]
+      },
+      {
+        title: "The Bodyguard",
+        native: "ボディガード",
+        country: "Japan", year: "1997", eps: "1 season", net: "Japanese network TV",
+        url: "https://mydramalist.com/688065-the-bodyguard",
+        art: { a: "#131A2C", b: "#3C3350", accent: "#DE6A78", motif: "petals" },
+        plot: "A widow running a flower shop watches a corrupt officer kill a colleague in an underground car park. Terrified for herself and her son Tsutomu, she hires Shin Enjoji, a karate-master international bodyguard, <em>who moves into their small domestic life while hunting the man hunting them</em>.",
+        caveat: "<b>Warning:</b> the hardest one here to actually watch — a 1997 Japanese series with no subtitled release. Listed because it is the cleanest statement of the premise anyone has filmed for television.",
+        beats: [2,2,2,2,1]
+      },
+      {
+        title: "Na Bole Tum Na Maine Kuch Kaha",
+        native: "नहीं बोले तुम",
+        country: "India", year: "2012–13", eps: "2 seasons", net: "Colors TV",
+        url: "https://en.wikipedia.org/wiki/Na_Bole_Tum_Na_Maine_Kuch_Kaha",
+        art: { a: "#3A1206", b: "#7E2A11", accent: "#EBA82B", motif: "arch" },
+        plot: "Megha is a young widow with two children, fighting for justice for a husband whose death nobody will explain. Mohan Bhatnagar, a blunt local reporter, takes up the fight and then takes up the family. <em>Her daughter comes around fast; her son Aditya holds out for a very long time</em>, which is the show's best thread.",
+        caveat: "<b>Note:</b> daily-soap pacing, and Aditya's hostility toward Mohan is dragged out to the end. The marriage and the family do land.",
+        beats: [2,2,2,2,2]
+      },
+      {
+        title: "When the Camellia Blooms",
+        native: "동백꽃 필 무렵",
+        country: "South Korea", year: "2019", eps: "40 half-eps", net: "KBS2",
+        url: "https://en.wikipedia.org/wiki/When_the_Camellia_Blooms",
+        art: { a: "#2A0B18", b: "#6E1B2E", accent: "#F0C9A0", motif: "petals" },
+        plot: "Dongbaek is a single mother running a bar in a small town that has decided to despise her, and a serial killer has decided she is next. Village policeman Hwang Yongsik installs himself as her bodyguard, bouncer and public defender. <em>Her son Pilgu vets him ruthlessly before granting approval.</em>",
+        caveat: "<b>Best-reviewed title on this list</b> — a Baeksang winner, and the funniest. The guarding is real (there is a genuine thriller running underneath) and the ending is unambiguously happy.",
+        beats: [2,1,2,2,2]
+      },
+      {
+        title: "Marriage Contract",
+        native: "결혼계약",
+        country: "South Korea", year: "2016", eps: "16 eps", net: "MBC",
+        url: "https://asianwiki.com/Marriage_Contract",
+        art: { a: "#141E28", b: "#3B4D5C", accent: "#E9A07A", motif: "rain" },
+        plot: "A rich man needs a liver for his mother; a single mother with a brain tumour needs money for the daughter she will leave behind. They sign a contract marriage, and he slowly stops being a buyer and starts being the man standing between this family and everything coming for it. <em>Eunseong watches him earn it.</em>",
+        caveat: "<b>Note:</b> a weepie, not a thriller — the danger is illness and his own family. Ends with the three of them moving into a new house together, hopeful rather than tidy.",
+        beats: [1,2,2,2,2]
+      },
+      {
+        title: "Manny",
+        native: "매니",
+        country: "South Korea", year: "2011", eps: "16 eps", net: "tvN",
+        url: "https://en.wikipedia.org/wiki/Manny_(TV_series)",
+        art: { a: "#0F2A26", b: "#2C6455", accent: "#F0A6A0", motif: "dots" },
+        plot: "A divorced fashion-industry mother has two children who have driven off every nanny in Seoul. She hires Kim Yihan, a male nanny trained in New York, mostly out of desperation. <em>The sabotage campaign is the first four episodes; the demolition of his professional distance is the rest.</em>",
+        caveat: "<b>Note:</b> light romantic comedy, no bodyguard element — the threat is a hostile aunt, not a gunman. The kids-hate-him-then-need-him arc is the most explicit on this list.",
+        beats: [1,2,0,2,2]
+      },
+      {
+        title: "Ek Vivah Aisa Bhi",
+        native: "एक विवाह ऐसा भी",
+        country: "India", year: "2017", eps: "1 season", net: "&TV",
+        url: "https://en.wikipedia.org/wiki/Ek_Vivah_Aisa_Bhi_(TV_series)",
+        art: { a: "#161036", b: "#3B2E7A", accent: "#F2B227", motif: "arch" },
+        plot: "Suman is a young widow with a small son, Veer; Ranveer Mittal is a careless rich man she cannot stand. He fights her family, the town and her own reluctance to be allowed near them. <em>Veer ties the gathbandhan at their wedding</em> — the child literally binds the couple together.",
+        caveat: "<b>Note:</b> short-run and hard to stream outside India, but it hits the exact arc, including the boy's blessing as the final beat.",
+        beats: [1,2,2,2,2]
+      }
+    ],
+    flipped: [
+      {
+        title: "Be Careful with My Heart",
+        native: "Philippines",
+        country: "Philippines", year: "2012–14", eps: "3 seasons", net: "ABS-CBN",
+        url: "https://en.wikipedia.org/wiki/Be_Careful_with_My_Heart",
+        art: { a: "#0E2A33", b: "#1F6A72", accent: "#F2B85C", motif: "waves" },
+        plot: "Maya is hired as yaya to the youngest daughter of widowed airline owner Richard Lim — a little girl who has stopped speaking. <em>The household and the older children treat her as help for a long time.</em> One of the most successful daytime teleseryes ever made in the Philippines.",
+        caveat: "<b>Ending:</b> a full 'happily ever after' arc — marriage, the older kids won over, twins. Roles reversed, beats identical.",
+        beats: [2,2,2,2,2]
+      },
+      {
+        title: "Cute Bodyguard",
+        native: "臭小子，真可爱",
+        country: "China", year: "2022", eps: "24 eps", net: "web",
+        url: "https://www.viki.com/tv/38881c-cute-bodyguard",
+        art: { a: "#1A1230", b: "#4A2A6B", accent: "#F09A5B", motif: "city" },
+        plot: "A father hires Wu Shiyi, a female bodyguard, to protect his son. <em>The son sets out to humiliate her off the job</em> and fails, repeatedly. The straight gender-flip of the bodyguard-and-hostile-charge dynamic, played as comedy.",
+        caveat: "<b>Note:</b> the charge is an adult, so there is no child-bonding thread — this is the guarding and the antagonism, not the parenting.",
+        beats: [2,2,0,2,2]
+      },
+      {
+        title: "Down with Love",
+        native: "就想賴著妳",
+        country: "Taiwan", year: "2010", eps: "16 eps", net: "CTV",
+        url: "https://en.wikipedia.org/wiki/Down_with_Love_(TV_series)",
+        art: { a: "#123024", b: "#2E6B3F", accent: "#EFB24B", motif: "dots" },
+        plot: "A cold divorce lawyer suddenly inherits guardianship of his brother's two orphaned children and hires a nanny to absorb the problem. <em>The children arrive already hostile to everyone</em>, and she is the one who refuses to leave.",
+        caveat: "<b>Note:</b> he is the guardian and she is the carer, so the roles are split rather than flipped. Classic idol-drama comfort watch with a clean happy ending.",
+        beats: [1,2,0,2,2]
+      },
+      {
+        title: "My Lovely Bodyguard",
+        native: "บอดี้การ์ดที่รัก",
+        country: "Thailand", year: "2022", eps: "12 eps", net: "One 31",
+        url: "https://mydramalist.com/695729-my-lovely-bodyguard",
+        art: { a: "#151C33", b: "#3B3E7A", accent: "#EE8C6E", motif: "rays" },
+        plot: "A stuntwoman takes a close-protection job guarding a businessman and the young niece in his care. <em>The child is the one who accepts her first</em>, which is the usual order of operations in this trope.",
+        caveat: "<b>Note:</b> short, action-forward lakorn. The child is a niece rather than a son or daughter, so the family-formation beat is softer.",
+        beats: [2,1,0,2,2]
+      },
+      {
+        title: "The Suspicious Housekeeper",
+        native: "수상한 가정부",
+        country: "South Korea", year: "2013", eps: "20 eps", net: "SBS",
+        url: "https://asianwiki.com/The_Suspicious_Housekeeper",
+        art: { a: "#1A1A1D", b: "#3D3D45", accent: "#C9C2B4", motif: "rain" },
+        plot: "A silent, unnervingly capable housekeeper arrives at the home of a newly widowed father of four and does precisely what she is told, no more. <em>The children try everything to break her</em> — and the show is about what they find when they do.",
+        caveat: "<b>Not a romance.</b> Included as the sharpest version of the 'children wage war on the newcomer' arc ever put on television. Devastating rather than warm — go in knowing that.",
+        beats: [1,2,1,0,1]
+      }
+    ],
+    near: [
+      {
+        title: "Bodyguard",
+        native: "BBC One",
+        country: "United Kingdom", year: "2018", eps: "6 eps", net: "BBC One",
+        url: "https://en.wikipedia.org/wiki/Bodyguard_(British_TV_series)",
+        art: { a: "#101418", b: "#2E3A44", accent: "#B23A3A", motif: "city" },
+        plot: "The show everyone names first: a war-veteran police protection officer is assigned to a Home Secretary and falls into an affair with her. <em>It is a superb thriller and the wrong answer to this question.</em>",
+        caveat: "<b>Why it misses:</b> the children are his own, not hers; the protectee is killed mid-series; there is no family ending. Watch it for the tension, not the romance.",
+        beats: [2,0,2,1,0]
+      },
+      {
+        title: "Yeni Hayat",
+        native: "New Life",
+        country: "Turkey", year: "2020", eps: "13 eps", net: "Kanal D",
+        url: "https://dizilah.com/news/yeni-hayat-episode-1-review",
+        art: { a: "#101E24", b: "#2B4E52", accent: "#D8894A", motif: "rain" },
+        plot: "A bodyguard named Adem is hired by a dangerous man to watch his wife, Yasemin, who is planning to run. She uses his devotion as cover for the escape and is caught out by meaning it. <em>The best-looking bodyguard romance Turkish television has made.</em>",
+        caveat: "<b>Why it misses:</b> cancelled after one season, so the story stops rather than ends. Adem's daughter is his own, and the wife's children are not the emotional centre.",
+        beats: [2,0,1,2,0]
+      },
+      {
+        title: "Loving, Never Forgetting",
+        native: "恋恋不忘",
+        country: "China", year: "2014", eps: "34 eps", net: "Zhejiang TV",
+        url: "https://en.wikipedia.org/wiki/Loving,_Never_Forgetting",
+        art: { a: "#211026", b: "#5A2A55", accent: "#E8A0A8", motif: "dots" },
+        plot: "A tycoon discovers that the injured boy in the hospital is his son, sues the single mother raising him for custody, and then has to learn to be admitted into the family he tried to take apart. <em>The child decides the outcome.</em>",
+        caveat: "<b>Why it misses:</b> he is the boy's biological father, not a hired protector, and the conflict is a custody fight. They do marry. The closest well-known Chinese fit to your premise.",
+        beats: [1,2,2,2,2]
+      },
+      {
+        title: "Guns of Paradise",
+        native: "Paradise",
+        country: "United States", year: "1988–91", eps: "3 seasons", net: "CBS",
+        url: "https://en.wikipedia.org/wiki/Paradise_(1988_TV_series)",
+        art: { a: "#2A1A0E", b: "#6B4423", accent: "#E4A845", motif: "rays" },
+        plot: "A gunfighter inherits his dead sister's four children in a mining town and hangs up the guns badly. <em>The children want a different life than the one he can give them</em>, and the town banker, Amelia, becomes the reason he tries.",
+        caveat: "<b>Why it misses:</b> the children are his own kin rather than the love interest's, so the 'winning over her kids' beat never quite exists. The nearest American network TV gets to this premise.",
+        beats: [2,2,0,2,1]
+      },
+      {
+        title: "Amor en Custodia",
+        native: "Love in Custody",
+        country: "Argentina", year: "2005", eps: "2 seasons", net: "Telefe",
+        url: "https://es.wikipedia.org/wiki/Amor_en_custodia_(telenovela_mexicana)",
+        art: { a: "#171029", b: "#3E2A63", accent: "#D9A03C", motif: "rays" },
+        plot: "The format that started the whole bodyguard-in-the-mansion genre and was remade across Latin America, most successfully as <em>Amores Verdaderos</em>. A bodyguard moves into a wealthy, poisonous household and changes who everyone in it turns out to be.",
+        caveat: "<b>Why it misses:</b> in the original, the bodyguard's romance is with the family's grown daughter, not the mother. Watch the Mexican remake for the version you actually want.",
+        beats: [2,1,0,2,2]
+      }
+    ]
+  };
+
+  const BEAT_NAMES = ["Protector", "Kids resist", "Widow / wife", "Romance", "Happy end"];
+  const STATE = ["no", "part", "yes"];
+
+  function motif(kind, accent) {
+    const bits = [];
+    const push = (s) => bits.push(s);
+    if (kind === "city") {
+      for (let i = 0; i < 9; i++) {
+        const w = 22 + (i % 3) * 12, h = 60 + ((i * 47) % 130);
+        push(`<rect x="${i * 34 - 6}" y="${300 - h}" width="${w}" height="${h + 10}" fill="${accent}" opacity=".13"/>`);
+      }
+      for (let i = 0; i < 26; i++) {
+        push(`<rect x="${12 + (i * 41) % 276}" y="${190 + (i * 29) % 100}" width="4" height="5" fill="${accent}" opacity=".5"/>`);
+      }
+    } else if (kind === "waves") {
+      for (let i = 0; i < 7; i++) {
+        const y = 250 + i * 17;
+        push(`<path d="M-10 ${y} q 40 -13 80 0 t 80 0 t 80 0 t 80 0" fill="none" stroke="${accent}" stroke-width="2" opacity="${0.34 - i * 0.03}"/>`);
+      }
+    } else if (kind === "rain") {
+      for (let i = 0; i < 44; i++) {
+        const x = (i * 53) % 310, y = (i * 97) % 300;
+        push(`<line x1="${x}" y1="${y}" x2="${x - 6}" y2="${y + 26}" stroke="${accent}" stroke-width="1.4" opacity=".26"/>`);
+      }
+    } else if (kind === "petals") {
+      for (let i = 0; i < 22; i++) {
+        const x = (i * 71) % 300, y = (i * 113) % 310, r = 4 + (i % 4) * 2.5;
+        push(`<circle cx="${x}" cy="${y}" r="${r}" fill="${accent}" opacity="${0.16 + (i % 3) * 0.07}"/>`);
+      }
+    } else if (kind === "rays") {
+      for (let i = -5; i <= 5; i++) {
+        push(`<path d="M150 130 L${150 + i * 46} -40 L${150 + i * 46 + 22} -40 Z" fill="${accent}" opacity=".08"/>`);
+      }
+    } else if (kind === "arch") {
+      push(`<path d="M60 320 L60 150 a90 90 0 0 1 180 0 L240 320" fill="none" stroke="${accent}" stroke-width="2.5" opacity=".35"/>`);
+      push(`<path d="M84 320 L84 158 a66 66 0 0 1 132 0 L216 320" fill="none" stroke="${accent}" stroke-width="1.2" opacity=".22"/>`);
+    } else if (kind === "dots") {
+      for (let i = 0; i < 40; i++) {
+        push(`<circle cx="${(i * 43) % 300}" cy="${(i * 67) % 300}" r="2.6" fill="${accent}" opacity=".28"/>`);
+      }
+    }
+    return bits.join("");
+  }
+
+  function figures(shade) {
+    // one tall silhouette, one small one at its side, hands meeting
+    const adult = `
+      <circle cx="118" cy="286" r="19" fill="${shade}"/>
+      <path d="M84 450 L84 344 q0 -30 34 -30 q34 0 34 30 L152 450 Z" fill="${shade}"/>`;
+    const child = `
+      <circle cx="186" cy="368" r="12" fill="${shade}"/>
+      <path d="M164 450 L164 402 q0 -20 22 -20 q22 0 22 20 L208 450 Z" fill="${shade}"/>`;
+    const hands = `<path d="M150 352 q14 6 20 34" fill="none" stroke="${shade}" stroke-width="6" stroke-linecap="round"/>`;
+    return adult + hands + child;
+  }
+
+  function cover(show, rank) {
+    const { a, b, accent } = show.art;
+    const id = "g" + Math.random().toString(36).slice(2, 9);
+    const svg = `
+      <svg viewBox="0 0 300 450" role="img" aria-label="Cover art for ${show.title}" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="${b}"/>
+            <stop offset="100%" stop-color="${a}"/>
+          </linearGradient>
+          <radialGradient id="${id}r" cx="50%" cy="30%" r="55%">
+            <stop offset="0%" stop-color="${accent}" stop-opacity=".55"/>
+            <stop offset="100%" stop-color="${accent}" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="300" height="450" fill="url(#${id})"/>
+        <circle cx="150" cy="130" r="58" fill="${accent}" opacity=".85"/>
+        <rect width="300" height="450" fill="url(#${id}r)"/>
+        ${motif(show.art.motif, accent)}
+        ${figures("#0A0E10")}
+        <rect width="300" height="450" fill="${a}" opacity=".14"/>
+      </svg>`;
+    const rankBadge = rank ? `<span class="rank">${rank}</span>` : "";
+    return `<div class="cover">${svg}${rankBadge}
+      <div class="plate"><b>${show.title}</b><span>${show.year}</span></div>
+    </div>`;
+  }
+
+  function card(show, rank) {
+    const beats = show.beats.map((v, i) =>
+      `<li class="${STATE[v]}">${BEAT_NAMES[i]}</li>`).join("");
+    return `<article class="card${rank === 1 ? " top" : ""}">
+      ${cover(show, rank)}
+      <div class="body">
+        <div class="title-row">
+          <h3><a href="${show.url}">${show.title}</a></h3>
+          <span class="native">${show.native}</span>
+        </div>
+        <div class="meta">
+          <span class="flag">${show.country}</span><span>${show.year}</span>
+          <span>${show.eps}</span><span>${show.net}</span>
+        </div>
+        <p class="plot">${show.plot}</p>
+        <p class="caveat">${show.caveat}</p>
+        <ul class="beats">${beats}</ul>
+      </div>
+    </article>`;
+  }
+
+  document.getElementById("core-cards").innerHTML =
+    SHOWS.core.map((s, i) => card(s, i + 1)).join("");
+  document.getElementById("flipped-cards").innerHTML =
+    SHOWS.flipped.map((s) => card(s, 0)).join("");
+  document.getElementById("near-cards").innerHTML =
+    SHOWS.near.map((s) => card(s, 0)).join("");
+</script>
