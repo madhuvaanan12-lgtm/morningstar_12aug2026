@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-12T15:20:37.481Z",
+  "generatedAt": "2026-08-14T03:13:20.393Z",
   "sourceGeneratedAt": "2026-08-10T07:08:18.533Z",
   "catalogueTitles": 5004,
   "watchedTitles": 179,
   "kDramaTitles": 3632,
-  "curslickCollections": 3,
-  "dataSha256": "ea0819e214254c34a34085fd20c5d92b18f2d907ba8eed88c24208ffa730336f",
-  "dataBytes": 12131439,
+  "curslickCollections": 4,
+  "dataSha256": "198201c467c9ad77e6e94b0c53e6ad41f113ac6f264adb273a92707858962232",
+  "dataBytes": 12182735,
   "parts": [
     "morningstar-data-01-a36a148e8dbe.txt",
     "morningstar-data-02-f85957eaf8ba.txt",
@@ -21,14 +21,14 @@
     "morningstar-data-10-81a1fd74f787.txt",
     "morningstar-data-11-183efb68712c.txt",
     "morningstar-data-12-453a264f5f30.txt",
-    "morningstar-data-13-9a12178fd1ab.txt",
-    "morningstar-data-14-4f64bba85b2b.txt",
-    "morningstar-data-15-fd74282197b6.txt",
-    "morningstar-data-16-9961e17d52ce.txt",
-    "morningstar-data-17-36e3bde5e258.txt",
-    "morningstar-data-18-9d5777a93dac.txt",
-    "morningstar-data-19-180f0baff4d3.txt",
-    "morningstar-data-20-bbe6230fe30c.txt",
-    "morningstar-data-21-17289417131b.txt"
+    "morningstar-data-13-024a1a54be30.txt",
+    "morningstar-data-14-1b3f657ebdcd.txt",
+    "morningstar-data-15-4b87897537fa.txt",
+    "morningstar-data-16-e504bdf7c35f.txt",
+    "morningstar-data-17-bc2e1109fd25.txt",
+    "morningstar-data-18-ead3447aadd5.txt",
+    "morningstar-data-19-a7ec19a9ae83.txt",
+    "morningstar-data-20-1c952d422f89.txt",
+    "morningstar-data-21-2a27ff0465bb.txt"
   ]
 }
