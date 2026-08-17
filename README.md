@@ -5,7 +5,8 @@ Morningstar is a mobile-friendly, static television-series discovery app.
 - 5,004 ranked main-catalogue titles
 - 179 watched titles preserved
 - 3,632 optional K-drama titles
-- Curslick editorial collections (4: Run Hide Fight, Annabelle horror, Protector romance, Lesbian happy endings)
+- 1,000 franchise-ranked finished anime under 60 hours (212 existing titles reused + 788 new cards)
+- Curslick editorial collections (5: Run Hide Fight, Annabelle horror, Protector romance, Lesbian happy endings, Anime 1000)
 - Search, year/genre/country/format filters, My List, watched controls, and JSON backup/restore
 - Sticky collapsible filters plus Grid, List, and Detailed-with-plot views
 - Adjustable cards-per-row control in Grid view
@@ -36,6 +37,14 @@ ranks eleven qualifying shows first, then seven well-known titles that almost fi
 two conditions (killed off right after the romance lands, cancelled before any ending exists, undone
 by a later spinoff, or still airing) — each with the specific reason named, so a future editor extending
 this collection knows the bar new entries need to clear.
+
+Collection 05, *Anime 1000*, groups AniList PREQUEL/SEQUEL relations into franchise-level runs, counts
+linked movies, OVAs and specials toward the runtime, and admits a title only when every currently
+catalogued mainline installment is FINISHED, fully end-dated, present in the source snapshot and below
+60 combined hours. The 16 August 2026 combined snapshot produced 4,223 eligible franchises before
+the Top 1,000 quality cut. Full rules, exclusions and the reproducible audit live in
+`research/anime-top-1000-methodology.md`; the machine-readable title audit is
+`research/anime-top-1000-2026-08-16.json`.
 
 ## Deploy on Netlify
 
