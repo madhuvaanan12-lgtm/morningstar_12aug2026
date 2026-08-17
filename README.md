@@ -31,13 +31,39 @@ the ordinary filters.
 ## One card per series
 
 The catalogue, the K-drama archive, the watched history and Curslick's editorial exclusives are
-merged into a single record per series before anything is rendered. Records are joined by id, by
-matching title/original-title plus year and origin, and — across the catalogue and the K-drama
-archive only — by a bigram/token similarity pass that catches the same show carrying two English
-names ("Strong Woman Do Bong Soon" / "Strong Girl Bong Soon"). The merged record keeps the
-IMDb-linked English title, adopts the original-language title underneath it (IMDb style), unions the
-genres, and is watched if *any* of its source records was. Every id that was folded in is kept as an
-alias, so My List and watched marks saved against the old id keep working.
+merged into a single record per series before anything is rendered — 8,815 source records collapse to
+7,875 cards. The same Korean drama routinely appears in the ranked catalogue under one English title
+(IMDb's) and in the K-drama archive under another (MyDramaList's), which is what produced duplicate
+cards and made an already-watched series look unwatched.
+
+Records are joined in four passes, the last three only between a catalogue record and a K-drama
+archive record, and each catalogue record can claim at most one archive record (best score wins, so
+nothing chains "Reply 1997" into "Reply 1994"):
+
+1. **Same id**, and same normalised title/original-title plus year and origin.
+2. **English-title similarity** — bigram similarity ≥ 0.65 or a shared-distinctive-token test:
+   *Empress Ki* / *The Empress Ki*, *Under the Queen's Umbrella* / *The Queen's Umbrella*.
+3. **Romanised native title** — Hangul original titles are romanised in the browser and compared to
+   the catalogue's romanisation, which is exact far more often than the English names are:
+   응답하라 1988 → `eungdaphara 1988` matches *Answer Me 1988*'s `Eungdaphara 1988`, so *Reply 1988*
+   folds into it. This is what catches *Tempted* / *Great Seducer*, *Rain or Shine* /
+   *Just Between Lovers* and *Bring It On, Ghost* / *Let's Fight Ghost*.
+4. **Plot fingerprint** — TF-IDF cosine over the two synopses, accepted only above 0.4 and only when
+   it beats the runner-up by 30%, for shows whose two English names share nothing:
+   *Nice Guy* / *The Innocent Man*, *Haechi* / *Hatch*, *Delayed Justice* / *Fly Dragon*.
+
+Years must be within one, episode counts within one (or an exact 2× split at the same episode
+length, which is how the two sources disagree about split broadcasts), and conflicting numbers in
+the titles veto a match.
+
+The merged record keeps the IMDb-linked English title, shows the native-script original underneath
+it (IMDb style), keeps the romanisation and every folded English title searchable and lists them as
+"Also known as" on the detail page, unions the genres, and is watched if *any* of its source records
+was. Every folded id is kept as an alias, so My List entries, watched marks and Curslick `showId`
+references saved against the old id keep resolving.
+
+All 127 watched Korean titles now resolve to a single card; 60 catalogue titles still have no
+identifiable archive twin, none of them watched.
 
 ## Curslick collections
 

@@ -11349,6 +11349,82 @@ var TOP_FIVE_COUNTRIES = ["United States", "United Kingdom", "South Korea", "Jap
   MIN_RUNTIME_HOURS = 4,
   MAX_RUNTIME_HOURS = 60,
   KDRAMA_MIN_YEAR = 2010,
+  HANGUL_INITIALS = [
+    "g",
+    "kk",
+    "n",
+    "d",
+    "tt",
+    "r",
+    "m",
+    "b",
+    "pp",
+    "s",
+    "ss",
+    "",
+    "j",
+    "jj",
+    "ch",
+    "k",
+    "t",
+    "p",
+    "h",
+  ],
+  HANGUL_MEDIALS = [
+    "a",
+    "ae",
+    "ya",
+    "yae",
+    "eo",
+    "e",
+    "yeo",
+    "ye",
+    "o",
+    "wa",
+    "wae",
+    "oe",
+    "yo",
+    "u",
+    "wo",
+    "we",
+    "wi",
+    "yu",
+    "eu",
+    "ui",
+    "i",
+  ],
+  HANGUL_FINALS = [
+    "",
+    "k",
+    "k",
+    "ks",
+    "n",
+    "nj",
+    "nh",
+    "t",
+    "l",
+    "lk",
+    "lm",
+    "lp",
+    "ls",
+    "lt",
+    "lp",
+    "lh",
+    "m",
+    "p",
+    "ps",
+    "t",
+    "t",
+    "ng",
+    "t",
+    "t",
+    "k",
+    "t",
+    "p",
+    "h",
+  ],
+  PLOT_MATCH_MIN = 0.4,
+  PLOT_MATCH_MARGIN = 1.3,
   TITLE_STOP_WORDS = [
     "of",
     "and",
@@ -11448,6 +11524,78 @@ function normaliseTitleKey(e) {
 function isLatinTitle(e) {
   return !!e && !/[^\p{Script=Latin}\p{N}\p{P}\p{S}\p{Zs}]/u.test(e);
 }
+function romaniseHangul(e) {
+  let t = "";
+  for (let n of e || "") {
+    let e = n.codePointAt(0);
+    if (e >= 44032 && e <= 55203) {
+      let n = e - 44032;
+      t +=
+        HANGUL_INITIALS[Math.floor(n / 588)] +
+        HANGUL_MEDIALS[Math.floor((n % 588) / 28)] +
+        HANGUL_FINALS[n % 28];
+    } else t += n;
+  }
+  return t;
+}
+function nativeTitleKey(e) {
+  return e.originalTitle
+    ? normaliseTitleKey(romaniseHangul(e.originalTitle)).replace(/ /g, "")
+    : "";
+}
+function isSameNativeTitle(e, t) {
+  let n = nativeTitleKey(e),
+    r = nativeTitleKey(t);
+  return (
+    !!n &&
+    !!r &&
+    n.length > 3 &&
+    r.length > 3 &&
+    "number" == typeof e.year &&
+    "number" == typeof t.year &&
+    Math.abs(e.year - t.year) <= 1 &&
+    titleSimilarity(n, r) >= 0.65
+  );
+}
+function plotTokens(e) {
+  return (e || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]/g, " ")
+    .split(/\s+/)
+    .filter((e) => e.length > 3);
+}
+function buildPlotScorer(e) {
+  let documentFrequency = new Map();
+  for (let t of e)
+    for (let e of new Set(plotTokens(t.shortPlot)))
+      documentFrequency.set(e, (documentFrequency.get(e) || 0) + 1);
+  let corpusSize = Math.max(e.length, 1),
+    unseenWeight = Math.log(corpusSize + 1);
+  return (e) => {
+    let termCounts = new Map();
+    for (let t of plotTokens(e)) termCounts.set(t, (termCounts.get(t) || 0) + 1);
+    let magnitude = 0;
+    for (let [term, count] of termCounts) {
+      let weight =
+        count *
+        (documentFrequency.has(term)
+          ? Math.log(corpusSize / (documentFrequency.get(term) + 1))
+          : unseenWeight);
+      (termCounts.set(term, weight), (magnitude += weight * weight));
+    }
+    magnitude = Math.sqrt(magnitude) || 1;
+    for (let [term, weight] of termCounts) termCounts.set(term, weight / magnitude);
+    return termCounts;
+  };
+}
+function plotSimilarity(e, t) {
+  let n = 0;
+  for (let [r, l] of e) {
+    let e = t.get(r);
+    e && (n += l * e);
+  }
+  return n;
+}
 function showTitleKeys(e) {
   let t = new Set();
   for (let n of [e.title, e.originalTitle]) {
@@ -11499,11 +11647,26 @@ function sharesDistinctiveTokens(e, t) {
   for (let e of n) r.has(e) && (a += 1);
   return l >= 2 && a >= 2 && a / l >= 0.7;
 }
+function sameEpisodeShape(e, t) {
+  return e.episodeRuntime && t.episodeRuntime
+    ? Math.abs(e.episodeRuntime - t.episodeRuntime) <=
+        0.2 * Math.max(e.episodeRuntime, t.episodeRuntime)
+    : !!e.runtimeHours &&
+        !!t.runtimeHours &&
+        Math.abs(e.runtimeHours - t.runtimeHours) <=
+          0.25 * Math.max(e.runtimeHours, t.runtimeHours);
+}
+function episodeCountsCompatible(e, t) {
+  if (!e.episodes || !t.episodes) return !0;
+  let n = Math.max(e.episodes, t.episodes),
+    r = Math.min(e.episodes, t.episodes);
+  return n - r <= 1 || (Math.abs(n - 2 * r) <= 1 && sameEpisodeShape(e, t));
+}
 function isSameTranslatedSeries(e, t) {
   return (
     e.year === t.year &&
     (e.country || "") === (t.country || "") &&
-    !(e.episodes && t.episodes && Math.abs(e.episodes - t.episodes) > 1) &&
+    episodeCountsCompatible(e, t) &&
     (titleSimilarity(normaliseTitleKey(e.title), normaliseTitleKey(t.title)) >= 0.65 ||
       sharesDistinctiveTokens(e.title, t.title))
   );
@@ -11541,7 +11704,91 @@ function mergeSeriesGroup(e) {
         !isLatinTitle(e.title) &&
         (n.originalTitle = e.title));
   }
-  return ((n.aliasIds = [...r].filter((e) => e !== n.id)), n);
+  return ((n.aliasIds = [...r].filter((e) => e !== n.id)), preferNativeOriginalTitle(n, t));
+}
+function preferNativeOriginalTitle(e, t) {
+  let n = [],
+    r = [];
+  for (let e of t) e.originalTitle && (isLatinTitle(e.originalTitle) ? r : n).push(e.originalTitle);
+  n.length && ((e.romanisedTitle = r.find((t) => t !== e.title) || ""), (e.originalTitle = n[0]));
+  let l = new Set();
+  for (let n of t)
+    for (let t of [n.title, n.originalTitle])
+      t &&
+        t !== e.title &&
+        t !== e.originalTitle &&
+        t !== e.romanisedTitle &&
+        isLatinTitle(t) &&
+        l.add(t);
+  return (l.size && (e.alternativeTitles = [...l]), e);
+}
+function archiveYearIndex(e) {
+  let t = new Map();
+  for (let n of e.values())
+    !0 === n.kDramaArchive &&
+      "number" == typeof n.year &&
+      (t.get(n.year) || t.set(n.year, []).get(n.year)).push(n);
+  return t;
+}
+function archiveCandidates(e, t) {
+  return [...(e.get(t - 1) || []), ...(e.get(t) || []), ...(e.get(t + 1) || [])];
+}
+function crossSourceMatchScore(e, t, n) {
+  if (digitsConflict(e, t)) return 0;
+  let r = 0;
+  if (isSameTranslatedSeries(e, t)) {
+    let n = titleSimilarity(normaliseTitleKey(e.title), normaliseTitleKey(t.title));
+    r = Math.max(r, Math.max(n, sharesDistinctiveTokens(e.title, t.title) ? 0.7 : 0));
+  }
+  return (
+    isSameNativeTitle(e, t) &&
+      (r = Math.max(r, titleSimilarity(nativeTitleKey(e), nativeTitleKey(t)))),
+    n && (r = Math.max(r, n)),
+    r
+  );
+}
+function digitsConflict(e, t) {
+  let n = `${e.title} ${e.originalTitle || ""}`.match(/\d+/g) || [],
+    r = `${t.title} ${romaniseHangul(t.originalTitle || "")}`.match(/\d+/g) || [];
+  return !!n.length && !!r.length && n.sort().join(",") !== r.sort().join(",");
+}
+function matchCrossSourceRecords(e, t, n) {
+  let r = [],
+    l = [];
+  for (let n of e.values())
+    !0 === n.kDramaArchive ? l.push(n) : x(n) && "number" == typeof n.year && !t(n) && r.push(n);
+  if (!r.length || !l.length) return [];
+  let a = buildPlotScorer(l),
+    i = new Map(),
+    o = (e) => (i.has(e.id) || i.set(e.id, a(e.shortPlot || "")), i.get(e.id)),
+    s = [];
+  for (let e of r) {
+    let t = null,
+      r = 0,
+      l = 0,
+      a = 0;
+    for (let i of archiveCandidates(n, e.year)) {
+      let n = 0;
+      (e.shortPlot &&
+        i.shortPlot &&
+        episodeCountsCompatible(e, i) &&
+        (n = plotSimilarity(o(e), o(i))),
+        n > l ? ((a = l), (l = n)) : n > a && (a = n));
+      let s = crossSourceMatchScore(e, i, n >= PLOT_MATCH_MIN ? n : 0);
+      s > r && ((r = s), (t = i));
+    }
+    t &&
+      r > 0 &&
+      (r >= 0.65 || (l >= PLOT_MATCH_MIN && l >= a * PLOT_MATCH_MARGIN)) &&
+      s.push({ catalogue: e, archive: t, score: r });
+  }
+  s.sort((e, t) => t.score - e.score);
+  let u = new Set(),
+    d = new Set(),
+    c = [];
+  for (let { catalogue: e, archive: t } of s)
+    u.has(e.id) || d.has(t.id) || (u.add(e.id), d.add(t.id), c.push([e.id, t.id]));
+  return c;
 }
 function buildMergedCatalogue(e) {
   let t = new Map();
@@ -11563,15 +11810,10 @@ function buildMergedCatalogue(e) {
   for (let e of n.values())
     for (let t = 0; t < e.length; t += 1)
       for (let n = t + 1; n < e.length; n += 1) isSameSeries(e[t], e[n]) && i(e[t].id, e[n].id);
-  let o = new Map();
-  for (let e of t.values()) {
-    if ("number" != typeof e.year) continue;
-    let t = `${e.country || ""}|${e.year}`,
-      n = o.get(t) || o.set(t, { catalogue: [], archive: [] }).get(t);
-    (!0 === e.kDramaArchive ? n.archive : n.catalogue).push(e);
-  }
-  for (let { catalogue: e, archive: t } of o.values())
-    for (let n of e) for (let e of t) isSameTranslatedSeries(n, e) && i(n.id, e.id);
+  let o = archiveYearIndex(t),
+    s = new Set();
+  for (let e of t.values()) !0 === e.kDramaArchive && s.add(l(e.id));
+  for (let [e, n] of matchCrossSourceRecords(t, (e) => s.has(l(e.id)), o)) i(e, n);
   let a = new Map();
   for (let e of t.values()) {
     let t = l(e.id);
@@ -12022,6 +12264,12 @@ function ie({
                   }),
                   e.originalTitle && e.originalTitle !== e.title
                     ? (0, p.jsx)("p", { className: "original-title", children: e.originalTitle })
+                    : null,
+                  e.alternativeTitles?.length
+                    ? (0, p.jsxs)("p", {
+                        className: "alternative-titles",
+                        children: ["Also known as ", e.alternativeTitles.join(" · ")],
+                      })
                     : null,
                   (0, p.jsxs)("div", {
                     className: "modal-actions",
@@ -13553,7 +13801,7 @@ function T() {
                 ? `${l?.label || ""} ${l?.matchTags.join(" ") || ""} ${l?.why || ""}`
                 : "",
             i = y(
-              `${e.title} ${e.originalTitle || ""} ${e.country} ${e.language} ${e.format} ${e.status || ""} ${e.genres.join(" ")} ${e.shortPlot || ""} ${e.longPlot || ""} ${r} ${a}`,
+              `${e.title} ${e.originalTitle || ""} ${e.romanisedTitle || ""} ${(e.alternativeTitles || []).join(" ")} ${e.country} ${e.language} ${e.format} ${e.status || ""} ${e.genres.join(" ")} ${e.shortPlot || ""} ${e.longPlot || ""} ${r} ${a}`,
             );
           if (
             (n.length && !n.every((e) => i.includes(e))) ||
