@@ -11404,7 +11404,27 @@ var TOP_FIVE_COUNTRIES = ["United States", "United Kingdom", "South Korea", "Jap
       label: "Over 60 hours total",
       note: `Skips anything above ${MAX_RUNTIME_HOURS} viewing hours`,
     },
-  ];
+  ],
+  KDRAMA_EQUIVALENT_TITLE_GROUPS = [
+    ["Let's Fight Ghost", "Bring It On, Ghost"],
+    ["Great Seducer", "Tempted"],
+  ],
+  KDRAMA_EQUIVALENT_TITLE_KEYS = new Map(
+    KDRAMA_EQUIVALENT_TITLE_GROUPS.flatMap((e, t) =>
+      e.map((e) => [
+        (e || "")
+          .normalize("NFKD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .replace(/&/g, " and ")
+          .replace(/[^\p{L}\p{N}]+/gu, " ")
+          .replace(/\b(?:the|a|an)\b/g, " ")
+          .replace(/\s+/g, " ")
+          .trim(),
+        `kdrama-equivalent-${t}`,
+      ]),
+    ),
+  );
 function isTopFiveOrigin(e) {
   return (
     TOP_FIVE_COUNTRIES.includes(e.country) ||
@@ -11448,11 +11468,26 @@ function normaliseTitleKey(e) {
 function isLatinTitle(e) {
   return !!e && !/[^\p{Script=Latin}\p{N}\p{P}\p{S}\p{Zs}]/u.test(e);
 }
+function sourceTitleAlias(e) {
+  if ("MyDramaList" !== e.sourceName || !e.sourceUrl) return "";
+  let t = e.sourceUrl.match(/mydramalist\.com\/(?:\d+-)?([^/?#]+)/i)?.[1] || "";
+  try {
+    t = decodeURIComponent(t);
+  } catch {}
+  return t.replace(/-/g, " ").trim();
+}
+function seriesTitleNames(e) {
+  return [e.title, e.originalTitle, ...(e.aliases || []), sourceTitleAlias(e)].filter(Boolean);
+}
 function showTitleKeys(e) {
   let t = new Set();
-  for (let n of [e.title, e.originalTitle]) {
+  for (let n of seriesTitleNames(e)) {
     let r = normaliseTitleKey(n);
-    r && t.add(r);
+    if (r) {
+      t.add(r);
+      let e = KDRAMA_EQUIVALENT_TITLE_KEYS.get(r);
+      e && t.add(e);
+    }
   }
   return [...t];
 }
@@ -11466,7 +11501,7 @@ function isSameSeries(e, t) {
   return (
     !(a > 1) &&
     !(a > 0 && !l) &&
-    !(e.episodes && t.episodes && Math.abs(e.episodes - t.episodes) > 2) &&
+    !(e.episodes && t.episodes && Math.abs(e.episodes - t.episodes) > 1) &&
     (n === r || l || (!!e.language && e.language === t.language))
   );
 }
@@ -11500,12 +11535,19 @@ function sharesDistinctiveTokens(e, t) {
   return l >= 2 && a >= 2 && a / l >= 0.7;
 }
 function isSameTranslatedSeries(e, t) {
+  let n = seriesTitleNames(e).filter(isLatinTitle),
+    r = seriesTitleNames(t).filter(isLatinTitle);
   return (
     e.year === t.year &&
     (e.country || "") === (t.country || "") &&
     !(e.episodes && t.episodes && Math.abs(e.episodes - t.episodes) > 1) &&
-    (titleSimilarity(normaliseTitleKey(e.title), normaliseTitleKey(t.title)) >= 0.65 ||
-      sharesDistinctiveTokens(e.title, t.title))
+    n.some((e) =>
+      r.some(
+        (t) =>
+          titleSimilarity(normaliseTitleKey(e), normaliseTitleKey(t)) >= 0.65 ||
+          sharesDistinctiveTokens(e, t),
+      ),
+    )
   );
 }
 function seriesRecordScore(e) {
@@ -11521,11 +11563,52 @@ function seriesRecordScore(e) {
     t
   );
 }
+function englishTitleScore(e, t) {
+  if (!isLatinTitle(e.title)) return -1e3;
+  let n = 0;
+  return (
+    t && "MyDramaList" === e.sourceName && (n += 80),
+    t && e.id?.startsWith("mdl-") && (n += 30),
+    t && e.originalTitle && !isLatinTitle(e.originalTitle) && (n += 20),
+    e.imdbId && (n += 8),
+    e.mainCatalogue && (n += 6),
+    e.rank && (n += 3),
+    n
+  );
+}
+function chooseEnglishTitle(e) {
+  let t = e.some(x),
+    n = e
+      .filter((e) => isLatinTitle(e.title))
+      .sort((e, n) => englishTitleScore(n, t) - englishTitleScore(e, t));
+  return n[0]?.title || e[0]?.title || "Untitled series";
+}
+function chooseOriginalTitle(e, t) {
+  let n = e
+    .flatMap((e) => [e.originalTitle, isLatinTitle(e.title) ? "" : e.title])
+    .filter((e) => e && normaliseTitleKey(e) !== normaliseTitleKey(t));
+  if (!n.length) return "";
+  let r = e.some(x);
+  return (
+    (r && n.find((e) => /\p{Script=Hangul}/u.test(e))) ||
+    n.find((e) => !isLatinTitle(e)) ||
+    n[0]
+  );
+}
+function uniqueSeriesNames(e) {
+  let t = new Map();
+  for (let n of e) {
+    let e = normaliseTitleKey(n);
+    e && !t.has(e) && t.set(e, n);
+  }
+  return [...t.values()];
+}
 function mergeSeriesGroup(e) {
-  if (1 === e.length) return e[0];
   let t = [...e].sort((e, t) => seriesRecordScore(t) - seriesRecordScore(e)),
     n = { ...t[0] },
-    r = new Set(t[0].aliasIds || []);
+    r = new Set(t[0].aliasIds || []),
+    l = [];
+  for (let e of t) l.push(...seriesTitleNames(e));
   for (let e of t.slice(1)) {
     (r.add(e.id), (e.aliasIds || []).forEach((e) => r.add(e)));
     for (let t of Object.keys(e))
@@ -11535,19 +11618,34 @@ function mergeSeriesGroup(e) {
       UNPLACED_COUNTRIES.includes(n.country || "") &&
         !UNPLACED_COUNTRIES.includes(e.country || "") &&
         (n.country = e.country),
-      (n.genres = [...new Set([...(n.genres || []), ...(e.genres || [])])]),
-      !n.originalTitle &&
-        e.title !== n.title &&
-        !isLatinTitle(e.title) &&
-        (n.originalTitle = e.title));
+      (n.genres = [...new Set([...(n.genres || []), ...(e.genres || [])])]));
   }
-  return ((n.aliasIds = [...r].filter((e) => e !== n.id)), n);
+  let i = chooseEnglishTitle(t),
+    o = chooseOriginalTitle(t, i);
+  return (
+    (n.title = i),
+    o ? (n.originalTitle = o) : delete n.originalTitle,
+    (n.aliases = uniqueSeriesNames(l).filter(
+      (e) =>
+        normaliseTitleKey(e) !== normaliseTitleKey(n.title) &&
+        normaliseTitleKey(e) !== normaliseTitleKey(n.originalTitle),
+    )),
+    (n.watched = t.some((e) => !!e.watched)),
+    (n.kDramaArchive = t.some((e) => !0 === e.kDramaArchive)),
+    (n.mainCatalogue = t.some((e) => !0 === e.mainCatalogue)),
+    (n.watchedArchiveRecord = t.some((e) => !0 === e.watchedArchiveRecord)),
+    (n.catalogueMember = t.some(
+      (e) => !0 === e.catalogueMember || !0 === e.mainCatalogue,
+    )),
+    (n.aliasIds = [...r].filter((e) => e !== n.id)),
+    n
+  );
 }
 function buildMergedCatalogue(e) {
   let t = new Map();
   for (let n of e) {
     let e = t.get(n.id);
-    t.set(n.id, e ? mergeSeriesGroup([e, n]) : { ...n });
+    t.set(n.id, e ? mergeSeriesGroup([e, n]) : mergeSeriesGroup([{ ...n }]));
   }
   let n = new Map();
   for (let e of t.values())
@@ -11567,10 +11665,11 @@ function buildMergedCatalogue(e) {
   for (let e of t.values()) {
     if ("number" != typeof e.year) continue;
     let t = `${e.country || ""}|${e.year}`,
-      n = o.get(t) || o.set(t, { catalogue: [], archive: [] }).get(t);
-    (!0 === e.kDramaArchive ? n.archive : n.catalogue).push(e);
+      n = o.get(t) || o.set(t, { reference: [], archive: [] }).get(t),
+      r = !0 === e.mainCatalogue || !0 === e.watchedArchiveRecord || !0 === e.watched;
+    r ? n.reference.push(e) : !0 === e.kDramaArchive && n.archive.push(e);
   }
-  for (let { catalogue: e, archive: t } of o.values())
+  for (let { reference: e, archive: t } of o.values())
     for (let n of e) for (let e of t) isSameTranslatedSeries(n, e) && i(n.id, e.id);
   let a = new Map();
   for (let e of t.values()) {
@@ -11712,9 +11811,6 @@ function ne({ show: e, entry: t, onOpen: n, inList: r, isWatched: l, onToggleLis
             className: "card-title-row",
             children: (0, p.jsx)("h3", { children: e.title }),
           }),
-          e.originalTitle && e.originalTitle !== e.title
-            ? (0, p.jsx)("p", { className: "card-original-title", children: e.originalTitle })
-            : null,
           (0, p.jsxs)("p", {
             className: "card-meta",
             children: [e.year, " · ", b(e), " · ", e.format],
@@ -11809,9 +11905,6 @@ function re({ show: e, entry: t, onOpen: n, inList: r, isWatched: l, onToggleLis
               (0, p.jsx)(_, { name: "chevron", size: 20 }),
             ],
           }),
-          e.originalTitle && e.originalTitle !== e.title
-            ? (0, p.jsx)("p", { className: "curslick-original-title", children: e.originalTitle })
-            : null,
           (0, p.jsxs)("p", {
             className: "curslick-meta",
             children: [
@@ -12020,8 +12113,12 @@ function ie({
                     className: "modal-heading-row",
                     children: (0, p.jsx)("h2", { children: e.title }),
                   }),
-                  e.originalTitle && e.originalTitle !== e.title
-                    ? (0, p.jsx)("p", { className: "original-title", children: e.originalTitle })
+                  e.originalTitle &&
+                  normaliseTitleKey(e.originalTitle) !== normaliseTitleKey(e.title)
+                    ? (0, p.jsxs)("p", {
+                        className: "original-title",
+                        children: ["Original title: ", e.originalTitle],
+                      })
                     : null,
                   (0, p.jsxs)("div", {
                     className: "modal-actions",
@@ -13476,7 +13573,7 @@ function T() {
         buildMergedCatalogue([
           ...e.shows.map((e) => ({ ...e, mainCatalogue: !0 })),
           ...l.shows,
-          ...e.watchedArchive,
+          ...e.watchedArchive.map((e) => ({ ...e, watchedArchiveRecord: !0 })),
           ...je,
         ]),
       [e.shows, e.watchedArchive, l.shows, je],
@@ -13553,7 +13650,7 @@ function T() {
                 ? `${l?.label || ""} ${l?.matchTags.join(" ") || ""} ${l?.why || ""}`
                 : "",
             i = y(
-              `${e.title} ${e.originalTitle || ""} ${e.country} ${e.language} ${e.format} ${e.status || ""} ${e.genres.join(" ")} ${e.shortPlot || ""} ${e.longPlot || ""} ${r} ${a}`,
+              `${e.title} ${e.originalTitle || ""} ${(e.aliases || []).join(" ")} ${e.country} ${e.language} ${e.format} ${e.status || ""} ${e.genres.join(" ")} ${e.shortPlot || ""} ${e.longPlot || ""} ${r} ${a}`,
             );
           if (
             (n.length && !n.every((e) => i.includes(e))) ||

@@ -154,9 +154,12 @@ assert.strictEqual(
 );
 
 const app = fs.readFileSync(path.join(REPO, "app.js"), "utf8");
-assert(app.includes("children:t.placementNote||"), "Curslick placement-note support is missing");
-assert(app.includes(':e.animeScore?`${e.animeScore.toFixed(1)} AniList`'), "Anime card score support is missing");
-assert(app.includes(':e.animeScore?` · ${e.animeScore.toFixed(1)} AniList`'), "Anime detail score support is missing");
+assert(app.includes("t.placementNote ||"), "Curslick placement-note support is missing");
+assert(app.includes("`${e.animeScore.toFixed(1)} AniList`"), "Anime card score support is missing");
+assert(
+  app.includes("` · ${e.animeScore.toFixed(1)} AniList`"),
+  "Anime detail score support is missing",
+);
 
 console.log(
   `Anime 1000 integrity OK: ${matched} existing + ${created} new, ${manifest.parts.length} data parts.`,

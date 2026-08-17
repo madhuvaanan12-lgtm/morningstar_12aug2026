@@ -33,11 +33,14 @@ the ordinary filters.
 The catalogue, the K-drama archive, the watched history and Curslick's editorial exclusives are
 merged into a single record per series before anything is rendered. Records are joined by id, by
 matching title/original-title plus year and origin, and — across the catalogue and the K-drama
-archive only — by a bigram/token similarity pass that catches the same show carrying two English
-names ("Strong Woman Do Bong Soon" / "Strong Girl Bong Soon"). The merged record keeps the
-IMDb-linked English title, adopts the original-language title underneath it (IMDb style), unions the
-genres, and is watched if *any* of its source records was. Every id that was folded in is kept as an
-alias, so My List and watched marks saved against the old id keep working.
+archive only — by a bigram/token similarity pass, MyDramaList's alternate-title URL, and a small
+verified alias map for titles whose English names are completely different. This catches pairs such
+as "Strong Woman Do Bong Soon" / "Strong Girl Bong Soon" and "Just Between Lovers" / "Rain or
+Shine". Korean shows use the MyDramaList English display title everywhere in Browse, Home, search,
+My List and Curslick. The original-language title appears only after the series is opened, labelled
+"Original title" like IMDb. The merged record unions the genres and is watched if *any* source record
+was watched. Every id and alternate title that was folded in is kept as an alias, so old My List,
+watched marks and searches continue to work.
 
 ## Curslick collections
 
