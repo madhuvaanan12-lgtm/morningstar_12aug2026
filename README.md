@@ -7,6 +7,8 @@ Morningstar is a mobile-friendly, static television-series discovery app.
 - 3,632 optional K-drama titles
 - Curslick editorial collections (4: Run Hide Fight, Annabelle horror, Protector romance, Lesbian happy endings)
 - Search, year/genre/country/format filters, My List, watched controls, and JSON backup/restore
+- Sticky collapsible filters plus Grid, List, and Detailed-with-plot views
+- Adjustable cards-per-row control in Grid view
 
 ## Curslick collections
 
@@ -21,8 +23,8 @@ ending"), not necessarily a genre browse. Each collection's `matchingStandard` f
 explicitly, and `researchNote` explains how titles were checked against it — including naming the
 well-known titles that almost qualify but don't, and why. Build scripts for each collection live in
 `research/build-curslick-0N.js` and are the reference implementation for adding another one: they
-define the collection's editorial exclusives (shows absent from the main catalogue, rendered with
-generated cover art) and catalogue-linked entries (`showId` into an existing title), then rewrite and
+define the collection's editorial exclusives (shows absent from the main catalogue, using verified
+poster URLs with generated cover art as a fallback) and catalogue-linked entries (`showId` into an existing title), then rewrite and
 re-chunk the data payload in `data/`. Run `node research/build-curslick-0N.js` to apply one.
 
 Collection 03, *Protector romance*, also has an illustrated long-form edition at

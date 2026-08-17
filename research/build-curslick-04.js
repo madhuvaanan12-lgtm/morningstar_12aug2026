@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
-const REPO = "/home/user/morningstar_12aug2026";
+const REPO = path.resolve(__dirname, "..");
 const DATA_DIR = path.join(REPO, "data");
 
 /* ---------- cover art (same visual language as the other Curslick collections) ---------- */
@@ -119,7 +119,7 @@ function exclusive(o) {
     format: o.format,
     imdbId: o.imdbId || null,
     imdbUrl: o.imdbId ? `https://www.imdb.com/title/${o.imdbId}/` : findUrl(o.title, o.year),
-    image: null,
+    image: o.image || null,
     shortPlot: o.shortPlot,
     longPlot: o.longPlot,
     watched: false,
@@ -132,7 +132,7 @@ function exclusive(o) {
     curslickExclusive: true,
   };
   show.art = o.art;
-  show.image = coverArt(show);
+  show.image = o.image || coverArt(show);
   delete show.art;
   return show;
 }
@@ -144,6 +144,7 @@ const EXCLUSIVES = {
     genres: ["Drama", "Crime", "Romance"],
     country: "Australia", language: "English", format: "Live action",
     imdbId: "tt2433738",
+    image: "https://static.tvmaze.com/uploads/images/original_untouched/158/396176.jpg",
     shortPlot: "A reimagining of Prisoner: inside Wentworth Correctional Centre, inmate-turned-crime-boss Franky Doyle and prison psychologist Bridget Westfall keep finding their way back to each other across eight seasons.",
     longPlot: "Franky and Bridget break up, get back together, and lose years to Franky's sentence before the series finale gives them a release-day reunion. Foxtel's longest-running one-hour drama, and the rare entry on this list with no genre trappings at all — just an adult prison drama that lands its central couple safely on the outside.",
     sourceName: "Wikipedia", sourceUrl: "https://en.wikipedia.org/wiki/Wentworth_(TV_series)",
@@ -155,6 +156,7 @@ const EXCLUSIVES = {
     genres: ["Drama", "Family", "Romance"],
     country: "United States", language: "English", format: "Live action",
     imdbId: "tt2262532",
+    image: "https://static.tvmaze.com/uploads/images/original_untouched/116/292055.jpg",
     shortPlot: "Stef Foster and Lena Adams Foster are already married and raising five kids — two biological, one adopted, two fostered — when the series opens; the whole show is their marriage surviving everything thrown at it.",
     longPlot: "Unlike almost everything else on this list, Stef and Lena aren't a will-they-won't-they arc: they're the stable center a very unstable found family orbits for five seasons. The series finale has Stef propose again anyway — 'will you marry me for a third time?' — and Lena says yes, again, on her way out the door of the house they're leaving behind.",
     sourceName: "Wikipedia", sourceUrl: "https://en.wikipedia.org/wiki/The_Fosters_(2013_TV_series)",
@@ -166,6 +168,7 @@ const EXCLUSIVES = {
     genres: ["Action", "Drama", "Sci-Fi"],
     country: "United States", language: "English", format: "Live action",
     imdbId: "tt2661044",
+    image: "https://static.tvmaze.com/uploads/images/original_untouched/477/1194981.jpg",
     shortPlot: "Post-apocalyptic survival drama built around Clarke Griffin — whose relationship with Commander Lexa became one of the most-cited 'bury your gays' cases in modern television.",
     longPlot: "Lexa is shot dead in season 3, minutes after she and Clarke sleep together for the first time — a death timed so badly against the romance that it sparked a public apology from the showrunner and years of discourse about the trope. The show runs four more seasons afterward and never gives Clarke another ending with a woman. Included here only as the warning it has become.",
     sourceName: "Wikipedia", sourceUrl: "https://en.wikipedia.org/wiki/The_100_(TV_series)",
@@ -177,6 +180,7 @@ const EXCLUSIVES = {
     genres: ["Drama", "Mystery", "Romance", "Thriller"],
     country: "United States", language: "English", format: "Live action",
     imdbId: "tt1578873",
+    image: "https://static.tvmaze.com/uploads/images/original_untouched/125/314775.jpg",
     shortPlot: "The original teen-mystery series ends its own run with Alison proposing to Emily and the two of them raising twins together — a genuinely sweet finale that a later spinoff quietly undoes.",
     longPlot: "Alison proposes with Emily's grandmother's ring in the series finale, and the two are shown co-parenting twin girls. They never marry on screen, and the 2019 sequel Pretty Little Liars: The Perfectionists reveals the relationship didn't survive — they're written as split up and living on opposite coasts. The original finale qualifies on its own; the franchise as a whole doesn't.",
     sourceName: "IMDb", sourceUrl: "https://www.imdb.com/title/tt1578873/",
@@ -188,6 +192,7 @@ const EXCLUSIVES = {
     genres: ["Drama", "Romance", "Medical"],
     country: "United States", language: "English", format: "Live action",
     imdbId: "tt0413573",
+    image: "https://static.tvmaze.com/uploads/images/original_untouched/600/1501061.jpg",
     status: "Ongoing",
     shortPlot: "Callie Torres and Arizona Robbins were, for years, the show's flagship lesbian couple — but Grey's Anatomy fails this list twice over: they broke up years before the finish line, and there is no finish line yet.",
     longPlot: "Callie leaves for New York with a new partner, Arizona wins a custody battle for their daughter, and the show only gestures at a possible reconciliation via an unanswered text. That would already be a soft exclusion. The harder one: the show is still airing, renewed for a 23rd season for fall 2026, so there is no series ending to evaluate in the first place.",

@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
-const REPO = "/home/user/morningstar_12aug2026";
+const REPO = path.resolve(__dirname, "..");
 const DATA_DIR = path.join(REPO, "data");
 
 /* ---------- cover art (same visual language as the research page) ---------- */
@@ -119,7 +119,7 @@ function exclusive(o) {
     format: o.format,
     imdbId: o.imdbId || null,
     imdbUrl: o.imdbId ? `https://www.imdb.com/title/${o.imdbId}/` : findUrl(o.title, o.year),
-    image: null,
+    image: o.image || null,
     shortPlot: o.shortPlot,
     longPlot: o.longPlot,
     watched: false,
@@ -132,7 +132,7 @@ function exclusive(o) {
     curslickExclusive: true,
   };
   show.art = o.art;
-  show.image = coverArt(show);
+  show.image = o.image || coverArt(show);
   delete show.art;
   return show;
 }
@@ -144,6 +144,7 @@ const EXCLUSIVES = {
     genres: ["Drama", "Romance", "Thriller", "Family"],
     country: "Turkey", language: "Turkish", format: "Live action",
     imdbId: "tt7932896",
+    image: "https://static.tvmaze.com/uploads/images/original_untouched/142/357411.jpg",
     shortPlot: "A woman fleeing a violent husband hides in a Black Sea village, where a hot-tempered local man makes himself the wall between her small son and everything hunting them.",
     longPlot: "Nefes escapes her abusive husband with her son Yigit and lands in a Black Sea village where Tahir Kaleli appoints himself her protector, marrying her first to shield her name and falling in love with her long after. Yigit spends most of a season deciding whether this loud stranger is a threat or a father. The series became one of Turkey's most-exported dramas for its portrayal of a woman rebuilding a life after abuse, and it ends with the family intact and Nefes on her way to law school.",
     sourceName: "Wikipedia", sourceUrl: "https://en.wikipedia.org/wiki/Sen_Anlat_Karadeniz",
@@ -155,6 +156,7 @@ const EXCLUSIVES = {
     genres: ["Drama", "Romance", "Melodrama"],
     country: "Mexico", language: "Spanish", format: "Live action",
     imdbId: "tt2320524",
+    image: "https://static.tvmaze.com/uploads/images/original_untouched/544/1360526.jpg",
     shortPlot: "A wealthy businesswoman survives a kidnapping attempt, hires her gardener as her personal bodyguard, and finds the only decent man in her house is the one she pays.",
     longPlot: "Victoria Balvanera is not a widow but a wife, held in a marriage of convenience to an unfaithful businessman, when she hires former policeman Jose Angel Arriaga to protect her. Her grown children treat him as staff before they start treating him as the only adult in the household. The Televisa remake of Amor en Custodia runs 181 episodes and lands on a divorce, an exoneration and a wedding.",
     sourceName: "IMDb", sourceUrl: "https://www.imdb.com/title/tt2320524/",
@@ -166,6 +168,7 @@ const EXCLUSIVES = {
     genres: ["Drama", "Romance", "Melodrama"],
     country: "Argentina", language: "Spanish", format: "Live action",
     imdbId: null,
+    image: "https://static.tvmaze.com/uploads/images/original_untouched/90/226374.jpg",
     shortPlot: "The telenovela that invented this whole genre: two bodyguards arrive at a wealthy estate, and the one assigned to the lady of the house falls in love with her.",
     longPlot: "Paz Achaval Urien is a powerful landowner trapped in a hollow marriage, with two daughters and a household that runs on appearances, when bodyguard Juan Manuel Aguirre is hired to protect her. The format was remade across Latin America, most successfully as Mexico's Amores Verdaderos. It swept the 2005 Martin Fierro awards and ends with the couple together and raising twins.",
     sourceName: "Wikipedia", sourceUrl: "https://es.wikipedia.org/wiki/Amor_en_custodia_(telenovela_argentina)",
@@ -177,6 +180,7 @@ const EXCLUSIVES = {
     genres: ["Action", "Drama", "Crime", "Romance"],
     country: "Japan", language: "Japanese", format: "Asian drama",
     imdbId: "tt33312057",
+    image: "https://i.mydramalist.com/v84Vp_4f.jpg",
     shortPlot: "A widowed florist witnesses a murder in a car park and hires a karate-master bodyguard to stand between her small son and the corrupt officer who did it.",
     longPlot: "Megumi Kyoda runs a flower shop and is raising her son Tsutomu alone when she sees a policeman kill a colleague underground. Through an old acquaintance she hires Shin Enjoji, an international bodyguard, who moves into their small domestic life while hunting the man hunting them. It is the cleanest statement of this premise anyone has put on television, and the hardest to actually watch: a 1997 TV Asahi series with no subtitled release.",
     sourceName: "MyDramaList", sourceUrl: "https://mydramalist.com/688065-the-bodyguard",
@@ -188,6 +192,7 @@ const EXCLUSIVES = {
     genres: ["Drama", "Romance", "Family"],
     country: "India", language: "Hindi", format: "Live action",
     imdbId: "tt2192156",
+    image: "https://upload.wikimedia.org/wikipedia/en/f/f2/Na_bole_tum_na_maine_kuch_kaha.jpg",
     shortPlot: "A blunt local reporter takes up a young widow's fight for justice, and then takes up her family — over the loud objections of her son.",
     longPlot: "Megha Vyas is a widow with two children and no explanation for how her husband died. Mohan Bhatnagar, a crime reporter, fights her case, her in-laws and the town, and eventually her own reluctance to let anyone stand near her children. Her daughter comes around quickly; her son Aditya holds out almost to the end, which is the show's strongest thread.",
     sourceName: "Wikipedia", sourceUrl: "https://en.wikipedia.org/wiki/Na_Bole_Tum_Na_Maine_Kuch_Kaha",
@@ -199,6 +204,7 @@ const EXCLUSIVES = {
     genres: ["Drama", "Romance", "Family"],
     country: "India", language: "Hindi", format: "Live action",
     imdbId: "tt6505716",
+    image: "https://static.tvmaze.com/uploads/images/original_untouched/502/1255956.jpg",
     shortPlot: "A careless rich man fights a town, a family and a young widow's own reluctance for the right to look after her and her small son.",
     longPlot: "Suman is a young widow raising her son Veer under the weight of everyone's opinion; Ranveer Mittal is the man she cannot stand and cannot get rid of. The show runs the full arc in a single season and ends on the beat that defines this whole premise: the child ties the knot at their wedding, binding the couple together himself.",
     sourceName: "Wikipedia", sourceUrl: "https://en.wikipedia.org/wiki/Ek_Vivah_Aisa_Bhi_(TV_series)",
@@ -210,6 +216,7 @@ const EXCLUSIVES = {
     genres: ["Drama", "Romance", "Family", "Comedy"],
     country: "Philippines", language: "Filipino", format: "Asian drama",
     imdbId: "tt2256248",
+    image: "https://static.tvmaze.com/uploads/images/original_untouched/521/1302879.jpg",
     shortPlot: "A cheerful nobody is hired as nanny to the youngest daughter of a widowed airline owner — a little girl who has stopped speaking.",
     longPlot: "Maya dela Rosa takes the job because she has no other option, and the Lim household treats her as help long after she has become its centre of gravity. One of the most successful daytime teleseryes ever made in the Philippines, it runs the protector-and-hostile-children arc with the roles reversed and finishes with a full happily-ever-after: marriage, the older children won over, and twins.",
     sourceName: "Wikipedia", sourceUrl: "https://en.wikipedia.org/wiki/Be_Careful_with_My_Heart",
@@ -221,6 +228,7 @@ const EXCLUSIVES = {
     genres: ["Romance", "Comedy", "Action"],
     country: "China", language: "Mandarin", format: "Asian drama",
     imdbId: "tt14090166",
+    image: "https://1.vikiplatform.com/c/38881c/0499d9633d.jpg?x=b",
     shortPlot: "A father hires a female bodyguard to protect his son, and the son sets out to humiliate her off the job.",
     longPlot: "Wu Shiyi saves a wealthy man during an attack and is hired to protect his heir, who wants nothing to do with her. The straight gender-flip of the bodyguard-and-hostile-charge dynamic, played as light comedy. There is no child-bonding thread here — the charge is an adult — but the antagonism-to-devotion arc is the same one.",
     sourceName: "IMDb", sourceUrl: "https://www.imdb.com/title/tt14090166/",
@@ -232,6 +240,7 @@ const EXCLUSIVES = {
     genres: ["Action", "Romance", "Drama"],
     country: "Thailand", language: "Thai", format: "Asian drama",
     imdbId: "tt19759788",
+    image: "https://static.tvmaze.com/uploads/images/original_untouched/407/1018213.jpg",
     shortPlot: "A stuntwoman takes a close-protection job guarding a businessman and the young niece in his care.",
     longPlot: "A short, action-forward lakorn that runs the trope in the usual order of operations: the child accepts the bodyguard first and the adult argues about it for another eight episodes. The child is a niece rather than a son or daughter, so the family-formation beat is softer than in the core matches here.",
     sourceName: "MyDramaList", sourceUrl: "https://mydramalist.com/695729-my-lovely-bodyguard",
@@ -243,6 +252,7 @@ const EXCLUSIVES = {
     genres: ["Drama", "Romance", "Melodrama"],
     country: "China", language: "Mandarin", format: "Asian drama",
     imdbId: null,
+    image: "https://static.tvmaze.com/uploads/images/original_untouched/149/374673.jpg",
     shortPlot: "A tycoon discovers the injured boy in the hospital is his son, sues the single mother raising him, and then has to earn his way into the family he tried to take apart.",
     longPlot: "The closest well-known Chinese title to this premise, and the one that breaks it: Li Zhongmou is the boy's biological father rather than a hired protector, so the conflict is a custody fight instead of a guarding job. What survives is the shape you came for — a hostile child who decides the outcome, and a mother who is the last to give in. They marry.",
     sourceName: "Wikipedia", sourceUrl: "https://en.wikipedia.org/wiki/Loving,_Never_Forgetting",
@@ -254,6 +264,7 @@ const EXCLUSIVES = {
     genres: ["Western", "Drama", "Family"],
     country: "United States", language: "English", format: "Live action",
     imdbId: null,
+    image: "https://static.tvmaze.com/uploads/images/original_untouched/276/691345.jpg",
     shortPlot: "A gunfighter inherits his dead sister's four children in a mining town and hangs up the guns badly.",
     longPlot: "The nearest American network television gets to this premise. Ethan Allen Cord takes in four children who want a different life than the one he can give them, rents a farm from the town banker Amelia Lawson, and slowly becomes both a father and a marshal. The children are his own kin rather than the love interest's, so the winning-over-her-kids beat never quite exists — but the protector-becomes-family engine is the same one.",
     sourceName: "Wikipedia", sourceUrl: "https://en.wikipedia.org/wiki/Paradise_(1988_TV_series)",
