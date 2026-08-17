@@ -11,6 +11,34 @@ Morningstar is a mobile-friendly, static television-series discovery app.
 - Sticky collapsible filters plus Grid, List, and Detailed-with-plot views
 - Adjustable cards-per-row control in Grid view
 
+## Exclusions
+
+The filter dock opens with an **Exclusions** block that decides which titles are eligible before any
+other filter runs. It applies to Browse, My List's source pool, the home rails and every Curslick
+collection, and the chosen set is stored in `localStorage` under `morningstar-exclusions`.
+
+| Exclusion | Default | Rule |
+| --- | --- | --- |
+| Outside the top 5 countries | on | Keeps United States, United Kingdom, South Korea, Japan and China. Titles filed as `International`/`Unknown` fall back to their language, so an English, Korean, Japanese or Chinese production still qualifies. |
+| K-dramas | off | Korean series are part of Browse by default now; switch this on to hide the whole shelf. |
+| K-dramas before 2010 | on | Korean series with a premiere year under 2010 stay out. |
+| Under 4 hours total | on | Drops titles whose estimated total runtime is below 4 hours. Titles with no runtime estimate are kept. |
+| Over 60 hours total | on | Drops titles whose estimated total runtime is above 60 hours. |
+
+"Back to defaults" restores the table above. The dock header counts the active exclusions alongside
+the ordinary filters.
+
+## One card per series
+
+The catalogue, the K-drama archive, the watched history and Curslick's editorial exclusives are
+merged into a single record per series before anything is rendered. Records are joined by id, by
+matching title/original-title plus year and origin, and — across the catalogue and the K-drama
+archive only — by a bigram/token similarity pass that catches the same show carrying two English
+names ("Strong Woman Do Bong Soon" / "Strong Girl Bong Soon"). The merged record keeps the
+IMDb-linked English title, adopts the original-language title underneath it (IMDb style), unions the
+genres, and is watched if *any* of its source records was. Every id that was folded in is kept as an
+alias, so My List and watched marks saved against the old id keep working.
+
 ## Curslick collections
 
 Collections live in the data payload under `curslick.collections` and surface automatically in the
