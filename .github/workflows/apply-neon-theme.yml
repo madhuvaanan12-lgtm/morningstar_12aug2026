@@ -24,6 +24,7 @@ jobs:
         shell: python
         run: |
           from pathlib import Path
+          import textwrap
 
           path = Path("index.html")
           html = path.read_text(encoding="utf-8")
@@ -31,92 +32,92 @@ jobs:
           if marker in html:
               raise SystemExit(0)
 
-          theme = r'''
-    <style id="morningstar-neon-theme">
-      /* Morningstar black + neon-green brand theme. */
-      :root {
-        --red: #39ff14;
-        --coral: #73ff5c;
-        --green: #39ff14;
-      }
+          theme = textwrap.dedent("""
+              <style id="morningstar-neon-theme">
+                /* Morningstar black + neon-green brand theme. */
+                :root {
+                  --red: #39ff14;
+                  --coral: #73ff5c;
+                  --green: #39ff14;
+                }
 
-      .site-root {
-        background: radial-gradient(circle at 78% 12%, #39ff1418, transparent 28%), var(--night);
-      }
+                .site-root {
+                  background: radial-gradient(circle at 78% 12%, #39ff1418, transparent 28%), var(--night);
+                }
 
-      .poster-fallback {
-        background: radial-gradient(circle at 70% 20%, #39ff14a6, #0000 35%), linear-gradient(150deg, #2a2d34, #0d0e11 65%);
-      }
+                .poster-fallback {
+                  background: radial-gradient(circle at 70% 20%, #39ff14a6, #0000 35%), linear-gradient(150deg, #2a2d34, #0d0e11 65%);
+                }
 
-      .top-badge {
-        color: #071006;
-        background: #39ff14e6;
-      }
+                .top-badge {
+                  color: #071006;
+                  background: #39ff14e6;
+                }
 
-      .browse-cta {
-        background: radial-gradient(circle at 85% 10%, #39ff1459, #0000 33%), linear-gradient(135deg, #17191e, #0e0f12);
-      }
+                .browse-cta {
+                  background: radial-gradient(circle at 85% 10%, #39ff1459, #0000 33%), linear-gradient(135deg, #17191e, #0e0f12);
+                }
 
-      .curslick-cta {
-        background: radial-gradient(circle at 88% 10%, #ffca693b, #0000 32%), radial-gradient(circle at 7% 115%, #39ff143b, #0000 42%), #121418;
-      }
+                .curslick-cta {
+                  background: radial-gradient(circle at 88% 10%, #ffca693b, #0000 32%), radial-gradient(circle at 7% 115%, #39ff143b, #0000 42%), #121418;
+                }
 
-      .multi-filter[open] summary {
-        border-color: #73ff5c8c;
-      }
+                .multi-filter[open] summary {
+                  border-color: #73ff5c8c;
+                }
 
-      .genre-mode button.active {
-        color: #fff;
-        background: #39ff1426;
-        border-color: #73ff5c8c;
-      }
+                .genre-mode button.active {
+                  color: #fff;
+                  background: #39ff1426;
+                  border-color: #73ff5c8c;
+                }
 
-      .method-panel,
-      .sources-panel {
-        background: radial-gradient(circle at 5% 100%, #39ff142b, #0000 37%), #121418;
-      }
+                .method-panel,
+                .sources-panel {
+                  background: radial-gradient(circle at 5% 100%, #39ff142b, #0000 37%), #121418;
+                }
 
-      .sources-panel {
-        background: #101216;
-      }
+                .sources-panel {
+                  background: #101216;
+                }
 
-      .clk-hub-hero::before {
-        background: radial-gradient(circle at 12% 70%, #39ff143b, #0000 34%), radial-gradient(circle at 78% 22%, #ffca692e, #0000 31%);
-      }
+                .clk-hub-hero::before {
+                  background: radial-gradient(circle at 12% 70%, #39ff143b, #0000 34%), radial-gradient(circle at 78% 22%, #ffca692e, #0000 31%);
+                }
 
-      .curslick-hero::before {
-        background: radial-gradient(circle at 75% 30%, #ffca6929, #0000 28%), radial-gradient(circle at 22% 75%, #39ff142e, #0000 34%);
-      }
+                .curslick-hero::before {
+                  background: radial-gradient(circle at 75% 30%, #ffca6929, #0000 28%), radial-gradient(circle at 22% 75%, #39ff142e, #0000 34%);
+                }
 
-      .curslick-editorial-grid article:first-child {
-        background: radial-gradient(circle at 91% 0, #73ff5c24, #0000 34%), #14161a;
-      }
+                .curslick-editorial-grid article:first-child {
+                  background: radial-gradient(circle at 91% 0, #73ff5c24, #0000 34%), #14161a;
+                }
 
-      .modal-fallback {
-        background: radial-gradient(circle at 80% 20%, #238a19, #0000 38%), #17191e;
-      }
+                .modal-fallback {
+                  background: radial-gradient(circle at 80% 20%, #238a19, #0000 38%), #17191e;
+                }
 
-      .plot-expander:hover small {
-        color: #a4ff92;
-      }
+                .plot-expander:hover small {
+                  color: #a4ff92;
+                }
 
-      .exclusion-controls {
-        background: #39ff1408;
-      }
+                .exclusion-controls {
+                  background: #39ff1408;
+                }
 
-      .exclusion-chip.active {
-        color: #efffec;
-        border-color: #73ff5c6b;
-        background: #39ff141f;
-      }
+                .exclusion-chip.active {
+                  color: #efffec;
+                  border-color: #73ff5c6b;
+                  background: #39ff141f;
+                }
 
-      .exclusion-chip.active .exclusion-box {
-        color: #071006;
-        border-color: var(--coral);
-        background: var(--coral);
-      }
-    </style>
-'''
+                .exclusion-chip.active .exclusion-box {
+                  color: #071006;
+                  border-color: var(--coral);
+                  background: var(--coral);
+                }
+              </style>
+          """)
           html = html.replace("  </head>", theme + "  </head>", 1)
           path.write_text(html, encoding="utf-8")
 
