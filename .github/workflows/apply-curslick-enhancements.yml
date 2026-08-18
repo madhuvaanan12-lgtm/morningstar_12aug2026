@@ -1,0 +1,43 @@
+name: Apply Curslick UI enhancements
+
+on:
+  push:
+    branches:
+      - agent/ten-day-morningstar-updates
+    paths:
+      - .github/workflows/apply-curslick-enhancements.yml
+
+permissions:
+  contents: write
+
+jobs:
+  wire-curslick-ui:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out development branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ten-day-morningstar-updates
+          fetch-depth: 0
+
+      - name: Load Curslick enhancement script
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path("index.html")
+          html = path.read_text(encoding="utf-8")
+          marker = '<script defer src="/assets/curslick-enhancements.js"></script>'
+          if marker not in html:
+              html = html.replace("</body>", f"  {marker}\n</body>", 1)
+              path.write_text(html, encoding="utf-8")
+
+      - name: Commit UI wiring
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Wire collapsible Curslick UI and ME2"
+            git push origin HEAD:agent/ten-day-morningstar-updates
+          fi
