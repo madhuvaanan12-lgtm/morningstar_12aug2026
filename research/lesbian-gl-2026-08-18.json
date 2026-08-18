@@ -11879,7 +11879,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Bob%20Loves%20Abishola&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/bob-loves-abishola-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/502/1256967.jpg",
       "shortPlot": "Bob, a middle-aged compression sock businessman from Detroit, unexpectedly falls for his cardiac nurse while recovering from a heart attack and sets his sights on winning her over. Undaunted by Abishola's lack of initial interest or the vast differences in their backgrounds -- she's originally from Nigeria -- Bob is determined to win Abishola's heart in this comedic examination of immigrant life in America.",
       "longPlot": "Bob, a middle-aged compression sock businessman from Detroit, unexpectedly falls for his cardiac nurse while recovering from a heart attack and sets his sights on winning her over. Undaunted by Abishola's lack of initial interest or the vast differences in their backgrounds -- she's originally from Nigeria -- Bob is determined to win Abishola's heart in this comedic examination of immigrant life in America. Inclusion evidence: Aria's WLW television database (Supporting representation; Renewed).",
       "status": "Ongoing",
@@ -11890,10 +11890,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/42167/bob-abishola",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Bob ♥ Abishola"
     },
     {
       "id": "gl-bodkin-unknown",
@@ -16775,7 +16776,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Interview%20with%20a%20Vampire&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/interview-with-a-vampire-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/469/1173859.jpg",
       "shortPlot": "In the year 2022, the vampire Louis de Pointe du Lac lives in Dubai and seeks to tell the story of his life or afterlife to renowned journalist Daniel Molloy. Beginning in early 20th-century New Orleans, Louis' story follows his relationship with the vampire Lestat du Lioncourt and their formed family, including teen fledgling Claudia. Together, the vampire family endures immortality in New Orleans and beyond.",
       "longPlot": "In the year 2022, the vampire Louis de Pointe du Lac lives in Dubai and seeks to tell the story of his life or afterlife to renowned journalist Daniel Molloy. Beginning in early 20th-century New Orleans, Louis' story follows his relationship with the vampire Lestat du Lioncourt and their formed family, including teen fledgling Claudia. Together, the vampire family endures immortality in New Orleans and beyond. Inclusion evidence: Aria's WLW television database (Supporting representation; Renewed).",
       "status": "Ongoing",
@@ -16786,10 +16787,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/56150/anne-rices-interview-with-the-vampire",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Anne Rice's Interview with the Vampire"
     },
     {
       "id": "tt3865236",
@@ -17144,7 +17146,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Land%20of%20Women&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/land-of-women-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/524/1310385.jpg",
       "shortPlot": "A New York socialite is forced to flee to a charming Spanish wine town with her mother and daughter. She finds herself navigating small-town quirks while also confronting her deepest family secrets, and a pair of bumbling hit men.",
       "longPlot": "A New York socialite is forced to flee to a charming Spanish wine town with her mother and daughter. She finds herself navigating small-town quirks while also confronting her deepest family secrets, and a pair of bumbling hit men. Inclusion evidence: Aria's WLW television database (Main representation; Currently running/no update).",
       "status": "Ongoing",
@@ -17155,10 +17157,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/63466/tierra-de-mujeres",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Tierra de Mujeres"
     },
     {
       "id": "gl-las-pelotaris-1926-unknown",
@@ -21066,7 +21069,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Shelter&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/shelter-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/473/1183784.jpg",
       "shortPlot": "Mickey lives with a mother in rehab, a dead father, an annoying aunt and a new school in New Jersey. When a creepy old woman tells him that his father isn't dead, Mickey thinks he's losing his mind.",
       "longPlot": "Mickey lives with a mother in rehab, a dead father, an annoying aunt and a new school in New Jersey. When a creepy old woman tells him that his father isn't dead, Mickey thinks he's losing his mind. Inclusion evidence: Aria's WLW television database (Supporting representation; Canceled with no final season).",
       "status": "Ended",
@@ -21077,10 +21080,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/61063/harlan-cobens-shelter",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Harlan Coben's Shelter"
     },
     {
       "id": "gl-shock-me-girls-2026",
@@ -26306,10 +26310,10 @@
     }
   ],
   "coverAudit": {
-    "generatedAt": "2026-08-18T13:40:10.634Z",
+    "generatedAt": "2026-08-18T13:43:07.156Z",
     "blankImagesBefore": 277,
-    "realPostersResolved": 246,
-    "generatedFallbacks": 31,
+    "realPostersResolved": 250,
+    "generatedFallbacks": 27,
     "blankImagesAfter": 0,
     "report": "research/lesbian-gl-cover-audit-2026-08-18.json"
   }

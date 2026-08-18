@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-18T13:40:10.634Z",
+  "generatedAt": "2026-08-18T13:43:07.156Z",
   "lookupDate": "2026-08-18",
   "archiveTitles": 475,
   "blankImagesBefore": 277,
-  "tvmazeResolved": 246,
+  "tvmazeResolved": 250,
   "wikipediaResolved": 0,
-  "generatedFallbacks": 31,
+  "generatedFallbacks": 27,
   "blankImagesAfter": 0,
   "resolved": [
     {
@@ -16,7 +16,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/561/1403989.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/67572/1-happy-family-usa",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-195-lewis-2017",
@@ -25,7 +26,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/591/1478274.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/87525/195-lewis",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-3way-2008",
@@ -34,7 +36,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/49/124048.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/14656/3way",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-4-elements-air-2026",
@@ -43,7 +46,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/625/1563550.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/84956/4-elements-the-air",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-4-elements-fire-2026",
@@ -52,7 +56,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/594/1485994.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/85851/4-elements-the-fire",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-4-estrellas-unknown",
@@ -61,7 +66,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/461/1154937.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/68819/4-estrellas",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-9-1-1-unknown",
@@ -70,7 +76,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/600/1501058.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/28152/9-1-1",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-9-1-1-nashville-unknown",
@@ -79,7 +86,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/595/1489150.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/82759/9-1-1-nashville",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-good-girl-s-guide-to-murder-unknown",
@@ -88,7 +96,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/626/1566763.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/63949/a-good-girls-guide-to-murder",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-man-on-inside-unknown",
@@ -97,7 +106,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/599/1499138.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/74443/a-man-on-the-inside",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-million-little-things-unknown",
@@ -106,7 +116,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/445/1113408.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/34601/a-million-little-things",
-      "score": 105
+      "score": 105,
+      "alias": null
+    },
+    {
+      "id": "gl-agents-of-s-h-i-e-l-d-2014",
+      "title": "Agents of S.H.I.E.L.D.",
+      "year": 2014,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/486/1215694.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/31/marvels-agents-of-shield",
+      "score": 119,
+      "alias": "Marvel's Agents of S.H.I.E.L.D."
     },
     {
       "id": "gl-ai-girl-2026",
@@ -115,7 +136,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/631/1579252.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/90147/ai-girl",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-all-or-nothing-2017",
@@ -124,7 +146,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/239/599594.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/18873/all-or-nothing",
-      "score": 114
+      "score": 114,
+      "alias": null
     },
     {
       "id": "gl-american-horror-story-2011",
@@ -133,7 +156,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/636/1591621.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/30/american-horror-story",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-and-just-like-that-unknown",
@@ -142,7 +166,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/581/1453808.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/52904/and-just-like-that",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-animal-control-unknown",
@@ -151,7 +176,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/605/1513832.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/63266/animal-control",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-anyone-but-me-2008",
@@ -160,7 +186,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/250/626286.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/1307/anyone-but-me",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-apples-never-fall-unknown",
@@ -169,7 +196,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/508/1272467.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/60411/apples-never-fall",
-      "score": 105
+      "score": 105,
+      "alias": null
+    },
+    {
+      "id": "gl-arcane-unknown",
+      "title": "Arcane",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/536/1340287.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/55138/arcane-league-of-legends",
+      "score": 105,
+      "alias": "Arcane: League of Legends"
     },
     {
       "id": "gl-arrow-2012",
@@ -178,7 +216,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/143/358967.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/4/arrow",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-b-friend-2025",
@@ -187,7 +226,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/579/1448674.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/86104/b-friend",
-      "score": 150
+      "score": 150,
+      "alias": null
+    },
+    {
+      "id": "gl-back-to-15-unknown",
+      "title": "Back to 15",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/530/1327232.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/57943/de-volta-aos-15",
+      "score": 105,
+      "alias": "De Volta aos 15"
     },
     {
       "id": "gl-batman-caped-crusader-unknown",
@@ -196,7 +246,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/529/1323819.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/55415/batman-caped-crusader",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-batwoman-2019",
@@ -205,7 +256,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/361/903721.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/37776/batwoman",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-be-my-angel-2026",
@@ -214,7 +266,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/611/1528313.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/86190/be-my-angel",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-beacon-23-unknown",
@@ -223,7 +276,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/512/1281473.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/39081/beacon-23",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-beyond-gates-unknown",
@@ -232,7 +286,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/593/1482540.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/75194/beyond-the-gates",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-big-girls-don-t-cry-unknown",
@@ -241,7 +296,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/508/1271721.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/75352/big-girls-dont-cry",
-      "score": 105
+      "score": 105,
+      "alias": null
+    },
+    {
+      "id": "gl-black-dove-unknown",
+      "title": "Black Dove",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/540/1350767.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/68407/black-doves",
+      "score": 105,
+      "alias": "Black Doves"
     },
     {
       "id": "gl-blank-2024",
@@ -250,7 +316,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/508/1271954.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/75367/blank-the-series",
-      "score": 77
+      "score": 77,
+      "alias": null
+    },
+    {
+      "id": "gl-bob-loves-abishola-unknown",
+      "title": "Bob Loves Abishola",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/502/1256967.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/42167/bob-abishola",
+      "score": 105,
+      "alias": "Bob ♥ Abishola"
     },
     {
       "id": "gl-bodkin-unknown",
@@ -259,7 +336,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/518/1296268.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/62602/bodkin",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-bridgerton-unknown",
@@ -268,7 +346,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/614/1535959.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/42966/bridgerton",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-broken-of-love-2026",
@@ -277,7 +356,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/619/1549075.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/88838/broken-of-love",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-call-me-by-no-name-2025",
@@ -286,7 +366,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/548/1371855.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/81634/call-me-by-no-name",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "tt18926830",
@@ -295,7 +376,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/445/1114793.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/66859/call-my-agent-italia",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-casualty-unknown",
@@ -304,7 +386,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/628/1571888.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/729/casualty",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-chaser-game-w-2024",
@@ -313,7 +396,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/495/1238392.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/73601/chaser-game-w-power-harassment-boss-is-my-ex-girlfriend",
-      "score": 92
+      "score": 92,
+      "alias": null
     },
     {
       "id": "gl-chasing-love-2026",
@@ -322,7 +406,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/611/1527519.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/90095/chasing-love",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-class-of-07-unknown",
@@ -331,7 +416,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/452/1131776.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/67125/class-of-07",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-class-of-09-unknown",
@@ -340,7 +426,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/460/1150604.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/56039/class-of-09",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-common-side-effects-unknown",
@@ -349,7 +436,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/553/1384654.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/69327/common-side-effects",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-coronation-street-unknown",
@@ -358,7 +446,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/598/1495734.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/4139/coronation-street",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-craig-of-creek-unknown",
@@ -367,7 +456,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/467/1168209.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/26644/craig-of-the-creek",
-      "score": 105
+      "score": 105,
+      "alias": null
+    },
+    {
+      "id": "gl-criminal-minds-evolution-unknown",
+      "title": "Criminal Minds: Evolution",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/626/1567475.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/81/criminal-minds",
+      "score": 105,
+      "alias": "Criminal Minds"
     },
     {
       "id": "gl-dangerous-queen-2025",
@@ -376,7 +476,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/579/1447958.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/86051/dangerous-queen",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-dead-ringers-unknown",
@@ -385,7 +486,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/458/1145737.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/56532/dead-ringers",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-deadloch-2023",
@@ -394,7 +496,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/615/1538438.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/60614/deadloch",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-denied-love-2025",
@@ -403,7 +506,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/571/1428581.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/85108/denied-love",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-doctor-who-2005",
@@ -412,7 +516,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/488/1220400.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/210/doctor-who",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-dope-girls-unknown",
@@ -421,7 +526,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/556/1390988.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/67594/dope-girls",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-double-parked-unknown",
@@ -430,7 +536,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/465/1164818.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/69132/double-parked",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-dr-death-unknown",
@@ -439,7 +546,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/490/1225885.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/43875/dr-death",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-dragon-age-absolution-unknown",
@@ -448,7 +556,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/412/1031681.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/62484/dragon-age-absolution",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-dying-for-sex-unknown",
@@ -457,7 +566,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/562/1405420.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/73213/dying-for-sex",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-eastenders-unknown",
@@ -466,7 +576,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/6/15519.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/793/eastenders",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-elle-unknown",
@@ -475,7 +586,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/628/1572300.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/77011/elle",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-emily-in-paris-unknown",
@@ -484,7 +596,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/604/1510920.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/41632/emily-in-paris",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-emmerdale-unknown",
@@ -493,7 +606,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/598/1495905.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/2548/emmerdale",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-enemies-with-benefits-2026",
@@ -502,7 +616,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/600/1500908.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/88619/enemies-with-benefits",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-even-though-we-re-adults-2025",
@@ -511,7 +626,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/556/1391177.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/82699/even-though-were-adults",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-everyone-else-burns-unknown",
@@ -520,7 +636,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/442/1106485.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/66182/everyone-else-burns",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-everything-sucks-2018",
@@ -529,7 +646,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/142/356594.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/29895/everything-sucks",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-fatal-seduction-unknown",
@@ -538,7 +656,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/467/1169882.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/69144/fatal-seduction",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-fbi-most-wanted-unknown",
@@ -547,7 +666,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/538/1345375.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/40695/fbi-most-wanted",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-fear-walking-dead-unknown",
@@ -556,7 +676,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/479/1198360.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/1824/fear-the-walking-dead",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-fire-country-unknown",
@@ -565,7 +686,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/591/1479862.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/60339/fire-country",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-firefly-2002",
@@ -574,7 +696,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/1/2600.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/180/firefly",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-for-all-mankind-2019",
@@ -583,7 +706,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/616/1541416.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/41414/for-all-mankind",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-from-unknown",
@@ -592,7 +716,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/621/1554646.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/54723/from",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-frozen-valentine-2026",
@@ -601,7 +726,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/610/1526331.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/90052/frozen-valentine",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-fulfill-2026",
@@ -610,7 +736,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/611/1529281.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/90146/fulfill",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-full-circle-unknown",
@@ -619,7 +746,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/488/1220544.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/57103/full-circle",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-furious-unknown",
@@ -628,7 +756,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/634/1585631.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/87753/furious",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-futari-escape-2025",
@@ -637,7 +766,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/585/1464594.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/86872/futari-escape",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-futari-monologue-2017",
@@ -646,7 +776,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/284/710454.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/52007/futari-monologue",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-gap-2022",
@@ -655,7 +786,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/431/1078543.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/64662/gap",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-general-hospital-unknown",
@@ -664,7 +796,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/521/1302689.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/4189/general-hospital",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-ginny-and-georgia-unknown",
@@ -673,7 +806,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/570/1427139.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/47549/ginny-georgia",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-girl-rules-2026",
@@ -682,7 +816,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/615/1537803.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/81090/girl-rules",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-good-trouble-2019",
@@ -691,7 +826,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/501/1252566.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/36872/good-trouble",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-gossip-girl-unknown",
@@ -700,7 +836,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/499/1247570.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/567/gossip-girl",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-gotham-knights-unknown",
@@ -709,7 +846,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/449/1123550.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/59492/gotham-knights",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-griselda-unknown",
@@ -718,7 +856,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/501/1253424.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/58779/griselda",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-hal-and-harper-unknown",
@@ -727,7 +866,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/570/1425112.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/84862/hal-harper",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-harley-quinn-unknown",
@@ -736,7 +876,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/547/1368613.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/33452/harley-quinn",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-hazbin-hotel-unknown",
@@ -745,7 +886,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/594/1487307.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/43094/hazbin-hotel",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-heart-code-2026",
@@ -754,7 +896,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/594/1487211.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/87884/heart-code",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-high-country-unknown",
@@ -763,7 +906,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/509/1273198.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/72241/high-country",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-high-school-2022",
@@ -772,7 +916,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/426/1065749.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/55079/high-school",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-hotel-mondial-unknown",
@@ -781,7 +926,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/443/1108993.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/66620/hotel-mondial",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-house-of-dragon-unknown",
@@ -790,7 +936,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/627/1568449.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/44778/house-of-the-dragon",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-how-do-we-relationship-2026",
@@ -799,7 +946,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/631/1578728.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/92978/how-do-we-relationship",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-how-i-met-your-father-unknown",
@@ -808,7 +956,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/445/1112546.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/54887/how-i-met-your-father",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-how-to-get-to-heaven-from-belfast-unknown",
@@ -817,7 +966,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/613/1533076.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/76004/how-to-get-to-heaven-from-belfast",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-i-am-devil-2024",
@@ -826,7 +976,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/551/1378742.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/81979/i-am-devil",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-i-am-not-okay-with-this-2020",
@@ -835,7 +986,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/240/601959.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/40020/i-am-not-okay-with-this",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-i-love-la-unknown",
@@ -844,7 +996,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/596/1490312.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/86738/i-love-la",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-i-wanna-be-sup-tar-2026",
@@ -853,7 +1006,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/606/1517176.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/89605/i-wanna-be-suptar",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-i-m-your-moon-2025",
@@ -862,7 +1016,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/564/1411141.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/84164/im-your-moon",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-ici-tout-commence-unknown",
@@ -871,7 +1026,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/278/696024.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/49213/ici-tout-commence",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-in-love-forever-2026",
@@ -880,7 +1036,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/620/1551878.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/90253/in-love-forever",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-industry-unknown",
@@ -889,7 +1046,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/608/1521293.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/45501/industry",
-      "score": 105
+      "score": 105,
+      "alias": null
+    },
+    {
+      "id": "gl-interview-with-vampire-unknown",
+      "title": "Interview with a Vampire",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/469/1173859.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/56150/anne-rices-interview-with-the-vampire",
+      "score": 105,
+      "alias": "Anne Rice's Interview with the Vampire"
     },
     {
       "id": "gl-is-you-2024",
@@ -898,7 +1066,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/517/1294880.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/76741/my-marvellous-dream-is-you",
-      "score": 77
+      "score": 77,
+      "alias": null
     },
     {
       "id": "gl-jane-virgin-2014",
@@ -907,7 +1076,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/591/1478947.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/128/jane-the-virgin",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-jury-duty-presents-company-retreat-unknown",
@@ -916,7 +1086,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/619/1547537.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/90105/jury-duty-presents-company-retreat",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-la-palma-unknown",
@@ -925,7 +1096,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/545/1364327.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/81135/la-palma",
-      "score": 105
+      "score": 105,
+      "alias": null
+    },
+    {
+      "id": "gl-land-of-women-unknown",
+      "title": "Land of Women",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/524/1310385.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/63466/tierra-de-mujeres",
+      "score": 105,
+      "alias": "Tierra de Mujeres"
     },
     {
       "id": "gl-las-pelotaris-1926-unknown",
@@ -934,7 +1116,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/451/1129108.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/67420/las-pelotaris-1926",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-law-and-order-organized-crime-unknown",
@@ -943,7 +1126,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/564/1410371.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/48631/law-order-organized-crime",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-led-astray-by-love-2022",
@@ -952,7 +1136,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/454/1136264.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/67786/led-astray-by-love",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-legacies-2018",
@@ -961,7 +1146,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/364/911065.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/36708/legacies",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-legend-of-yun-qian-2021",
@@ -970,7 +1156,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/292/731348.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/52898/legend-of-yun-qian",
-      "score": 114
+      "score": 114,
+      "alias": null
     },
     {
       "id": "gl-legends-of-tomorrow-2016",
@@ -979,7 +1166,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/315/787584.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/1851/dcs-legends-of-tomorrow",
-      "score": 82
+      "score": 82,
+      "alias": null
     },
     {
       "id": "gl-like-palette-2025",
@@ -988,7 +1176,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/580/1450194.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/86188/like-a-palette",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-london-kills-unknown",
@@ -997,7 +1186,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/203/508470.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/35577/london-kills",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-long-story-short-unknown",
@@ -1006,7 +1196,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/577/1444561.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/81766/long-story-short",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-love-beyond-dreams-2026",
@@ -1015,7 +1206,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/611/1529283.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/90150/love-beyond-dreams",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-love-bully-2024",
@@ -1024,7 +1216,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/529/1324572.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/78732/club-friday-the-series-16-love-bully",
-      "score": 92
+      "score": 92,
+      "alias": null
     },
     {
       "id": "gl-love-design-2025",
@@ -1033,7 +1226,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/579/1448151.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/86062/love-design",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-love-senior-2023",
@@ -1042,7 +1236,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/485/1214821.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/72578/love-senior",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-lucky-my-love-2023",
@@ -1051,7 +1246,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/486/1216241.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/72291/lucky-my-love",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-mate-2024",
@@ -1060,7 +1256,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/541/1354490.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/80531/mate",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-matlock-unknown",
@@ -1069,7 +1266,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/591/1479764.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/66872/matlock",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-mhom-ped-sawan-2024",
@@ -1078,7 +1276,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/541/1354496.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/80532/mhom-ped-sawan",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-mr-loverman-unknown",
@@ -1087,7 +1286,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/539/1349348.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/69162/mr-loverman",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-my-lady-s-bodyguard-2026",
@@ -1096,7 +1296,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/631/1577975.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/92940/my-ladys-bodyguard",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-my-marvellous-dream-is-you-2024",
@@ -1105,7 +1306,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/517/1294880.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/76741/my-marvellous-dream-is-you",
-      "score": 150
+      "score": 150,
+      "alias": null
+    },
+    {
+      "id": "gl-my-marvelous-dream-is-you-unknown",
+      "title": "My Marvelous Dream is You",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/517/1294880.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/76741/my-marvellous-dream-is-you",
+      "score": 105,
+      "alias": "My Marvellous Dream Is You"
     },
     {
       "id": "gl-my-only-sunshine-2026",
@@ -1114,7 +1326,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/611/1529282.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/90149/my-only-sunshine",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-nancy-drew-unknown",
@@ -1123,7 +1336,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/463/1157961.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/42107/nancy-drew",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-naomi-2022",
@@ -1132,7 +1346,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/388/971868.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/52243/naomi",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-ncis-hawai-i-unknown",
@@ -1141,7 +1356,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/591/1479860.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/53629/ncis-hawaii",
-      "score": 105
+      "score": 105,
+      "alias": null
+    },
+    {
+      "id": "gl-neighbours-new-chapter-unknown",
+      "title": "Neighbours: A New Chapter",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/471/1178200.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/5420/neighbours",
+      "score": 105,
+      "alias": "Neighbours"
     },
     {
       "id": "gl-neon-unknown",
@@ -1150,7 +1376,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/481/1203655.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/65097/neon",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-new-amsterdam-unknown",
@@ -1159,7 +1386,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/426/1065220.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/32291/new-amsterdam",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-no-good-deed-unknown",
@@ -1168,7 +1396,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/544/1361840.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/62291/no-good-deed",
-      "score": 105
+      "score": 105,
+      "alias": null
+    },
+    {
+      "id": "gl-no-traces-unknown",
+      "title": "No Traces (Sin Huellas)",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/452/1131805.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/62685/sin-huellas",
+      "score": 105,
+      "alias": "Sin Huellas"
     },
     {
       "id": "gl-nobody-wants-this-unknown",
@@ -1177,7 +1416,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/594/1485603.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/77060/nobody-wants-this",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-oh-my-god-yes-unknown",
@@ -1186,7 +1426,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/562/1406892.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/77793/oh-my-godyes",
-      "score": 105
+      "score": 105,
+      "alias": null
+    },
+    {
+      "id": "gl-only-murders-in-buildling-unknown",
+      "title": "Only Murders in the Buildling",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/586/1466415.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/48830/only-murders-in-the-building",
+      "score": 105,
+      "alias": "Only Murders in the Building"
     },
     {
       "id": "gl-paris-has-fallen-unknown",
@@ -1195,7 +1446,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/534/1336371.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/79446/paris-has-fallen",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "tt33967948",
@@ -1204,7 +1456,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/545/1362767.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/79453/petrichor",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-pinecone-and-pony-unknown",
@@ -1213,7 +1466,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/445/1113323.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/61090/pinecone-pony",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-play-park-2026",
@@ -1222,7 +1476,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/614/1536960.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/86187/play-park",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-pluribus-unknown",
@@ -1231,7 +1486,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/592/1481086.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/86175/pluribus",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-poisonous-love-2025",
@@ -1240,7 +1496,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/579/1447957.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/86049/poisonous-love",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-praise-petey-unknown",
@@ -1249,7 +1506,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/468/1172113.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/66349/praise-petey",
-      "score": 105
+      "score": 105,
+      "alias": null
+    },
+    {
+      "id": "gl-pretty-little-liars-original-sin-unknown",
+      "title": "Pretty Little Liars: Original Sin",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/125/314775.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/177/pretty-little-liars",
+      "score": 105,
+      "alias": "Pretty Little Liars"
     },
     {
       "id": "gl-push-unknown",
@@ -1258,7 +1526,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/629/1574150.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/65977/push",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-pushers-unknown",
@@ -1267,7 +1536,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/574/1436527.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/70801/pushers",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-queendom-2025",
@@ -1276,7 +1546,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/582/1457081.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/86050/queendom",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-reboot-unknown",
@@ -1285,7 +1556,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/9/22952.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/1662/reboot",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-recipes-for-love-and-murder-unknown",
@@ -1294,7 +1566,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/555/1389879.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/60467/recipes-for-love-and-murder",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-rental-love-lab-2026",
@@ -1303,7 +1576,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/631/1578370.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/92366/rental-love-lab",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-reverse-4-you-2024",
@@ -1312,7 +1586,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/528/1320792.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/78533/reverse-4-you",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-riverdale-unknown",
@@ -1321,7 +1596,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/455/1138820.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/5262/riverdale",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-roller-coaster-2025",
@@ -1330,7 +1606,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/577/1443744.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/85826/roller-coaster",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-rugrats-unknown",
@@ -1339,7 +1616,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/402/1007439.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/421/rugrats",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-rumors-unknown",
@@ -1348,7 +1626,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/523/1309751.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/77838/rumors",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-rwby-unknown",
@@ -1357,7 +1636,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/447/1119412.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/4091/rwby",
-      "score": 105
+      "score": 105,
+      "alias": null
+    },
+    {
+      "id": "gl-santuary-witch-s-tale-unknown",
+      "title": "Santuary: A Witch's Tale",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/605/1512734.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/63508/sanctuary-a-witchs-tale",
+      "score": 105,
+      "alias": "Sanctuary: A Witch's Tale"
     },
     {
       "id": "gl-scarpetta-unknown",
@@ -1366,7 +1656,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/615/1539895.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/67323/scarpetta",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-scavengers-reign-unknown",
@@ -1375,7 +1666,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/482/1205705.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/62554/scavengers-reign",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-school-spirits-unknown",
@@ -1384,7 +1676,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/609/1523297.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/62556/school-spirits",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-shadow-of-love-2026",
@@ -1393,7 +1686,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/311/778538.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/55018/shadow-of-love",
-      "score": 83
+      "score": 83,
+      "alias": null
     },
     {
       "id": "gl-she-is-still-cute-today-2026",
@@ -1402,7 +1696,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/632/1580200.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/75652/she-is-still-cute-today",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-she-loves-to-cook-and-she-loves-to-eat-2022",
@@ -1411,7 +1706,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/433/1084804.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/65624/she-loves-to-cook-and-she-loves-to-eat",
-      "score": 150
+      "score": 150,
+      "alias": null
+    },
+    {
+      "id": "gl-shelter-unknown",
+      "title": "Shelter",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/473/1183784.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/61063/harlan-cobens-shelter",
+      "score": 105,
+      "alias": "Harlan Coben's Shelter"
     },
     {
       "id": "gl-show-me-love-2023",
@@ -1420,7 +1726,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/449/1123020.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/67187/show-me-love",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-skymed-unknown",
@@ -1429,7 +1736,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/622/1557107.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/57682/skymed",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-slip-unknown",
@@ -1438,7 +1746,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/458/1145741.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/61198/slip",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-small-town-potential-unknown",
@@ -1447,7 +1756,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/564/1410103.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/66270/small-town-potential",
-      "score": 100
+      "score": 100,
+      "alias": null
+    },
+    {
+      "id": "gl-special-ops-lioness-unknown",
+      "title": "Special Ops: Lioness",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/635/1587727.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/50415/lioness",
+      "score": 105,
+      "alias": "Lioness"
     },
     {
       "id": "gl-stardust-telepath-2024",
@@ -1456,7 +1776,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/566/1415180.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/84349/stardust-telepath",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-station-19-unknown",
@@ -1465,7 +1786,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/507/1267852.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/34577/station-19",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-such-brave-girls-unknown",
@@ -1474,7 +1796,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/576/1441947.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/72410/such-brave-girls",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-suenos-de-libertad-unknown",
@@ -1483,7 +1806,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/506/1265300.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/74973/suenos-de-libertad",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-tell-me-everything-unknown",
@@ -1492,7 +1816,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/522/1306319.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/61254/tell-me-everything",
-      "score": 105
+      "score": 105,
+      "alias": null
+    },
+    {
+      "id": "gl-art-of-joy-unknown",
+      "title": "The Art of Joy",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/558/1395185.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/82945/larte-della-gioia",
+      "score": 105,
+      "alias": "L'arte della gioia"
     },
     {
       "id": "gl-buccaneers-unknown",
@@ -1501,7 +1836,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/572/1431045.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/62707/the-buccaneers",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-chi-unknown",
@@ -1510,7 +1846,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/626/1566210.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/24371/the-chi",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-couple-next-door-unknown",
@@ -1519,7 +1856,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/578/1447381.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/67780/the-couple-next-door",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-equalizer-unknown",
@@ -1528,7 +1866,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/540/1350125.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/47929/the-equalizer",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-family-next-door-unknown",
@@ -1537,7 +1876,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/578/1445939.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/81120/the-family-next-door",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-fragrance-you-inherit-2024",
@@ -1546,7 +1886,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/537/1344513.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/79929/the-fragrance-you-inherit",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-full-monty-unknown",
@@ -1555,7 +1896,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/464/1161200.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/61294/the-full-monty",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-girlfriend-unknown",
@@ -1564,7 +1906,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/583/1459064.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/76565/the-girlfriend",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-horror-of-dolores-roach-unknown",
@@ -1573,7 +1916,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/487/1218496.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/47891/the-horror-of-dolores-roach",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-hunting-wives-unknown",
@@ -1582,7 +1926,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/579/1448883.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/72427/the-hunting-wives",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-jetty-unknown",
@@ -1591,7 +1936,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/527/1318913.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/70858/the-jetty",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-last-of-us-unknown",
@@ -1600,7 +1946,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/563/1409008.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/46562/the-last-of-us",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-last-thing-he-told-me-unknown",
@@ -1609,7 +1956,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/614/1536838.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/52331/the-last-thing-he-told-me",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-legend-of-vox-machina-unknown",
@@ -1618,7 +1966,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/541/1354629.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/44885/the-legend-of-vox-machina",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-magicians-2015",
@@ -1627,7 +1976,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/229/573329.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/3083/the-magicians",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-mighty-nein-unknown",
@@ -1636,7 +1986,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/598/1496655.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/86172/the-mighty-nein",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-morning-show-unknown",
@@ -1645,7 +1996,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/594/1485135.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/41524/the-morning-show",
-      "score": 105
+      "score": 105,
+      "alias": null
+    },
+    {
+      "id": "gl-most-beautiful-flower-unknown",
+      "title": "The Most Beautiful Flower",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/433/1084225.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/65604/la-flor-mas-bella",
+      "score": 105,
+      "alias": "La flor más bella"
     },
     {
       "id": "gl-ms-pat-show-unknown",
@@ -1654,7 +2016,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/607/1517868.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/56678/the-ms-pat-show",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-originals-2013",
@@ -1663,7 +2026,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/271/678632.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/62/the-originals",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-other-black-girl-unknown",
@@ -1672,7 +2036,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/476/1191634.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/63393/the-other-black-girl",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-pitt-unknown",
@@ -1681,7 +2046,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/606/1516776.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/75632/the-pitt",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-rig-unknown",
@@ -1690,7 +2056,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/549/1374448.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/51726/the-rig",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-rookie-feds-unknown",
@@ -1699,7 +2066,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/444/1111664.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/62068/the-rookie-feds",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-second-best-hospital-in-galaxy-unknown",
@@ -1708,7 +2076,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/505/1263480.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/73546/the-second-best-hospital-in-the-galaxy",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-secret-of-girls-2025",
@@ -1717,7 +2086,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/602/1506048.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/88837/the-secret-of-girls",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-stolen-girl-unknown",
@@ -1726,7 +2096,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/564/1410383.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/69580/the-stolen-girl",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-testaments-unknown",
@@ -1735,7 +2106,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/616/1541825.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/45531/the-testaments",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-vampire-diaries-2009",
@@ -1744,7 +2116,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/271/677698.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/63/the-vampire-diaries",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-vexations-of-shut-in-vampire-princess-unknown",
@@ -1753,7 +2126,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/616/1541014.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/70866/the-vexations-of-a-shut-in-vampire-princess",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-walking-dead-2010",
@@ -1762,7 +2136,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/424/1061900.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/73/the-walking-dead",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-white-lotus-unknown",
@@ -1771,7 +2146,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/557/1393876.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/51394/the-white-lotus",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-witcher-unknown",
@@ -1780,7 +2156,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/594/1486674.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/28276/the-witcher",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-young-and-restless-unknown",
@@ -1789,7 +2166,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/593/1482522.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/4344/the-young-and-the-restless",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-tiny-beautiful-things-unknown",
@@ -1798,7 +2176,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/455/1139376.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/62425/tiny-beautiful-things",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-torchwood-2006",
@@ -1807,7 +2186,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/356/890285.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/659/torchwood",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-tracker-unknown",
@@ -1816,7 +2196,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/591/1479867.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/63192/tracker",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-transit-girls-2015",
@@ -1825,7 +2206,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/29/74245.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/8198/transit-girls",
-      "score": 150
+      "score": 150,
+      "alias": null
+    },
+    {
+      "id": "gl-tres-gracas-unknown",
+      "title": "Três Graças (Three Graces)",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/593/1483464.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/84857/tres-gracas",
+      "score": 105,
+      "alias": "Três Graças"
     },
     {
       "id": "gl-true-detective-unknown",
@@ -1834,7 +2226,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/490/1226764.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/5/true-detective",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-twenties-unknown",
@@ -1843,7 +2236,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/364/911628.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/38796/twenties",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-twisted-metal-2023",
@@ -1852,7 +2246,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/581/1452707.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/60743/twisted-metal",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-unlimited-love-2025",
@@ -1861,7 +2256,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/580/1450196.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/86192/unlimited-love",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-unlock-your-love-2024",
@@ -1870,7 +2266,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/537/1343569.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/79868/unlock-your-love",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-urzila-unknown",
@@ -1879,7 +2276,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/623/1557508.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/91609/urzila",
-      "score": 100
+      "score": 100,
+      "alias": null
     },
     {
       "id": "gl-us-2025",
@@ -1888,7 +2286,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/550/1376916.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/76333/us",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-utopia-falls-2020",
@@ -1897,7 +2296,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/239/599954.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/42140/utopia-falls",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-vagrant-queen-2020",
@@ -1906,7 +2306,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/241/604625.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/42267/vagrant-queen",
-      "score": 140
+      "score": 140,
+      "alias": null
     },
     {
       "id": "gl-velma-unknown",
@@ -1915,7 +2316,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/513/1284185.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/53473/velma",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-videoland-unknown",
@@ -1924,7 +2326,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/552/1382386.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/75021/videoland",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-vigil-unknown",
@@ -1933,7 +2336,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/637/1593094.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/45879/vigil",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-waack-girls-unknown",
@@ -1942,7 +2346,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/544/1361465.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/75475/waack-girls",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-wayward-unknown",
@@ -1951,7 +2356,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/589/1472932.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/67919/wayward",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-we-are-lady-parts-unknown",
@@ -1960,7 +2366,18 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/520/1301439.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/53271/we-are-lady-parts",
-      "score": 105
+      "score": 105,
+      "alias": null
+    },
+    {
+      "id": "gl-welcome-to-eden-unknown",
+      "title": "Welcome to Eden",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/408/1020901.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/61436/bienvenidos-a-eden",
+      "score": 105,
+      "alias": "Bienvenidos a Edén"
     },
     {
       "id": "gl-whale-store-xoxo-2025",
@@ -1969,7 +2386,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/573/1433386.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/81081/whale-store-xoxo",
-      "score": 150
+      "score": 150,
+      "alias": null
     },
     {
       "id": "gl-while-men-are-away-unknown",
@@ -1978,7 +2396,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/476/1191801.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/70758/while-the-men-are-away",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-white-fever-unknown",
@@ -1987,7 +2406,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/513/1282740.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/72652/white-fever",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-wilderness-unknown",
@@ -1996,7 +2416,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/473/1184943.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/62589/wilderness",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-will-trent-unknown",
@@ -2005,7 +2426,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/602/1506386.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/61740/will-trent",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-willow-unknown",
@@ -2014,7 +2436,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/426/1067123.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/51419/willow",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-women-wearing-shoulder-pads-unknown",
@@ -2023,7 +2446,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/582/1456834.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/71919/women-wearing-shoulder-pads",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-xo-kitty-unknown",
@@ -2032,7 +2456,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/620/1550651.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/60509/xo-kitty",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-yellowjackets-unknown",
@@ -2041,7 +2466,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/554/1387457.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/36672/yellowjackets",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-young-ladies-don-t-play-fighting-games-2023",
@@ -2050,7 +2476,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/631/1579061.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/92631/young-ladies-dont-play-fighting-games",
-      "score": 83
+      "score": 83,
+      "alias": null
     },
     {
       "id": "gl-your-friendly-neighborhood-spider-man-unknown",
@@ -2059,7 +2486,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/556/1391478.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/58952/your-friendly-neighborhood-spider-man",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-yuri-is-my-job-unknown",
@@ -2068,7 +2496,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/455/1138711.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/67278/yuri-is-my-job",
-      "score": 105
+      "score": 105,
+      "alias": null
     },
     {
       "id": "gl-zlata-labut-unknown",
@@ -2077,16 +2506,8 @@
       "source": "TVmaze",
       "image": "https://static.tvmaze.com/uploads/images/original_untouched/444/1111588.jpg",
       "sourceUrl": "https://www.tvmaze.com/shows/66717/zlata-labut",
-      "score": 105
-    },
-    {
-      "id": "gl-agents-of-s-h-i-e-l-d-2014",
-      "title": "Agents of S.H.I.E.L.D.",
-      "year": 2014,
-      "source": "Wikipedia / Wikimedia Commons",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Agents_of_S.H.I.E.L.D._logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Agents_of_S.H.I.E.L.D._web_series",
-      "score": 72
+      "score": 105,
+      "alias": null
     }
   ],
   "fallbacks": [
@@ -2145,12 +2566,6 @@
       "image": "/assets/gl-covers/beneath-the-moon-s-shadow-2026.svg"
     },
     {
-      "id": "gl-bob-loves-abishola-unknown",
-      "title": "Bob Loves Abishola",
-      "year": null,
-      "image": "/assets/gl-covers/bob-loves-abishola-unknown.svg"
-    },
-    {
       "id": "gl-denied-love-special-endless-2026",
       "title": "Denied Love Special Endless",
       "year": 2026,
@@ -2199,22 +2614,10 @@
       "image": "/assets/gl-covers/in-that-moment-it-was-love-2026.svg"
     },
     {
-      "id": "gl-interview-with-vampire-unknown",
-      "title": "Interview with a Vampire",
-      "year": null,
-      "image": "/assets/gl-covers/interview-with-a-vampire-unknown.svg"
-    },
-    {
       "id": "gl-kontrol-unknown",
       "title": "Kontrol",
       "year": null,
       "image": "/assets/gl-covers/kontrol-unknown.svg"
-    },
-    {
-      "id": "gl-land-of-women-unknown",
-      "title": "Land of Women",
-      "year": null,
-      "image": "/assets/gl-covers/land-of-women-unknown.svg"
     },
     {
       "id": "gl-muteluv-hello-is-this-luck-2025",
@@ -2239,12 +2642,6 @@
       "title": "RJ Decker",
       "year": null,
       "image": "/assets/gl-covers/rj-decker-unknown.svg"
-    },
-    {
-      "id": "gl-shelter-unknown",
-      "title": "Shelter",
-      "year": null,
-      "image": "/assets/gl-covers/shelter-unknown.svg"
     },
     {
       "id": "gl-shock-me-girls-2026",
@@ -2463,5 +2860,49 @@
         "score": 105
       }
     ]
+  },
+  "finalAliasPass": {
+    "date": "2026-08-18",
+    "targeted": 4,
+    "upgraded": 4,
+    "upgrades": [
+      {
+        "id": "gl-bob-loves-abishola-unknown",
+        "title": "Bob Loves Abishola",
+        "year": null,
+        "alias": "Bob ♥ Abishola",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/502/1256967.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/42167/bob-abishola",
+        "score": 105
+      },
+      {
+        "id": "gl-interview-with-vampire-unknown",
+        "title": "Interview with a Vampire",
+        "year": null,
+        "alias": "Anne Rice's Interview with the Vampire",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/469/1173859.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/56150/anne-rices-interview-with-the-vampire",
+        "score": 105
+      },
+      {
+        "id": "gl-land-of-women-unknown",
+        "title": "Land of Women",
+        "year": null,
+        "alias": "Tierra de Mujeres",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/524/1310385.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/63466/tierra-de-mujeres",
+        "score": 105
+      },
+      {
+        "id": "gl-shelter-unknown",
+        "title": "Shelter",
+        "year": null,
+        "alias": "Harlan Coben's Shelter",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/473/1183784.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/61063/harlan-cobens-shelter",
+        "score": 105
+      }
+    ],
+    "remainingGeneratedFallbacks": 27
   }
 }
