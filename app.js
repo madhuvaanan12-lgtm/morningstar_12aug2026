@@ -11273,6 +11273,7 @@ var t = e((e) => {
     recommendationsCount: 0,
     shows: [],
     watchedArchive: [],
+    lesbianGlArchive: [],
   },
   h = { generatedAt: "", collections: [] },
   g = { generatedAt: "", total: 0, rule: "", source: "", rawCompletedDramaCount: 0, shows: [] },
@@ -11339,10 +11340,13 @@ var t = e((e) => {
   b = (e) =>
     e.runtimeHours
       ? `${e.runtimeHours}h total`
-      : e.kDramaArchive
+      : e.kDramaArchive || e.lesbianGlArchive
         ? "Runtime varies"
         : "Runtime unavailable",
   x = (e) => !0 === e.kDramaArchive || "South Korea" === e.country || "Korean" === e.language;
+function isLesbianGl(e) {
+  return !0 === e.lesbianGlArchive || (e.genres || []).includes("Lesbian / GL");
+}
 var TOP_FIVE_COUNTRIES = ["United States", "United Kingdom", "South Korea", "Japan", "China"],
   TOP_FIVE_LANGUAGES = ["English", "Korean", "Japanese", "Chinese"],
   UNPLACED_COUNTRIES = ["", "International", "Unknown", "Various"],
@@ -11449,14 +11453,20 @@ function isTopFiveOrigin(e) {
 function passesExclusions(e, t) {
   return !(
     (t.kdrama && x(e)) ||
-    (t.outsideTopFive && !isTopFiveOrigin(e)) ||
+    (t.outsideTopFive && !isLesbianGl(e) && !isTopFiveOrigin(e)) ||
     (t.kdramaBefore2015 &&
       x(e) &&
       "number" == typeof e.year &&
       e.year < KDRAMA_CUTOFF_YEAR) ||
     (t.kdrama2015 && x(e) && e.year === KDRAMA_CUTOFF_YEAR) ||
-    (t.underFourHours && e.runtimeHours && e.runtimeHours < MIN_RUNTIME_HOURS) ||
-    (t.overSixtyHours && e.runtimeHours && e.runtimeHours > MAX_RUNTIME_HOURS)
+    (t.underFourHours &&
+      !isLesbianGl(e) &&
+      e.runtimeHours &&
+      e.runtimeHours < MIN_RUNTIME_HOURS) ||
+    (t.overSixtyHours &&
+      !isLesbianGl(e) &&
+      e.runtimeHours &&
+      e.runtimeHours > MAX_RUNTIME_HOURS)
   );
 }
 function countActiveExclusions(e) {
@@ -11679,6 +11689,7 @@ function mergeSeriesGroup(e) {
       (null == n[t] || "" === n[t] || (Array.isArray(n[t]) && !n[t].length)) && (n[t] = e[t]);
     ((n.watched = !!n.watched || !!e.watched),
       !0 === e.kDramaArchive && (n.kDramaArchive = !0),
+      !0 === e.lesbianGlArchive && (n.lesbianGlArchive = !0),
       UNPLACED_COUNTRIES.includes(n.country || "") &&
         !UNPLACED_COUNTRIES.includes(e.country || "") &&
         (n.country = e.country),
@@ -11696,6 +11707,7 @@ function mergeSeriesGroup(e) {
     )),
     (n.watched = t.some((e) => !!e.watched)),
     (n.kDramaArchive = t.some((e) => !0 === e.kDramaArchive)),
+    (n.lesbianGlArchive = t.some((e) => !0 === e.lesbianGlArchive)),
     (n.mainCatalogue = t.some((e) => !0 === e.mainCatalogue)),
     (n.watchedArchiveRecord = t.some((e) => !0 === e.watchedArchiveRecord)),
     (n.catalogueMember = t.some(
@@ -12074,12 +12086,14 @@ function ne({
                       ? `${e.imdbRating.toFixed(1)} IMDb`
                       : e.animeScore
                         ? `${e.animeScore.toFixed(1)} AniList`
-                        : "Ranked series",
+                        : e.lesbianGlArchive
+                          ? "GL archive series"
+                          : "Ranked series",
                   }),
                 ],
               }),
               (0, p.jsxs)("span", {
-                children: [e.episodes, " eps · ", b(e), " · ", e.year ?? "—"],
+                children: [e.episodes ? `${e.episodes} eps · ` : "", b(e), " · ", e.year ?? "—"],
               }),
             ],
           }),
@@ -12216,8 +12230,7 @@ function re({
               e.year,
               e.endYear && e.endYear !== e.year ? `–${e.endYear}` : "",
               " · ",
-              e.episodes,
-              " episodes · ",
+              e.episodes ? `${e.episodes} episodes · ` : "",
               e.format,
               e.imdbRating
                 ? ` · ${e.imdbRating.toFixed(1)} IMDb`
@@ -12444,8 +12457,10 @@ function ie({
                         ? `CURSLICK #${String(i.position).padStart(2, "0")} · ${i.label.toUpperCase()}`
                         : e.curslickExclusive
                           ? "CURSLICK · EDITORIAL EXCLUSIVE"
-                          : e.kDramaArchive && !e.catalogueMember
-                            ? "K-DRAMA ARCHIVE"
+                          : e.lesbianGlArchive
+                            ? "LESBIAN / GL ARCHIVE"
+                            : e.kDramaArchive && !e.catalogueMember
+                              ? "K-DRAMA ARCHIVE"
                             : `MORNINGSTAR RANK #${e.rank ?? "—"}`,
                   }),
                   (0, p.jsx)("div", {
@@ -12653,13 +12668,16 @@ function ie({
                       "eligibility-note " +
                       (e.archiveException ||
                       e.curslickExclusive ||
+                      e.lesbianGlArchive ||
                       (e.kDramaArchive && !e.catalogueMember)
                         ? "exception"
                         : ""),
                     children: [
                       (0, p.jsx)(_, {
                         name:
-                          e.archiveException || (e.kDramaArchive && !e.catalogueMember)
+                          e.archiveException ||
+                          e.lesbianGlArchive ||
+                          (e.kDramaArchive && !e.catalogueMember)
                             ? "eye"
                             : "check",
                         size: 16,
@@ -12669,7 +12687,9 @@ function ie({
                           ? "This is preserved from your imported watched history, so it may sit outside the ranked catalogue’s 2010+, ended, and 6–60-hour rules."
                           : e.curslickExclusive
                             ? `This Curslick editorial exclusive is a completed ${e.episodes}-episode series from ${e.year}–${e.endYear}, with an estimated ${e.runtimeHours}-hour run.`
-                            : e.kDramaArchive && !e.catalogueMember
+                            : e.lesbianGlArchive
+                              ? "This verified Lesbian / GL Archive entry has a central or substantial recurring queer-woman story. This genre is broader than the ending-safe Curslick list, so status and endings may vary."
+                              : e.kDramaArchive && !e.catalogueMember
                               ? "This is a completed scripted entry in the broad K-Drama Archive. The archive includes older and shorter Korean series, while excluding reality, talk shows, one-off specials and soap-style runs above 60 episodes."
                               : `Verified for the ranked catalogue: season one began in ${e.year}, the series is ended, and its estimated complete runtime is ${e.runtimeHours} hours.`,
                       }),
@@ -14034,10 +14054,11 @@ function T() {
         buildMergedCatalogue([
           ...e.shows.map((e) => ({ ...e, mainCatalogue: !0 })),
           ...l.shows,
+          ...(e.lesbianGlArchive || []).map((e) => ({ ...e, lesbianGlArchive: !0 })),
           ...e.watchedArchive.map((e) => ({ ...e, watchedArchiveRecord: !0 })),
           ...je,
         ]),
-      [e.shows, e.watchedArchive, l.shows, je],
+      [e.shows, e.watchedArchive, e.lesbianGlArchive, l.shows, je],
     ),
     Ee = (0, f.useMemo)(() => {
       let e = new Map();
@@ -14549,7 +14570,9 @@ function T() {
                                   }),
                                   (0, p.jsxs)("b", { children: ["Rank #", $e.rank] }),
                                   (0, p.jsx)("b", { children: $e.year }),
-                                  (0, p.jsxs)("b", { children: [$e.episodes, " episodes"] }),
+                                  (0, p.jsx)("b", {
+                                    children: $e.episodes ? `${$e.episodes} episodes` : "Episodes vary",
+                                  }),
                                   (0, p.jsx)("b", { children: b($e) }),
                                 ],
                               }),
