@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-18T13:31:10.030Z",
+  "generatedAt": "2026-08-18T13:40:10.634Z",
   "lookupDate": "2026-08-18",
   "archiveTitles": 475,
   "blankImagesBefore": 277,
-  "tvmazeResolved": 230,
-  "wikipediaResolved": 1,
-  "generatedFallbacks": 46,
+  "tvmazeResolved": 246,
+  "wikipediaResolved": 0,
+  "generatedFallbacks": 31,
   "blankImagesAfter": 0,
   "resolved": [
     {
@@ -2139,40 +2139,16 @@
       "image": "/assets/gl-covers/any-other-vlog-2015.svg"
     },
     {
-      "id": "gl-arcane-unknown",
-      "title": "Arcane",
-      "year": null,
-      "image": "/assets/gl-covers/arcane-unknown.svg"
-    },
-    {
-      "id": "gl-back-to-15-unknown",
-      "title": "Back to 15",
-      "year": null,
-      "image": "/assets/gl-covers/back-to-15-unknown.svg"
-    },
-    {
       "id": "gl-beneath-moon-s-shadow-2026",
       "title": "Beneath the Moon’s Shadow",
       "year": 2026,
       "image": "/assets/gl-covers/beneath-the-moon-s-shadow-2026.svg"
     },
     {
-      "id": "gl-black-dove-unknown",
-      "title": "Black Dove",
-      "year": null,
-      "image": "/assets/gl-covers/black-dove-unknown.svg"
-    },
-    {
       "id": "gl-bob-loves-abishola-unknown",
       "title": "Bob Loves Abishola",
       "year": null,
       "image": "/assets/gl-covers/bob-loves-abishola-unknown.svg"
-    },
-    {
-      "id": "gl-criminal-minds-evolution-unknown",
-      "title": "Criminal Minds: Evolution",
-      "year": null,
-      "image": "/assets/gl-covers/criminal-minds-evolution-unknown.svg"
     },
     {
       "id": "gl-denied-love-special-endless-2026",
@@ -2247,34 +2223,10 @@
       "image": "/assets/gl-covers/muteluv-hello-is-this-luck-2025.svg"
     },
     {
-      "id": "gl-my-marvelous-dream-is-you-unknown",
-      "title": "My Marvelous Dream is You",
-      "year": null,
-      "image": "/assets/gl-covers/my-marvelous-dream-is-you-unknown.svg"
-    },
-    {
-      "id": "gl-neighbours-new-chapter-unknown",
-      "title": "Neighbours: A New Chapter",
-      "year": null,
-      "image": "/assets/gl-covers/neighbours-a-new-chapter-unknown.svg"
-    },
-    {
-      "id": "gl-no-traces-unknown",
-      "title": "No Traces (Sin Huellas)",
-      "year": null,
-      "image": "/assets/gl-covers/no-traces-sin-huellas-unknown.svg"
-    },
-    {
       "id": "gl-omai-2023",
       "title": "Omai",
       "year": 2023,
       "image": "/assets/gl-covers/omai-2023.svg"
-    },
-    {
-      "id": "gl-only-murders-in-buildling-unknown",
-      "title": "Only Murders in the Buildling",
-      "year": null,
-      "image": "/assets/gl-covers/only-murders-in-the-buildling-unknown.svg"
     },
     {
       "id": "gl-player-series-2025",
@@ -2283,22 +2235,10 @@
       "image": "/assets/gl-covers/player-the-series-2025.svg"
     },
     {
-      "id": "gl-pretty-little-liars-original-sin-unknown",
-      "title": "Pretty Little Liars: Original Sin",
-      "year": null,
-      "image": "/assets/gl-covers/pretty-little-liars-original-sin-unknown.svg"
-    },
-    {
       "id": "gl-rj-decker-unknown",
       "title": "RJ Decker",
       "year": null,
       "image": "/assets/gl-covers/rj-decker-unknown.svg"
-    },
-    {
-      "id": "gl-santuary-witch-s-tale-unknown",
-      "title": "Santuary: A Witch's Tale",
-      "year": null,
-      "image": "/assets/gl-covers/santuary-a-witch-s-tale-unknown.svg"
     },
     {
       "id": "gl-shelter-unknown",
@@ -2319,40 +2259,10 @@
       "image": "/assets/gl-covers/shortland-street-legacy-unknown.svg"
     },
     {
-      "id": "gl-special-ops-lioness-unknown",
-      "title": "Special Ops: Lioness",
-      "year": null,
-      "image": "/assets/gl-covers/special-ops-lioness-unknown.svg"
-    },
-    {
-      "id": "gl-art-of-joy-unknown",
-      "title": "The Art of Joy",
-      "year": null,
-      "image": "/assets/gl-covers/the-art-of-joy-unknown.svg"
-    },
-    {
-      "id": "gl-most-beautiful-flower-unknown",
-      "title": "The Most Beautiful Flower",
-      "year": null,
-      "image": "/assets/gl-covers/the-most-beautiful-flower-unknown.svg"
-    },
-    {
-      "id": "gl-tres-gracas-unknown",
-      "title": "Três Graças (Three Graces)",
-      "year": null,
-      "image": "/assets/gl-covers/tre-s-grac-as-three-graces-unknown.svg"
-    },
-    {
       "id": "gl-triple-oh-unknown",
       "title": "Triple Oh!",
       "year": null,
       "image": "/assets/gl-covers/triple-oh-unknown.svg"
-    },
-    {
-      "id": "gl-welcome-to-eden-unknown",
-      "title": "Welcome to Eden",
-      "year": null,
-      "image": "/assets/gl-covers/welcome-to-eden-unknown.svg"
     },
     {
       "id": "gl-who-knows-girls-l-2025",
@@ -2366,5 +2276,192 @@
       "year": null,
       "image": "/assets/gl-covers/wyfie-unknown.svg"
     }
-  ]
+  ],
+  "improvementPass": {
+    "date": "2026-08-18",
+    "targetedFallbackOrWikipediaCovers": 47,
+    "upgradedFallbacksToRealPosters": 15,
+    "upgradedWikipediaToRealPosters": 1,
+    "upgradedTotal": 16,
+    "remainingGeneratedFallbacks": 31,
+    "remainingWikipediaImages": 0,
+    "upgrades": [
+      {
+        "id": "gl-agents-of-s-h-i-e-l-d-2014",
+        "title": "Agents of S.H.I.E.L.D.",
+        "year": 2014,
+        "previousSource": "Wikipedia / Wikimedia Commons",
+        "source": "TVmaze",
+        "alias": "Marvel's Agents of S.H.I.E.L.D.",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/486/1215694.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/31/marvels-agents-of-shield",
+        "score": 119
+      },
+      {
+        "id": "gl-arcane-unknown",
+        "title": "Arcane",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "Arcane: League of Legends",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/536/1340287.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/55138/arcane-league-of-legends",
+        "score": 105
+      },
+      {
+        "id": "gl-back-to-15-unknown",
+        "title": "Back to 15",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "De Volta aos 15",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/530/1327232.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/57943/de-volta-aos-15",
+        "score": 105
+      },
+      {
+        "id": "gl-black-dove-unknown",
+        "title": "Black Dove",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "Black Doves",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/540/1350767.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/68407/black-doves",
+        "score": 105
+      },
+      {
+        "id": "gl-criminal-minds-evolution-unknown",
+        "title": "Criminal Minds: Evolution",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "Criminal Minds",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/626/1567475.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/81/criminal-minds",
+        "score": 105
+      },
+      {
+        "id": "gl-my-marvelous-dream-is-you-unknown",
+        "title": "My Marvelous Dream is You",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "My Marvellous Dream Is You",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/517/1294880.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/76741/my-marvellous-dream-is-you",
+        "score": 105
+      },
+      {
+        "id": "gl-neighbours-new-chapter-unknown",
+        "title": "Neighbours: A New Chapter",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "Neighbours",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/471/1178200.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/5420/neighbours",
+        "score": 105
+      },
+      {
+        "id": "gl-no-traces-unknown",
+        "title": "No Traces (Sin Huellas)",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "Sin Huellas",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/452/1131805.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/62685/sin-huellas",
+        "score": 105
+      },
+      {
+        "id": "gl-only-murders-in-buildling-unknown",
+        "title": "Only Murders in the Buildling",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "Only Murders in the Building",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/586/1466415.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/48830/only-murders-in-the-building",
+        "score": 105
+      },
+      {
+        "id": "gl-pretty-little-liars-original-sin-unknown",
+        "title": "Pretty Little Liars: Original Sin",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "Pretty Little Liars",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/125/314775.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/177/pretty-little-liars",
+        "score": 105
+      },
+      {
+        "id": "gl-santuary-witch-s-tale-unknown",
+        "title": "Santuary: A Witch's Tale",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "Sanctuary: A Witch's Tale",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/605/1512734.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/63508/sanctuary-a-witchs-tale",
+        "score": 105
+      },
+      {
+        "id": "gl-special-ops-lioness-unknown",
+        "title": "Special Ops: Lioness",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "Lioness",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/635/1587727.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/50415/lioness",
+        "score": 105
+      },
+      {
+        "id": "gl-art-of-joy-unknown",
+        "title": "The Art of Joy",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "L'arte della gioia",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/558/1395185.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/82945/larte-della-gioia",
+        "score": 105
+      },
+      {
+        "id": "gl-most-beautiful-flower-unknown",
+        "title": "The Most Beautiful Flower",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "La flor más bella",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/433/1084225.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/65604/la-flor-mas-bella",
+        "score": 105
+      },
+      {
+        "id": "gl-tres-gracas-unknown",
+        "title": "Três Graças (Three Graces)",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "Três Graças",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/593/1483464.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/84857/tres-gracas",
+        "score": 105
+      },
+      {
+        "id": "gl-welcome-to-eden-unknown",
+        "title": "Welcome to Eden",
+        "year": null,
+        "previousSource": "Morningstar generated fallback",
+        "source": "TVmaze",
+        "alias": "Bienvenidos a Edén",
+        "image": "https://static.tvmaze.com/uploads/images/original_untouched/408/1020901.jpg",
+        "sourceUrl": "https://www.tvmaze.com/shows/61436/bienvenidos-a-eden",
+        "score": 105
+      }
+    ]
+  }
 }

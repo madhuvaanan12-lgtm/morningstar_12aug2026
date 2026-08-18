@@ -10427,7 +10427,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Agents%20of%20S.H.I.E.L.D.&s=tt&ttype=tv",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Agents_of_S.H.I.E.L.D._logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/486/1215694.jpg",
       "shortPlot": "Agents of S.H.I.E.L.D. is a verified Lesbian / GL archive series, selected from an editorial or specialist queer-television source.",
       "longPlot": "Agents of S.H.I.E.L.D. is a verified Lesbian / GL archive series, selected from an editorial or specialist queer-television source. Inclusion evidence: Autostraddle 100 best queer sci-fi/fantasy shows (Editorial rank #66 of 100).",
       "status": "Ended",
@@ -10438,10 +10438,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Wikipedia / Wikimedia Commons",
-      "imageSourceUrl": "https://en.wikipedia.org/wiki/Agents_of_S.H.I.E.L.D._web_series",
-      "imageMatchScore": 72,
-      "imageLookupDate": "2026-08-18"
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/31/marvels-agents-of-shield",
+      "imageMatchScore": 119,
+      "imageLookupDate": "2026-08-18",
+      "imageLookupAlias": "Marvel's Agents of S.H.I.E.L.D."
     },
     {
       "id": "gl-ai-girl-2026",
@@ -11137,7 +11138,7 @@
       "format": "Animation",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Arcane&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/arcane-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/536/1340287.jpg",
       "shortPlot": "The origins of two iconic League champions, set in the utopian Piltover and the oppressed underground of Zaun.",
       "longPlot": "The origins of two iconic League champions, set in the utopian Piltover and the oppressed underground of Zaun. Inclusion evidence: Aria's WLW television database (Protagonist representation; Complete).",
       "status": "Ended",
@@ -11148,10 +11149,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/55138/arcane-league-of-legends",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Arcane: League of Legends"
     },
     {
       "id": "gl-arrow-2012",
@@ -11319,7 +11321,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Back%20to%2015&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/back-to-15-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/530/1327232.jpg",
       "shortPlot": "Thirty-year-old Anita travels back to age 15 and starts meddling with everybody's lives, until she realizes the only life that needs fixing is her own.",
       "longPlot": "Thirty-year-old Anita travels back to age 15 and starts meddling with everybody's lives, until she realizes the only life that needs fixing is her own. Inclusion evidence: Aria's WLW television database (Supporting representation; Complete).",
       "status": "Ended",
@@ -11330,10 +11332,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/57943/de-volta-aos-15",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "De Volta aos 15"
     },
     {
       "id": "tt2099034",
@@ -11785,7 +11788,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Black%20Dove&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/black-dove-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/540/1350767.jpg",
       "shortPlot": "Helen embarks on a passionate affair with a man who has no idea what her secret identity is; caught in the crosshairs when her lover falls victim to the dangerous London underworld, Helen's employer's call in Sam to protect her.",
       "longPlot": "Helen embarks on a passionate affair with a man who has no idea what her secret identity is; caught in the crosshairs when her lover falls victim to the dangerous London underworld, Helen's employer's call in Sam to protect her. Inclusion evidence: Aria's WLW television database (Supporting representation; Currently running/no update).",
       "status": "Ongoing",
@@ -11796,10 +11799,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/68407/black-doves",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Black Doves"
     },
     {
       "id": "gl-blank-2024",
@@ -12736,7 +12740,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Criminal%20Minds%3A%20Evolution&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/criminal-minds-evolution-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/626/1567475.jpg",
       "shortPlot": "An elite squad of FBI profilers analyzes the country's most-twisted criminal minds, anticipating the perpetrators' next moves before they can strike again. Each member of the \"mind hunter\" team brings his or her expertise to pinpoint predators' motivations and identify emotional triggers to stop them.",
       "longPlot": "An elite squad of FBI profilers analyzes the country's most-twisted criminal minds, anticipating the perpetrators' next moves before they can strike again. Each member of the \"mind hunter\" team brings his or her expertise to pinpoint predators' motivations and identify emotional triggers to stop them. Inclusion evidence: Aria's WLW television database (Main representation; Renewed).",
       "status": "Ongoing",
@@ -12747,10 +12751,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/81/criminal-minds",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Criminal Minds"
     },
     {
       "id": "tt8749198",
@@ -18423,7 +18428,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=My%20Marvelous%20Dream%20is%20You&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/my-marvelous-dream-is-you-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/517/1294880.jpg",
       "shortPlot": "A girl who falls in love with a girl she sees in her dreams. She then meets her in real life.",
       "longPlot": "A girl who falls in love with a girl she sees in her dreams. She then meets her in real life. Inclusion evidence: Aria's WLW television database (Protagonist representation; Limited series).",
       "status": "Ended",
@@ -18434,10 +18439,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/76741/my-marvellous-dream-is-you",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "My Marvellous Dream Is You"
     },
     {
       "id": "gl-my-only-sunshine-2026",
@@ -18695,7 +18701,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Neighbours%3A%20A%20New%20Chapter&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/neighbours-a-new-chapter-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/471/1178200.jpg",
       "shortPlot": "Follows the lives, loves, and challenges faced by people living on Ramsay Street in Erinsborough, a fictional suburb of Melbourne, Australia.",
       "longPlot": "Follows the lives, loves, and challenges faced by people living on Ramsay Street in Erinsborough, a fictional suburb of Melbourne, Australia. Inclusion evidence: Aria's WLW television database (Ensemble representation; Canceled with no final season).",
       "status": "Ended",
@@ -18706,10 +18712,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/5420/neighbours",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Neighbours"
     },
     {
       "id": "gl-neon-unknown",
@@ -18895,7 +18902,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=No%20Traces%20(Sin%20Huellas)&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/no-traces-sin-huellas-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/452/1131805.jpg",
       "shortPlot": "Two socially marginalized women end up as suspects of a murder whose crime scene they had just cleaned up.",
       "longPlot": "Two socially marginalized women end up as suspects of a murder whose crime scene they had just cleaned up. Inclusion evidence: Aria's WLW television database (Protagonist representation; Currently running/no update).",
       "status": "Ongoing",
@@ -18906,10 +18913,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/62685/sin-huellas",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Sin Huellas"
     },
     {
       "id": "gl-nobody-wants-this-unknown",
@@ -19115,7 +19123,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Only%20Murders%20in%20the%20Buildling&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/only-murders-in-the-buildling-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/586/1466415.jpg",
       "shortPlot": "Three strangers share an obsession with true crime and suddenly find themselves wrapped up in one. When a grisly death occurs inside their exclusive Upper West Side apartment building, the trio suspects murder and employs their precise knowledge of true crime to investigate the truth. Perhaps even more explosive are the lies they tell one another. Soon, the endangered trio comes to realize a killer might be living am…",
       "longPlot": "Three strangers share an obsession with true crime and suddenly find themselves wrapped up in one. When a grisly death occurs inside their exclusive Upper West Side apartment building, the trio suspects murder and employs their precise knowledge of true crime to investigate the truth. Perhaps even more explosive are the lies they tell one another. Soon, the endangered trio comes to realize a killer might be living am… Inclusion evidence: Aria's WLW television database (Main representation; Renewed).",
       "status": "Ongoing",
@@ -19126,10 +19134,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/48830/only-murders-in-the-building",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Only Murders in the Building"
     },
     {
       "id": "tt33458973",
@@ -19758,7 +19767,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Pretty%20Little%20Liars%3A%20Original%20Sin&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/pretty-little-liars-original-sin-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/125/314775.jpg",
       "shortPlot": "Twenty years ago, a series of tragic events almost ripped the blue-collar town of Millwood apart; now, in the present day, a group of disparate teen girls, a brand-new set of Little Liars, find themselves tormented by an unknown 'A'ssailant.",
       "longPlot": "Twenty years ago, a series of tragic events almost ripped the blue-collar town of Millwood apart; now, in the present day, a group of disparate teen girls, a brand-new set of Little Liars, find themselves tormented by an unknown 'A'ssailant. Inclusion evidence: Aria's WLW television database (Main representation; Canceled with no final season).",
       "status": "Ended",
@@ -19769,10 +19778,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/177/pretty-little-liars",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Pretty Little Liars"
     },
     {
       "id": "tt31407116",
@@ -20601,7 +20611,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Santuary%3A%20A%20Witch's%20Tale&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/santuary-a-witch-s-tale-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/605/1512734.jpg",
       "shortPlot": "In the idyllic English town of Sanctuary, where for hundreds of years witches have lived peacefully, the death of a teen rugby star exposes an undercurrent of suspicion.",
       "longPlot": "In the idyllic English town of Sanctuary, where for hundreds of years witches have lived peacefully, the death of a teen rugby star exposes an undercurrent of suspicion. Inclusion evidence: Aria's WLW television database (Supporting representation; Limited series).",
       "status": "Ended",
@@ -20612,10 +20622,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/63508/sanctuary-a-witchs-tale",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Sanctuary: A Witch's Tale"
     },
     {
       "id": "gl-scarpetta-unknown",
@@ -21510,7 +21521,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Special%20Ops%3A%20Lioness&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/special-ops-lioness-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/635/1587727.jpg",
       "shortPlot": "Joe attempts to balance her personal and professional life as the tip of the CIA's spear in the war on terror; the Lioness Program enlists Cruz to operate undercover alongside Joe among the power brokers of State terrorism.",
       "longPlot": "Joe attempts to balance her personal and professional life as the tip of the CIA's spear in the war on terror; the Lioness Program enlists Cruz to operate undercover alongside Joe among the power brokers of State terrorism. Inclusion evidence: Aria's WLW television database (Main representation; Currently running/recently premiered).",
       "status": "Ongoing",
@@ -21521,10 +21532,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/50415/lioness",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Lioness"
     },
     {
       "id": "tt7631146",
@@ -22033,7 +22045,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=The%20Art%20of%20Joy&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/the-art-of-joy-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/558/1395185.jpg",
       "shortPlot": "Born Jan. 1, 1900, in rural Sicily, Modesta pursues happiness since childhood without falling victim to society's constraints.",
       "longPlot": "Born Jan. 1, 1900, in rural Sicily, Modesta pursues happiness since childhood without falling victim to society's constraints. Inclusion evidence: Aria's WLW television database (Protagonist representation; Limited series).",
       "status": "Ended",
@@ -22044,10 +22056,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/82945/larte-della-gioia",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "L'arte della gioia"
     },
     {
       "id": "tt31974367",
@@ -23304,7 +23317,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=La%20flor%20m%C3%A1s%20bella%20(The%20Most%20Beautiful%20Flower)&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/the-most-beautiful-flower-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/433/1084225.jpg",
       "shortPlot": "Curvy, curly and confident, Mich knows she's fabulous, but now she just has to convince everyone at her high school to believe it too.",
       "longPlot": "Curvy, curly and confident, Mich knows she's fabulous, but now she just has to convince everyone at her high school to believe it too. Inclusion evidence: Aria's WLW television database (Protagonist representation; Currently running/no update).",
       "status": "Ongoing",
@@ -23316,10 +23329,11 @@
       "rank": null,
       "featured": false,
       "originalTitle": "La flor más bella",
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/65604/la-flor-mas-bella",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "La flor más bella"
     },
     {
       "id": "gl-ms-pat-show-unknown",
@@ -24498,7 +24512,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Tr%C3%AAs%20Gra%C3%A7as%20(Three%20Graces)&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/tre-s-grac-as-three-graces-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/593/1483464.jpg",
       "shortPlot": "A mother and daughter in São Paulo faces corruption that affects her community and family. As evil forces threaten countless sick people for profit, she struggles with moral choices while fighting for survival.",
       "longPlot": "A mother and daughter in São Paulo faces corruption that affects her community and family. As evil forces threaten countless sick people for profit, she struggles with moral choices while fighting for survival. Inclusion evidence: Aria's WLW television database (Main representation; Currently running/no update).",
       "status": "Ongoing",
@@ -24509,10 +24523,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/84857/tres-gracas",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Três Graças"
     },
     {
       "id": "gl-triple-oh-unknown",
@@ -25471,7 +25486,7 @@
       "format": "Live action",
       "imdbId": null,
       "imdbUrl": "https://www.imdb.com/find/?q=Welcome%20to%20Eden&s=tt&ttype=tv",
-      "image": "/assets/gl-covers/welcome-to-eden-unknown.svg",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/408/1020901.jpg",
       "shortPlot": "Zoa and four other young people are invited to an exclusive party on a secret island, sponsored by a new drink. However, the supposed paradise they find waiting for them is not what they expected.",
       "longPlot": "Zoa and four other young people are invited to an exclusive party on a secret island, sponsored by a new drink. However, the supposed paradise they find waiting for them is not what they expected. Inclusion evidence: Aria's WLW television database (Main representation; Canceled with no final season).",
       "status": "Ended",
@@ -25482,10 +25497,11 @@
       "qualityScore": null,
       "rank": null,
       "featured": false,
-      "imageSourceName": "Morningstar generated fallback",
-      "imageSourceUrl": "local asset",
+      "imageSourceName": "TVmaze",
+      "imageSourceUrl": "https://www.tvmaze.com/shows/61436/bienvenidos-a-eden",
       "imageLookupDate": "2026-08-18",
-      "imageMatchScore": null
+      "imageMatchScore": 105,
+      "imageLookupAlias": "Bienvenidos a Edén"
     },
     {
       "id": "tt11447470",
@@ -26290,10 +26306,10 @@
     }
   ],
   "coverAudit": {
-    "generatedAt": "2026-08-18T13:31:10.030Z",
+    "generatedAt": "2026-08-18T13:40:10.634Z",
     "blankImagesBefore": 277,
-    "realPostersResolved": 231,
-    "generatedFallbacks": 46,
+    "realPostersResolved": 246,
+    "generatedFallbacks": 31,
     "blankImagesAfter": 0,
     "report": "research/lesbian-gl-cover-audit-2026-08-18.json"
   }
