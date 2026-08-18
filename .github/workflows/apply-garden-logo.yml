@@ -1,0 +1,109 @@
+name: Apply Morningstar garden logo
+
+on:
+  push:
+    branches:
+      - agent/ten-day-morningstar-updates
+    paths:
+      - .github/workflows/apply-garden-logo.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply-logo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out development branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/ten-day-morningstar-updates
+          fetch-depth: 0
+
+      - name: Install garden logo and brand styling
+        shell: python
+        run: |
+          from pathlib import Path
+          import base64
+
+          logo_b64 = """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"""
+
+          assets = Path("assets")
+          assets.mkdir(exist_ok=True)
+          logo_path = assets / "morningstar-garden-logo.jpg"
+          logo_path.write_bytes(base64.b64decode(logo_b64))
+
+          index_path = Path("index.html")
+          html = index_path.read_text(encoding="utf-8")
+          marker = 'id="morningstar-garden-logo-theme"'
+          if marker not in html:
+              style = '''
+    <style id="morningstar-garden-logo-theme">
+      .wordmark,
+      .footer-mark {
+        color: transparent !important;
+        font-size: 0 !important;
+        letter-spacing: 0 !important;
+        background-image: url('/assets/morningstar-garden-logo.jpg') !important;
+        background-repeat: no-repeat !important;
+        overflow: hidden;
+      }
+
+      .wordmark {
+        width: 210px;
+        height: 58px;
+        flex: none;
+        border-radius: 8px;
+        background-size: cover !important;
+        background-position: center top !important;
+        box-shadow: 0 0 0 1px #39ff1438, 0 8px 25px #0000005c;
+      }
+
+      .wordmark span,
+      .wordmark i,
+      .footer-mark span,
+      .footer-mark i {
+        display: none !important;
+      }
+
+      .footer-mark {
+        width: min(360px, 82vw);
+        height: 240px;
+        opacity: 1 !important;
+        transform: none !important;
+        border-radius: 12px;
+        background-size: contain !important;
+        background-position: center !important;
+      }
+
+      @media (max-width: 820px) {
+        .wordmark {
+          width: 165px;
+          height: 50px;
+        }
+        .footer-mark {
+          width: min(310px, 88vw);
+          height: 207px;
+        }
+      }
+
+      @media (max-width: 470px) {
+        .wordmark {
+          width: 145px;
+          height: 46px;
+        }
+      }
+    </style>
+'''
+              html = html.replace("  </head>", style + "  </head>", 1)
+              index_path.write_text(html, encoding="utf-8")
+
+      - name: Commit logo change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets/morningstar-garden-logo.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m "Use garden artwork as Morningstar logo"
+            git push origin HEAD:agent/ten-day-morningstar-updates
+          fi
