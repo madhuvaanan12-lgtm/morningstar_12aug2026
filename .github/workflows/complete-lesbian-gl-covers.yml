@@ -1,0 +1,53 @@
+name: Complete Lesbian GL covers
+
+on:
+  push:
+    branches:
+      - agent/lesbian-gl-cover-completion
+    paths:
+      - .github/workflows/complete-lesbian-gl-covers.yml
+
+permissions:
+  contents: write
+
+jobs:
+  enrich-covers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out cover-completion branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/lesbian-gl-cover-completion
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Audit and complete Lesbian / GL covers
+        run: node research/fill-lesbian-gl-covers.js
+
+      - name: Verify no blank GL archive cover remains
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const audit = JSON.parse(fs.readFileSync('research/lesbian-gl-2026-08-18.json', 'utf8'));
+          const blanks = audit.archiveEntries.filter((x) => Object.prototype.hasOwnProperty.call(x, 'image') && !String(x.image || '').trim());
+          if (blanks.length) {
+            console.error(blanks.slice(0, 20).map((x) => x.title));
+            process.exit(1);
+          }
+          console.log(`Verified ${audit.archiveEntries.length} GL archive entries; 0 blank explicit image fields.`);
+          NODE
+
+      - name: Commit completed covers and rebuilt data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A research/lesbian-gl-2026-08-18.json research/lesbian-gl-cover-audit-2026-08-18.json assets/gl-covers data
+          if ! git diff --cached --quiet; then
+            git commit -m "Complete Lesbian GL cover artwork"
+            git push origin HEAD:agent/lesbian-gl-cover-completion
+          fi
