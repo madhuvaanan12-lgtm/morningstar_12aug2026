@@ -11,9 +11,9 @@ permissions:
   contents: write
 
 jobs:
-  enrich-covers:
+  improve-covers:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
       - name: Check out cover-completion branch
         uses: actions/checkout@v4
@@ -26,10 +26,10 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Audit and complete Lesbian / GL covers
-        run: node research/fill-lesbian-gl-covers.js
+      - name: Improve fallback posters with corrected title aliases
+        run: node research/improve-lesbian-gl-cover-aliases.js
 
-      - name: Verify no blank GL archive cover remains
+      - name: Verify zero blank GL archive covers
         run: |
           node - <<'NODE'
           const fs = require('fs');
@@ -42,12 +42,12 @@ jobs:
           console.log(`Verified ${audit.archiveEntries.length} GL archive entries; 0 blank explicit image fields.`);
           NODE
 
-      - name: Commit completed covers and rebuilt data
+      - name: Commit improved posters and rebuilt data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A research/lesbian-gl-2026-08-18.json research/lesbian-gl-cover-audit-2026-08-18.json assets/gl-covers data
           if ! git diff --cached --quiet; then
-            git commit -m "Complete Lesbian GL cover artwork"
+            git commit -m "Improve Lesbian GL poster matches"
             git push origin HEAD:agent/lesbian-gl-cover-completion
           fi
