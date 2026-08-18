@@ -6,6 +6,7 @@ Morningstar is a mobile-friendly, static television-series discovery app.
 - 179 watched titles preserved
 - 3,632 optional K-drama titles
 - 1,000 franchise-ranked finished anime under 60 hours (212 existing titles reused + 788 new cards)
+- 475 verified Lesbian / GL titles (199 existing records reused + 276 archive cards), including 67 Thai series
 - Curslick editorial collections (5: Run Hide Fight, Annabelle horror, Protector romance, Lesbian happy endings, Anime 1000)
 - Search, year/genre/country/format filters, Watchlist, Not Interested reasons/notes, watched controls, and JSON backup/restore
 - Sticky collapsible filters plus Grid, List, and Detailed-with-plot views
@@ -25,6 +26,10 @@ set is stored in `localStorage` under `morningstar-exclusions`.
 | K-dramas from 2015 | on | Korean series that premiered during 2015 stay out as a separate choice. |
 | Under 4 hours total | on | Drops titles whose estimated total runtime is below 4 hours. Titles with no runtime estimate are kept. |
 | Over 60 hours total | on | Drops titles whose estimated total runtime is above 60 hours. |
+
+Lesbian / GL Archive entries are exempt from the country and runtime exclusions so Thai, short-form and
+long-running representation remains reachable from its genre filter. The explicit K-drama exclusions
+still apply to Korean entries.
 
 "Back to defaults" restores the table above. Five exclusions are active by default. The dock header
 counts the active exclusions alongside the ordinary filters.
@@ -52,8 +57,8 @@ Drive” uses the system file picker. Legacy schema-version-1 backups containing
 
 ## One card per series
 
-The catalogue, the K-drama archive, the watched history and Curslick's editorial exclusives are
-merged into a single record per series before anything is rendered. Records are joined by id, by
+The catalogue, the K-drama archive, the Lesbian / GL Archive, the watched history and Curslick's
+editorial exclusives are merged into a single record per series before anything is rendered. Records are joined by id, by
 matching title/original-title plus year and origin, and — across the catalogue and the K-drama
 archive only — by a bigram/token similarity pass, MyDramaList's alternate-title URL, and a small
 verified alias map for titles whose English names are completely different. This catches pairs such
@@ -63,6 +68,25 @@ Watchlist, Not Interested and Curslick. The original-language title appears only
 "Original title" like IMDb. The merged record unions the genres and is watched if *any* source record
 was watched. Every id and alternate title that was folded in is kept as an alias, so old Watchlist,
 watched marks and searches continue to work.
+
+## Lesbian / GL genre
+
+The **Lesbian / GL** genre is an evidence-backed representation archive rather than an ending promise.
+It contains 475 unique series: 199 reuse an existing Morningstar record and 276 supply a new archive
+card. Sixty-seven entries are Thai, with the 2026 slate limited to titles released or airing by
+18 August 2026. The source union uses Aria's WLW television database, the international GL drama list,
+Thai GL Hub, LezWatch.TV's strongest public editorial signals, Autostraddle's queer sci-fi/fantasy
+ranking and the existing Curslick 04 audit.
+
+Minor/occasional-only appearances, reality and competition programmes, documentaries, unreleased Thai
+projects and duplicate seasons are excluded. The archive deliberately stops at 475 verified titles
+instead of padding to 1,000 with cameo-only or unreleased entries. Its complete methodology and
+title-by-title evidence live in `research/lesbian-gl-methodology.md` and
+`research/lesbian-gl-2026-08-18.json`.
+
+This genre is broader than Collection 04, *Lesbian happy endings*. A title can be in the genre even
+when it is ongoing, cancelled or has an unhappy ending; Collection 04 remains the strict ending-safe
+recommendation.
 
 ## Curslick collections
 
