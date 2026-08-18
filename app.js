@@ -11348,7 +11348,7 @@ var TOP_FIVE_COUNTRIES = ["United States", "United Kingdom", "South Korea", "Jap
   UNPLACED_COUNTRIES = ["", "International", "Unknown", "Various"],
   MIN_RUNTIME_HOURS = 4,
   MAX_RUNTIME_HOURS = 60,
-  KDRAMA_MIN_YEAR = 2010,
+  KDRAMA_CUTOFF_YEAR = 2015,
   TITLE_STOP_WORDS = [
     "of",
     "and",
@@ -11378,7 +11378,8 @@ var TOP_FIVE_COUNTRIES = ["United States", "United Kingdom", "South Korea", "Jap
   EXCLUSION_DEFAULTS = {
     outsideTopFive: !0,
     kdrama: !1,
-    kdramaBefore2010: !0,
+    kdramaBefore2015: !0,
+    kdrama2015: !0,
     underFourHours: !0,
     overSixtyHours: !0,
   },
@@ -11390,9 +11391,14 @@ var TOP_FIVE_COUNTRIES = ["United States", "United Kingdom", "South Korea", "Jap
     },
     { id: "kdrama", label: "K-dramas", note: "Hides every Korean series" },
     {
-      id: "kdramaBefore2010",
-      label: "K-dramas before 2010",
-      note: "Older Korean series stay out",
+      id: "kdramaBefore2015",
+      label: "K-dramas before 2015",
+      note: "Korean series released before 2015 stay out",
+    },
+    {
+      id: "kdrama2015",
+      label: "K-dramas from 2015",
+      note: "2015 Korean series are excluded separately",
     },
     {
       id: "underFourHours",
@@ -11403,6 +11409,15 @@ var TOP_FIVE_COUNTRIES = ["United States", "United Kingdom", "South Korea", "Jap
       id: "overSixtyHours",
       label: "Over 60 hours total",
       note: `Skips anything above ${MAX_RUNTIME_HOURS} viewing hours`,
+    },
+  ],
+  NOT_INTERESTED_STORAGE_KEY = "morningstar-not-interested",
+  NOT_INTERESTED_REASONS = [
+    { id: "incomplete-ending", label: "Incomplete ending" },
+    { id: "dislike-ending", label: "I don't like the ending" },
+    {
+      id: "not-lifetime-worthy",
+      label: "Not worthy for 1 in 1000 show I can watch in lifetime",
     },
   ],
   KDRAMA_EQUIVALENT_TITLE_GROUPS = [
@@ -11435,7 +11450,11 @@ function passesExclusions(e, t) {
   return !(
     (t.kdrama && x(e)) ||
     (t.outsideTopFive && !isTopFiveOrigin(e)) ||
-    (t.kdramaBefore2010 && x(e) && "number" == typeof e.year && e.year < KDRAMA_MIN_YEAR) ||
+    (t.kdramaBefore2015 &&
+      x(e) &&
+      "number" == typeof e.year &&
+      e.year < KDRAMA_CUTOFF_YEAR) ||
+    (t.kdrama2015 && x(e) && e.year === KDRAMA_CUTOFF_YEAR) ||
     (t.underFourHours && e.runtimeHours && e.runtimeHours < MIN_RUNTIME_HOURS) ||
     (t.overSixtyHours && e.runtimeHours && e.runtimeHours > MAX_RUNTIME_HOURS)
   );
@@ -11449,10 +11468,55 @@ function hasCustomExclusions(e) {
 function readStoredExclusions() {
   try {
     let e = JSON.parse(localStorage.getItem(EXCLUSIONS_STORAGE_KEY) || "null");
-    return e && "object" == typeof e ? { ...EXCLUSION_DEFAULTS, ...e } : { ...EXCLUSION_DEFAULTS };
+    if (!e || "object" != typeof e) return { ...EXCLUSION_DEFAULTS };
+    let { kdramaBefore2010: t, ...n } = e;
+    return { ...EXCLUSION_DEFAULTS, ...n };
   } catch {
     return { ...EXCLUSION_DEFAULTS };
   }
+}
+function sanitiseNotInterestedEntries(e) {
+  let t = {},
+    n = new Set(NOT_INTERESTED_REASONS.map((e) => e.id)),
+    entries = Array.isArray(e)
+      ? e.map((e) => [e?.showId || e?.id, e])
+      : e && "object" == typeof e
+        ? Object.entries(e)
+        : [];
+  for (let [id, entry] of entries) {
+    if (
+      "string" != typeof id ||
+      !id ||
+      !entry ||
+      "object" != typeof entry ||
+      !n.has(entry.reason)
+    )
+      continue;
+    t[id] = {
+      reason: entry.reason,
+      note: "string" == typeof entry.note ? entry.note.trim().slice(0, 600) : "",
+      updatedAt: "string" == typeof entry.updatedAt ? entry.updatedAt : "",
+    };
+  }
+  return t;
+}
+function readStoredNotInterested() {
+  try {
+    return sanitiseNotInterestedEntries(
+      JSON.parse(localStorage.getItem(NOT_INTERESTED_STORAGE_KEY) || "{}"),
+    );
+  } catch {
+    return {};
+  }
+}
+function getNotInterestedEntry(e, t) {
+  if (!e || !t) return null;
+  if (e[t.id]) return e[t.id];
+  for (let n of t.aliasIds || []) if (e[n]) return e[n];
+  return null;
+}
+function notInterestedReasonLabel(e) {
+  return NOT_INTERESTED_REASONS.find((t) => t.id === e)?.label || "Not interested";
 }
 function normaliseTitleKey(e) {
   return (e || "")
@@ -11711,7 +11775,219 @@ function te(e) {
   let t = `${e.title} (${e.year ?? "year unknown"}, ${e.country})`;
   return `https://chatgpt.com/?q=${encodeURIComponent(t)}`;
 }
-function ne({ show: e, entry: t, onOpen: n, inList: r, isWatched: l, onToggleList: a }) {
+function createPersonalBackupFile(e, t, n) {
+  let r = JSON.stringify(
+      {
+        app: "Morningstar",
+        schemaVersion: 2,
+        exportedAt: new Date().toISOString(),
+        watchlist: [...e],
+        myList: [...e],
+        extraWatched: [...t],
+        notInterested: Object.entries(n).map(([e, t]) => ({ showId: e, ...t })),
+      },
+      null,
+      2,
+    ),
+    l = `Morningstar-lists-${new Date().toISOString().slice(0, 10)}.json`;
+  return new File([r], l, { type: "application/json" });
+}
+function downloadPersonalBackup(e) {
+  let t = URL.createObjectURL(e),
+    n = document.createElement("a");
+  ((n.href = t),
+    (n.download = e.name),
+    document.body.appendChild(n),
+    n.click(),
+    n.remove(),
+    window.setTimeout(() => URL.revokeObjectURL(t), 0));
+}
+async function exportPersonalBackupToDrive(e) {
+  if (navigator.share && navigator.canShare?.({ files: [e] })) {
+    try {
+      return void (await navigator.share({
+        title: "Morningstar lists",
+        text: "Save this Morningstar list backup to Google Drive.",
+        files: [e],
+      }));
+    } catch (e) {
+      if ("AbortError" === e?.name) return;
+    }
+  }
+  (downloadPersonalBackup(e),
+    window.alert("The list backup was downloaded. Save or upload that JSON file to Google Drive."));
+}
+function NotInterestedDialog({ show: e, existing: t, onClose: n, onSave: r, onRemove: l }) {
+  let [a, i] = (0, f.useState)(t?.reason || ""),
+    [o, s] = (0, f.useState)(t?.note || "");
+  return (
+    (0, f.useEffect)(() => {
+      let e = (e) => {
+        if ("Escape" !== e.key) return;
+        (e.preventDefault(), e.stopImmediatePropagation(), n());
+      };
+      return (
+        document.body.classList.add("not-interested-open"),
+        window.addEventListener("keydown", e, !0),
+        () => {
+          (document.body.classList.remove("not-interested-open"),
+            window.removeEventListener("keydown", e, !0));
+        }
+      );
+    }, [n]),
+    (0, p.jsx)("div", {
+      className: "not-interested-backdrop",
+      onMouseDown: (e) => e.target === e.currentTarget && n(),
+      role: "presentation",
+      children: (0, p.jsxs)("section", {
+        className: "not-interested-dialog",
+        role: "dialog",
+        "aria-modal": "true",
+        "aria-label": `Not Interested reason for ${e.title}`,
+        children: [
+          (0, p.jsxs)("header", {
+            children: [
+              (0, p.jsxs)("div", {
+                children: [
+                  (0, p.jsx)("p", { children: "NOT INTERESTED" }),
+                  (0, p.jsx)("h2", { children: e.title }),
+                ],
+              }),
+              (0, p.jsx)("button", {
+                type: "button",
+                onClick: n,
+                "aria-label": "Close Not Interested choices",
+                children: (0, p.jsx)(_, { name: "close", size: 18 }),
+              }),
+            ],
+          }),
+          (0, p.jsx)("p", {
+            className: "not-interested-help",
+            children: "Choose the main reason. You can also add your own note.",
+          }),
+          (0, p.jsx)("div", {
+            className: "not-interested-reasons",
+            children: NOT_INTERESTED_REASONS.map((e, t) =>
+              (0, p.jsxs)(
+                "label",
+                {
+                  className: a === e.id ? "active" : "",
+                  children: [
+                    (0, p.jsx)("input", {
+                      type: "radio",
+                      name: "not-interested-reason",
+                      value: e.id,
+                      checked: a === e.id,
+                      onChange: () => i(e.id),
+                    }),
+                    (0, p.jsx)("span", { children: t + 1 }),
+                    (0, p.jsx)("b", { children: e.label }),
+                  ],
+                },
+                e.id,
+              ),
+            ),
+          }),
+          (0, p.jsxs)("label", {
+            className: "not-interested-note",
+            children: [
+              (0, p.jsx)("span", { children: "Note (optional)" }),
+              (0, p.jsx)("textarea", {
+                value: o,
+                maxLength: 600,
+                rows: 4,
+                onChange: (e) => s(e.target.value),
+                placeholder: "Write your own reason or reminder…",
+              }),
+              (0, p.jsxs)("small", { children: [o.length, "/600"] }),
+            ],
+          }),
+          (0, p.jsxs)("div", {
+            className: "not-interested-dialog-actions",
+            children: [
+              t
+                ? (0, p.jsx)("button", {
+                    type: "button",
+                    className: "remove-not-interested",
+                    onClick: l,
+                    children: "Remove from Not Interested",
+                  })
+                : (0, p.jsx)("span", {}),
+              (0, p.jsxs)("div", {
+                children: [
+                  (0, p.jsx)("button", { type: "button", onClick: n, children: "Cancel" }),
+                  (0, p.jsx)("button", {
+                    type: "button",
+                    className: "save-not-interested",
+                    disabled: !a,
+                    onClick: () => r(a, o),
+                    children: t ? "Save changes" : "Add to Not Interested",
+                  }),
+                ],
+              }),
+            ],
+          }),
+        ],
+      }),
+    })
+  );
+}
+function PersonalListTransfer({
+  watchlistCount: e,
+  notInterestedCount: t,
+  onDownload: n,
+  onExportToDrive: r,
+  onImport: l,
+}) {
+  return (0, p.jsxs)("section", {
+    className: "list-transfer",
+    children: [
+      (0, p.jsxs)("div", {
+        children: [
+          (0, p.jsx)("b", { children: "Move your lists with Google Drive" }),
+          (0, p.jsxs)("small", {
+            children: [e, " Watchlist · ", t, " Not Interested"],
+          }),
+        ],
+      }),
+      (0, p.jsxs)("div", {
+        children: [
+          (0, p.jsx)("button", { type: "button", onClick: n, children: "Download backup" }),
+          (0, p.jsx)("button", {
+            type: "button",
+            className: "drive-action",
+            onClick: r,
+            children: "Export to Drive",
+          }),
+          (0, p.jsxs)("label", {
+            className: "drive-action",
+            children: [
+              "Import from Drive",
+              (0, p.jsx)("input", {
+                type: "file",
+                accept: "application/json,.json",
+                onChange: (e) => {
+                  let t = e.target.files?.[0];
+                  ((e.target.value = ""), t && l(t));
+                },
+              }),
+            ],
+          }),
+        ],
+      }),
+    ],
+  });
+}
+function ne({
+  show: e,
+  entry: t,
+  onOpen: n,
+  inList: r,
+  isWatched: l,
+  onToggleList: a,
+  notInterestedEntry: i,
+  onEditNotInterested: o,
+}) {
   return (0, p.jsxs)("article", {
     className: "show-card",
     onClick: n,
@@ -11769,8 +12045,19 @@ function ne({ show: e, entry: t, onOpen: n, inList: r, isWatched: l, onToggleLis
             onClick: (e) => {
               (e.stopPropagation(), a());
             },
-            "aria-label": r ? `Remove ${e.title} from My List` : `Add ${e.title} to My List`,
+            "aria-label": r ? `Remove ${e.title} from Watchlist` : `Add ${e.title} to Watchlist`,
             children: (0, p.jsx)(_, { name: r ? "check" : "plus", size: 18 }),
+          }),
+          (0, p.jsx)("button", {
+            className: "not-interested-button " + (i ? "active" : ""),
+            onClick: (e) => {
+              (e.stopPropagation(), o());
+            },
+            "aria-label": i
+              ? `Edit why ${e.title} is Not Interested`
+              : `Add ${e.title} to Not Interested`,
+            title: "Not Interested",
+            children: (0, p.jsx)(_, { name: "close", size: 17 }),
           }),
           (0, p.jsxs)("div", {
             className: "card-reveal",
@@ -11815,6 +12102,15 @@ function ne({ show: e, entry: t, onOpen: n, inList: r, isWatched: l, onToggleLis
             className: "card-meta",
             children: [e.year, " · ", b(e), " · ", e.format],
           }),
+          i
+            ? (0, p.jsxs)("p", {
+                className: "not-interested-context",
+                children: [
+                  (0, p.jsx)("b", { children: notInterestedReasonLabel(i.reason) }),
+                  i.note ? (0, p.jsx)("span", { children: i.note }) : null,
+                ],
+              })
+            : null,
           (0, p.jsx)("p", {
             className: "card-plot",
             children: e.shortPlot || "Plot summary unavailable.",
@@ -11850,7 +12146,16 @@ function ne({ show: e, entry: t, onOpen: n, inList: r, isWatched: l, onToggleLis
     ],
   });
 }
-function re({ show: e, entry: t, onOpen: n, inList: r, isWatched: l, onToggleList: a }) {
+function re({
+  show: e,
+  entry: t,
+  onOpen: n,
+  inList: r,
+  isWatched: l,
+  onToggleList: a,
+  notInterestedEntry: i,
+  onEditNotInterested: o,
+}) {
   return (0, p.jsxs)("article", {
     className: "curslick-story-card",
     children: [
@@ -11921,6 +12226,15 @@ function re({ show: e, entry: t, onOpen: n, inList: r, isWatched: l, onToggleLis
                   : "",
             ],
           }),
+          i
+            ? (0, p.jsxs)("p", {
+                className: "not-interested-context curslick-not-interested-context",
+                children: [
+                  (0, p.jsx)("b", { children: notInterestedReasonLabel(i.reason) }),
+                  i.note ? (0, p.jsx)("span", { children: i.note }) : null,
+                ],
+              })
+            : null,
           (0, p.jsx)("p", {
             className: "curslick-plot",
             children: e.shortPlot || "Plot summary unavailable.",
@@ -11965,10 +12279,21 @@ function re({ show: e, entry: t, onOpen: n, inList: r, isWatched: l, onToggleLis
               (0, p.jsxs)("button", {
                 className: "curslick-list-button " + (r ? "active" : ""),
                 onClick: a,
-                "aria-label": r ? `Remove ${e.title} from My List` : `Add ${e.title} to My List`,
+                "aria-label": r ? `Remove ${e.title} from Watchlist` : `Add ${e.title} to Watchlist`,
                 children: [
                   (0, p.jsx)(_, { name: r ? "check" : "plus", size: 16 }),
-                  r ? "In My List" : "My List",
+                  r ? "In Watchlist" : "Watchlist",
+                ],
+              }),
+              (0, p.jsxs)("button", {
+                className: "curslick-not-interested-button " + (i ? "active" : ""),
+                onClick: o,
+                "aria-label": i
+                  ? `Edit Not Interested reason for ${e.title}`
+                  : `Add ${e.title} to Not Interested`,
+                children: [
+                  (0, p.jsx)(_, { name: "close", size: 16 }),
+                  i ? "Not Interested" : "Not Interested",
                 ],
               }),
             ],
@@ -11978,7 +12303,17 @@ function re({ show: e, entry: t, onOpen: n, inList: r, isWatched: l, onToggleLis
     ],
   });
 }
-function w({ title: e, eyebrow: t, shows: n, list: r, watched: l, onOpen: a, onToggleList: i }) {
+function w({
+  title: e,
+  eyebrow: t,
+  shows: n,
+  list: r,
+  watched: l,
+  notInterested: u,
+  onOpen: a,
+  onToggleList: i,
+  onEditNotInterested: c,
+}) {
   let o = `rail-${e.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
     s = (e) =>
       document
@@ -12020,7 +12355,9 @@ function w({ title: e, eyebrow: t, shows: n, list: r, watched: l, onOpen: a, onT
                       onOpen: () => a(e),
                       inList: hasShowId(r, e),
                       isWatched: !!e.watched || hasShowId(l, e),
-                      onToggleList: () => i(e.id),
+                      onToggleList: () => i(e),
+                      notInterestedEntry: getNotInterestedEntry(u, e),
+                      onEditNotInterested: () => c(e),
                     },
                     e.id,
                   ),
@@ -12046,6 +12383,8 @@ function ie({
   onToggleList: l,
   onToggleWatched: a,
   curslickEntry: i,
+  notInterestedEntry: c,
+  onEditNotInterested: d,
 }) {
   let [o, s] = (0, f.useState)(!1);
   return (
@@ -12154,8 +12493,19 @@ function ie({
                       (0, p.jsx)("button", {
                         onClick: l,
                         className: "round-action",
-                        "aria-label": t ? "Remove from My List" : "Add to My List",
+                        "aria-label": t ? "Remove from Watchlist" : "Add to Watchlist",
                         children: (0, p.jsx)(_, { name: t ? "check" : "plus" }),
+                      }),
+                      (0, p.jsx)("button", {
+                        onClick: d,
+                        className:
+                          "round-action not-interested-action " +
+                          (c ? "not-interested-selected" : ""),
+                        "aria-label": c
+                          ? "Edit Not Interested reason"
+                          : "Add to Not Interested",
+                        title: "Not Interested",
+                        children: (0, p.jsx)(_, { name: "close" }),
                       }),
                       (0, p.jsx)("button", {
                         onClick: e.watched ? void 0 : a,
@@ -12210,6 +12560,20 @@ function ie({
                       e.status ? (0, p.jsx)("span", { children: e.status }) : null,
                     ],
                   }),
+                  c
+                    ? (0, p.jsxs)("section", {
+                        className: "modal-not-interested-context",
+                        children: [
+                          (0, p.jsx)(_, { name: "close", size: 15 }),
+                          (0, p.jsxs)("div", {
+                            children: [
+                              (0, p.jsx)("b", { children: notInterestedReasonLabel(c.reason) }),
+                              c.note ? (0, p.jsx)("p", { children: c.note }) : null,
+                            ],
+                          }),
+                        ],
+                      })
+                    : null,
                   (0, p.jsxs)("button", {
                     className: "plot-expander " + (o ? "expanded" : ""),
                     onClick: () => s((e) => !e),
@@ -12668,6 +13032,12 @@ function se({
   includeWatched: k,
   onIncludeWatched: w,
   watchedCount: x,
+  includeWatchlist,
+  onIncludeWatchlist,
+  watchlistCount,
+  includeNotInterested,
+  onIncludeNotInterested,
+  notInterestedCount,
   kDramaCount: C,
   onSpin: E,
   curslick: N,
@@ -12688,6 +13058,8 @@ function se({
       ("All formats" !== g ? 1 : 0) +
       ("rank" !== v ? 1 : 0) +
       (k ? 1 : 0) +
+      (includeWatchlist ? 1 : 0) +
+      (includeNotInterested ? 1 : 0) +
       countActiveExclusions(S);
   return (0, p.jsxs)("div", {
     className: `filter-dock ${O ? "collapsed" : ""} ${N ? "curslick-filter-dock" : ""}`,
@@ -12815,6 +13187,57 @@ function se({
                   }),
                 ],
               }),
+              (0, p.jsxs)("label", {
+                className: "watched-control personal-list-control " +
+                  (includeWatchlist ? "active" : ""),
+                children: [
+                  (0, p.jsx)("input", {
+                    type: "checkbox",
+                    checked: includeWatchlist,
+                    onChange: (e) => onIncludeWatchlist(e.target.checked),
+                  }),
+                  (0, p.jsx)("span", {
+                    className: "watched-box",
+                    children: (0, p.jsx)(_, { name: "check", size: 14 }),
+                  }),
+                  (0, p.jsxs)("span", {
+                    children: [
+                      (0, p.jsx)("b", { children: "Include Watchlist" }),
+                      (0, p.jsx)("small", {
+                        children: includeWatchlist
+                          ? `${watchlistCount} saved titles visible`
+                          : "Hidden by default",
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+              (0, p.jsxs)("label", {
+                className:
+                  "watched-control personal-list-control not-interested-control " +
+                  (includeNotInterested ? "active" : ""),
+                children: [
+                  (0, p.jsx)("input", {
+                    type: "checkbox",
+                    checked: includeNotInterested,
+                    onChange: (e) => onIncludeNotInterested(e.target.checked),
+                  }),
+                  (0, p.jsx)("span", {
+                    className: "watched-box",
+                    children: (0, p.jsx)(_, { name: "close", size: 14 }),
+                  }),
+                  (0, p.jsxs)("span", {
+                    children: [
+                      (0, p.jsx)("b", { children: "Include Not Interested" }),
+                      (0, p.jsx)("small", {
+                        children: includeNotInterested
+                          ? `${notInterestedCount} titles visible`
+                          : "Hidden by default",
+                      }),
+                    ],
+                  }),
+                ],
+              }),
             ],
           }),
         ],
@@ -12822,7 +13245,7 @@ function se({
     ],
   });
 }
-function ce({ collections: e, knownShows: t, onOpenCollection: n }) {
+function ce({ collections: e, knownShows: t, onOpenCollection: n, isShowVisible: a }) {
   let r = (e) => e.show || t.get(e.showId || "");
   return (0, p.jsxs)("main", {
     className: "clk-hub page-shell",
@@ -12839,7 +13262,7 @@ function ce({ collections: e, knownShows: t, onOpenCollection: n }) {
               (0, p.jsx)("h1", { children: "Choosing what to watch should feel better." }),
               (0, p.jsx)("p", {
                 children:
-                  "Curslick is bigger than any one list. It is Morningstar's growing home for researched “what should I watch next?” paths, spoiler-safe reasoning, mood-led discovery and practical viewing guides. Every collection opens as its own article and still keeps the catalogue's search, filters, My List, watched marks and complete series pages.",
+                  "Curslick is bigger than any one list. It is Morningstar's growing home for researched “what should I watch next?” paths, spoiler-safe reasoning, mood-led discovery and practical viewing guides. Every collection opens as its own article and still keeps the catalogue's search, filters, Watchlist, Not Interested reasons, watched marks and complete series pages.",
               }),
             ],
           }),
@@ -12908,9 +13331,9 @@ function ce({ collections: e, knownShows: t, onOpenCollection: n }) {
         className: "clk-collection-grid",
         children: e.map((e) => {
           let t = e.entries
-            .slice(0, 3)
             .map(r)
-            .filter((e) => !!e);
+            .filter((e) => !!e && a(e))
+            .slice(0, 3);
           return (0, p.jsxs)(
             "article",
             {
@@ -12977,8 +13400,10 @@ function le({
   entries: a,
   list: i,
   watched: o,
+  notInterestedEntries,
   onOpen: s,
   onToggleList: u,
+  onEditNotInterested,
   years: c,
   selectedYears: d,
   onToggleYear: f,
@@ -13000,6 +13425,12 @@ function le({
   includeWatched: z,
   onIncludeWatched: L,
   watchedCount: P,
+  includeWatchlist,
+  onIncludeWatchlist,
+  watchlistCount,
+  includeNotInterested,
+  onIncludeNotInterested,
+  notInterestedCount,
   onSpin: A,
   onReset: M,
   viewMode: O,
@@ -13146,9 +13577,10 @@ function le({
                 ],
               }),
               (0, p.jsx)("p", {
-                children: z
-                  ? "Your watched titles are shown and clearly marked."
-                  : "Watched titles stay out of the way until you choose to include them.",
+                children:
+                  z || includeWatchlist || includeNotInterested
+                    ? "Any personal categories you included are shown and clearly marked."
+                    : "Watched, Watchlist and Not Interested titles stay hidden by default.",
               }),
             ],
           }),
@@ -13174,6 +13606,12 @@ function le({
             includeWatched: z,
             onIncludeWatched: L,
             watchedCount: P,
+            includeWatchlist: includeWatchlist,
+            onIncludeWatchlist: onIncludeWatchlist,
+            watchlistCount: watchlistCount,
+            includeNotInterested: includeNotInterested,
+            onIncludeNotInterested: onIncludeNotInterested,
+            notInterestedCount: notInterestedCount,
             onSpin: A,
             curslick: !0,
             viewMode: O,
@@ -13201,7 +13639,9 @@ function le({
                             onOpen: () => s(e),
                             inList: hasShowId(i, e),
                             isWatched: !!e.watched || hasShowId(o, e),
-                            onToggleList: () => u(e.id),
+                            onToggleList: () => u(e),
+                            notInterestedEntry: getNotInterestedEntry(notInterestedEntries, e),
+                            onEditNotInterested: () => onEditNotInterested(e),
                           },
                           e.id,
                         )
@@ -13222,7 +13662,9 @@ function le({
                             onOpen: () => s(e),
                             inList: hasShowId(i, e),
                             isWatched: !!e.watched || hasShowId(o, e),
-                            onToggleList: () => u(e.id),
+                            onToggleList: () => u(e),
+                            notInterestedEntry: getNotInterestedEntry(notInterestedEntries, e),
+                            onEditNotInterested: () => onEditNotInterested(e),
                           },
                           e.id,
                         )
@@ -13366,7 +13808,7 @@ function ue({ catalogue: e, kDramaArchive: t }) {
             children: [
               "The ",
               t.total.toLocaleString(),
-              "-title K-Drama Archive is available through one catalogue switch rather than a separate menu tab. It uses MyDramaList's completed South Korean drama index, removes one-off specials and runs above 60 episodes to keep out soap-style daily serials, and excludes reality, talk, documentary and film formats at source. Korean titles are now part of Browse by default; the Exclusions panel keeps everything before 2010 out and can hide the whole shelf again in one tap. Where a Korean title also exists in the ranked catalogue the two records are merged into one card, so a title never appears twice under its English and original names.",
+              "-title K-Drama Archive is available through the catalogue rather than a separate menu tab. It uses MyDramaList's completed South Korean drama index, removes one-off specials and runs above 60 episodes to keep out soap-style daily serials, and excludes reality, talk, documentary and film formats at source. Korean titles from 2016 onward are included by default; the Exclusions panel keeps pre-2015 titles and 2015 titles out as two separate choices, and can hide the whole shelf again in one tap. Where a Korean title also exists in the ranked catalogue the two records are merged into one card, so a title never appears twice under its English and original names.",
             ],
           }),
         ],
@@ -13479,7 +13921,11 @@ function T() {
       }
     }),
     [he, me] = (0, f.useState)(() => localStorage.getItem("morningstar-grid-columns") || "auto"),
-    [exclusions, setExclusions] = (0, f.useState)(readStoredExclusions);
+    [exclusions, setExclusions] = (0, f.useState)(readStoredExclusions),
+    [notInterestedEntries, setNotInterestedEntries] = (0, f.useState)(readStoredNotInterested),
+    [notInterestedTarget, setNotInterestedTarget] = (0, f.useState)(null),
+    [includeWatchlist, setIncludeWatchlist] = (0, f.useState)(!1),
+    [includeNotInterested, setIncludeNotInterested] = (0, f.useState)(!1);
   ((0, f.useEffect)(() => {
     let e = window.__MORNINGSTAR_DATA__;
     e
@@ -13534,7 +13980,10 @@ function T() {
     }, [fe, he]),
     (0, f.useEffect)(() => {
       localStorage.setItem(EXCLUSIONS_STORAGE_KEY, JSON.stringify(exclusions));
-    }, [exclusions]));
+    }, [exclusions]),
+    (0, f.useEffect)(() => {
+      localStorage.setItem(NOT_INTERESTED_STORAGE_KEY, JSON.stringify(notInterestedEntries));
+    }, [notInterestedEntries]));
   let toggleExclusion = (e) => setExclusions((t) => ({ ...t, [e]: !t[e] })),
     resetExclusions = () => setExclusions({ ...EXCLUSION_DEFAULTS });
   let ge = "curslick" === c ? "curslick" : "catalogue",
@@ -13560,6 +14009,18 @@ function T() {
       }),
     xe = (0, f.useCallback)((e) => !!e.watched || hasShowId(M, e), [M]),
     Xe = (0, f.useCallback)((e) => hasShowId(P, e), [P]),
+    notInterestedFor = (0, f.useCallback)(
+      (e) => getNotInterestedEntry(notInterestedEntries, e),
+      [notInterestedEntries],
+    ),
+    isNotInterested = (0, f.useCallback)((e) => !!notInterestedFor(e), [notInterestedFor]),
+    visibleForDiscovery = (0, f.useCallback)(
+      (e) =>
+        (R || !xe(e)) &&
+        (includeWatchlist || !Xe(e)) &&
+        (includeNotInterested || !isNotInterested(e)),
+      [R, xe, includeWatchlist, Xe, includeNotInterested, isNotInterested],
+    ),
     Se = (0, f.useMemo)(() => n.collections.find((e) => e.id === i), [n.collections, i]),
     je = (0, f.useMemo)(
       () =>
@@ -13586,6 +14047,46 @@ function T() {
       }
       return e;
     }, [Ce]),
+    removeNotInterested = (e, t = !0) => {
+      let n = "string" == typeof e ? Ee.get(e) : Ee.get(e.id) || e;
+      if (!n) return;
+      let r = [n.id, ...(n.aliasIds || [])];
+      (setNotInterestedEntries((e) => {
+        let t = { ...e };
+        for (let e of r) delete t[e];
+        return t;
+      }),
+        t && setNotInterestedTarget(null));
+    },
+    saveNotInterested = (e, t, n) => {
+      let r = Ee.get(e.id) || e,
+        l = [r.id, ...(r.aliasIds || [])];
+      (setNotInterestedEntries((e) => {
+        let a = { ...e };
+        for (let e of l) delete a[e];
+        return (
+          (a[r.id] = {
+            reason: t,
+            note: (n || "").trim().slice(0, 600),
+            updatedAt: new Date().toISOString(),
+          }),
+          a
+        );
+      }),
+        A((e) => {
+          let t = new Set(e);
+          for (let e of l) t.delete(e);
+          return (localStorage.setItem("morningstar-list", JSON.stringify([...t])), t);
+        }),
+        setNotInterestedTarget(null));
+    },
+    toggleWatchlist = (e) => {
+      let t = "string" == typeof e ? Ee.get(e) : Ee.get(e.id) || e;
+      if (!t) return;
+      let n = !hasShowId(P, t);
+      (n && getNotInterestedEntry(notInterestedEntries, t) && removeNotInterested(t, !1),
+        be("morningstar-list", A, P, t));
+    },
     Ne = (0, f.useMemo)(
       () =>
         (Se?.entries || [])
@@ -13603,7 +14104,12 @@ function T() {
     _e = (0, f.useMemo)(() => Ce.filter((e) => passesExclusions(e, exclusions)), [Ce, exclusions]),
     excludedCount = Ce.length - _e.length,
     ze = (0, f.useMemo)(() => Ce.filter(x).length, [Ce]),
-    Le = "curslick" === c ? Ne.map(({ show: e }) => e) : _e,
+    Le =
+      "curslick" === c
+        ? Ne.map(({ show: e }) => e)
+        : "my-list" === c || "not-interested" === c
+          ? Ce
+          : _e,
     Pe = (0, f.useMemo)(
       () =>
         [...new Set(Le.map((e) => e.year).filter((e) => "number" == typeof e))].sort(
@@ -13629,28 +14135,32 @@ function T() {
     Re = (0, f.useMemo)(() => {
       if ("curslick" === c) {
         let e = Ne.map(({ show: e }) => e).filter((e) => passesExclusions(e, exclusions));
-        return R ? e : e.filter((e) => !xe(e));
+        return e.filter(visibleForDiscovery);
       }
-      if ("my-list" === c) {
-        let e = Ce.filter(Xe);
-        return R ? e : e.filter((e) => !xe(e));
-      }
-      return R ? _e : _e.filter((e) => !xe(e));
-    }, [Ce, _e, Ne, R, xe, Xe, c, exclusions]),
+      if ("my-list" === c) return Ce.filter(Xe);
+      if ("not-interested" === c) return Ce.filter(isNotInterested);
+      return _e.filter(visibleForDiscovery);
+    }, [Ce, _e, Ne, Xe, isNotInterested, visibleForDiscovery, c, exclusions]),
     De = (0, f.useMemo)(() => {
       let e = y(j.trim()).split(/\s+/).filter(Boolean),
         t = e.includes("watched"),
         n = e.filter((e) => "watched" !== e),
         r = Re.filter((e) => {
-          if (("my-list" === c && !Xe(e)) || (t && !xe(e))) return !1;
+          if (
+            ("my-list" === c && !Xe(e)) ||
+            ("not-interested" === c && !isNotInterested(e)) ||
+            (t && !xe(e))
+          )
+            return !1;
           let r = xe(e) ? "watched already seen completed" : "unseen new not seen",
             l = Te.get(e.id),
             a =
               "curslick" === c
                 ? `${l?.label || ""} ${l?.matchTags.join(" ") || ""} ${l?.why || ""}`
                 : "",
+            o = notInterestedFor(e),
             i = y(
-              `${e.title} ${e.originalTitle || ""} ${(e.aliases || []).join(" ")} ${e.country} ${e.language} ${e.format} ${e.status || ""} ${e.genres.join(" ")} ${e.shortPlot || ""} ${e.longPlot || ""} ${r} ${a}`,
+              `${e.title} ${e.originalTitle || ""} ${(e.aliases || []).join(" ")} ${e.country} ${e.language} ${e.format} ${e.status || ""} ${e.genres.join(" ")} ${e.shortPlot || ""} ${e.longPlot || ""} ${r} ${a} ${o ? `${notInterestedReasonLabel(o.reason)} ${o.note || ""}` : ""}`,
             );
           if (
             (n.length && !n.every((e) => i.includes(e))) ||
@@ -13682,17 +14192,17 @@ function T() {
         )),
         r
       );
-    }, [Re, j, $, H, W, q, G, Y, J, c, Xe, xe, Te]);
+    }, [Re, j, $, H, W, q, G, Y, J, c, Xe, xe, isNotInterested, notInterestedFor, Te]);
   (0, f.useEffect)(() => {
     let e = requestAnimationFrame(() => de(72));
     return () => cancelAnimationFrame(e);
-  }, [j, $, H, W, q, G, Y, J, c, R, exclusions]);
+  }, [j, $, H, W, q, G, Y, J, c, R, exclusions, includeWatchlist, includeNotInterested]);
   let Ie = (0, f.useMemo)(
       () =>
         _e
-          .filter((e) => e.mainCatalogue && (R || !xe(e)))
+          .filter((e) => e.mainCatalogue && visibleForDiscovery(e))
           .sort((e, t) => (e.rank || 99999) - (t.rank || 99999)),
-      [_e, R, xe],
+      [_e, visibleForDiscovery],
     ),
     Fe = (0, f.useMemo)(() => (re ? S(Ie, re) : Ie), [Ie, re]),
     $e = re
@@ -13760,11 +14270,11 @@ function T() {
           n.push({
             title: "Your watched history",
             eyebrow: `${e.watchedCount} IMPORTED MEMORIES`,
-            shows: e.watchedArchive.slice(0, 18),
+            shows: e.watchedArchive.filter(visibleForDiscovery).slice(0, 18),
           }),
         n
       );
-    }, [Fe, R, e.watchedArchive, e.watchedCount]),
+    }, [Fe, R, e.watchedArchive, e.watchedCount, visibleForDiscovery]),
     He = (e) => {
       (X(e), "random" === e && Z(randomSeed()));
     },
@@ -13788,8 +14298,43 @@ function T() {
     qe = () => {
       (E(""), U(new Set()), V(new Set()), Q("All countries"), K("All formats"));
     },
-    Qe = "browse" === c || "my-list" === c,
-    Ge = _e.length,
+    notInterestedCount = Object.keys(notInterestedEntries).length,
+    makePersonalBackup = () => createPersonalBackupFile(P, M, notInterestedEntries),
+    downloadLists = () => downloadPersonalBackup(makePersonalBackup()),
+    exportListsToDrive = () => exportPersonalBackupToDrive(makePersonalBackup()),
+    importLists = async (e) => {
+      try {
+        let t = JSON.parse(await e.text()),
+          n = Array.isArray(t.watchlist) ? t.watchlist : t.myList;
+        if ("Morningstar" !== t.app || !Array.isArray(n) || !Array.isArray(t.extraWatched))
+          throw Error("Invalid backup");
+        if (
+          void 0 !== t.notInterested &&
+          !Array.isArray(t.notInterested) &&
+          (!t.notInterested || "object" != typeof t.notInterested)
+        )
+          throw Error("Invalid Not Interested backup");
+        let r = new Set(n.filter((e) => "string" == typeof e)),
+          l = new Set(t.extraWatched.filter((e) => "string" == typeof e)),
+          a =
+            void 0 === t.notInterested
+              ? notInterestedEntries
+              : sanitiseNotInterestedEntries(t.notInterested);
+        (A(r),
+          O(l),
+          setNotInterestedEntries(a),
+          localStorage.setItem("morningstar-list", JSON.stringify([...r])),
+          localStorage.setItem("morningstar-watched", JSON.stringify([...l])),
+          localStorage.setItem(NOT_INTERESTED_STORAGE_KEY, JSON.stringify(a)),
+          window.alert(
+            `Morningstar restored ${r.size} Watchlist titles, ${Object.keys(a).length} Not Interested titles and ${l.size} extra watched marks.`,
+          ));
+      } catch {
+        window.alert("That file is not a valid Morningstar personal-data backup.");
+      }
+    },
+    Qe = "browse" === c || "my-list" === c || "not-interested" === c,
+    Ge = _e.filter(visibleForDiscovery).length,
     Ke = e.generatedAt
       ? new Date(e.generatedAt).toLocaleDateString("en-GB", {
           day: "numeric",
@@ -13843,7 +14388,15 @@ function T() {
               (0, p.jsx)("button", {
                 className: "my-list" === c ? "active" : "",
                 onClick: () => Be("my-list"),
-                children: "My List",
+                children: "Watchlist",
+              }),
+              (0, p.jsxs)("button", {
+                className: "not-interested" === c ? "active" : "",
+                onClick: () => Be("not-interested"),
+                children: [
+                  "Not Interested ",
+                  (0, p.jsx)("span", { children: notInterestedCount }),
+                ],
               }),
               (0, p.jsx)("button", {
                 className: "method" === c ? "active" : "",
@@ -13912,8 +14465,10 @@ function T() {
                   entries: Te,
                   list: P,
                   watched: M,
+                  notInterestedEntries: notInterestedEntries,
                   onOpen: k,
-                  onToggleList: (e) => be("morningstar-list", A, P, e),
+                  onToggleList: toggleWatchlist,
+                  onEditNotInterested: setNotInterestedTarget,
                   years: Pe,
                   selectedYears: $,
                   onToggleYear: ke,
@@ -13935,6 +14490,12 @@ function T() {
                   includeWatched: R,
                   onIncludeWatched: D,
                   watchedCount: e.watchedCount,
+                  includeWatchlist: includeWatchlist,
+                  onIncludeWatchlist: setIncludeWatchlist,
+                  watchlistCount: P.size,
+                  includeNotInterested: includeNotInterested,
+                  onIncludeNotInterested: setIncludeNotInterested,
+                  notInterestedCount: notInterestedCount,
                   onSpin: Ve,
                   onReset: qe,
                   exclusions: exclusions,
@@ -13950,6 +14511,8 @@ function T() {
               : (0, p.jsx)(ce, {
                   collections: n.collections,
                   knownShows: Ee,
+                  isShowVisible: (e) =>
+                    passesExclusions(e, exclusions) && visibleForDiscovery(e),
                   onOpenCollection: (e) => {
                     (o(e), window.scrollTo({ top: 0, behavior: "smooth" }));
                   },
@@ -14104,7 +14667,7 @@ function T() {
                               (0, p.jsxs)("span", {
                                 children: [
                                   (0, p.jsx)(_, { name: "check", size: 15 }),
-                                  " Watched hidden by default",
+                                  " Watched, Watchlist & Not Interested hidden by default",
                                 ],
                               }),
                               (0, p.jsxs)("span", {
@@ -14137,8 +14700,10 @@ function T() {
                                 ...e,
                                 list: P,
                                 watched: M,
+                                notInterested: notInterestedEntries,
                                 onOpen: k,
-                                onToggleList: (e) => be("morningstar-list", A, P, e),
+                                onToggleList: toggleWatchlist,
+                                onEditNotInterested: setNotInterestedTarget,
                               },
                               e.title,
                             ),
@@ -14193,10 +14758,17 @@ function T() {
                                     children:
                                       "my-list" === c
                                         ? "SAVED FOR LATER"
+                                        : "not-interested" === c
+                                          ? "YOUR PERSONAL DO-NOT-SHOW LIST"
                                         : `${Ge.toLocaleString()} SEARCHABLE SERIES · RANKED CATALOGUE + ARCHIVES + CURSLICK`,
                                   }),
                                   (0, p.jsx)("h1", {
-                                    children: "my-list" === c ? "My List" : "Browse everything",
+                                    children:
+                                      "my-list" === c
+                                        ? "Watchlist"
+                                        : "not-interested" === c
+                                          ? "Not Interested"
+                                          : "Browse everything",
                                   }),
                                 ],
                               }),
@@ -14205,11 +14777,22 @@ function T() {
                                   De.length.toLocaleString(),
                                   " result",
                                   1 === De.length ? "" : "s",
-                                  R ? " · watched included" : " · watched hidden",
+                                  "browse" === c
+                                    ? ` · watched ${R ? "included" : "hidden"} · Watchlist ${includeWatchlist ? "included" : "hidden"} · Not Interested ${includeNotInterested ? "included" : "hidden"}`
+                                    : "",
                                 ],
                               }),
                             ],
                           }),
+                          "my-list" === c || "not-interested" === c
+                            ? (0, p.jsx)(PersonalListTransfer, {
+                                watchlistCount: P.size,
+                                notInterestedCount: notInterestedCount,
+                                onDownload: downloadLists,
+                                onExportToDrive: exportListsToDrive,
+                                onImport: importLists,
+                              })
+                            : null,
                           (0, p.jsx)(se, {
                             years: Pe,
                             selectedYears: $,
@@ -14232,6 +14815,12 @@ function T() {
                             includeWatched: R,
                             onIncludeWatched: D,
                             watchedCount: e.watchedCount,
+                            includeWatchlist: includeWatchlist,
+                            onIncludeWatchlist: setIncludeWatchlist,
+                            watchlistCount: P.size,
+                            includeNotInterested: includeNotInterested,
+                            onIncludeNotInterested: setIncludeNotInterested,
+                            notInterestedCount: notInterestedCount,
                             kDramaCount: ze,
                             exclusions: exclusions,
                             onToggleExclusion: toggleExclusion,
@@ -14257,7 +14846,9 @@ function T() {
                                           onOpen: () => k(e),
                                           inList: Xe(e),
                                           isWatched: xe(e),
-                                          onToggleList: () => be("morningstar-list", A, P, e.id),
+                                          onToggleList: () => toggleWatchlist(e),
+                                          notInterestedEntry: notInterestedFor(e),
+                                          onEditNotInterested: () => setNotInterestedTarget(e),
                                         },
                                         e.id,
                                       ),
@@ -14322,61 +14913,24 @@ function T() {
               (0, p.jsx)("button", { onClick: () => Be("curslick"), children: "Curslick" }),
               (0, p.jsx)("button", { onClick: () => Be("browse"), children: "Browse" }),
               (0, p.jsx)("button", {
-                onClick: () => {
-                  let e = JSON.stringify(
-                      {
-                        app: "Morningstar",
-                        schemaVersion: 1,
-                        exportedAt: new Date().toISOString(),
-                        myList: [...P],
-                        extraWatched: [...M],
-                      },
-                      null,
-                      2,
-                    ),
-                    t = URL.createObjectURL(new Blob([e], { type: "application/json" })),
-                    n = document.createElement("a");
-                  ((n.href = t),
-                    (n.download = `Morningstar-personal-data-${new Date().toISOString().slice(0, 10)}.json`),
-                    document.body.appendChild(n),
-                    n.click(),
-                    n.remove(),
-                    window.setTimeout(() => URL.revokeObjectURL(t), 0));
-                },
-                children: "Back up My List",
+                onClick: downloadLists,
+                children: "Download lists",
+              }),
+              (0, p.jsx)("button", {
+                className: "footer-drive-action",
+                onClick: exportListsToDrive,
+                children: "Export to Drive",
               }),
               (0, p.jsxs)("label", {
-                className: "footer-import",
+                className: "footer-import footer-drive-action",
                 children: [
-                  "Restore backup",
+                  "Import from Drive",
                   (0, p.jsx)("input", {
                     type: "file",
                     accept: "application/json,.json",
-                    onChange: async (e) => {
+                    onChange: (e) => {
                       let t = e.target.files?.[0];
-                      if (((e.target.value = ""), t))
-                        try {
-                          let e = JSON.parse(await t.text());
-                          if (
-                            "Morningstar" !== e.app ||
-                            !Array.isArray(e.myList) ||
-                            !Array.isArray(e.extraWatched)
-                          )
-                            throw Error("Invalid backup");
-                          let n = new Set(e.myList.filter((e) => "string" == typeof e)),
-                            r = new Set(e.extraWatched.filter((e) => "string" == typeof e));
-                          (A(n),
-                            O(r),
-                            localStorage.setItem("morningstar-list", JSON.stringify([...n])),
-                            localStorage.setItem("morningstar-watched", JSON.stringify([...r])),
-                            window.alert(
-                              `Morningstar restored ${n.size} My List titles and ${r.size} extra watched marks.`,
-                            ));
-                        } catch {
-                          window.alert(
-                            "That file is not a valid Morningstar personal-data backup.",
-                          );
-                        }
+                      ((e.target.value = ""), t && importLists(t));
                     },
                   }),
                 ],
@@ -14394,11 +14948,26 @@ function T() {
               inList: Xe(v),
               isWatched: xe(v),
               onClose: () => k(null),
-              onToggleList: () => be("morningstar-list", A, P, v.id),
+              onToggleList: () => toggleWatchlist(v),
               onToggleWatched: () => be("morningstar-watched", O, M, v.id),
               curslickEntry: "curslick" === c ? Te.get(v.id) : void 0,
+              notInterestedEntry: notInterestedFor(v),
+              onEditNotInterested: () => setNotInterestedTarget(v),
             },
             v.id,
+          )
+        : null,
+      notInterestedTarget
+        ? (0, p.jsx)(
+            NotInterestedDialog,
+            {
+              show: notInterestedTarget,
+              existing: notInterestedFor(notInterestedTarget),
+              onClose: () => setNotInterestedTarget(null),
+              onSave: (e, t) => saveNotInterested(notInterestedTarget, e, t),
+              onRemove: () => removeNotInterested(notInterestedTarget),
+            },
+            notInterestedTarget.id,
           )
         : null,
     ],

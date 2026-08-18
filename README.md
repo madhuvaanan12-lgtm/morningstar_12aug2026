@@ -7,26 +7,48 @@ Morningstar is a mobile-friendly, static television-series discovery app.
 - 3,632 optional K-drama titles
 - 1,000 franchise-ranked finished anime under 60 hours (212 existing titles reused + 788 new cards)
 - Curslick editorial collections (5: Run Hide Fight, Annabelle horror, Protector romance, Lesbian happy endings, Anime 1000)
-- Search, year/genre/country/format filters, My List, watched controls, and JSON backup/restore
+- Search, year/genre/country/format filters, Watchlist, Not Interested reasons/notes, watched controls, and JSON backup/restore
 - Sticky collapsible filters plus Grid, List, and Detailed-with-plot views
 - Adjustable cards-per-row control in Grid view
 
 ## Exclusions
 
 The filter dock opens with an **Exclusions** block that decides which titles are eligible before any
-other filter runs. It applies to Browse, My List's source pool, the home rails and every Curslick
-collection, and the chosen set is stored in `localStorage` under `morningstar-exclusions`.
+other filter runs. It applies to Browse, the home rails and every Curslick collection, and the chosen
+set is stored in `localStorage` under `morningstar-exclusions`.
 
 | Exclusion | Default | Rule |
 | --- | --- | --- |
 | Outside the top 5 countries | on | Keeps United States, United Kingdom, South Korea, Japan and China. Titles filed as `International`/`Unknown` fall back to their language, so an English, Korean, Japanese or Chinese production still qualifies. |
-| K-dramas | off | Korean series are part of Browse by default now; switch this on to hide the whole shelf. |
-| K-dramas before 2010 | on | Korean series with a premiere year under 2010 stay out. |
+| K-dramas | off | Korean series from 2016 onward are part of Browse by default; switch this on to hide the whole shelf. |
+| K-dramas before 2015 | on | Korean series with a premiere year before 2015 stay out. |
+| K-dramas from 2015 | on | Korean series that premiered during 2015 stay out as a separate choice. |
 | Under 4 hours total | on | Drops titles whose estimated total runtime is below 4 hours. Titles with no runtime estimate are kept. |
 | Over 60 hours total | on | Drops titles whose estimated total runtime is above 60 hours. |
 
-"Back to defaults" restores the table above. The dock header counts the active exclusions alongside
-the ordinary filters.
+"Back to defaults" restores the table above. Five exclusions are active by default. The dock header
+counts the active exclusions alongside the ordinary filters.
+
+## Watchlist and Not Interested
+
+Watchlist replaces the older “My List” label without changing its `morningstar-list` storage key, so
+existing saved titles remain intact. Not Interested is a separate list stored under
+`morningstar-not-interested`. Every Not Interested entry records one of these reasons plus an optional
+600-character note:
+
+1. Incomplete ending
+2. I don't like the ending
+3. Not worthy for 1 in 1000 show I can watch in lifetime
+
+Watchlist and Not Interested are mutually exclusive: moving a title into either one removes it from
+the other. Watched, Watchlist and Not Interested titles are hidden from Home, Browse and Curslick by
+default. The filter dock can include each category independently, while the dedicated Watchlist and
+Not Interested pages always expose their own saved titles.
+
+List backups use schema version 2 and include Watchlist, Not Interested reasons/notes and extra
+watched marks. “Export to Drive” opens the device share sheet with the JSON backup, while “Import from
+Drive” uses the system file picker. Legacy schema-version-1 backups containing `myList` and
+`extraWatched` remain importable.
 
 ## One card per series
 
@@ -37,9 +59,9 @@ archive only — by a bigram/token similarity pass, MyDramaList's alternate-titl
 verified alias map for titles whose English names are completely different. This catches pairs such
 as "Strong Woman Do Bong Soon" / "Strong Girl Bong Soon" and "Just Between Lovers" / "Rain or
 Shine". Korean shows use the MyDramaList English display title everywhere in Browse, Home, search,
-My List and Curslick. The original-language title appears only after the series is opened, labelled
+Watchlist, Not Interested and Curslick. The original-language title appears only after the series is opened, labelled
 "Original title" like IMDb. The merged record unions the genres and is watched if *any* source record
-was watched. Every id and alternate title that was folded in is kept as an alias, so old My List,
+was watched. Every id and alternate title that was folded in is kept as an alias, so old Watchlist,
 watched marks and searches continue to work.
 
 ## Curslick collections
