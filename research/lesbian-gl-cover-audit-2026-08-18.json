@@ -1,0 +1,2370 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-18T13:31:10.030Z",
+  "lookupDate": "2026-08-18",
+  "archiveTitles": 475,
+  "blankImagesBefore": 277,
+  "tvmazeResolved": 230,
+  "wikipediaResolved": 1,
+  "generatedFallbacks": 46,
+  "blankImagesAfter": 0,
+  "resolved": [
+    {
+      "id": "gl-1-happy-family-usa-unknown",
+      "title": "#1 Happy Family USA",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/561/1403989.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/67572/1-happy-family-usa",
+      "score": 105
+    },
+    {
+      "id": "gl-195-lewis-2017",
+      "title": "195 Lewis",
+      "year": 2017,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/591/1478274.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/87525/195-lewis",
+      "score": 140
+    },
+    {
+      "id": "gl-3way-2008",
+      "title": "3Way",
+      "year": 2008,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/49/124048.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/14656/3way",
+      "score": 140
+    },
+    {
+      "id": "gl-4-elements-air-2026",
+      "title": "4 Elements: The Air",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/625/1563550.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/84956/4-elements-the-air",
+      "score": 150
+    },
+    {
+      "id": "gl-4-elements-fire-2026",
+      "title": "4 Elements: The Fire",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/594/1485994.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/85851/4-elements-the-fire",
+      "score": 150
+    },
+    {
+      "id": "gl-4-estrellas-unknown",
+      "title": "4 Estrellas",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/461/1154937.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/68819/4-estrellas",
+      "score": 105
+    },
+    {
+      "id": "gl-9-1-1-unknown",
+      "title": "9-1-1",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/600/1501058.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/28152/9-1-1",
+      "score": 105
+    },
+    {
+      "id": "gl-9-1-1-nashville-unknown",
+      "title": "9-1-1 Nashville",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/595/1489150.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/82759/9-1-1-nashville",
+      "score": 105
+    },
+    {
+      "id": "gl-good-girl-s-guide-to-murder-unknown",
+      "title": "A Good Girl's Guide to Murder",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/626/1566763.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/63949/a-good-girls-guide-to-murder",
+      "score": 105
+    },
+    {
+      "id": "gl-man-on-inside-unknown",
+      "title": "A Man on the Inside",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/599/1499138.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/74443/a-man-on-the-inside",
+      "score": 105
+    },
+    {
+      "id": "gl-million-little-things-unknown",
+      "title": "A Million Little Things",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/445/1113408.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/34601/a-million-little-things",
+      "score": 105
+    },
+    {
+      "id": "gl-ai-girl-2026",
+      "title": "AI Girl",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/631/1579252.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/90147/ai-girl",
+      "score": 140
+    },
+    {
+      "id": "gl-all-or-nothing-2017",
+      "title": "All Or Nothing",
+      "year": 2017,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/239/599594.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/18873/all-or-nothing",
+      "score": 114
+    },
+    {
+      "id": "gl-american-horror-story-2011",
+      "title": "American Horror Story",
+      "year": 2011,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/636/1591621.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/30/american-horror-story",
+      "score": 140
+    },
+    {
+      "id": "gl-and-just-like-that-unknown",
+      "title": "And Just Like That...",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/581/1453808.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/52904/and-just-like-that",
+      "score": 105
+    },
+    {
+      "id": "gl-animal-control-unknown",
+      "title": "Animal Control",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/605/1513832.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/63266/animal-control",
+      "score": 105
+    },
+    {
+      "id": "gl-anyone-but-me-2008",
+      "title": "Anyone But Me",
+      "year": 2008,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/250/626286.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/1307/anyone-but-me",
+      "score": 140
+    },
+    {
+      "id": "gl-apples-never-fall-unknown",
+      "title": "Apples Never Fall",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/508/1272467.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/60411/apples-never-fall",
+      "score": 105
+    },
+    {
+      "id": "gl-arrow-2012",
+      "title": "Arrow",
+      "year": 2012,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/143/358967.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/4/arrow",
+      "score": 140
+    },
+    {
+      "id": "gl-b-friend-2025",
+      "title": "B-Friend",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/579/1448674.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/86104/b-friend",
+      "score": 150
+    },
+    {
+      "id": "gl-batman-caped-crusader-unknown",
+      "title": "Batman: Caped Crusader",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/529/1323819.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/55415/batman-caped-crusader",
+      "score": 105
+    },
+    {
+      "id": "gl-batwoman-2019",
+      "title": "Batwoman",
+      "year": 2019,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/361/903721.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/37776/batwoman",
+      "score": 140
+    },
+    {
+      "id": "gl-be-my-angel-2026",
+      "title": "Be My Angel",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/611/1528313.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/86190/be-my-angel",
+      "score": 140
+    },
+    {
+      "id": "gl-beacon-23-unknown",
+      "title": "Beacon 23",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/512/1281473.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/39081/beacon-23",
+      "score": 105
+    },
+    {
+      "id": "gl-beyond-gates-unknown",
+      "title": "Beyond the Gates",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/593/1482540.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/75194/beyond-the-gates",
+      "score": 105
+    },
+    {
+      "id": "gl-big-girls-don-t-cry-unknown",
+      "title": "Big Girls Don't Cry",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/508/1271721.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/75352/big-girls-dont-cry",
+      "score": 105
+    },
+    {
+      "id": "gl-blank-2024",
+      "title": "Blank",
+      "year": 2024,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/508/1271954.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/75367/blank-the-series",
+      "score": 77
+    },
+    {
+      "id": "gl-bodkin-unknown",
+      "title": "Bodkin",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/518/1296268.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/62602/bodkin",
+      "score": 105
+    },
+    {
+      "id": "gl-bridgerton-unknown",
+      "title": "Bridgerton",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/614/1535959.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/42966/bridgerton",
+      "score": 105
+    },
+    {
+      "id": "gl-broken-of-love-2026",
+      "title": "Broken of Love",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/619/1549075.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/88838/broken-of-love",
+      "score": 140
+    },
+    {
+      "id": "gl-call-me-by-no-name-2025",
+      "title": "Call Me by No-Name",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/548/1371855.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/81634/call-me-by-no-name",
+      "score": 150
+    },
+    {
+      "id": "tt18926830",
+      "title": "Call My Agent - Italia",
+      "year": 2023,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/445/1114793.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/66859/call-my-agent-italia",
+      "score": 150
+    },
+    {
+      "id": "gl-casualty-unknown",
+      "title": "Casualty",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/628/1571888.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/729/casualty",
+      "score": 105
+    },
+    {
+      "id": "gl-chaser-game-w-2024",
+      "title": "Chaser Game W",
+      "year": 2024,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/495/1238392.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/73601/chaser-game-w-power-harassment-boss-is-my-ex-girlfriend",
+      "score": 92
+    },
+    {
+      "id": "gl-chasing-love-2026",
+      "title": "Chasing Love",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/611/1527519.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/90095/chasing-love",
+      "score": 140
+    },
+    {
+      "id": "gl-class-of-07-unknown",
+      "title": "Class of '07",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/452/1131776.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/67125/class-of-07",
+      "score": 105
+    },
+    {
+      "id": "gl-class-of-09-unknown",
+      "title": "Class of '09",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/460/1150604.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/56039/class-of-09",
+      "score": 105
+    },
+    {
+      "id": "gl-common-side-effects-unknown",
+      "title": "Common Side Effects",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/553/1384654.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/69327/common-side-effects",
+      "score": 105
+    },
+    {
+      "id": "gl-coronation-street-unknown",
+      "title": "Coronation Street",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/598/1495734.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/4139/coronation-street",
+      "score": 105
+    },
+    {
+      "id": "gl-craig-of-creek-unknown",
+      "title": "Craig of the Creek",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/467/1168209.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/26644/craig-of-the-creek",
+      "score": 105
+    },
+    {
+      "id": "gl-dangerous-queen-2025",
+      "title": "Dangerous Queen",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/579/1447958.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/86051/dangerous-queen",
+      "score": 140
+    },
+    {
+      "id": "gl-dead-ringers-unknown",
+      "title": "Dead Ringers",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/458/1145737.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/56532/dead-ringers",
+      "score": 105
+    },
+    {
+      "id": "gl-deadloch-2023",
+      "title": "Deadloch",
+      "year": 2023,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/615/1538438.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/60614/deadloch",
+      "score": 140
+    },
+    {
+      "id": "gl-denied-love-2025",
+      "title": "Denied Love",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/571/1428581.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/85108/denied-love",
+      "score": 140
+    },
+    {
+      "id": "gl-doctor-who-2005",
+      "title": "Doctor Who",
+      "year": 2005,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/488/1220400.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/210/doctor-who",
+      "score": 140
+    },
+    {
+      "id": "gl-dope-girls-unknown",
+      "title": "Dope Girls",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/556/1390988.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/67594/dope-girls",
+      "score": 105
+    },
+    {
+      "id": "gl-double-parked-unknown",
+      "title": "Double Parked",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/465/1164818.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/69132/double-parked",
+      "score": 105
+    },
+    {
+      "id": "gl-dr-death-unknown",
+      "title": "Dr. Death",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/490/1225885.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/43875/dr-death",
+      "score": 105
+    },
+    {
+      "id": "gl-dragon-age-absolution-unknown",
+      "title": "Dragon Age: Absolution",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/412/1031681.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/62484/dragon-age-absolution",
+      "score": 105
+    },
+    {
+      "id": "gl-dying-for-sex-unknown",
+      "title": "Dying For Sex",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/562/1405420.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/73213/dying-for-sex",
+      "score": 105
+    },
+    {
+      "id": "gl-eastenders-unknown",
+      "title": "EastEnders",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/6/15519.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/793/eastenders",
+      "score": 105
+    },
+    {
+      "id": "gl-elle-unknown",
+      "title": "Elle",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/628/1572300.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/77011/elle",
+      "score": 105
+    },
+    {
+      "id": "gl-emily-in-paris-unknown",
+      "title": "Emily in Paris",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/604/1510920.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/41632/emily-in-paris",
+      "score": 105
+    },
+    {
+      "id": "gl-emmerdale-unknown",
+      "title": "Emmerdale",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/598/1495905.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/2548/emmerdale",
+      "score": 105
+    },
+    {
+      "id": "gl-enemies-with-benefits-2026",
+      "title": "Enemies With Benefits",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/600/1500908.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/88619/enemies-with-benefits",
+      "score": 150
+    },
+    {
+      "id": "gl-even-though-we-re-adults-2025",
+      "title": "Even Though We're Adults",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/556/1391177.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/82699/even-though-were-adults",
+      "score": 150
+    },
+    {
+      "id": "gl-everyone-else-burns-unknown",
+      "title": "Everyone Else Burns",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/442/1106485.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/66182/everyone-else-burns",
+      "score": 105
+    },
+    {
+      "id": "gl-everything-sucks-2018",
+      "title": "Everything Sucks!",
+      "year": 2018,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/142/356594.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/29895/everything-sucks",
+      "score": 140
+    },
+    {
+      "id": "gl-fatal-seduction-unknown",
+      "title": "Fatal Seduction",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/467/1169882.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/69144/fatal-seduction",
+      "score": 105
+    },
+    {
+      "id": "gl-fbi-most-wanted-unknown",
+      "title": "FBI: Most Wanted",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/538/1345375.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/40695/fbi-most-wanted",
+      "score": 105
+    },
+    {
+      "id": "gl-fear-walking-dead-unknown",
+      "title": "Fear the Walking Dead",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/479/1198360.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/1824/fear-the-walking-dead",
+      "score": 105
+    },
+    {
+      "id": "gl-fire-country-unknown",
+      "title": "Fire Country",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/591/1479862.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/60339/fire-country",
+      "score": 105
+    },
+    {
+      "id": "gl-firefly-2002",
+      "title": "Firefly",
+      "year": 2002,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/1/2600.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/180/firefly",
+      "score": 140
+    },
+    {
+      "id": "gl-for-all-mankind-2019",
+      "title": "For All Mankind",
+      "year": 2019,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/616/1541416.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/41414/for-all-mankind",
+      "score": 140
+    },
+    {
+      "id": "gl-from-unknown",
+      "title": "From",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/621/1554646.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/54723/from",
+      "score": 105
+    },
+    {
+      "id": "gl-frozen-valentine-2026",
+      "title": "Frozen Valentine",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/610/1526331.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/90052/frozen-valentine",
+      "score": 140
+    },
+    {
+      "id": "gl-fulfill-2026",
+      "title": "Fulfill",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/611/1529281.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/90146/fulfill",
+      "score": 150
+    },
+    {
+      "id": "gl-full-circle-unknown",
+      "title": "Full Circle",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/488/1220544.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/57103/full-circle",
+      "score": 105
+    },
+    {
+      "id": "gl-furious-unknown",
+      "title": "Furious",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/634/1585631.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/87753/furious",
+      "score": 105
+    },
+    {
+      "id": "gl-futari-escape-2025",
+      "title": "Futari Escape",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/585/1464594.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/86872/futari-escape",
+      "score": 150
+    },
+    {
+      "id": "gl-futari-monologue-2017",
+      "title": "Futari Monologue",
+      "year": 2017,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/284/710454.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/52007/futari-monologue",
+      "score": 150
+    },
+    {
+      "id": "gl-gap-2022",
+      "title": "Gap",
+      "year": 2022,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/431/1078543.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/64662/gap",
+      "score": 150
+    },
+    {
+      "id": "gl-general-hospital-unknown",
+      "title": "General Hospital",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/521/1302689.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/4189/general-hospital",
+      "score": 105
+    },
+    {
+      "id": "gl-ginny-and-georgia-unknown",
+      "title": "Ginny & Georgia",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/570/1427139.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/47549/ginny-georgia",
+      "score": 105
+    },
+    {
+      "id": "gl-girl-rules-2026",
+      "title": "Girl Rules",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/615/1537803.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/81090/girl-rules",
+      "score": 150
+    },
+    {
+      "id": "gl-good-trouble-2019",
+      "title": "Good Trouble",
+      "year": 2019,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/501/1252566.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/36872/good-trouble",
+      "score": 140
+    },
+    {
+      "id": "gl-gossip-girl-unknown",
+      "title": "Gossip Girl",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/499/1247570.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/567/gossip-girl",
+      "score": 105
+    },
+    {
+      "id": "gl-gotham-knights-unknown",
+      "title": "Gotham Knights",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/449/1123550.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/59492/gotham-knights",
+      "score": 105
+    },
+    {
+      "id": "gl-griselda-unknown",
+      "title": "Griselda",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/501/1253424.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/58779/griselda",
+      "score": 105
+    },
+    {
+      "id": "gl-hal-and-harper-unknown",
+      "title": "Hal & Harper",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/570/1425112.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/84862/hal-harper",
+      "score": 105
+    },
+    {
+      "id": "gl-harley-quinn-unknown",
+      "title": "Harley Quinn",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/547/1368613.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/33452/harley-quinn",
+      "score": 105
+    },
+    {
+      "id": "gl-hazbin-hotel-unknown",
+      "title": "Hazbin Hotel",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/594/1487307.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/43094/hazbin-hotel",
+      "score": 105
+    },
+    {
+      "id": "gl-heart-code-2026",
+      "title": "Heart Code",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/594/1487211.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/87884/heart-code",
+      "score": 150
+    },
+    {
+      "id": "gl-high-country-unknown",
+      "title": "High Country",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/509/1273198.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/72241/high-country",
+      "score": 105
+    },
+    {
+      "id": "gl-high-school-2022",
+      "title": "High School",
+      "year": 2022,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/426/1065749.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/55079/high-school",
+      "score": 140
+    },
+    {
+      "id": "gl-hotel-mondial-unknown",
+      "title": "Hotel Mondial",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/443/1108993.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/66620/hotel-mondial",
+      "score": 105
+    },
+    {
+      "id": "gl-house-of-dragon-unknown",
+      "title": "House of the Dragon",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/627/1568449.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/44778/house-of-the-dragon",
+      "score": 105
+    },
+    {
+      "id": "gl-how-do-we-relationship-2026",
+      "title": "How Do We Relationship?",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/631/1578728.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/92978/how-do-we-relationship",
+      "score": 150
+    },
+    {
+      "id": "gl-how-i-met-your-father-unknown",
+      "title": "How I Met Your Father",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/445/1112546.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/54887/how-i-met-your-father",
+      "score": 105
+    },
+    {
+      "id": "gl-how-to-get-to-heaven-from-belfast-unknown",
+      "title": "How to Get to Heaven From Belfast",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/613/1533076.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/76004/how-to-get-to-heaven-from-belfast",
+      "score": 105
+    },
+    {
+      "id": "gl-i-am-devil-2024",
+      "title": "I Am Devil",
+      "year": 2024,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/551/1378742.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/81979/i-am-devil",
+      "score": 140
+    },
+    {
+      "id": "gl-i-am-not-okay-with-this-2020",
+      "title": "I Am Not Okay With This",
+      "year": 2020,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/240/601959.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/40020/i-am-not-okay-with-this",
+      "score": 140
+    },
+    {
+      "id": "gl-i-love-la-unknown",
+      "title": "I Love LA",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/596/1490312.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/86738/i-love-la",
+      "score": 105
+    },
+    {
+      "id": "gl-i-wanna-be-sup-tar-2026",
+      "title": "I Wanna Be Sup'tar",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/606/1517176.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/89605/i-wanna-be-suptar",
+      "score": 150
+    },
+    {
+      "id": "gl-i-m-your-moon-2025",
+      "title": "I'm Your Moon",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/564/1411141.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/84164/im-your-moon",
+      "score": 150
+    },
+    {
+      "id": "gl-ici-tout-commence-unknown",
+      "title": "Ici tout commence",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/278/696024.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/49213/ici-tout-commence",
+      "score": 105
+    },
+    {
+      "id": "gl-in-love-forever-2026",
+      "title": "In Love Forever",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/620/1551878.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/90253/in-love-forever",
+      "score": 150
+    },
+    {
+      "id": "gl-industry-unknown",
+      "title": "Industry",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/608/1521293.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/45501/industry",
+      "score": 105
+    },
+    {
+      "id": "gl-is-you-2024",
+      "title": "Is You",
+      "year": 2024,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/517/1294880.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/76741/my-marvellous-dream-is-you",
+      "score": 77
+    },
+    {
+      "id": "gl-jane-virgin-2014",
+      "title": "Jane the Virgin",
+      "year": 2014,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/591/1478947.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/128/jane-the-virgin",
+      "score": 140
+    },
+    {
+      "id": "gl-jury-duty-presents-company-retreat-unknown",
+      "title": "Jury Duty Presents: Company Retreat",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/619/1547537.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/90105/jury-duty-presents-company-retreat",
+      "score": 105
+    },
+    {
+      "id": "gl-la-palma-unknown",
+      "title": "La Palma",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/545/1364327.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/81135/la-palma",
+      "score": 105
+    },
+    {
+      "id": "gl-las-pelotaris-1926-unknown",
+      "title": "Las pelotaris 1926",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/451/1129108.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/67420/las-pelotaris-1926",
+      "score": 105
+    },
+    {
+      "id": "gl-law-and-order-organized-crime-unknown",
+      "title": "Law & Order: Organized Crime",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/564/1410371.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/48631/law-order-organized-crime",
+      "score": 105
+    },
+    {
+      "id": "gl-led-astray-by-love-2022",
+      "title": "Led Astray by Love",
+      "year": 2022,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/454/1136264.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/67786/led-astray-by-love",
+      "score": 150
+    },
+    {
+      "id": "gl-legacies-2018",
+      "title": "Legacies",
+      "year": 2018,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/364/911065.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/36708/legacies",
+      "score": 140
+    },
+    {
+      "id": "gl-legend-of-yun-qian-2021",
+      "title": "Legend of Yun Qian",
+      "year": 2021,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/292/731348.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/52898/legend-of-yun-qian",
+      "score": 114
+    },
+    {
+      "id": "gl-legends-of-tomorrow-2016",
+      "title": "Legends of Tomorrow",
+      "year": 2016,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/315/787584.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/1851/dcs-legends-of-tomorrow",
+      "score": 82
+    },
+    {
+      "id": "gl-like-palette-2025",
+      "title": "Like a Palette",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/580/1450194.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/86188/like-a-palette",
+      "score": 140
+    },
+    {
+      "id": "gl-london-kills-unknown",
+      "title": "London Kills",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/203/508470.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/35577/london-kills",
+      "score": 105
+    },
+    {
+      "id": "gl-long-story-short-unknown",
+      "title": "Long Story Short",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/577/1444561.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/81766/long-story-short",
+      "score": 105
+    },
+    {
+      "id": "gl-love-beyond-dreams-2026",
+      "title": "Love Beyond Dreams",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/611/1529283.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/90150/love-beyond-dreams",
+      "score": 140
+    },
+    {
+      "id": "gl-love-bully-2024",
+      "title": "Love Bully",
+      "year": 2024,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/529/1324572.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/78732/club-friday-the-series-16-love-bully",
+      "score": 92
+    },
+    {
+      "id": "gl-love-design-2025",
+      "title": "Love Design",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/579/1448151.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/86062/love-design",
+      "score": 140
+    },
+    {
+      "id": "gl-love-senior-2023",
+      "title": "Love Senior",
+      "year": 2023,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/485/1214821.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/72578/love-senior",
+      "score": 150
+    },
+    {
+      "id": "gl-lucky-my-love-2023",
+      "title": "Lucky My Love",
+      "year": 2023,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/486/1216241.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/72291/lucky-my-love",
+      "score": 140
+    },
+    {
+      "id": "gl-mate-2024",
+      "title": "Mate",
+      "year": 2024,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/541/1354490.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/80531/mate",
+      "score": 150
+    },
+    {
+      "id": "gl-matlock-unknown",
+      "title": "Matlock",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/591/1479764.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/66872/matlock",
+      "score": 105
+    },
+    {
+      "id": "gl-mhom-ped-sawan-2024",
+      "title": "Mhom Ped Sawan",
+      "year": 2024,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/541/1354496.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/80532/mhom-ped-sawan",
+      "score": 150
+    },
+    {
+      "id": "gl-mr-loverman-unknown",
+      "title": "Mr. Loverman",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/539/1349348.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/69162/mr-loverman",
+      "score": 105
+    },
+    {
+      "id": "gl-my-lady-s-bodyguard-2026",
+      "title": "My Lady’s Bodyguard",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/631/1577975.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/92940/my-ladys-bodyguard",
+      "score": 140
+    },
+    {
+      "id": "gl-my-marvellous-dream-is-you-2024",
+      "title": "My Marvellous Dream Is You",
+      "year": 2024,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/517/1294880.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/76741/my-marvellous-dream-is-you",
+      "score": 150
+    },
+    {
+      "id": "gl-my-only-sunshine-2026",
+      "title": "My Only Sunshine",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/611/1529282.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/90149/my-only-sunshine",
+      "score": 140
+    },
+    {
+      "id": "gl-nancy-drew-unknown",
+      "title": "Nancy Drew",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/463/1157961.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/42107/nancy-drew",
+      "score": 105
+    },
+    {
+      "id": "gl-naomi-2022",
+      "title": "Naomi",
+      "year": 2022,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/388/971868.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/52243/naomi",
+      "score": 140
+    },
+    {
+      "id": "gl-ncis-hawai-i-unknown",
+      "title": "NCIS: Hawai'i",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/591/1479860.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/53629/ncis-hawaii",
+      "score": 105
+    },
+    {
+      "id": "gl-neon-unknown",
+      "title": "Neon",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/481/1203655.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/65097/neon",
+      "score": 105
+    },
+    {
+      "id": "gl-new-amsterdam-unknown",
+      "title": "New Amsterdam",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/426/1065220.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/32291/new-amsterdam",
+      "score": 105
+    },
+    {
+      "id": "gl-no-good-deed-unknown",
+      "title": "No Good Deed",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/544/1361840.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/62291/no-good-deed",
+      "score": 105
+    },
+    {
+      "id": "gl-nobody-wants-this-unknown",
+      "title": "Nobody Wants This",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/594/1485603.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/77060/nobody-wants-this",
+      "score": 105
+    },
+    {
+      "id": "gl-oh-my-god-yes-unknown",
+      "title": "Oh My God...Yes!",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/562/1406892.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/77793/oh-my-godyes",
+      "score": 105
+    },
+    {
+      "id": "gl-paris-has-fallen-unknown",
+      "title": "Paris Has Fallen",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/534/1336371.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/79446/paris-has-fallen",
+      "score": 105
+    },
+    {
+      "id": "tt33967948",
+      "title": "Petrichor",
+      "year": 2024,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/545/1362767.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/79453/petrichor",
+      "score": 150
+    },
+    {
+      "id": "gl-pinecone-and-pony-unknown",
+      "title": "Pinecone and Pony",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/445/1113323.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/61090/pinecone-pony",
+      "score": 105
+    },
+    {
+      "id": "gl-play-park-2026",
+      "title": "Play Park",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/614/1536960.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/86187/play-park",
+      "score": 140
+    },
+    {
+      "id": "gl-pluribus-unknown",
+      "title": "Pluribus",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/592/1481086.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/86175/pluribus",
+      "score": 105
+    },
+    {
+      "id": "gl-poisonous-love-2025",
+      "title": "Poisonous Love",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/579/1447957.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/86049/poisonous-love",
+      "score": 150
+    },
+    {
+      "id": "gl-praise-petey-unknown",
+      "title": "Praise Petey",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/468/1172113.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/66349/praise-petey",
+      "score": 105
+    },
+    {
+      "id": "gl-push-unknown",
+      "title": "Push",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/629/1574150.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/65977/push",
+      "score": 105
+    },
+    {
+      "id": "gl-pushers-unknown",
+      "title": "Pushers",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/574/1436527.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/70801/pushers",
+      "score": 105
+    },
+    {
+      "id": "gl-queendom-2025",
+      "title": "Queendom",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/582/1457081.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/86050/queendom",
+      "score": 140
+    },
+    {
+      "id": "gl-reboot-unknown",
+      "title": "Reboot",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/9/22952.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/1662/reboot",
+      "score": 105
+    },
+    {
+      "id": "gl-recipes-for-love-and-murder-unknown",
+      "title": "Recipes for Love and Murder",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/555/1389879.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/60467/recipes-for-love-and-murder",
+      "score": 105
+    },
+    {
+      "id": "gl-rental-love-lab-2026",
+      "title": "Rental Love Lab",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/631/1578370.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/92366/rental-love-lab",
+      "score": 140
+    },
+    {
+      "id": "gl-reverse-4-you-2024",
+      "title": "Reverse 4 You",
+      "year": 2024,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/528/1320792.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/78533/reverse-4-you",
+      "score": 140
+    },
+    {
+      "id": "gl-riverdale-unknown",
+      "title": "Riverdale",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/455/1138820.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/5262/riverdale",
+      "score": 105
+    },
+    {
+      "id": "gl-roller-coaster-2025",
+      "title": "Roller Coaster",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/577/1443744.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/85826/roller-coaster",
+      "score": 150
+    },
+    {
+      "id": "gl-rugrats-unknown",
+      "title": "Rugrats",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/402/1007439.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/421/rugrats",
+      "score": 105
+    },
+    {
+      "id": "gl-rumors-unknown",
+      "title": "Rumors",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/523/1309751.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/77838/rumors",
+      "score": 105
+    },
+    {
+      "id": "gl-rwby-unknown",
+      "title": "RWBY",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/447/1119412.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/4091/rwby",
+      "score": 105
+    },
+    {
+      "id": "gl-scarpetta-unknown",
+      "title": "Scarpetta",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/615/1539895.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/67323/scarpetta",
+      "score": 105
+    },
+    {
+      "id": "gl-scavengers-reign-unknown",
+      "title": "Scavengers Reign",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/482/1205705.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/62554/scavengers-reign",
+      "score": 105
+    },
+    {
+      "id": "gl-school-spirits-unknown",
+      "title": "School Spirits",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/609/1523297.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/62556/school-spirits",
+      "score": 105
+    },
+    {
+      "id": "gl-shadow-of-love-2026",
+      "title": "Shadow of Love",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/311/778538.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/55018/shadow-of-love",
+      "score": 83
+    },
+    {
+      "id": "gl-she-is-still-cute-today-2026",
+      "title": "She Is Still Cute Today",
+      "year": 2026,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/632/1580200.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/75652/she-is-still-cute-today",
+      "score": 150
+    },
+    {
+      "id": "gl-she-loves-to-cook-and-she-loves-to-eat-2022",
+      "title": "She Loves to Cook, and She Loves to Eat",
+      "year": 2022,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/433/1084804.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/65624/she-loves-to-cook-and-she-loves-to-eat",
+      "score": 150
+    },
+    {
+      "id": "gl-show-me-love-2023",
+      "title": "Show Me Love",
+      "year": 2023,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/449/1123020.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/67187/show-me-love",
+      "score": 140
+    },
+    {
+      "id": "gl-skymed-unknown",
+      "title": "SkyMed",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/622/1557107.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/57682/skymed",
+      "score": 105
+    },
+    {
+      "id": "gl-slip-unknown",
+      "title": "Slip",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/458/1145741.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/61198/slip",
+      "score": 105
+    },
+    {
+      "id": "gl-small-town-potential-unknown",
+      "title": "Small Town Potential",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/564/1410103.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/66270/small-town-potential",
+      "score": 100
+    },
+    {
+      "id": "gl-stardust-telepath-2024",
+      "title": "Stardust Telepath",
+      "year": 2024,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/566/1415180.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/84349/stardust-telepath",
+      "score": 150
+    },
+    {
+      "id": "gl-station-19-unknown",
+      "title": "Station 19",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/507/1267852.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/34577/station-19",
+      "score": 105
+    },
+    {
+      "id": "gl-such-brave-girls-unknown",
+      "title": "Such Brave Girls",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/576/1441947.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/72410/such-brave-girls",
+      "score": 105
+    },
+    {
+      "id": "gl-suenos-de-libertad-unknown",
+      "title": "Sueños de libertad",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/506/1265300.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/74973/suenos-de-libertad",
+      "score": 105
+    },
+    {
+      "id": "gl-tell-me-everything-unknown",
+      "title": "Tell Me Everything",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/522/1306319.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/61254/tell-me-everything",
+      "score": 105
+    },
+    {
+      "id": "gl-buccaneers-unknown",
+      "title": "The Buccaneers",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/572/1431045.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/62707/the-buccaneers",
+      "score": 105
+    },
+    {
+      "id": "gl-chi-unknown",
+      "title": "The Chi",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/626/1566210.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/24371/the-chi",
+      "score": 105
+    },
+    {
+      "id": "gl-couple-next-door-unknown",
+      "title": "The Couple Next Door",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/578/1447381.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/67780/the-couple-next-door",
+      "score": 105
+    },
+    {
+      "id": "gl-equalizer-unknown",
+      "title": "The Equalizer",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/540/1350125.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/47929/the-equalizer",
+      "score": 105
+    },
+    {
+      "id": "gl-family-next-door-unknown",
+      "title": "The Family Next Door",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/578/1445939.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/81120/the-family-next-door",
+      "score": 105
+    },
+    {
+      "id": "gl-fragrance-you-inherit-2024",
+      "title": "The Fragrance You Inherit",
+      "year": 2024,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/537/1344513.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/79929/the-fragrance-you-inherit",
+      "score": 150
+    },
+    {
+      "id": "gl-full-monty-unknown",
+      "title": "The Full Monty",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/464/1161200.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/61294/the-full-monty",
+      "score": 105
+    },
+    {
+      "id": "gl-girlfriend-unknown",
+      "title": "The Girlfriend",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/583/1459064.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/76565/the-girlfriend",
+      "score": 105
+    },
+    {
+      "id": "gl-horror-of-dolores-roach-unknown",
+      "title": "The Horror of Dolores Roach",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/487/1218496.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/47891/the-horror-of-dolores-roach",
+      "score": 105
+    },
+    {
+      "id": "gl-hunting-wives-unknown",
+      "title": "The Hunting Wives",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/579/1448883.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/72427/the-hunting-wives",
+      "score": 105
+    },
+    {
+      "id": "gl-jetty-unknown",
+      "title": "The Jetty",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/527/1318913.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/70858/the-jetty",
+      "score": 105
+    },
+    {
+      "id": "gl-last-of-us-unknown",
+      "title": "The Last of Us",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/563/1409008.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/46562/the-last-of-us",
+      "score": 105
+    },
+    {
+      "id": "gl-last-thing-he-told-me-unknown",
+      "title": "The Last Thing He Told Me",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/614/1536838.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/52331/the-last-thing-he-told-me",
+      "score": 105
+    },
+    {
+      "id": "gl-legend-of-vox-machina-unknown",
+      "title": "The Legend of Vox: Machina",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/541/1354629.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/44885/the-legend-of-vox-machina",
+      "score": 105
+    },
+    {
+      "id": "gl-magicians-2015",
+      "title": "The Magicians",
+      "year": 2015,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/229/573329.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/3083/the-magicians",
+      "score": 140
+    },
+    {
+      "id": "gl-mighty-nein-unknown",
+      "title": "The Mighty Nein",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/598/1496655.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/86172/the-mighty-nein",
+      "score": 105
+    },
+    {
+      "id": "gl-morning-show-unknown",
+      "title": "The Morning Show",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/594/1485135.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/41524/the-morning-show",
+      "score": 105
+    },
+    {
+      "id": "gl-ms-pat-show-unknown",
+      "title": "The Ms. Pat Show",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/607/1517868.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/56678/the-ms-pat-show",
+      "score": 105
+    },
+    {
+      "id": "gl-originals-2013",
+      "title": "The Originals",
+      "year": 2013,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/271/678632.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/62/the-originals",
+      "score": 140
+    },
+    {
+      "id": "gl-other-black-girl-unknown",
+      "title": "The Other Black Girl",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/476/1191634.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/63393/the-other-black-girl",
+      "score": 105
+    },
+    {
+      "id": "gl-pitt-unknown",
+      "title": "The Pitt",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/606/1516776.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/75632/the-pitt",
+      "score": 105
+    },
+    {
+      "id": "gl-rig-unknown",
+      "title": "The Rig",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/549/1374448.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/51726/the-rig",
+      "score": 105
+    },
+    {
+      "id": "gl-rookie-feds-unknown",
+      "title": "The Rookie: Feds",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/444/1111664.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/62068/the-rookie-feds",
+      "score": 105
+    },
+    {
+      "id": "gl-second-best-hospital-in-galaxy-unknown",
+      "title": "The Second Best Hospital in the Galaxy",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/505/1263480.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/73546/the-second-best-hospital-in-the-galaxy",
+      "score": 105
+    },
+    {
+      "id": "gl-secret-of-girls-2025",
+      "title": "The Secret of Girls",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/602/1506048.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/88837/the-secret-of-girls",
+      "score": 140
+    },
+    {
+      "id": "gl-stolen-girl-unknown",
+      "title": "The Stolen Girl",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/564/1410383.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/69580/the-stolen-girl",
+      "score": 105
+    },
+    {
+      "id": "gl-testaments-unknown",
+      "title": "The Testaments",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/616/1541825.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/45531/the-testaments",
+      "score": 105
+    },
+    {
+      "id": "gl-vampire-diaries-2009",
+      "title": "The Vampire Diaries",
+      "year": 2009,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/271/677698.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/63/the-vampire-diaries",
+      "score": 140
+    },
+    {
+      "id": "gl-vexations-of-shut-in-vampire-princess-unknown",
+      "title": "The Vexations of a Shut-In Vampire Princess",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/616/1541014.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/70866/the-vexations-of-a-shut-in-vampire-princess",
+      "score": 105
+    },
+    {
+      "id": "gl-walking-dead-2010",
+      "title": "The Walking Dead",
+      "year": 2010,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/424/1061900.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/73/the-walking-dead",
+      "score": 140
+    },
+    {
+      "id": "gl-white-lotus-unknown",
+      "title": "The White Lotus",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/557/1393876.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/51394/the-white-lotus",
+      "score": 105
+    },
+    {
+      "id": "gl-witcher-unknown",
+      "title": "The Witcher",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/594/1486674.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/28276/the-witcher",
+      "score": 105
+    },
+    {
+      "id": "gl-young-and-restless-unknown",
+      "title": "The Young and the Restless",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/593/1482522.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/4344/the-young-and-the-restless",
+      "score": 105
+    },
+    {
+      "id": "gl-tiny-beautiful-things-unknown",
+      "title": "Tiny Beautiful Things",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/455/1139376.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/62425/tiny-beautiful-things",
+      "score": 105
+    },
+    {
+      "id": "gl-torchwood-2006",
+      "title": "Torchwood",
+      "year": 2006,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/356/890285.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/659/torchwood",
+      "score": 140
+    },
+    {
+      "id": "gl-tracker-unknown",
+      "title": "Tracker",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/591/1479867.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/63192/tracker",
+      "score": 105
+    },
+    {
+      "id": "gl-transit-girls-2015",
+      "title": "Transit Girls",
+      "year": 2015,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/29/74245.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/8198/transit-girls",
+      "score": 150
+    },
+    {
+      "id": "gl-true-detective-unknown",
+      "title": "True Detective",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/490/1226764.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/5/true-detective",
+      "score": 105
+    },
+    {
+      "id": "gl-twenties-unknown",
+      "title": "Twenties",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/364/911628.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/38796/twenties",
+      "score": 105
+    },
+    {
+      "id": "gl-twisted-metal-2023",
+      "title": "Twisted Metal",
+      "year": 2023,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/581/1452707.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/60743/twisted-metal",
+      "score": 140
+    },
+    {
+      "id": "gl-unlimited-love-2025",
+      "title": "Unlimited Love",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/580/1450196.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/86192/unlimited-love",
+      "score": 140
+    },
+    {
+      "id": "gl-unlock-your-love-2024",
+      "title": "Unlock Your Love",
+      "year": 2024,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/537/1343569.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/79868/unlock-your-love",
+      "score": 150
+    },
+    {
+      "id": "gl-urzila-unknown",
+      "title": "Urzila",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/623/1557508.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/91609/urzila",
+      "score": 100
+    },
+    {
+      "id": "gl-us-2025",
+      "title": "Us",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/550/1376916.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/76333/us",
+      "score": 150
+    },
+    {
+      "id": "gl-utopia-falls-2020",
+      "title": "Utopia Falls",
+      "year": 2020,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/239/599954.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/42140/utopia-falls",
+      "score": 140
+    },
+    {
+      "id": "gl-vagrant-queen-2020",
+      "title": "Vagrant Queen",
+      "year": 2020,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/241/604625.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/42267/vagrant-queen",
+      "score": 140
+    },
+    {
+      "id": "gl-velma-unknown",
+      "title": "Velma",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/513/1284185.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/53473/velma",
+      "score": 105
+    },
+    {
+      "id": "gl-videoland-unknown",
+      "title": "Videoland",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/552/1382386.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/75021/videoland",
+      "score": 105
+    },
+    {
+      "id": "gl-vigil-unknown",
+      "title": "Vigil",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/637/1593094.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/45879/vigil",
+      "score": 105
+    },
+    {
+      "id": "gl-waack-girls-unknown",
+      "title": "Waack Girls",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/544/1361465.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/75475/waack-girls",
+      "score": 105
+    },
+    {
+      "id": "gl-wayward-unknown",
+      "title": "Wayward",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/589/1472932.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/67919/wayward",
+      "score": 105
+    },
+    {
+      "id": "gl-we-are-lady-parts-unknown",
+      "title": "We Are Lady Parts",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/520/1301439.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/53271/we-are-lady-parts",
+      "score": 105
+    },
+    {
+      "id": "gl-whale-store-xoxo-2025",
+      "title": "Whale Store xoxo",
+      "year": 2025,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/573/1433386.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/81081/whale-store-xoxo",
+      "score": 150
+    },
+    {
+      "id": "gl-while-men-are-away-unknown",
+      "title": "While the Men Are Away",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/476/1191801.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/70758/while-the-men-are-away",
+      "score": 105
+    },
+    {
+      "id": "gl-white-fever-unknown",
+      "title": "White Fever",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/513/1282740.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/72652/white-fever",
+      "score": 105
+    },
+    {
+      "id": "gl-wilderness-unknown",
+      "title": "Wilderness",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/473/1184943.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/62589/wilderness",
+      "score": 105
+    },
+    {
+      "id": "gl-will-trent-unknown",
+      "title": "Will Trent",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/602/1506386.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/61740/will-trent",
+      "score": 105
+    },
+    {
+      "id": "gl-willow-unknown",
+      "title": "Willow",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/426/1067123.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/51419/willow",
+      "score": 105
+    },
+    {
+      "id": "gl-women-wearing-shoulder-pads-unknown",
+      "title": "Women Wearing Shoulder Pads",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/582/1456834.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/71919/women-wearing-shoulder-pads",
+      "score": 105
+    },
+    {
+      "id": "gl-xo-kitty-unknown",
+      "title": "XO Kitty",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/620/1550651.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/60509/xo-kitty",
+      "score": 105
+    },
+    {
+      "id": "gl-yellowjackets-unknown",
+      "title": "Yellowjackets",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/554/1387457.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/36672/yellowjackets",
+      "score": 105
+    },
+    {
+      "id": "gl-young-ladies-don-t-play-fighting-games-2023",
+      "title": "Young Ladies Don't Play Fighting Games",
+      "year": 2023,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/631/1579061.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/92631/young-ladies-dont-play-fighting-games",
+      "score": 83
+    },
+    {
+      "id": "gl-your-friendly-neighborhood-spider-man-unknown",
+      "title": "Your Friendly Neighborhood Spider-Man",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/556/1391478.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/58952/your-friendly-neighborhood-spider-man",
+      "score": 105
+    },
+    {
+      "id": "gl-yuri-is-my-job-unknown",
+      "title": "Yuri is My Job!",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/455/1138711.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/67278/yuri-is-my-job",
+      "score": 105
+    },
+    {
+      "id": "gl-zlata-labut-unknown",
+      "title": "Zlatá labut",
+      "year": null,
+      "source": "TVmaze",
+      "image": "https://static.tvmaze.com/uploads/images/original_untouched/444/1111588.jpg",
+      "sourceUrl": "https://www.tvmaze.com/shows/66717/zlata-labut",
+      "score": 105
+    },
+    {
+      "id": "gl-agents-of-s-h-i-e-l-d-2014",
+      "title": "Agents of S.H.I.E.L.D.",
+      "year": 2014,
+      "source": "Wikipedia / Wikimedia Commons",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Agents_of_S.H.I.E.L.D._logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Agents_of_S.H.I.E.L.D._web_series",
+      "score": 72
+    }
+  ],
+  "fallbacks": [
+    {
+      "id": "gl-hashtag-series-2014",
+      "title": "#Hashtag The Series",
+      "year": 2014,
+      "image": "/assets/gl-covers/hashtag-the-series-2014.svg"
+    },
+    {
+      "id": "gl-10-rules-before-i-fell-for-you-2026",
+      "title": "10 Rules Before I Fell for You",
+      "year": 2026,
+      "image": "/assets/gl-covers/10-rules-before-i-fell-for-you-2026.svg"
+    },
+    {
+      "id": "gl-30-30-2017",
+      "title": "30 30",
+      "year": 2017,
+      "image": "/assets/gl-covers/30-30-2017.svg"
+    },
+    {
+      "id": "gl-advocates-2016",
+      "title": "Advocates",
+      "year": 2016,
+      "image": "/assets/gl-covers/advocates-2016.svg"
+    },
+    {
+      "id": "gl-after-oil-2017",
+      "title": "After Oil",
+      "year": 2017,
+      "image": "/assets/gl-covers/after-oil-2017.svg"
+    },
+    {
+      "id": "gl-animal-warmth-2017",
+      "title": "Animal Warmth",
+      "year": 2017,
+      "image": "/assets/gl-covers/animal-warmth-2017.svg"
+    },
+    {
+      "id": "gl-any-other-rosie-2017",
+      "title": "Any Other Rosie",
+      "year": 2017,
+      "image": "/assets/gl-covers/any-other-rosie-2017.svg"
+    },
+    {
+      "id": "gl-any-other-vlog-2015",
+      "title": "Any Other Vlog",
+      "year": 2015,
+      "image": "/assets/gl-covers/any-other-vlog-2015.svg"
+    },
+    {
+      "id": "gl-arcane-unknown",
+      "title": "Arcane",
+      "year": null,
+      "image": "/assets/gl-covers/arcane-unknown.svg"
+    },
+    {
+      "id": "gl-back-to-15-unknown",
+      "title": "Back to 15",
+      "year": null,
+      "image": "/assets/gl-covers/back-to-15-unknown.svg"
+    },
+    {
+      "id": "gl-beneath-moon-s-shadow-2026",
+      "title": "Beneath the Moon’s Shadow",
+      "year": 2026,
+      "image": "/assets/gl-covers/beneath-the-moon-s-shadow-2026.svg"
+    },
+    {
+      "id": "gl-black-dove-unknown",
+      "title": "Black Dove",
+      "year": null,
+      "image": "/assets/gl-covers/black-dove-unknown.svg"
+    },
+    {
+      "id": "gl-bob-loves-abishola-unknown",
+      "title": "Bob Loves Abishola",
+      "year": null,
+      "image": "/assets/gl-covers/bob-loves-abishola-unknown.svg"
+    },
+    {
+      "id": "gl-criminal-minds-evolution-unknown",
+      "title": "Criminal Minds: Evolution",
+      "year": null,
+      "image": "/assets/gl-covers/criminal-minds-evolution-unknown.svg"
+    },
+    {
+      "id": "gl-denied-love-special-endless-2026",
+      "title": "Denied Love Special Endless",
+      "year": 2026,
+      "image": "/assets/gl-covers/denied-love-special-endless-2026.svg"
+    },
+    {
+      "id": "gl-divided-youth-unknown",
+      "title": "Divided Youth",
+      "year": null,
+      "image": "/assets/gl-covers/divided-youth-unknown.svg"
+    },
+    {
+      "id": "gl-domino-day-lone-witch-unknown",
+      "title": "Domino Day: Lone Witch",
+      "year": null,
+      "image": "/assets/gl-covers/domino-day-lone-witch-unknown.svg"
+    },
+    {
+      "id": "gl-don-t-mess-with-senior-2024",
+      "title": "Don't Mess with Senior",
+      "year": 2024,
+      "image": "/assets/gl-covers/don-t-mess-with-senior-2024.svg"
+    },
+    {
+      "id": "gl-el-jardin-de-olivia-unknown",
+      "title": "El Jardin De Olivia",
+      "year": null,
+      "image": "/assets/gl-covers/el-jardin-de-olivia-unknown.svg"
+    },
+    {
+      "id": "gl-ghostfriend-forever-2026",
+      "title": "Ghostfriend Forever",
+      "year": 2026,
+      "image": "/assets/gl-covers/ghostfriend-forever-2026.svg"
+    },
+    {
+      "id": "gl-goodbye-laura-unknown",
+      "title": "Goodbye, Laura",
+      "year": null,
+      "image": "/assets/gl-covers/goodbye-laura-unknown.svg"
+    },
+    {
+      "id": "gl-in-that-moment-it-was-love-2026",
+      "title": "In That Moment, It Was Love",
+      "year": 2026,
+      "image": "/assets/gl-covers/in-that-moment-it-was-love-2026.svg"
+    },
+    {
+      "id": "gl-interview-with-vampire-unknown",
+      "title": "Interview with a Vampire",
+      "year": null,
+      "image": "/assets/gl-covers/interview-with-a-vampire-unknown.svg"
+    },
+    {
+      "id": "gl-kontrol-unknown",
+      "title": "Kontrol",
+      "year": null,
+      "image": "/assets/gl-covers/kontrol-unknown.svg"
+    },
+    {
+      "id": "gl-land-of-women-unknown",
+      "title": "Land of Women",
+      "year": null,
+      "image": "/assets/gl-covers/land-of-women-unknown.svg"
+    },
+    {
+      "id": "gl-muteluv-hello-is-this-luck-2025",
+      "title": "MuTeLuv: Hello, is this Luck?",
+      "year": 2025,
+      "image": "/assets/gl-covers/muteluv-hello-is-this-luck-2025.svg"
+    },
+    {
+      "id": "gl-my-marvelous-dream-is-you-unknown",
+      "title": "My Marvelous Dream is You",
+      "year": null,
+      "image": "/assets/gl-covers/my-marvelous-dream-is-you-unknown.svg"
+    },
+    {
+      "id": "gl-neighbours-new-chapter-unknown",
+      "title": "Neighbours: A New Chapter",
+      "year": null,
+      "image": "/assets/gl-covers/neighbours-a-new-chapter-unknown.svg"
+    },
+    {
+      "id": "gl-no-traces-unknown",
+      "title": "No Traces (Sin Huellas)",
+      "year": null,
+      "image": "/assets/gl-covers/no-traces-sin-huellas-unknown.svg"
+    },
+    {
+      "id": "gl-omai-2023",
+      "title": "Omai",
+      "year": 2023,
+      "image": "/assets/gl-covers/omai-2023.svg"
+    },
+    {
+      "id": "gl-only-murders-in-buildling-unknown",
+      "title": "Only Murders in the Buildling",
+      "year": null,
+      "image": "/assets/gl-covers/only-murders-in-the-buildling-unknown.svg"
+    },
+    {
+      "id": "gl-player-series-2025",
+      "title": "Player The Series",
+      "year": 2025,
+      "image": "/assets/gl-covers/player-the-series-2025.svg"
+    },
+    {
+      "id": "gl-pretty-little-liars-original-sin-unknown",
+      "title": "Pretty Little Liars: Original Sin",
+      "year": null,
+      "image": "/assets/gl-covers/pretty-little-liars-original-sin-unknown.svg"
+    },
+    {
+      "id": "gl-rj-decker-unknown",
+      "title": "RJ Decker",
+      "year": null,
+      "image": "/assets/gl-covers/rj-decker-unknown.svg"
+    },
+    {
+      "id": "gl-santuary-witch-s-tale-unknown",
+      "title": "Santuary: A Witch's Tale",
+      "year": null,
+      "image": "/assets/gl-covers/santuary-a-witch-s-tale-unknown.svg"
+    },
+    {
+      "id": "gl-shelter-unknown",
+      "title": "Shelter",
+      "year": null,
+      "image": "/assets/gl-covers/shelter-unknown.svg"
+    },
+    {
+      "id": "gl-shock-me-girls-2026",
+      "title": "Shock Me Girls",
+      "year": 2026,
+      "image": "/assets/gl-covers/shock-me-girls-2026.svg"
+    },
+    {
+      "id": "gl-shortland-street-legacy-unknown",
+      "title": "Shortland Street: Legacy",
+      "year": null,
+      "image": "/assets/gl-covers/shortland-street-legacy-unknown.svg"
+    },
+    {
+      "id": "gl-special-ops-lioness-unknown",
+      "title": "Special Ops: Lioness",
+      "year": null,
+      "image": "/assets/gl-covers/special-ops-lioness-unknown.svg"
+    },
+    {
+      "id": "gl-art-of-joy-unknown",
+      "title": "The Art of Joy",
+      "year": null,
+      "image": "/assets/gl-covers/the-art-of-joy-unknown.svg"
+    },
+    {
+      "id": "gl-most-beautiful-flower-unknown",
+      "title": "The Most Beautiful Flower",
+      "year": null,
+      "image": "/assets/gl-covers/the-most-beautiful-flower-unknown.svg"
+    },
+    {
+      "id": "gl-tres-gracas-unknown",
+      "title": "Três Graças (Three Graces)",
+      "year": null,
+      "image": "/assets/gl-covers/tre-s-grac-as-three-graces-unknown.svg"
+    },
+    {
+      "id": "gl-triple-oh-unknown",
+      "title": "Triple Oh!",
+      "year": null,
+      "image": "/assets/gl-covers/triple-oh-unknown.svg"
+    },
+    {
+      "id": "gl-welcome-to-eden-unknown",
+      "title": "Welcome to Eden",
+      "year": null,
+      "image": "/assets/gl-covers/welcome-to-eden-unknown.svg"
+    },
+    {
+      "id": "gl-who-knows-girls-l-2025",
+      "title": "Who Knows Girls' L",
+      "year": 2025,
+      "image": "/assets/gl-covers/who-knows-girls-l-2025.svg"
+    },
+    {
+      "id": "gl-wyfie-unknown",
+      "title": "Wyfie",
+      "year": null,
+      "image": "/assets/gl-covers/wyfie-unknown.svg"
+    }
+  ]
+}
