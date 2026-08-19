@@ -6,7 +6,7 @@ Morningstar is a mobile-friendly, static television-series discovery app.
 - 179 watched titles preserved
 - 3,632 optional K-drama titles
 - 1,000 franchise-ranked finished anime under 60 hours (212 existing titles reused + 788 new cards)
-- 475 verified Lesbian / GL titles (199 existing records reused + 276 archive cards), including 67 Thai series
+- 465 verified Lesbian / GL titles (193 existing records reused + 272 archive cards), including 66 Thai series
 - Curslick editorial collections (5: Run Hide Fight, Annabelle horror, Protector romance, Lesbian happy endings, Anime 1000)
 - Search, year/genre/country/format filters, Watchlist, Not Interested reasons/notes, watched controls, and JSON backup/restore
 - Sticky collapsible filters plus Grid, List, and Detailed-with-plot views
@@ -55,6 +55,33 @@ watched marks. “Export to Drive” opens the device share sheet with the JSON 
 Drive” uses the system file picker. Legacy schema-version-1 backups containing `myList` and
 `extraWatched` remain importable.
 
+## Series detail
+
+Opening a series shows the IMDb rating (with its vote count beneath it), year, episode count, runtime
+and status on one fact line, then the plot. Where a title has a genuinely longer synopsis the plot
+block expands; where it does not, it simply renders — there is no toggle that reveals the same
+sentence twice.
+
+The header carries an IMDb link and a MyDramaList link side by side. For the 2,927 K-drama archive
+titles sourced from MyDramaList directly, the merge preserves that real title-page URL even when a
+TVmaze record wins the rest of the card; every other title falls back to a MyDramaList search link
+for its exact title.
+
+Below the plot sits a row of chips: every Curslick collection the series belongs to, then its genres.
+A chip is a button only when there is already researched copy behind it — a collection's "why it
+belongs" write-up, or the Lesbian / GL archive's inclusion evidence — and clicking it expands that
+existing text. Genres with no such write-up render as plain labels, so no chip invites a click that
+leads nowhere. Opening a series from inside a collection auto-expands that collection's chip.
+
+Two ChatGPT links sit in the header. **Ending & romance** asks three questions: whether the story
+actually has an ending, whether there is romance between the main couple, and whether that couple
+ends up together — or is at least implied or open-ended enough to read as a soft endgame. The second
+link is labelled with the series' runtime and year and opens a plain lookup.
+
+Generated `longPlot` fields used to end with a templated sentence restating the episode count,
+format, country, runtime and genres. Since the fact line and chips already carry all of that, it is
+stripped from the payload by `research/strip-plot-boilerplate.js`.
+
 ## One card per series
 
 The catalogue, the K-drama archive, the Lesbian / GL Archive, the watched history and Curslick's
@@ -72,16 +99,17 @@ watched marks and searches continue to work.
 ## Lesbian / GL genre
 
 The **Lesbian / GL** genre is an evidence-backed representation archive rather than an ending promise.
-It contains 475 unique series: 199 reuse an existing Morningstar record and 276 supply a new archive
-card. Sixty-seven entries are Thai, with the 2026 slate limited to titles released or airing by
+It contains 465 unique series: 193 reuse an existing Morningstar record and 272 supply a new archive
+card. Sixty-six entries are Thai, with the 2026 slate limited to titles released or airing by
 18 August 2026. The source union uses Aria's WLW television database, the international GL drama list,
 Thai GL Hub, LezWatch.TV's strongest public editorial signals, Autostraddle's queer sci-fi/fantasy
 ranking and the existing Curslick 04 audit.
 
 Minor/occasional-only appearances, reality and competition programmes, documentaries, unreleased Thai
-projects and duplicate seasons are excluded. The archive deliberately stops at 475 verified titles
-instead of padding to 1,000 with cameo-only or unreleased entries. Its complete methodology and
-title-by-title evidence live in `research/lesbian-gl-methodology.md` and
+projects and duplicate seasons are excluded, along with titles where a queer-woman storyline is only
+secondary or supporting inside a primarily non-GL series. The archive deliberately stops well short of
+1,000 rather than padding the genre with cameo-only, unreleased, or non-primary entries. Its complete
+methodology and title-by-title evidence live in `research/lesbian-gl-methodology.md` and
 `research/lesbian-gl-2026-08-18.json`.
 
 This genre is broader than Collection 04, *Lesbian happy endings*. A title can be in the genre even
