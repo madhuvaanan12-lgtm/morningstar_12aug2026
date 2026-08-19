@@ -1,3 +1,11 @@
+> # 🥬 PARKED UNTIL NABARD
+>
+> **Do not use or restart Morning Star until after clearing NABARD.**
+> The GitHub repo is deleted on purpose; the complete backup lives in Google Drive
+> (folder: *Morning Star — GitHub Backup 2026-08-19*).
+>
+> **Always remember your cabbage. 🥬**
+
 # Morningstar
 
 Morningstar is a mobile-friendly, static television-series discovery app.
