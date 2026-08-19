@@ -19,19 +19,22 @@ This genre deliberately excludes shows where queer women appear as supporting ch
 
 ## Result
 
-The curated collection contains **461 unique scripted series**:
+The curated collection contains **465 unique scripted series**:
 
-- 198 titles reuse an existing Morningstar record.
-- 263 titles receive a new archive card.
-- 67 titles are Thai.
+- 193 titles reuse an existing Morningstar record.
+- 272 titles receive a new archive card.
+- 66 titles are Thai.
 - Every included record carries the Lesbian / GL genre and title-level source evidence.
 
-A cleanup pass in August 2026 removed 19 titles that failed primary-genre criteria (false positives from source data that featured queer women only as supporting characters in primarily non-GL narratives).
+A verification pass on 19 August 2026 removed 19 titles that failed primary-genre criteria (false
+positives from source data that featured queer women only as supporting characters in primarily
+non-GL narratives) and added 9 verified titles, after merging 3 near-duplicate candidate rows an
+earlier pass had introduced. See **19 August 2026 verification pass** below.
 
 The requested 1,000 was treated as a research target, not a quota. The available specialist databases
 can exceed 1,000 only by mixing in minor/occasional appearances, one-off films, reality programming,
 unreleased announcements, or titles whose queer character is not a substantial recurring part of the
-show. This pass stops at 475 rather than padding the genre with weaker matches.
+show. This collection stops at 465 rather than padding the genre with weaker matches.
 
 ## Inclusion rule
 
@@ -61,16 +64,37 @@ The application exempts these archive entries from the default country and runti
 keeps Thai, short-form web series and longer ensemble series available through the genre filter.
 Explicit K-drama exclusions still work.
 
-## August 2026 Cleanup
+## 19 August 2026 verification pass
 
-To strengthen genre accuracy, a verification pass removed 19 titles that appeared in source data but failed primary-genre criteria on verification. Examples of removed titles:
+A verification pass removed 19 titles that appeared in the original 18 August research but failed
+primary-genre criteria on individual, title-by-title web verification. Examples of removed titles:
 
 - **Genre shows with secondary queer content**: Arcane (fantasy/action with sapphic subtext), Arrow (superhero with queer secondary characters), Agents of S.H.I.E.L.D. (spy action ensemble)
 - **Procedurals and dramas with supporting LGBT characters**: 9-1-1 (emergency ensemble), A Good Girl's Guide to Murder (mystery thriller with queer best friend), All American: Homecoming (sports drama)
 - **Horror/anthology with queer supporting roles**: American Horror Story, American Horror Stories (horror primary, LGBTQ+ secondary)
 - **Other non-GL primary shows**: Atypical (autism coming-of-age, not lesbian primary), And Just Like That... (romantic comedy/drama, not GL primary), A Murder at the End of the World (mystery thriller)
 
-This cleanup improves precision: from 475 candidates, 19 false positives were removed and 5 verified GL shows were added (Friendly Rivalry, Gushing Over Magical Girls, Futari Escape, Adachi and Shimamura, Kase-san and Morning Glories), bringing the collection to 461 titles with higher confidence in primary-genre classification.
+The same pass added 9 verified titles: Beguinas (Spain), Girls Band Cry, Gushing Over Magical Girls,
+Jellyfish Can't Swim in the Night, Kase-san and Morning Glories, Adachi and Shimamura (Japan), Mayfly
+Angel, Tendering Resignation (South Korea), and Xeque Mate (Brazil). Adachi and Shimamura already
+existed in Morningstar's main catalogue (id `tt12728882`) and was linked as a matched-existing record
+rather than given a second card. Three candidate rows an earlier editing pass had appended a second
+time for shows already present in the research — Friendly Rivalry, Futari Escape, and Us (added again
+under the casing "US") — were merged back into their original single entries rather than counted as
+new titles.
+
+**A note on how this was applied.** `research/lesbian-gl-2026-08-18.json` carries two arrays: `candidates`,
+a lightweight research/audit trail, and `archiveEntries`, the fully-shaped records `research/build-lesbian-gl-genre.js`
+actually copies into `data/catalogue.lesbianGlArchive` — the array the running app reads. An earlier
+editing pass updated only `candidates` and never touched `archiveEntries`, `data/*.txt`, or `data/manifest.json`,
+so none of that pass's removals or additions ever reached the published catalogue: the genre filter and
+its exclusions kept showing the original, unedited 18 August set. This pass reconciled `archiveEntries`
+against the corrected `candidates` list, generated branded fallback cover art for the newly-added titles
+(`assets/gl-covers/`, via the same template `research/fill-lesbian-gl-covers.js` uses — the sandbox this
+pass ran in could not reach TVmaze or Wikipedia to look up real posters), ran `research/build-lesbian-gl-genre.js`
+to rebuild the data payload, and verified the result with `research/test-lesbian-gl-genre.js`. Any future
+edit to this genre must edit `archiveEntries` (not just `candidates`) and rerun the build script, or the
+same desync will happen again.
 
 ## Sources
 
