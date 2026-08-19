@@ -11780,12 +11780,20 @@ function S(e, t) {
   return [...e].sort((e, n) => ee(e.id, t) - ee(n.id, t));
 }
 function C(e) {
-  let t = `For the TV series "${e.title}" (${e.year}), answer only these two questions without spoilers: 1) Does it have a happy or satisfying ending? 2) Does it include romance, and how prominent is the romance? Do not reveal plot twists, deaths, pairings, or ending details. If the title is ambiguous, use the year and country (${e.country}) to identify it.`;
+  let t = `For the TV series "${e.title}" (${e.year}), answer only these three questions: 1) Does it have an ending? Only whether the story actually finishes — nothing about whether the ending is good, bad or satisfying. 2) Is there romance between the main couple? 3) Does the main couple end up together — or is it at least implied or open-ended enough that I can reasonably assume they stay together after the show ends (an implied, open-ended or soft endgame)? Answer only those three. Beyond what they require, do not reveal plot twists, deaths or any other ending details. If the title is ambiguous, use the year and country (${e.country}) to identify it.`;
   return `https://chatgpt.com/?q=${encodeURIComponent(t)}`;
 }
 function te(e) {
   let t = `${e.title} (${e.year ?? "year unknown"}, ${e.country})`;
   return `https://chatgpt.com/?q=${encodeURIComponent(t)}`;
+}
+function runtimeYearLabel(e) {
+  let t = [];
+  return (
+    e.runtimeHours && t.push(`${e.runtimeHours}h`),
+    e.year && t.push(String(e.year)),
+    t.join(" · ") || e.country || "Series"
+  );
 }
 function createPersonalBackupFile(e, t, n) {
   let r = JSON.stringify(
@@ -12150,7 +12158,7 @@ function ne({
                 onKeyDown: (e) => e.stopPropagation(),
                 children: [
                   (0, p.jsx)(_, { name: "external", size: 11 }),
-                  " Title · year · country",
+                  " " + runtimeYearLabel(e),
                 ],
               }),
             ],
@@ -12286,7 +12294,7 @@ function re({
                 rel: "noreferrer",
                 children: [
                   (0, p.jsx)(_, { name: "external", size: 14 }),
-                  " Title · year · country",
+                  " " + runtimeYearLabel(e),
                 ],
               }),
               (0, p.jsxs)("button", {
@@ -12388,6 +12396,122 @@ function w({
       })
     : null;
 }
+function hasLongerPlot(e) {
+  let t = (e.longPlot || "").trim(),
+    n = (e.shortPlot || "").trim();
+  return !!t && t !== n;
+}
+function glEvidenceFor(e) {
+  return Array.isArray(e.glEvidence) && e.glEvidence.length ? e.glEvidence : null;
+}
+function ContextChips({ show: e, memberships: t, openCollectionId: n }) {
+  let [r, l] = (0, f.useState)(() => (n ? `curslick:${n}` : null)),
+    a = glEvidenceFor(e),
+    i = (t || []).map((e) => ({
+      key: `curslick:${e.collection.id}`,
+      kind: "curslick",
+      label: e.collection.shortTitle || e.collection.title,
+      detail: e,
+    })),
+    c = (e.genres || []).map((e) => ({
+      key: `genre:${e}`,
+      kind: "genre",
+      label: e,
+      detail: "Lesbian / GL" === e && a ? a : null,
+    })),
+    d = [...i, ...c];
+  if (!d.length) return null;
+  let o = d.find((e) => e.key === r && e.detail) || null;
+  return (0, p.jsxs)("section", {
+    className: "context-chips",
+    "aria-label": "Genres and Curslick collections",
+    children: [
+      (0, p.jsx)("div", {
+        className: "context-chip-row",
+        children: d.map((e) =>
+          e.detail
+            ? (0, p.jsxs)(
+                "button",
+                {
+                  type: "button",
+                  className: `context-chip ${e.kind} ${o && o.key === e.key ? "open" : ""}`,
+                  "aria-expanded": !!(o && o.key === e.key),
+                  onClick: () => l((t) => (t === e.key ? null : e.key)),
+                  children: [
+                    e.label,
+                    (0, p.jsx)(_, { name: "chevron", size: 11 }),
+                  ],
+                },
+                e.key,
+              )
+            : (0, p.jsx)(
+                "span",
+                { className: `context-chip ${e.kind} plain`, children: e.label },
+                e.key,
+              ),
+        ),
+      }),
+      o
+        ? (0, p.jsx)("div", {
+            className: "context-chip-detail",
+            children:
+              "curslick" === o.kind
+                ? (0, p.jsxs)(p.Fragment, {
+                    children: [
+                      (0, p.jsxs)("p", {
+                        className: "context-chip-kicker",
+                        children: [
+                          o.detail.collection.title,
+                          " · #",
+                          String(o.detail.entry.position).padStart(2, "0"),
+                        ],
+                      }),
+                      (0, p.jsx)("h3", { children: "Why it belongs" }),
+                      (0, p.jsx)("p", { children: o.detail.entry.why }),
+                      o.detail.entry.placementNote
+                        ? (0, p.jsx)("p", {
+                            className: "context-chip-note",
+                            children: o.detail.entry.placementNote,
+                          })
+                        : null,
+                      o.detail.entry.matchTags && o.detail.entry.matchTags.length
+                        ? (0, p.jsx)("span", {
+                            children: o.detail.entry.matchTags.join(" · "),
+                          })
+                        : null,
+                    ],
+                  })
+                : (0, p.jsxs)(p.Fragment, {
+                    children: [
+                      (0, p.jsx)("p", {
+                        className: "context-chip-kicker",
+                        children: o.label,
+                      }),
+                      (0, p.jsx)("h3", { children: "Why this genre" }),
+                      o.detail.map((e, t) =>
+                        (0, p.jsxs)(
+                          "p",
+                          {
+                            children: [
+                              e.detail,
+                              e.source
+                                ? (0, p.jsxs)("span", {
+                                    className: "context-chip-source",
+                                    children: [" — ", e.source],
+                                  })
+                                : null,
+                            ],
+                          },
+                          t,
+                        ),
+                      ),
+                    ],
+                  }),
+          })
+        : null,
+    ],
+  });
+}
 function ie({
   show: e,
   inList: t,
@@ -12396,6 +12520,8 @@ function ie({
   onToggleList: l,
   onToggleWatched: a,
   curslickEntry: i,
+  curslickMemberships: m,
+  openCollectionId: g,
   notInterestedEntry: c,
   onEditNotInterested: d,
 }) {
@@ -12502,7 +12628,7 @@ function ie({
                         className: "chatgpt-action simple-chatgpt-action",
                         children: [
                           (0, p.jsx)(_, { name: "external", size: 15 }),
-                          " Title · year · country",
+                          " " + runtimeYearLabel(e),
                         ],
                       }),
                       (0, p.jsx)("button", {
@@ -12551,7 +12677,16 @@ function ie({
                       e.imdbRating
                         ? (0, p.jsxs)("span", {
                             className: "rating-text",
-                            children: [e.imdbRating.toFixed(1), " IMDb"],
+                            children: [
+                              e.imdbRating.toFixed(1),
+                              " IMDb",
+                              e.imdbVotes
+                                ? (0, p.jsxs)("small", {
+                                    className: "rating-votes",
+                                    children: [v.format(e.imdbVotes), " votes"],
+                                  })
+                                : null,
+                            ],
                           })
                         : null,
                       n
@@ -12589,111 +12724,43 @@ function ie({
                         ],
                       })
                     : null,
-                  (0, p.jsxs)("button", {
-                    className: "plot-expander " + (o ? "expanded" : ""),
-                    onClick: () => s((e) => !e),
-                    "aria-expanded": o,
-                    children: [
-                      (0, p.jsx)("span", {
-                        className: "plot-label",
-                        children: o ? "Detailed plot" : "Short plot",
-                      }),
-                      (0, p.jsx)("span", {
-                        className: "plot-copy",
-                        children: o ? e.longPlot : e.shortPlot,
-                      }),
-                      (0, p.jsxs)("small", {
+                  hasLongerPlot(e)
+                    ? (0, p.jsxs)("button", {
+                        className: "plot-expander " + (o ? "expanded" : ""),
+                        onClick: () => s((e) => !e),
+                        "aria-expanded": o,
                         children: [
-                          o ? "Show short description" : "Open detailed description",
-                          " ",
-                          (0, p.jsx)(_, { name: "chevron", size: 13 }),
-                        ],
-                      }),
-                    ],
-                  }),
-                  i
-                    ? (0, p.jsxs)("section", {
-                        className: "curslick-detail-context",
-                        children: [
-                          (0, p.jsxs)("div", {
+                          (0, p.jsx)("span", {
+                            className: "plot-label",
+                            children: o ? "Detailed plot" : "Short plot",
+                          }),
+                          (0, p.jsx)("span", {
+                            className: "plot-copy",
+                            children: o ? e.longPlot : e.shortPlot,
+                          }),
+                          (0, p.jsxs)("small", {
                             children: [
-                              (0, p.jsx)(_, { name: "spark", size: 17 }),
-                              (0, p.jsxs)("p", {
-                                children: [
-                                  "Curslick placement · #",
-                                  String(i.position).padStart(2, "0"),
-                                ],
-                              }),
+                              o ? "Show short description" : "Open detailed description",
+                              " ",
+                              (0, p.jsx)(_, { name: "chevron", size: 13 }),
                             ],
                           }),
-                          (0, p.jsx)("h3", { children: "Why it belongs" }),
-                          (0, p.jsx)("p", { children: i.why }),
-                          (0, p.jsx)("span", { children: i.matchTags.join(" · ") }),
                         ],
                       })
-                    : null,
-                  (0, p.jsxs)("div", {
-                    className: "chatgpt-question-box",
-                    children: [
-                      (0, p.jsxs)("div", {
-                        className: "chatgpt-question-copy",
+                    : (0, p.jsxs)("div", {
+                        className: "plot-expander plot-static",
                         children: [
-                          (0, p.jsx)(_, { name: "spark", size: 20 }),
-                          (0, p.jsxs)("div", {
-                            children: [
-                              (0, p.jsx)("b", { children: "Unsure about the ending or romance?" }),
-                              (0, p.jsx)("p", {
-                                children:
-                                  "ChatGPT opens with this exact series and both spoiler-free questions already prepared.",
-                              }),
-                            ],
+                          (0, p.jsx)("span", { className: "plot-label", children: "Plot" }),
+                          (0, p.jsx)("span", {
+                            className: "plot-copy",
+                            children: e.shortPlot || e.longPlot || "Plot summary unavailable.",
                           }),
                         ],
                       }),
-                      (0, p.jsxs)("a", {
-                        href: C(e),
-                        target: "_blank",
-                        rel: "noreferrer",
-                        children: [
-                          "Ask about ",
-                          e.title,
-                          " ",
-                          (0, p.jsx)(_, { name: "external", size: 15 }),
-                        ],
-                      }),
-                    ],
-                  }),
-                  (0, p.jsxs)("div", {
-                    className:
-                      "eligibility-note " +
-                      (e.archiveException ||
-                      e.curslickExclusive ||
-                      e.lesbianGlArchive ||
-                      (e.kDramaArchive && !e.catalogueMember)
-                        ? "exception"
-                        : ""),
-                    children: [
-                      (0, p.jsx)(_, {
-                        name:
-                          e.archiveException ||
-                          e.lesbianGlArchive ||
-                          (e.kDramaArchive && !e.catalogueMember)
-                            ? "eye"
-                            : "check",
-                        size: 16,
-                      }),
-                      (0, p.jsx)("p", {
-                        children: e.archiveException
-                          ? "This is preserved from your imported watched history, so it may sit outside the ranked catalogue’s 2010+, ended, and 6–60-hour rules."
-                          : e.curslickExclusive
-                            ? `This Curslick editorial exclusive is a completed ${e.episodes}-episode series from ${e.year}–${e.endYear}, with an estimated ${e.runtimeHours}-hour run.`
-                            : e.lesbianGlArchive
-                              ? "This verified Lesbian / GL Archive entry has a central or substantial recurring queer-woman story. This genre is broader than the ending-safe Curslick list, so status and endings may vary."
-                              : e.kDramaArchive && !e.catalogueMember
-                              ? "This is a completed scripted entry in the broad K-Drama Archive. The archive includes older and shorter Korean series, while excluding reality, talk shows, one-off specials and soap-style runs above 60 episodes."
-                              : `Verified for the ranked catalogue: season one began in ${e.year}, the series is ended, and its estimated complete runtime is ${e.runtimeHours} hours.`,
-                      }),
-                    ],
+                  (0, p.jsx)(ContextChips, {
+                    show: e,
+                    memberships: m,
+                    openCollectionId: g,
                   }),
                 ],
               }),
@@ -12709,26 +12776,12 @@ function ie({
                   (0, p.jsxs)("p", {
                     children: [(0, p.jsx)("span", { children: "Format" }), e.format],
                   }),
-                  (0, p.jsxs)("p", {
-                    children: [
-                      (0, p.jsx)("span", { children: "Genres & tags" }),
-                      e.genres.join(", "),
-                    ],
-                  }),
                   e.episodeRuntime
                     ? (0, p.jsxs)("p", {
                         children: [
                           (0, p.jsx)("span", { children: "Typical episode" }),
                           e.episodeRuntime,
                           " minutes",
-                        ],
-                      })
-                    : null,
-                  e.imdbVotes
-                    ? (0, p.jsxs)("p", {
-                        children: [
-                          (0, p.jsx)("span", { children: "IMDb votes" }),
-                          v.format(e.imdbVotes),
                         ],
                       })
                     : null,
@@ -14121,6 +14174,18 @@ function T() {
       [Se, Ee],
     ),
     Te = (0, f.useMemo)(() => new Map(Ne.map(({ show: e, entry: t }) => [e.id, t])), [Ne]),
+    curslickMembershipsById = (0, f.useMemo)(() => {
+      let e = new Map();
+      for (let t of n.collections)
+        for (let r of t.entries) {
+          let l = r.show ? Ee.get(r.show.id) : Ee.get(r.showId || ""),
+            a = l ? l.id : r.show ? r.show.id : r.showId;
+          if (!a) continue;
+          let i = e.get(a);
+          (i || e.set(a, (i = [])), i.push({ collection: t, entry: r }));
+        }
+      return e;
+    }, [n.collections, Ee]),
     curslickExcludedCount = Ne.filter(({ show: e }) => !passesExclusions(e, exclusions)).length,
     _e = (0, f.useMemo)(() => Ce.filter((e) => passesExclusions(e, exclusions)), [Ce, exclusions]),
     excludedCount = Ce.length - _e.length,
@@ -14619,7 +14684,7 @@ function T() {
                                     rel: "noreferrer",
                                     children: [
                                       (0, p.jsx)(_, { name: "external", size: 15 }),
-                                      " Title · year · country",
+                                      " " + runtimeYearLabel($e),
                                     ],
                                   }),
                                   (0, p.jsxs)("button", {
@@ -14974,6 +15039,8 @@ function T() {
               onToggleList: () => toggleWatchlist(v),
               onToggleWatched: () => be("morningstar-watched", O, M, v.id),
               curslickEntry: "curslick" === c ? Te.get(v.id) : void 0,
+              curslickMemberships: curslickMembershipsById.get(v.id) || [],
+              openCollectionId: "curslick" === c && Te.get(v.id) ? Se?.id : null,
               notInterestedEntry: notInterestedFor(v),
               onEditNotInterested: () => setNotInterestedTarget(v),
             },

@@ -55,6 +55,28 @@ watched marks. “Export to Drive” opens the device share sheet with the JSON 
 Drive” uses the system file picker. Legacy schema-version-1 backups containing `myList` and
 `extraWatched` remain importable.
 
+## Series detail
+
+Opening a series shows the IMDb rating (with its vote count beneath it), year, episode count, runtime
+and status on one fact line, then the plot. Where a title has a genuinely longer synopsis the plot
+block expands; where it does not, it simply renders — there is no toggle that reveals the same
+sentence twice.
+
+Below the plot sits a row of chips: every Curslick collection the series belongs to, then its genres.
+A chip is a button only when there is already researched copy behind it — a collection's "why it
+belongs" write-up, or the Lesbian / GL archive's inclusion evidence — and clicking it expands that
+existing text. Genres with no such write-up render as plain labels, so no chip invites a click that
+leads nowhere. Opening a series from inside a collection auto-expands that collection's chip.
+
+Two ChatGPT links sit in the header. **Ending & romance** asks three questions: whether the story
+actually has an ending, whether there is romance between the main couple, and whether that couple
+ends up together — or is at least implied or open-ended enough to read as a soft endgame. The second
+link is labelled with the series' runtime and year and opens a plain lookup.
+
+Generated `longPlot` fields used to end with a templated sentence restating the episode count,
+format, country, runtime and genres. Since the fact line and chips already carry all of that, it is
+stripped from the payload by `research/strip-plot-boilerplate.js`.
+
 ## One card per series
 
 The catalogue, the K-drama archive, the Lesbian / GL Archive, the watched history and Curslick's
