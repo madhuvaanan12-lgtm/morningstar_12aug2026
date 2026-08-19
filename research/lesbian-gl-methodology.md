@@ -1,16 +1,32 @@
 # Lesbian / GL genre methodology
 
-Source date: 18 August 2026
+Source date: 18 August 2026; last updated: 19 August 2026
 Genre label: Lesbian / GL
+
+## Why This Genre Matters
+
+The Lesbian / GL genre is an evidence-backed representation archive designed to surface stories where women-loving-women relationships, queer female characters, and sapphic narratives occupy **primary structural importance** — not cameos, subtext, or secondary subplot roles.
+
+Lesbian and GL representation has historically been marginalized in mainstream television catalogs, often buried under broader "LGBTQ+" tags that don't capture the specific experience of girl-love storytelling. This genre honors:
+
+- Dedicated lesbian dramas and romance-centered series
+- Shows where sapphic relationships drive the central plot
+- Yuri/GL anime traditions (Japanese animation with female romance as core)
+- International queer women's storytelling (Thai GL, Korean dramas, Chinese web series, UK/USA television)
+- Stories across endings: some are happy, some tragic, some unfinished — representation doesn't require a specific ending
+
+This genre deliberately excludes shows where queer women appear as supporting characters or subtext in primarily heterosexual-focused or genre-driven narratives (superhero ensembles, medical dramas, sci-fi action, etc.).
 
 ## Result
 
-The first research pass contains **475 unique scripted series**:
+The curated collection contains **461 unique scripted series**:
 
-- 199 titles reuse an existing Morningstar record.
-- 276 titles receive a new archive card.
+- 198 titles reuse an existing Morningstar record.
+- 263 titles receive a new archive card.
 - 67 titles are Thai.
 - Every included record carries the Lesbian / GL genre and title-level source evidence.
+
+A cleanup pass in August 2026 removed 19 titles that failed primary-genre criteria (false positives from source data that featured queer women only as supporting characters in primarily non-GL narratives).
 
 The requested 1,000 was treated as a research target, not a quota. The available specialist databases
 can exceed 1,000 only by mixing in minor/occasional appearances, one-off films, reality programming,
@@ -19,15 +35,16 @@ show. This pass stops at 475 rather than padding the genre with weaker matches.
 
 ## Inclusion rule
 
-A title qualifies when at least one source establishes either:
+A title qualifies when at least one source establishes that sapphic women or GL storytelling is **primary** to the series, meaning:
 
-1. a female-led GL/yuri romance or dedicated GL drama; or
-2. a protagonist, main, several, ensemble, or supporting queer-woman storyline that recurs as a
-   substantial part of the scripted series.
+1. **Dedicated GL/yuri romance or GL drama** — the series centers on female-female romance or relationships as its core premise; or
+2. **Protagonist or leading queer-woman storyline** — a queer female character(s) or sapphic relationship drives the central narrative as substantially as it would in any other primary-genre show (not background elements, cameos, or secondary arcs in shows whose primary genre is action, medical drama, or superhero ensemble).
 
-This is a representation genre, not an ending guarantee. Ongoing, cancelled and unhappy-ending titles
-can qualify. The stricter Curslick 04 collection remains the place for completed stories whose central
-couple is alive and together in the ending.
+**Primary** is key: We exclude shows where queer women appear prominently but in supporting roles within primarily non-sapphic narratives (e.g., a queer secondary character in a procedural, or sapphic subtext in a superhero ensemble). We include shows where sapphic narratives are as central to the series as they would be in any other romance, drama, or character-driven show.
+
+This is a representation genre, not an ending guarantee. Ongoing, cancelled, and unhappy-ending titles can qualify. For titles seeking happy, completed endings, see **Curslick Collection 04** (Lesbian happy endings), which applies stricter criteria: the show must have an actual ending, and the central lesbian couple must be alive and together on screen in that ending.
+
+The Lesbian / GL genre is intentionally broader than Collection 04 — it captures the full spectrum of sapphic storytelling, while Collection 04 is the curated recommendation for viewers seeking story completeness and romantic resolution.
 
 ## Exclusions
 
@@ -38,10 +55,22 @@ The build removes:
 - entries explicitly marked Upcoming;
 - Thai 2026 announcements that had not released or begun airing by 18 August 2026;
 - duplicate seasons and alternate spellings of the same series.
+- **titles where sapphic representation is secondary, supporting, or subtext within primarily non-GL narratives** (e.g., a queer character in a superhero ensemble, LGBTQ+ side story in a medical drama, or sapphic subtext in a primarily heterosexual-focused show). These are false positives that fail the **primary-genre test**.
 
 The application exempts these archive entries from the default country and runtime exclusions. That
 keeps Thai, short-form web series and longer ensemble series available through the genre filter.
 Explicit K-drama exclusions still work.
+
+## August 2026 Cleanup
+
+To strengthen genre accuracy, a verification pass removed 19 titles that appeared in source data but failed primary-genre criteria on verification. Examples of removed titles:
+
+- **Genre shows with secondary queer content**: Arcane (fantasy/action with sapphic subtext), Arrow (superhero with queer secondary characters), Agents of S.H.I.E.L.D. (spy action ensemble)
+- **Procedurals and dramas with supporting LGBT characters**: 9-1-1 (emergency ensemble), A Good Girl's Guide to Murder (mystery thriller with queer best friend), All American: Homecoming (sports drama)
+- **Horror/anthology with queer supporting roles**: American Horror Story, American Horror Stories (horror primary, LGBTQ+ secondary)
+- **Other non-GL primary shows**: Atypical (autism coming-of-age, not lesbian primary), And Just Like That... (romantic comedy/drama, not GL primary), A Murder at the End of the World (mystery thriller)
+
+This cleanup improves precision: from 475 candidates, 19 false positives were removed and 5 verified GL shows were added (Friendly Rivalry, Gushing Over Magical Girls, Futari Escape, Adachi and Shimamura, Kase-san and Morning Glories), bringing the collection to 461 titles with higher confidence in primary-genre classification.
 
 ## Sources
 

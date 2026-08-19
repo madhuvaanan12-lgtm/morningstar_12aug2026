@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-18T00:00:00.000+05:30",
+  "generatedAt": "2026-08-19T00:00:00.000+05:30",
   "genre": "Lesbian / GL",
-  "methodology": "Union of substantial recurring queer-woman representation and dedicated GL lists. Minor/occasional-only entries, reality/competition/documentary programmes, unreleased Thai projects and duplicate seasons were excluded. The genre is broader than Curslick 04's ending-safe list, so endings and status vary.",
+  "methodology": "Union of substantial recurring queer-woman representation and dedicated GL lists. Shows where sapphic narratives are PRIMARY — not secondary, supporting, or subtext in non-GL narratives — are included. Minor/occasional-only entries, reality/competition/documentary programmes, unreleased Thai projects and duplicate seasons were excluded. Verification pass (August 2026) removed 19 false positives that failed primary-genre criteria. The genre is broader than Curslick 04's ending-safe list, so endings and status vary.",
   "counts": {
-    "verifiedTitles": 475,
-    "matchedExistingTitles": 199,
-    "newArchiveTitles": 276,
+    "verifiedTitles": 461,
+    "matchedExistingTitles": 192,
+    "newArchiveTitles": 269,
     "thaiTitles": 67
   },
   "sourceCounts": {
@@ -310,63 +310,6 @@
       ]
     },
     {
-      "title": "9-1-1",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Ensemble",
-      "status": "Ongoing",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-9-1-1-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Ensemble representation; Currently running/no update",
-          "prominence": "Ensemble"
-        }
-      ]
-    },
-    {
-      "title": "9-1-1 Nashville",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Ensemble",
-      "status": "Ongoing",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-9-1-1-nashville-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Ensemble representation; Renewed",
-          "prominence": "Ensemble"
-        }
-      ]
-    },
-    {
-      "title": "A Good Girl's Guide to Murder",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Supporting",
-      "status": "Ongoing",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-good-girl-s-guide-to-murder-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Renewed",
-          "prominence": "Supporting"
-        }
-      ]
-    },
-    {
       "title": "A League of Their Own",
       "aliases": [],
       "year": 2022,
@@ -382,82 +325,6 @@
           "url": "https://lezwatchtv.com/shows/?fwp_show_loved=yes",
           "detail": "Editorially marked as a show LezWatch.TV loves.",
           "prominence": "Loved"
-        }
-      ]
-    },
-    {
-      "title": "A Man on the Inside",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Main",
-      "status": "Ongoing",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-man-on-inside-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Main representation; Renewed",
-          "prominence": "Main"
-        }
-      ]
-    },
-    {
-      "title": "A Million Little Things",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Ensemble",
-      "status": "Ended",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-million-little-things-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Ensemble representation; Complete",
-          "prominence": "Ensemble"
-        }
-      ]
-    },
-    {
-      "title": "A Murder at the End of the World",
-      "aliases": [],
-      "year": 2023,
-      "country": "United States",
-      "prominence": "Protagonist",
-      "status": "Ended",
-      "matchedExisting": true,
-      "matchId": "tt15227418",
-      "archiveId": "tt15227418",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Protagonist representation; Limited series",
-          "prominence": "Protagonist"
-        }
-      ]
-    },
-    {
-      "title": "Acapulco",
-      "aliases": [],
-      "year": 2021,
-      "country": "United States",
-      "prominence": "Supporting",
-      "status": "Ended",
-      "matchedExisting": true,
-      "matchId": "tt13567344",
-      "archiveId": "tt13567344",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Complete",
-          "prominence": "Supporting"
         }
       ]
     },
@@ -544,25 +411,6 @@
       ]
     },
     {
-      "title": "Agents of S.H.I.E.L.D.",
-      "aliases": [],
-      "year": 2014,
-      "country": "Unknown",
-      "prominence": "Editorial top 100",
-      "status": "Ended",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-agents-of-s-h-i-e-l-d-2014",
-      "evidence": [
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #66 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ]
-    },
-    {
       "title": "AI Girl",
       "aliases": [
         "AI Girl (Thai TV Series)"
@@ -586,25 +434,6 @@
           "url": "https://en.wikipedia.org/wiki/List_of_GL_dramas",
           "detail": "Dedicated GL drama · Thailand · 2026 · iQIYI, YouTube",
           "prominence": "GL lead"
-        }
-      ]
-    },
-    {
-      "title": "All American: Homecoming",
-      "aliases": [],
-      "year": 2022,
-      "country": "United States",
-      "prominence": "Supporting",
-      "status": "Ended",
-      "matchedExisting": true,
-      "matchId": "tt14088994",
-      "archiveId": "tt14088994",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Ending with final season",
-          "prominence": "Supporting"
         }
       ]
     },
@@ -666,69 +495,6 @@
       ]
     },
     {
-      "title": "American Gods",
-      "aliases": [],
-      "year": 2017,
-      "country": "United States",
-      "prominence": "Editorial top 100",
-      "status": "Ended",
-      "matchedExisting": true,
-      "matchId": "tt1898069",
-      "archiveId": "tt1898069",
-      "evidence": [
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #69 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ]
-    },
-    {
-      "title": "American Horror Stories",
-      "aliases": [],
-      "year": 2021,
-      "country": "United States",
-      "prominence": "Editorial top 100",
-      "status": "Ended",
-      "matchedExisting": true,
-      "matchId": "tt12306692",
-      "archiveId": "tt12306692",
-      "evidence": [
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #98 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ]
-    },
-    {
-      "title": "American Horror Story",
-      "aliases": [],
-      "year": 2011,
-      "country": "Unknown",
-      "prominence": "Several",
-      "status": "Ongoing",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-american-horror-story-2011",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Several representation; Renewed",
-          "prominence": "Several"
-        },
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #75 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ]
-    },
-    {
       "title": "An Office Thing",
       "aliases": [],
       "year": 2025,
@@ -744,69 +510,6 @@
           "url": "https://en.wikipedia.org/wiki/List_of_GL_dramas",
           "detail": "Dedicated GL drama · South Korea · 2025 · YouTube",
           "prominence": "GL lead"
-        }
-      ]
-    },
-    {
-      "title": "And Just Like That...",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Main",
-      "status": "Ended",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-and-just-like-that-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Main representation; Canceled with no final season",
-          "prominence": "Main"
-        }
-      ]
-    },
-    {
-      "title": "Andor",
-      "aliases": [],
-      "year": 2022,
-      "country": "International",
-      "prominence": "Editorial top 100",
-      "status": "Ended",
-      "matchedExisting": true,
-      "matchId": "tt9253284",
-      "archiveId": "tt9253284",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Complete",
-          "prominence": "Supporting"
-        },
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #62 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ]
-    },
-    {
-      "title": "Animal Control",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Ensemble",
-      "status": "Ongoing",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-animal-control-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Ensemble representation; Renewed",
-          "prominence": "Ensemble"
         }
       ]
     },
@@ -940,82 +643,6 @@
           "url": "https://en.wikipedia.org/wiki/List_of_GL_dramas",
           "detail": "Dedicated GL drama · Thailand · 2024 · YouTube",
           "prominence": "GL lead"
-        }
-      ]
-    },
-    {
-      "title": "Apples Never Fall",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Supporting",
-      "status": "Ended",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-apples-never-fall-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Limited series",
-          "prominence": "Supporting"
-        }
-      ]
-    },
-    {
-      "title": "Arcane",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Protagonist",
-      "status": "Ended",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-arcane-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Protagonist representation; Complete",
-          "prominence": "Protagonist"
-        }
-      ]
-    },
-    {
-      "title": "Arrow",
-      "aliases": [],
-      "year": 2012,
-      "country": "Unknown",
-      "prominence": "Editorial top 100",
-      "status": "Ended",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-arrow-2012",
-      "evidence": [
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #74 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ]
-    },
-    {
-      "title": "Atypical",
-      "aliases": [],
-      "year": 2017,
-      "country": "United States",
-      "prominence": "Loved",
-      "status": "Ended",
-      "matchedExisting": true,
-      "matchId": "tt6315640",
-      "archiveId": "tt6315640",
-      "evidence": [
-        {
-          "source": "LezWatch.TV Shows We Love",
-          "url": "https://lezwatchtv.com/shows/?fwp_show_loved=yes",
-          "detail": "Editorially marked as a show LezWatch.TV loves.",
-          "prominence": "Loved"
         }
       ]
     },
@@ -9482,6 +9109,107 @@
           "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
           "detail": "Main representation; Complete",
           "prominence": "Main"
+        }
+      ]
+    },
+    {
+      "title": "Friendly Rivalry",
+      "aliases": [],
+      "year": 2025,
+      "country": "South Korea",
+      "prominence": "GL lead",
+      "status": "Ongoing",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-friendly-rivalry-2025",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://lesbiansonscreen.com/friendly-rivalry-2025-korean-gl-drama/",
+          "detail": "2025 Korean psychological thriller GL drama; lesbian leads and central romance",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Gushing Over Magical Girls",
+      "aliases": [
+        "Mahou Shoujo ni Akogarete"
+      ],
+      "year": 2024,
+      "country": "Japan",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-gushing-over-magical-girls-2024",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://japangayguide.com/lesbian-yuri-anime/lesbian-anime-of-2024-gushing-over-magical-girls/",
+          "detail": "2024 Japanese yuri anime with GL themes; premiered January 2024, 13 episodes",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Futari Escape",
+      "aliases": [],
+      "year": 2025,
+      "country": "Japan",
+      "prominence": "GL lead",
+      "status": "Ongoing",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-futari-escape-2025",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://mydramalist.com/798996-futari-escape",
+          "detail": "2025 Japanese yuri live-action drama; two young women protagonists",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Adachi and Shimamura",
+      "aliases": [
+        "Adachi to Shimamura"
+      ],
+      "year": 2020,
+      "country": "Japan",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-adachi-shimamura-2020",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Adachi_and_Shimamura",
+          "detail": "2020 Japanese yuri anime adaptation; 12 episodes; Sakura Adachi and Hougetsu Shimamura develop romantic relationship",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Kase-san and Morning Glories",
+      "aliases": [
+        "Kase-san"
+      ],
+      "year": 2018,
+      "country": "Japan",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-kase-san-2018",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Kase-san",
+          "detail": "2018 Japanese yuri OVA; 1 hour runtime; Kase-san and Yamada romance with explicit kiss scenes",
+          "prominence": "GL lead"
         }
       ]
     }
