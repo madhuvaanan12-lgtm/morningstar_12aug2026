@@ -1092,6 +1092,38 @@
           display: none;
         }
       }
+
+      /* Short viewports — a phone or tablet in landscape (wider than the 820px
+         mobile breakpoint but only ~400px tall), and ordinary laptops too. A
+         filter popover is absolutely positioned inside the dock, so once the
+         dock sticks at top:71px the popover's bottom is pinned off-screen and
+         no amount of scrolling reaches it. The open popover only clears a
+         sticky dock at roughly 900px of viewport height, so below that release
+         the dock exactly as the mobile block does — it is expanded-only, so
+         collapsed filters stay sticky while browsing — and size the choice
+         grids against the viewport instead of a flat 295px. */
+      @media (max-height: 900px) {
+        /* relative, not static: the dock's backdrop-filter already makes it a
+           stacking context, so dropping to static would retire its z-index and
+           let the card grid paint over the open popover. Relative lays out
+           exactly like static, so the dock still scrolls with the page. */
+        .filter-dock:not(.collapsed) {
+          position: relative;
+          top: auto;
+        }
+
+        .filter-dock-panel {
+          max-height: none;
+          overflow: visible;
+          overscroll-behavior: auto;
+        }
+
+        .choice-grid,
+        .years-grid {
+          max-height: clamp(150px, 100vh - 260px, 295px);
+          max-height: clamp(150px, 100dvh - 260px, 295px);
+        }
+      }
     </style>
 
 <style id="morningstar-neon-theme">
