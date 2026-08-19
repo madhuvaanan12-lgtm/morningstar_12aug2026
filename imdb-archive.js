@@ -120,12 +120,13 @@
     }
   }
 
-  function languageName(code) {
+  function languageName(value) {
+    if (!/^[a-z]{2,3}$/i.test(value || "")) return value || "Unknown";
     try {
       const display = new Intl.DisplayNames([navigator.language || "en"], { type: "language" });
-      return display.of(code) || code;
+      return display.of(value) || value;
     } catch (_) {
-      return code;
+      return value;
     }
   }
 
@@ -177,7 +178,7 @@
   function populateFilterOptions() {
     const meta = state.manifest?.filterOptions || {};
     addOptions(document.querySelector("#ms-imdb-country"), meta.countries, (value) => `${countryName(value)} · ${value}`, true, meta.unknownCountry);
-    addOptions(document.querySelector("#ms-imdb-language"), meta.languages, (value) => `${languageName(value)} · ${value}`, true, meta.unknownLanguage);
+    addOptions(document.querySelector("#ms-imdb-language"), meta.languages, (value) => languageName(value), true, meta.unknownLanguage);
     addOptions(document.querySelector("#ms-imdb-genre"), meta.genres, (value) => value, false, 0);
   }
 
@@ -213,13 +214,11 @@
           <select id="ms-imdb-country"><option value="all">All countries</option></select>
           <select id="ms-imdb-language"><option value="all">All languages</option></select>
           <select id="ms-imdb-genre"><option value="all">All genres</option></select>
-
           <input id="ms-imdb-min-hours" class="ms-imdb-duration-default" type="number" min="0" step="0.25" value="4" aria-label="Minimum total duration in hours" title="Inclusive minimum total duration">
           <input id="ms-imdb-max-hours" class="ms-imdb-duration-default" type="number" min="0.25" step="0.25" value="60" aria-label="Maximum total duration in hours" title="Inclusive maximum total duration">
           <input id="ms-imdb-min-rating" type="number" min="0" max="10" step="0.1" placeholder="Min IMDb rating">
           <input id="ms-imdb-year-from" type="number" min="1800" max="2100" placeholder="From year">
           <input id="ms-imdb-year-to" type="number" min="1800" max="2100" placeholder="To year">
-
           <select id="ms-imdb-sort"><option value="votes">Most votes</option><option value="rating">Highest rating</option><option value="duration">Shortest total</option><option value="year">Newest</option><option value="title">Title A–Z</option></select>
           <label class="ms-imdb-check"><input id="ms-imdb-unknown-duration" type="checkbox"> Include unknown/partial duration</label>
           <label class="ms-imdb-check"><input id="ms-imdb-exclude-animation" type="checkbox"> Exclude animation/cartoons</label>
@@ -268,14 +267,15 @@
     const duration = state.manifest.durationEnrichment || {};
     const origin = state.manifest.originFilterEnrichment || {};
     document.querySelector("#ms-imdb-note").innerHTML = `
-      ${escapeHtml(state.manifest.source.attribution)} Personal/non-commercial dataset use only.
+      ${escapeHtml(state.manifest.source.attribution)} Personal/non-commercial IMDb dataset use only.
       Total duration is the sum of IMDb-listed episode runtimes and is exact only when every listed episode has a runtime.
       Unknown/partial totals are excluded by default; enable them for web-verification candidates.
-      Country and language are conservative best-available values from IMDb original-title AKA metadata; ambiguous titles remain Unknown rather than being guessed.
+      Country/language are added only where TVmaze maps the exact IMDb ID; country means network/web-channel country and is not guaranteed production country. Unmatched titles remain Unknown.
       ${duration.exactTitles ? `${number(duration.exactTitles)} titles have exact total runtime.` : ""}
-      ${origin.titlesWithCountry ? `${number(origin.titlesWithCountry)} titles have country/region metadata.` : ""}
+      ${origin.matchedTvmazeTitles ? `${number(origin.matchedTvmazeTitles)} titles have an exact TVmaze match.` : ""}
       <a href="https://www.imdb.com/" target="_blank" rel="noopener noreferrer">IMDb</a> ·
-      <a href="https://developer.imdb.com/non-commercial-datasets/" target="_blank" rel="noopener noreferrer">dataset terms/source</a>.`;
+      <a href="https://developer.imdb.com/non-commercial-datasets/" target="_blank" rel="noopener noreferrer">IMDb dataset source</a> ·
+      <a href="https://www.tvmaze.com/api" target="_blank" rel="noopener noreferrer">TVmaze API (CC BY-SA)</a>.`;
     return state.manifest;
   }
 
