@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
-"""Add discovery metadata and remote cover URLs to Morningstar's IMDb archive.
+"""Add discovery metadata, remote covers, and scalable duration estimates.
 
-IMDb remains the source for title IDs, types, years, genres, ratings and episode-
-derived total duration. TVmaze is used only when a show has an exact external IMDb
-ID match. For those matches we add best-available country/language metadata, the
-primary poster URL, and the TVmaze show URL for attribution.
+IMDb remains the source for title IDs, types, years, genres, ratings, episode counts,
+and exact episode-derived total duration. TVmaze is used only when a show has an
+exact external IMDb ID match. For those matches we add best-available country/
+language metadata, the primary poster URL, the TVmaze show URL, and TVmaze's
+average episode runtime when available.
 
+When IMDb cannot provide an exact total duration, Morningstar may calculate a
+clearly labelled estimate. Estimate priority is:
+1. IMDb known-episode average runtime x IMDb episode count.
+2. TVmaze average runtime x IMDb episode count (exact IMDb-ID match only).
+3. IMDb series-level runtime x IMDb episode count.
+
+Estimates never replace exact episode-summed totals and are stored separately.
 Poster files are never downloaded into the repository or generated Netlify output;
 only remote TVmaze CDN URLs are stored in the compact archive records.
 """
@@ -27,9 +35,16 @@ MANIFEST_PATH = OUT_DIR / "manifest.json"
 REPORT_PATH = ROOT / "research" / "imdb-tv-import-report.json"
 TVMAZE_BASE = "https://api.tvmaze.com"
 TVMAZE_UPDATES_URL = f"{TVMAZE_BASE}/updates/shows"
-USER_AGENT = "Morningstar personal TV archive metadata enricher/1.1"
+USER_AGENT = "Morningstar personal TV archive metadata enricher/1.2"
 BASE_WITH_DURATION_FIELDS = 15
-APPENDED_FIELDS = ["countryCodes", "languages", "posterUrl", "tvmazeUrl"]
+APPENDED_FIELDS = [
+    "countryCodes",
+    "languages",
+    "posterUrl",
+    "tvmazeUrl",
+    "estimatedTotalRuntimeMinutes",
+    "durationEstimateSource",
+]
 REQUEST_INTERVAL_SECONDS = 0.5
 
 
@@ -92,6 +107,14 @@ def clean_https_url(value) -> str | None:
     return value if value and value.startswith("https://") else None
 
 
+def positive_number(value) -> float | None:
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, (int, float)) and value > 0:
+        return float(value)
+    return None
+
+
 def show_country(show: dict) -> str | None:
     for container_name in ("network", "webChannel"):
         container = show.get(container_name)
@@ -111,9 +134,14 @@ def show_poster(show: dict) -> str | None:
     image = show.get("image")
     if not isinstance(image, dict):
         return None
-    # Medium is intentionally preferred: it is a poster-sized resized image and
-    # avoids loading the original artwork for catalogue rows.
     return clean_https_url(image.get("medium")) or clean_https_url(image.get("original"))
+
+
+def show_average_runtime(show: dict) -> float | None:
+    # TVmaze exposes both runtime and averageRuntime in primary show information.
+    # Prefer averageRuntime because it is designed to represent typical episode
+    # length across shows whose individual episode lengths vary.
+    return positive_number(show.get("averageRuntime")) or positive_number(show.get("runtime"))
 
 
 def load_archive(manifest: dict[str, object]) -> tuple[list[list[object]], set[str]]:
@@ -129,14 +157,14 @@ def load_archive(manifest: dict[str, object]) -> tuple[list[list[object]], set[s
     return records, title_ids
 
 
-def tvmaze_mapping(title_ids: set[str]) -> tuple[dict[str, dict[str, str | None]], int, int]:
+def tvmaze_mapping(title_ids: set[str]) -> tuple[dict[str, dict[str, object]], int, int]:
     updates = fetch_json(TVMAZE_UPDATES_URL)
     if not isinstance(updates, dict) or not updates:
         raise RuntimeError("TVmaze updates/shows did not return the expected show-id map")
 
     max_show_id = max(int(show_id) for show_id in updates.keys())
     max_page = max_show_id // 250
-    mapping: dict[str, dict[str, str | None]] = {}
+    mapping: dict[str, dict[str, object]] = {}
     pages_read = 0
     shows_read = 0
 
@@ -160,26 +188,57 @@ def tvmaze_mapping(title_ids: set[str]) -> tuple[dict[str, dict[str, str | None]
             if not imdb_id or imdb_id not in title_ids:
                 continue
 
-            candidate = {
+            candidate: dict[str, object] = {
                 "country": show_country(show),
                 "language": clean_text(show.get("language")),
                 "poster": show_poster(show),
                 "tvmaze": clean_https_url(show.get("url")),
+                "averageRuntime": show_average_runtime(show),
             }
             previous = mapping.get(imdb_id)
             if previous is None:
                 mapping[imdb_id] = candidate
             else:
-                # Duplicate exact IMDb IDs are unusual. Prefer already-known values
-                # and fill only missing fields rather than overwriting them.
                 for key, value in candidate.items():
                     if not previous.get(key) and value:
                         previous[key] = value
 
-        # Free API limit is documented as at least 20 calls / 10 seconds.
         time.sleep(REQUEST_INTERVAL_SECONDS)
 
     return mapping, pages_read, shows_read
+
+
+def estimate_total_runtime(record: list[object], meta: dict[str, object]) -> tuple[int | None, str | None]:
+    """Return a transparent estimate only when exact total runtime is unavailable."""
+    exact_total = positive_number(record[11])
+    if exact_total is not None:
+        return None, None
+
+    episode_count = int(positive_number(record[12]) or 0)
+    if episode_count <= 0:
+        return None, None
+
+    known_count = int(positive_number(record[13]) or 0)
+    known_minutes = positive_number(record[14])
+    if known_count > 0 and known_minutes is not None:
+        average_known = known_minutes / known_count
+        estimate = round(average_known * episode_count)
+        if estimate > 0:
+            return estimate, "IMDb known-episode average × IMDb episode count"
+
+    tvmaze_average = positive_number(meta.get("averageRuntime"))
+    if tvmaze_average is not None:
+        estimate = round(tvmaze_average * episode_count)
+        if estimate > 0:
+            return estimate, "TVmaze average runtime × IMDb episode count"
+
+    imdb_series_runtime = positive_number(record[6])
+    if imdb_series_runtime is not None:
+        estimate = round(imdb_series_runtime * episode_count)
+        if estimate > 0:
+            return estimate, "IMDb series runtime × IMDb episode count"
+
+    return None, None
 
 
 def main() -> None:
@@ -190,11 +249,16 @@ def main() -> None:
     country_counts: Counter[str] = Counter()
     language_counts: Counter[str] = Counter()
     genre_counts: Counter[str] = Counter()
+    estimate_source_counts: Counter[str] = Counter()
     unknown_country = 0
     unknown_language = 0
     matched_tvmaze = 0
     poster_count = 0
+    tvmaze_average_runtime_count = 0
     exact_in_default_range = 0
+    estimated_duration_count = 0
+    estimated_in_default_range = 0
+    no_usable_duration_after_estimation = 0
 
     for record in records:
         if len(record) < BASE_WITH_DURATION_FIELDS:
@@ -204,16 +268,20 @@ def main() -> None:
 
         title_id = str(record[0])
         meta = mapping.get(title_id) or {}
-        country = meta.get("country")
-        language = meta.get("language")
-        poster = meta.get("poster")
-        tvmaze_url = meta.get("tvmaze")
+        country = meta.get("country") if isinstance(meta.get("country"), str) else None
+        language = meta.get("language") if isinstance(meta.get("language"), str) else None
+        poster = meta.get("poster") if isinstance(meta.get("poster"), str) else None
+        tvmaze_url = meta.get("tvmaze") if isinstance(meta.get("tvmaze"), str) else None
         countries = [country] if country else []
         languages = [language] if language else []
-        record.extend([countries, languages, poster, tvmaze_url])
+
+        estimated_total, estimate_source = estimate_total_runtime(record, meta)
+        record.extend([countries, languages, poster, tvmaze_url, estimated_total, estimate_source])
 
         if title_id in mapping:
             matched_tvmaze += 1
+        if positive_number(meta.get("averageRuntime")) is not None:
+            tvmaze_average_runtime_count += 1
         if poster:
             poster_count += 1
         if countries:
@@ -228,9 +296,18 @@ def main() -> None:
         genres = record[7] if isinstance(record[7], list) else []
         genre_counts.update(str(genre) for genre in genres if genre)
 
-        total_runtime = record[11]
-        if isinstance(total_runtime, (int, float)) and 240 <= total_runtime <= 3600:
-            exact_in_default_range += 1
+        exact_total = positive_number(record[11])
+        if exact_total is not None:
+            if 240 <= exact_total <= 3600:
+                exact_in_default_range += 1
+        elif estimated_total is not None:
+            estimated_duration_count += 1
+            if estimate_source:
+                estimate_source_counts.update([estimate_source])
+            if 240 <= estimated_total <= 3600:
+                estimated_in_default_range += 1
+        else:
+            no_usable_duration_after_estimation += 1
 
     cursor = 0
     new_files: list[dict[str, object]] = []
@@ -248,7 +325,7 @@ def main() -> None:
         raise RuntimeError("TVmaze rewrite did not consume all IMDb records")
 
     fields = list(manifest.get("fields") or [])
-    manifest["schemaVersion"] = 4
+    manifest["schemaVersion"] = 5
     manifest["generatedAt"] = datetime.now(timezone.utc).isoformat()
     manifest["fields"] = fields[:BASE_WITH_DURATION_FIELDS] + APPENDED_FIELDS
     manifest["files"] = new_files
@@ -256,15 +333,17 @@ def main() -> None:
     source = dict(manifest.get("source") or {})
     source["countryLanguageCoverSource"] = "TVmaze public API show index"
     source["tvmazeApiUrl"] = "https://api.tvmaze.com/shows?page=:num"
-    source["tvmazeAttribution"] = "Country/language/poster enrichment courtesy of TVmaze (CC BY-SA)."
+    source["tvmazeAttribution"] = "Country/language/poster/average-runtime enrichment courtesy of TVmaze (CC BY-SA)."
     source["coverStorage"] = "Remote TVmaze poster URLs only; image files are not stored by Morningstar."
+    source["durationEstimatePolicy"] = "Exact IMDb episode sums first; otherwise transparent estimates from IMDb partial episode averages, TVmaze averageRuntime, or IMDb series runtime multiplied by IMDb episode count."
     manifest["source"] = source
 
     manifest["originFilterEnrichment"] = {
-        "method": "Exact IMDb-ID match to TVmaze show index; country uses network/web-channel/DVD country, language uses TVmaze show language, poster uses TVmaze primary show image.",
+        "method": "Exact IMDb-ID match to TVmaze show index; country uses network/web-channel/DVD country, language uses TVmaze show language, poster uses TVmaze primary show image, and averageRuntime is used only for labelled duration estimates.",
         "countryFieldMeaning": "Best-available TV network/web-channel country, not guaranteed production country.",
         "languageFieldMeaning": "TVmaze show language for matched titles.",
         "matchedTvmazeTitles": matched_tvmaze,
+        "titlesWithTvmazeAverageRuntime": tvmaze_average_runtime_count,
         "titlesWithPoster": poster_count,
         "titlesWithCountry": len(records) - unknown_country,
         "titlesWithLanguage": len(records) - unknown_language,
@@ -287,6 +366,12 @@ def main() -> None:
     duration["defaultMinHoursInclusive"] = 4
     duration["defaultMaxHoursInclusive"] = 60
     duration["exactTitlesInDefaultRange"] = exact_in_default_range
+    duration["estimatedTitles"] = estimated_duration_count
+    duration["estimatedTitlesInDefaultRange"] = estimated_in_default_range
+    duration["usableDurationTitles"] = int(duration.get("exactTitles") or 0) + estimated_duration_count
+    duration["noUsableDurationAfterEstimation"] = no_usable_duration_after_estimation
+    duration["estimateSourceCounts"] = dict(estimate_source_counts)
+    duration["estimatePolicy"] = "Estimates are never labelled exact and never overwrite exact IMDb episode-summed totals."
     manifest["durationEnrichment"] = duration
 
     defaults = dict(manifest.get("uiDefaults") or {})
@@ -294,6 +379,7 @@ def main() -> None:
     defaults["minTotalHoursInclusive"] = 4
     defaults["maxTotalHoursInclusive"] = 60
     defaults["includeUnknownDuration"] = False
+    defaults["useEstimatedDuration"] = True
     defaults["excludeCartoons"] = False
     defaults["excludeDocumentary"] = False
     defaults["excludeLikelySoap"] = False
@@ -305,6 +391,7 @@ def main() -> None:
     report["filterEnrichment"] = {
         "source": "TVmaze public show index matched by exact IMDb ID",
         "tvmazeMatchedTitles": matched_tvmaze,
+        "titlesWithTvmazeAverageRuntime": tvmaze_average_runtime_count,
         "titlesWithPoster": poster_count,
         "tvmazePagesRead": pages_read,
         "tvmazeShowsRead": shows_read,
@@ -313,7 +400,19 @@ def main() -> None:
         "languageOptionCount": len(language_counts),
         "defaultDurationRangeHours": [4, 60],
         "coverStrategy": "Store only TVmaze medium poster URL and lazy-load visible results; no poster binaries in Git/Netlify.",
-        "defaultDurationRule": "Exact total runtime must be between 4 and 60 hours inclusive. Unknown/partial totals stay excluded by default.",
+        "durationStrategy": {
+            "exact": "Sum of every IMDb-listed episode runtime when all episode runtimes are known.",
+            "estimatePriority": [
+                "IMDb known-episode average × IMDb episode count",
+                "TVmaze average runtime × IMDb episode count for exact IMDb-ID matches",
+                "IMDb series runtime × IMDb episode count",
+            ],
+            "estimatedTitles": estimated_duration_count,
+            "estimatedTitlesInDefaultRange": estimated_in_default_range,
+            "noUsableDurationAfterEstimation": no_usable_duration_after_estimation,
+            "estimateSourceCounts": dict(estimate_source_counts),
+        },
+        "defaultDurationRule": "Use exact duration when available; otherwise use a clearly labelled estimate. Usable total must be between 4 and 60 hours inclusive. Truly unknown totals remain excluded by default.",
         "categoryExclusions": {
             "cartoons": "Optional; IMDb genre-based Animation exclusion in UI.",
             "documentary": "Optional; IMDb genre-based Documentary exclusion in UI.",
@@ -323,10 +422,10 @@ def main() -> None:
     write_json(REPORT_PATH, report, pretty=True)
 
     print(
-        f"IMDb filters/covers enriched: {matched_tvmaze:,} TVmaze exact-ID matches, "
-        f"{poster_count:,} posters, {len(country_counts)} countries, "
-        f"{len(language_counts)} languages, {len(genre_counts)} genres; "
-        f"{exact_in_default_range:,} exact-duration titles in 4-60h."
+        f"IMDb filters/durations enriched: {matched_tvmaze:,} TVmaze exact-ID matches, "
+        f"{tvmaze_average_runtime_count:,} TVmaze average runtimes, {poster_count:,} posters; "
+        f"{estimated_duration_count:,} labelled duration estimates, "
+        f"{no_usable_duration_after_estimation:,} titles still without usable total duration."
     )
 
 
