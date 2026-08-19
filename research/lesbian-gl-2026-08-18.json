@@ -4,9 +4,9 @@
   "genre": "Lesbian / GL",
   "methodology": "Union of substantial recurring queer-woman representation and dedicated GL lists. Shows where sapphic narratives are PRIMARY — not secondary, supporting, or subtext in non-GL narratives — are included. Minor/occasional-only entries, reality/competition/documentary programmes, unreleased Thai projects and duplicate seasons were excluded. Verification pass (August 2026) removed 19 false positives that failed primary-genre criteria. The genre is broader than Curslick 04's ending-safe list, so endings and status vary.",
   "counts": {
-    "verifiedTitles": 467,
+    "verifiedTitles": 468,
     "matchedExistingTitles": 192,
-    "newArchiveTitles": 275,
+    "newArchiveTitles": 276,
     "thaiTitles": 67
   },
   "sourceCounts": {
@@ -9327,6 +9327,27 @@
           "source": "Web verification 2026",
           "url": "https://en.wikipedia.org/wiki/Beguinas",
           "detail": "2024 Spanish period drama; lesbian romance; 10 episodes; aired Atresplayer/Antena 3",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Xeque Mate",
+      "aliases": [
+        "Checkmate"
+      ],
+      "year": 2024,
+      "country": "Brazil",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-xeque-mate-2024",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://lesbiansonscreen.com/xeque-mate-2024-review/",
+          "detail": "2024 Brazilian lesbian miniseries; political thriller with sapphic romance; desire and power themes",
           "prominence": "GL lead"
         }
       ]
