@@ -25,9 +25,10 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          mkdir -p backup
           git fetch --all --tags --prune
-          git bundle create ../morningstar_12aug2026-all-history.bundle --all
-          git archive --format=zip --output=../morningstar_12aug2026-source-main.zip HEAD
+          git bundle create backup/morningstar_12aug2026-all-history.bundle --all
+          git archive --format=zip --output=backup/morningstar_12aug2026-source-main.zip HEAD
           {
             echo "Morning Star complete GitHub backup"
             echo "Repository: madhuvaanan12-lgtm/morningstar_12aug2026"
@@ -40,16 +41,13 @@ jobs:
             echo "Restore full Git repository:"
             echo "  git clone morningstar_12aug2026-all-history.bundle morningstar_12aug2026"
             echo
-            echo "The source ZIP is a browsable snapshot of main at the backup commit."
-          } > ../BACKUP_INFO.txt
+            echo "The source ZIP is a browsable snapshot of the backup commit."
+          } > backup/BACKUP_INFO.txt
 
       - name: Upload backup artifact
         uses: actions/upload-artifact@v4
         with:
           name: morningstar-complete-backup-2026-08-19
-          path: |
-            ../morningstar_12aug2026-all-history.bundle
-            ../morningstar_12aug2026-source-main.zip
-            ../BACKUP_INFO.txt
+          path: backup/
           if-no-files-found: error
           retention-days: 90
