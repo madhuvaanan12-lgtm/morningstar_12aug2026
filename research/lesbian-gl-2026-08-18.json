@@ -1,22 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-18T00:00:00.000+05:30",
+  "generatedAt": "2026-08-19T12:00:00.000+05:30",
   "genre": "Lesbian / GL",
-  "methodology": "Union of substantial recurring queer-woman representation and dedicated GL lists. Minor/occasional-only entries, reality/competition/documentary programmes, unreleased Thai projects and duplicate seasons were excluded. The genre is broader than Curslick 04's ending-safe list, so endings and status vary.",
+  "methodology": "Union of substantial recurring queer-woman representation and dedicated GL lists. Shows where sapphic narratives are PRIMARY — not secondary, supporting, or subtext in non-GL narratives — are included. Minor/occasional-only entries, reality/competition/documentary programmes, unreleased Thai projects and duplicate seasons were excluded. A verification pass (19 August 2026) removed 19 titles that failed primary-genre criteria and added 9 verified titles across Korea, Japan, Spain and Brazil; three near-duplicate candidate rows from an earlier pass were also merged. The audit's archiveEntries array was resynced with this candidates list so the change actually reaches the published catalogue. The genre is broader than Curslick 04's ending-safe list, so endings and status vary.",
   "counts": {
-    "verifiedTitles": 475,
-    "matchedExistingTitles": 199,
-    "newArchiveTitles": 276,
-    "thaiTitles": 67
+    "verifiedTitles": 465,
+    "matchedExistingTitles": 193,
+    "newArchiveTitles": 272,
+    "thaiTitles": 66
   },
   "sourceCounts": {
-    "Aria's WLW television database": 324,
-    "LezWatch.TV Gold Star": 12,
+    "Aria's WLW television database": 310,
+    "Wikipedia GL drama list": 91,
+    "Autostraddle 100 best queer sci-fi/fantasy shows": 44,
     "Thai GL Hub 2026 line-up": 28,
-    "Wikipedia GL drama list": 89,
-    "LezWatch.TV Shows We Love": 12,
-    "Autostraddle 100 best queer sci-fi/fantasy shows": 50,
-    "Morningstar Curslick 04": 18
+    "Morningstar Curslick 04": 18,
+    "LezWatch.TV Gold Star": 12,
+    "Web verification 2026": 12,
+    "LezWatch.TV Shows We Love": 11
   },
   "sources": [
     {
@@ -310,63 +311,6 @@
       ]
     },
     {
-      "title": "9-1-1",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Ensemble",
-      "status": "Ongoing",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-9-1-1-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Ensemble representation; Currently running/no update",
-          "prominence": "Ensemble"
-        }
-      ]
-    },
-    {
-      "title": "9-1-1 Nashville",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Ensemble",
-      "status": "Ongoing",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-9-1-1-nashville-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Ensemble representation; Renewed",
-          "prominence": "Ensemble"
-        }
-      ]
-    },
-    {
-      "title": "A Good Girl's Guide to Murder",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Supporting",
-      "status": "Ongoing",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-good-girl-s-guide-to-murder-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Renewed",
-          "prominence": "Supporting"
-        }
-      ]
-    },
-    {
       "title": "A League of Their Own",
       "aliases": [],
       "year": 2022,
@@ -382,82 +326,6 @@
           "url": "https://lezwatchtv.com/shows/?fwp_show_loved=yes",
           "detail": "Editorially marked as a show LezWatch.TV loves.",
           "prominence": "Loved"
-        }
-      ]
-    },
-    {
-      "title": "A Man on the Inside",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Main",
-      "status": "Ongoing",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-man-on-inside-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Main representation; Renewed",
-          "prominence": "Main"
-        }
-      ]
-    },
-    {
-      "title": "A Million Little Things",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Ensemble",
-      "status": "Ended",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-million-little-things-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Ensemble representation; Complete",
-          "prominence": "Ensemble"
-        }
-      ]
-    },
-    {
-      "title": "A Murder at the End of the World",
-      "aliases": [],
-      "year": 2023,
-      "country": "United States",
-      "prominence": "Protagonist",
-      "status": "Ended",
-      "matchedExisting": true,
-      "matchId": "tt15227418",
-      "archiveId": "tt15227418",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Protagonist representation; Limited series",
-          "prominence": "Protagonist"
-        }
-      ]
-    },
-    {
-      "title": "Acapulco",
-      "aliases": [],
-      "year": 2021,
-      "country": "United States",
-      "prominence": "Supporting",
-      "status": "Ended",
-      "matchedExisting": true,
-      "matchId": "tt13567344",
-      "archiveId": "tt13567344",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Complete",
-          "prominence": "Supporting"
         }
       ]
     },
@@ -544,25 +412,6 @@
       ]
     },
     {
-      "title": "Agents of S.H.I.E.L.D.",
-      "aliases": [],
-      "year": 2014,
-      "country": "Unknown",
-      "prominence": "Editorial top 100",
-      "status": "Ended",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-agents-of-s-h-i-e-l-d-2014",
-      "evidence": [
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #66 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ]
-    },
-    {
       "title": "AI Girl",
       "aliases": [
         "AI Girl (Thai TV Series)"
@@ -586,25 +435,6 @@
           "url": "https://en.wikipedia.org/wiki/List_of_GL_dramas",
           "detail": "Dedicated GL drama · Thailand · 2026 · iQIYI, YouTube",
           "prominence": "GL lead"
-        }
-      ]
-    },
-    {
-      "title": "All American: Homecoming",
-      "aliases": [],
-      "year": 2022,
-      "country": "United States",
-      "prominence": "Supporting",
-      "status": "Ended",
-      "matchedExisting": true,
-      "matchId": "tt14088994",
-      "archiveId": "tt14088994",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Ending with final season",
-          "prominence": "Supporting"
         }
       ]
     },
@@ -666,69 +496,6 @@
       ]
     },
     {
-      "title": "American Gods",
-      "aliases": [],
-      "year": 2017,
-      "country": "United States",
-      "prominence": "Editorial top 100",
-      "status": "Ended",
-      "matchedExisting": true,
-      "matchId": "tt1898069",
-      "archiveId": "tt1898069",
-      "evidence": [
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #69 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ]
-    },
-    {
-      "title": "American Horror Stories",
-      "aliases": [],
-      "year": 2021,
-      "country": "United States",
-      "prominence": "Editorial top 100",
-      "status": "Ended",
-      "matchedExisting": true,
-      "matchId": "tt12306692",
-      "archiveId": "tt12306692",
-      "evidence": [
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #98 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ]
-    },
-    {
-      "title": "American Horror Story",
-      "aliases": [],
-      "year": 2011,
-      "country": "Unknown",
-      "prominence": "Several",
-      "status": "Ongoing",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-american-horror-story-2011",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Several representation; Renewed",
-          "prominence": "Several"
-        },
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #75 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ]
-    },
-    {
       "title": "An Office Thing",
       "aliases": [],
       "year": 2025,
@@ -744,69 +511,6 @@
           "url": "https://en.wikipedia.org/wiki/List_of_GL_dramas",
           "detail": "Dedicated GL drama · South Korea · 2025 · YouTube",
           "prominence": "GL lead"
-        }
-      ]
-    },
-    {
-      "title": "And Just Like That...",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Main",
-      "status": "Ended",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-and-just-like-that-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Main representation; Canceled with no final season",
-          "prominence": "Main"
-        }
-      ]
-    },
-    {
-      "title": "Andor",
-      "aliases": [],
-      "year": 2022,
-      "country": "International",
-      "prominence": "Editorial top 100",
-      "status": "Ended",
-      "matchedExisting": true,
-      "matchId": "tt9253284",
-      "archiveId": "tt9253284",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Complete",
-          "prominence": "Supporting"
-        },
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #62 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ]
-    },
-    {
-      "title": "Animal Control",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Ensemble",
-      "status": "Ongoing",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-animal-control-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Ensemble representation; Renewed",
-          "prominence": "Ensemble"
         }
       ]
     },
@@ -940,82 +644,6 @@
           "url": "https://en.wikipedia.org/wiki/List_of_GL_dramas",
           "detail": "Dedicated GL drama · Thailand · 2024 · YouTube",
           "prominence": "GL lead"
-        }
-      ]
-    },
-    {
-      "title": "Apples Never Fall",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Supporting",
-      "status": "Ended",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-apples-never-fall-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Limited series",
-          "prominence": "Supporting"
-        }
-      ]
-    },
-    {
-      "title": "Arcane",
-      "aliases": [],
-      "year": null,
-      "country": "Unknown",
-      "prominence": "Protagonist",
-      "status": "Ended",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-arcane-unknown",
-      "evidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Protagonist representation; Complete",
-          "prominence": "Protagonist"
-        }
-      ]
-    },
-    {
-      "title": "Arrow",
-      "aliases": [],
-      "year": 2012,
-      "country": "Unknown",
-      "prominence": "Editorial top 100",
-      "status": "Ended",
-      "matchedExisting": false,
-      "matchId": null,
-      "archiveId": "gl-arrow-2012",
-      "evidence": [
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #74 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ]
-    },
-    {
-      "title": "Atypical",
-      "aliases": [],
-      "year": 2017,
-      "country": "United States",
-      "prominence": "Loved",
-      "status": "Ended",
-      "matchedExisting": true,
-      "matchId": "tt6315640",
-      "archiveId": "tt6315640",
-      "evidence": [
-        {
-          "source": "LezWatch.TV Shows We Love",
-          "url": "https://lezwatchtv.com/shows/?fwp_show_loved=yes",
-          "detail": "Editorially marked as a show LezWatch.TV loves.",
-          "prominence": "Loved"
         }
       ]
     },
@@ -2804,6 +2432,12 @@
           "url": "https://en.wikipedia.org/wiki/List_of_GL_dramas",
           "detail": "Dedicated GL drama · South Korea · 2025 · Netfix",
           "prominence": "GL lead"
+        },
+        {
+          "source": "Web verification 2026",
+          "url": "https://lesbiansonscreen.com/friendly-rivalry-2025-korean-gl-drama/",
+          "detail": "2025 Korean psychological thriller GL drama; lesbian leads and central romance",
+          "prominence": "GL lead"
         }
       ]
     },
@@ -2948,6 +2582,12 @@
           "source": "Wikipedia GL drama list",
           "url": "https://en.wikipedia.org/wiki/List_of_GL_dramas",
           "detail": "Dedicated GL drama · Japan · 2025 · TV Osaka , TV Aichi",
+          "prominence": "GL lead"
+        },
+        {
+          "source": "Web verification 2026",
+          "url": "https://mydramalist.com/798996-futari-escape",
+          "detail": "2025 Japanese yuri live-action drama; two young women protagonists",
           "prominence": "GL lead"
         }
       ]
@@ -8758,7 +8398,9 @@
     },
     {
       "title": "Us",
-      "aliases": [],
+      "aliases": [
+        "รักของเรา"
+      ],
       "year": 2025,
       "country": "Thailand",
       "prominence": "GL lead",
@@ -8777,6 +8419,12 @@
           "source": "Wikipedia GL drama list",
           "url": "https://en.wikipedia.org/wiki/List_of_GL_dramas",
           "detail": "Dedicated GL drama · Thailand · 2025 · GMM 25, YouTube",
+          "prominence": "GL lead"
+        },
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Us_(Thai_TV_series)",
+          "detail": "2025 Thai GL drama adapted from Chao Pla Noy novel; GMMTV third GL production; stars Emi and Bonnie; 12 episodes",
           "prominence": "GL lead"
         }
       ]
@@ -9484,6 +9132,187 @@
           "prominence": "Main"
         }
       ]
+    },
+    {
+      "title": "Gushing Over Magical Girls",
+      "aliases": [
+        "Mahou Shoujo ni Akogarete"
+      ],
+      "year": 2024,
+      "country": "Japan",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-gushing-over-magical-girls-2024",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://japangayguide.com/lesbian-yuri-anime/lesbian-anime-of-2024-gushing-over-magical-girls/",
+          "detail": "2024 Japanese yuri anime with GL themes; premiered January 2024, 13 episodes",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Adachi and Shimamura",
+      "aliases": [
+        "Adachi to Shimamura"
+      ],
+      "year": 2020,
+      "country": "Japan",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": true,
+      "matchId": "tt12728882",
+      "archiveId": "tt12728882",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Adachi_and_Shimamura",
+          "detail": "2020 Japanese yuri anime adaptation; 12 episodes; Sakura Adachi and Hougetsu Shimamura develop romantic relationship",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Kase-san and Morning Glories",
+      "aliases": [
+        "Kase-san"
+      ],
+      "year": 2018,
+      "country": "Japan",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-kase-san-2018",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Kase-san",
+          "detail": "2018 Japanese yuri OVA; 1 hour runtime; Kase-san and Yamada romance with explicit kiss scenes",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Tendering Resignation",
+      "aliases": [],
+      "year": 2024,
+      "country": "South Korea",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-tendering-resignation-2024",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://mydramalist.com/778222-tendering-resignation",
+          "detail": "2024 Korean GL web series; office romance with love triangle; 50 vertical episodes; lesbian female lead",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Mayfly Angel",
+      "aliases": [],
+      "year": 2024,
+      "country": "South Korea",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-mayfly-angel-2024",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://mydramalist.com/770395-mayfly-angel",
+          "detail": "2024 Korean GL miniseries; 4 episodes, 9 minutes each; lesbian female lead and romance",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Girls Band Cry",
+      "aliases": [],
+      "year": 2024,
+      "country": "Japan",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-girls-band-cry-2024",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Girls_Band_Cry",
+          "detail": "2024 Japanese anime; 13 episodes; band of five girls with yuri themes; Nina and Momoka sapphic focus",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Jellyfish Can't Swim in the Night",
+      "aliases": [
+        "Yoru no Kurage wa Oyogenai"
+      ],
+      "year": 2024,
+      "country": "Japan",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-jellyfish-cant-swim-2024",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Jellyfish_Can%27t_Swim_in_the_Night",
+          "detail": "2024 original anime by Doga Kobo; girl band with sapphic themes; aired April-June 2024",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Beguinas",
+      "aliases": [],
+      "year": 2024,
+      "country": "Spain",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-beguinas-2024",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Beguinas",
+          "detail": "2024 Spanish period drama; lesbian romance; 10 episodes; aired Atresplayer/Antena 3",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Xeque Mate",
+      "aliases": [
+        "Checkmate"
+      ],
+      "year": 2024,
+      "country": "Brazil",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-xeque-mate-2024",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://lesbiansonscreen.com/xeque-mate-2024-review/",
+          "detail": "2024 Brazilian lesbian miniseries; political thriller with sapphic romance; desire and power themes",
+          "prominence": "GL lead"
+        }
+      ]
     }
   ],
   "archiveEntries": [
@@ -9979,141 +9808,6 @@
       "imageLookupDate": "2026-08-18"
     },
     {
-      "id": "gl-9-1-1-unknown",
-      "title": "9-1-1",
-      "year": null,
-      "genres": [
-        "Lesbian / GL",
-        "Police Procedural"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Ensemble",
-      "glEvidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Ensemble representation; Currently running/no update",
-          "prominence": "Ensemble"
-        }
-      ],
-      "sourceName": "Aria's WLW television database",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-      "endYear": null,
-      "episodes": null,
-      "episodeRuntime": null,
-      "runtimeHours": null,
-      "country": "Unknown",
-      "language": "Unknown",
-      "format": "Live action",
-      "imdbId": null,
-      "imdbUrl": "https://www.imdb.com/find/?q=9-1-1&s=tt&ttype=tv",
-      "image": "https://static.tvmaze.com/uploads/images/original_untouched/600/1501058.jpg",
-      "shortPlot": "The series explores the high-pressure experiences of first responders -- including police officers, firefighters and dispatchers -- who are thrust into the most frightening, shocking and heart-stopping situations. These emergency responders must try to balance saving those who are at their most vulnerable with solving the problems in their own lives. The show draws from real-life, high-pressure experiences of first r…",
-      "longPlot": "The series explores the high-pressure experiences of first responders -- including police officers, firefighters and dispatchers -- who are thrust into the most frightening, shocking and heart-stopping situations. These emergency responders must try to balance saving those who are at their most vulnerable with solving the problems in their own lives. The show draws from real-life, high-pressure experiences of first r… Inclusion evidence: Aria's WLW television database (Ensemble representation; Currently running/no update).",
-      "status": "Ongoing",
-      "broadcaster": null,
-      "watched": false,
-      "imdbRating": null,
-      "imdbVotes": 0,
-      "qualityScore": null,
-      "rank": null,
-      "featured": false,
-      "imageSourceName": "TVmaze",
-      "imageSourceUrl": "https://www.tvmaze.com/shows/28152/9-1-1",
-      "imageMatchScore": 105,
-      "imageLookupDate": "2026-08-18"
-    },
-    {
-      "id": "gl-9-1-1-nashville-unknown",
-      "title": "9-1-1 Nashville",
-      "year": null,
-      "genres": [
-        "Lesbian / GL",
-        "Procedural Drama"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Ensemble",
-      "glEvidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Ensemble representation; Renewed",
-          "prominence": "Ensemble"
-        }
-      ],
-      "sourceName": "Aria's WLW television database",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-      "endYear": null,
-      "episodes": null,
-      "episodeRuntime": null,
-      "runtimeHours": null,
-      "country": "Unknown",
-      "language": "Unknown",
-      "format": "Live action",
-      "imdbId": null,
-      "imdbUrl": "https://www.imdb.com/find/?q=9-1-1%20Nashville&s=tt&ttype=tv",
-      "image": "https://static.tvmaze.com/uploads/images/original_untouched/595/1489150.jpg",
-      "shortPlot": "Heroic first responders and their family sagas of power and glamour in one of America's most diverse and dynamic cities.",
-      "longPlot": "Heroic first responders and their family sagas of power and glamour in one of America's most diverse and dynamic cities. Inclusion evidence: Aria's WLW television database (Ensemble representation; Renewed).",
-      "status": "Ongoing",
-      "broadcaster": null,
-      "watched": false,
-      "imdbRating": null,
-      "imdbVotes": 0,
-      "qualityScore": null,
-      "rank": null,
-      "featured": false,
-      "imageSourceName": "TVmaze",
-      "imageSourceUrl": "https://www.tvmaze.com/shows/82759/9-1-1-nashville",
-      "imageMatchScore": 105,
-      "imageLookupDate": "2026-08-18"
-    },
-    {
-      "id": "gl-good-girl-s-guide-to-murder-unknown",
-      "title": "A Good Girl's Guide to Murder",
-      "year": null,
-      "genres": [
-        "Lesbian / GL",
-        "Mystery Drama"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Supporting",
-      "glEvidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Renewed",
-          "prominence": "Supporting"
-        }
-      ],
-      "sourceName": "Aria's WLW television database",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-      "endYear": null,
-      "episodes": null,
-      "episodeRuntime": null,
-      "runtimeHours": null,
-      "country": "Unknown",
-      "language": "Unknown",
-      "format": "Live action",
-      "imdbId": null,
-      "imdbUrl": "https://www.imdb.com/find/?q=A%20Good%20Girl's%20Guide%20to%20Murder&s=tt&ttype=tv",
-      "image": "https://static.tvmaze.com/uploads/images/original_untouched/626/1566763.jpg",
-      "shortPlot": "Pip Fitz-Amobi, a brilliant woman, is unsure whether schoolgirl Andie Bell was killed by her lover Sal Singh five years ago. How far will they go to protect Pip from learning the truth if Sal Singh turns out not to be the murderer?",
-      "longPlot": "Pip Fitz-Amobi, a brilliant woman, is unsure whether schoolgirl Andie Bell was killed by her lover Sal Singh five years ago. How far will they go to protect Pip from learning the truth if Sal Singh turns out not to be the murderer? Inclusion evidence: Aria's WLW television database (Supporting representation; Renewed).",
-      "status": "Ongoing",
-      "broadcaster": null,
-      "watched": false,
-      "imdbRating": null,
-      "imdbVotes": 0,
-      "qualityScore": null,
-      "rank": null,
-      "featured": false,
-      "imageSourceName": "TVmaze",
-      "imageSourceUrl": "https://www.tvmaze.com/shows/63949/a-good-girls-guide-to-murder",
-      "imageMatchScore": 105,
-      "imageLookupDate": "2026-08-18"
-    },
-    {
       "id": "tt8226360",
       "title": "A League of Their Own",
       "year": 2022,
@@ -10132,136 +9826,6 @@
       ],
       "sourceName": "LezWatch.TV Shows We Love",
       "sourceUrl": "https://lezwatchtv.com/shows/?fwp_show_loved=yes"
-    },
-    {
-      "id": "gl-man-on-inside-unknown",
-      "title": "A Man on the Inside",
-      "year": null,
-      "genres": [
-        "Lesbian / GL",
-        "Comedy Mystery"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Main",
-      "glEvidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Main representation; Renewed",
-          "prominence": "Main"
-        }
-      ],
-      "sourceName": "Aria's WLW television database",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-      "endYear": null,
-      "episodes": null,
-      "episodeRuntime": null,
-      "runtimeHours": null,
-      "country": "Unknown",
-      "language": "Unknown",
-      "format": "Live action",
-      "imdbId": null,
-      "imdbUrl": "https://www.imdb.com/find/?q=A%20Man%20on%20the%20Inside&s=tt&ttype=tv",
-      "image": "https://static.tvmaze.com/uploads/images/original_untouched/599/1499138.jpg",
-      "shortPlot": "Charles, a retired man, gets a new lease on life when he answers an ad from a private investigator and becomes a mole in a secret investigation in a nursing home.",
-      "longPlot": "Charles, a retired man, gets a new lease on life when he answers an ad from a private investigator and becomes a mole in a secret investigation in a nursing home. Inclusion evidence: Aria's WLW television database (Main representation; Renewed).",
-      "status": "Ongoing",
-      "broadcaster": null,
-      "watched": false,
-      "imdbRating": null,
-      "imdbVotes": 0,
-      "qualityScore": null,
-      "rank": null,
-      "featured": false,
-      "imageSourceName": "TVmaze",
-      "imageSourceUrl": "https://www.tvmaze.com/shows/74443/a-man-on-the-inside",
-      "imageMatchScore": 105,
-      "imageLookupDate": "2026-08-18"
-    },
-    {
-      "id": "gl-million-little-things-unknown",
-      "title": "A Million Little Things",
-      "year": null,
-      "genres": [
-        "Lesbian / GL",
-        "Drama"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Ensemble",
-      "glEvidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Ensemble representation; Complete",
-          "prominence": "Ensemble"
-        }
-      ],
-      "sourceName": "Aria's WLW television database",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-      "endYear": null,
-      "episodes": null,
-      "episodeRuntime": null,
-      "runtimeHours": null,
-      "country": "Unknown",
-      "language": "Unknown",
-      "format": "Live action",
-      "imdbId": null,
-      "imdbUrl": "https://www.imdb.com/find/?q=A%20Million%20Little%20Things&s=tt&ttype=tv",
-      "image": "https://static.tvmaze.com/uploads/images/original_untouched/445/1113408.jpg",
-      "shortPlot": "It has been said that friendship isn't one big thing, it's a million little things. That is certainly true for a group of friends from Boston who bonded under unexpected circumstances. Some have achieved success, others are struggling in their careers and relationships, but all of them feel stuck in life. After one of them dies unexpectedly, it's just the wake-up call the others need to finally start living. Along th…",
-      "longPlot": "It has been said that friendship isn't one big thing, it's a million little things. That is certainly true for a group of friends from Boston who bonded under unexpected circumstances. Some have achieved success, others are struggling in their careers and relationships, but all of them feel stuck in life. After one of them dies unexpectedly, it's just the wake-up call the others need to finally start living. Along th… Inclusion evidence: Aria's WLW television database (Ensemble representation; Complete).",
-      "status": "Ended",
-      "broadcaster": null,
-      "watched": false,
-      "imdbRating": null,
-      "imdbVotes": 0,
-      "qualityScore": null,
-      "rank": null,
-      "featured": false,
-      "imageSourceName": "TVmaze",
-      "imageSourceUrl": "https://www.tvmaze.com/shows/34601/a-million-little-things",
-      "imageMatchScore": 105,
-      "imageLookupDate": "2026-08-18"
-    },
-    {
-      "id": "tt15227418",
-      "title": "A Murder at the End of the World",
-      "year": 2023,
-      "genres": [
-        "Lesbian / GL"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Protagonist",
-      "glEvidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Protagonist representation; Limited series",
-          "prominence": "Protagonist"
-        }
-      ],
-      "sourceName": "Aria's WLW television database",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk"
-    },
-    {
-      "id": "tt13567344",
-      "title": "Acapulco",
-      "year": 2021,
-      "genres": [
-        "Lesbian / GL"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Supporting",
-      "glEvidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Complete",
-          "prominence": "Supporting"
-        }
-      ],
-      "sourceName": "Aria's WLW television database",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk"
     },
     {
       "id": "gl-advocates-2016",
@@ -10398,53 +9962,6 @@
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk"
     },
     {
-      "id": "gl-agents-of-s-h-i-e-l-d-2014",
-      "title": "Agents of S.H.I.E.L.D.",
-      "year": 2014,
-      "genres": [
-        "Lesbian / GL",
-        "Sci-Fi",
-        "Fantasy"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Editorial top 100",
-      "glEvidence": [
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #66 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ],
-      "sourceName": "Autostraddle 100 best queer sci-fi/fantasy shows",
-      "sourceUrl": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-      "endYear": 2014,
-      "episodes": null,
-      "episodeRuntime": null,
-      "runtimeHours": null,
-      "country": "Unknown",
-      "language": "Unknown",
-      "format": "Live action",
-      "imdbId": null,
-      "imdbUrl": "https://www.imdb.com/find/?q=Agents%20of%20S.H.I.E.L.D.&s=tt&ttype=tv",
-      "image": "https://static.tvmaze.com/uploads/images/original_untouched/486/1215694.jpg",
-      "shortPlot": "Agents of S.H.I.E.L.D. is a verified Lesbian / GL archive series, selected from an editorial or specialist queer-television source.",
-      "longPlot": "Agents of S.H.I.E.L.D. is a verified Lesbian / GL archive series, selected from an editorial or specialist queer-television source. Inclusion evidence: Autostraddle 100 best queer sci-fi/fantasy shows (Editorial rank #66 of 100).",
-      "status": "Ended",
-      "broadcaster": null,
-      "watched": false,
-      "imdbRating": null,
-      "imdbVotes": 0,
-      "qualityScore": null,
-      "rank": null,
-      "featured": false,
-      "imageSourceName": "TVmaze",
-      "imageSourceUrl": "https://www.tvmaze.com/shows/31/marvels-agents-of-shield",
-      "imageMatchScore": 119,
-      "imageLookupDate": "2026-08-18",
-      "imageLookupAlias": "Marvel's Agents of S.H.I.E.L.D."
-    },
-    {
       "id": "gl-ai-girl-2026",
       "title": "AI Girl",
       "year": 2026,
@@ -10494,26 +10011,6 @@
       "imageSourceUrl": "https://www.tvmaze.com/shows/90147/ai-girl",
       "imageMatchScore": 140,
       "imageLookupDate": "2026-08-18"
-    },
-    {
-      "id": "tt14088994",
-      "title": "All American: Homecoming",
-      "year": 2022,
-      "genres": [
-        "Lesbian / GL"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Supporting",
-      "glEvidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Ending with final season",
-          "prominence": "Supporting"
-        }
-      ],
-      "sourceName": "Aria's WLW television database",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk"
     },
     {
       "id": "tt5678876",
@@ -10600,99 +10097,6 @@
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_GL_dramas"
     },
     {
-      "id": "tt1898069",
-      "title": "American Gods",
-      "year": 2017,
-      "genres": [
-        "Lesbian / GL"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Editorial top 100",
-      "glEvidence": [
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #69 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ],
-      "sourceName": "Autostraddle 100 best queer sci-fi/fantasy shows",
-      "sourceUrl": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/"
-    },
-    {
-      "id": "tt12306692",
-      "title": "American Horror Stories",
-      "year": 2021,
-      "genres": [
-        "Lesbian / GL"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Editorial top 100",
-      "glEvidence": [
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #98 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ],
-      "sourceName": "Autostraddle 100 best queer sci-fi/fantasy shows",
-      "sourceUrl": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/"
-    },
-    {
-      "id": "gl-american-horror-story-2011",
-      "title": "American Horror Story",
-      "year": 2011,
-      "genres": [
-        "Lesbian / GL",
-        "Horror",
-        "Sci-Fi",
-        "Fantasy"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Several",
-      "glEvidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Several representation; Renewed",
-          "prominence": "Several"
-        },
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #75 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ],
-      "sourceName": "Aria's WLW television database",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-      "endYear": null,
-      "episodes": null,
-      "episodeRuntime": null,
-      "runtimeHours": null,
-      "country": "Unknown",
-      "language": "Unknown",
-      "format": "Live action",
-      "imdbId": null,
-      "imdbUrl": "https://www.imdb.com/find/?q=American%20Horror%20Story&s=tt&ttype=tv",
-      "image": "https://static.tvmaze.com/uploads/images/original_untouched/636/1591621.jpg",
-      "shortPlot": "An anthology horror series, each season a mini-series with a different story",
-      "longPlot": "An anthology horror series, each season a mini-series with a different story Inclusion evidence: Aria's WLW television database (Several representation; Renewed); Autostraddle 100 best queer sci-fi/fantasy shows (Editorial rank #75 of 100).",
-      "status": "Ongoing",
-      "broadcaster": null,
-      "watched": false,
-      "imdbRating": null,
-      "imdbVotes": 0,
-      "qualityScore": null,
-      "rank": null,
-      "featured": false,
-      "imageSourceName": "TVmaze",
-      "imageSourceUrl": "https://www.tvmaze.com/shows/30/american-horror-story",
-      "imageMatchScore": 140,
-      "imageLookupDate": "2026-08-18"
-    },
-    {
       "id": "mdl-789270",
       "title": "An Office Thing",
       "year": 2025,
@@ -10711,122 +10115,6 @@
       ],
       "sourceName": "Wikipedia GL drama list",
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_GL_dramas"
-    },
-    {
-      "id": "gl-and-just-like-that-unknown",
-      "title": "And Just Like That...",
-      "year": null,
-      "genres": [
-        "Lesbian / GL",
-        "Comedy"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Main",
-      "glEvidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Main representation; Canceled with no final season",
-          "prominence": "Main"
-        }
-      ],
-      "sourceName": "Aria's WLW television database",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-      "endYear": null,
-      "episodes": null,
-      "episodeRuntime": null,
-      "runtimeHours": null,
-      "country": "Unknown",
-      "language": "Unknown",
-      "format": "Live action",
-      "imdbId": null,
-      "imdbUrl": "https://www.imdb.com/find/?q=And%20Just%20Like%20That...&s=tt&ttype=tv",
-      "image": "https://static.tvmaze.com/uploads/images/original_untouched/581/1453808.jpg",
-      "shortPlot": "The women of \"Sex and the City\" transition from the friendship they had in their 30s to a more complicated reality of life and friendship in their 50s. Sarah Jessica Parker, Cynthia Nixon and Kristin Davis return as Carrie, Miranda and Charlotte, respectively, whereas Samantha has moved to London since Kim Cattrall chose not to reprise her role.",
-      "longPlot": "The women of \"Sex and the City\" transition from the friendship they had in their 30s to a more complicated reality of life and friendship in their 50s. Sarah Jessica Parker, Cynthia Nixon and Kristin Davis return as Carrie, Miranda and Charlotte, respectively, whereas Samantha has moved to London since Kim Cattrall chose not to reprise her role. Inclusion evidence: Aria's WLW television database (Main representation; Canceled with no final season).",
-      "status": "Ended",
-      "broadcaster": null,
-      "watched": false,
-      "imdbRating": null,
-      "imdbVotes": 0,
-      "qualityScore": null,
-      "rank": null,
-      "featured": false,
-      "imageSourceName": "TVmaze",
-      "imageSourceUrl": "https://www.tvmaze.com/shows/52904/and-just-like-that",
-      "imageMatchScore": 105,
-      "imageLookupDate": "2026-08-18"
-    },
-    {
-      "id": "tt9253284",
-      "title": "Andor",
-      "year": 2022,
-      "genres": [
-        "Lesbian / GL"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Editorial top 100",
-      "glEvidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Complete",
-          "prominence": "Supporting"
-        },
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #62 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ],
-      "sourceName": "Aria's WLW television database",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk"
-    },
-    {
-      "id": "gl-animal-control-unknown",
-      "title": "Animal Control",
-      "year": null,
-      "genres": [
-        "Lesbian / GL",
-        "Workplace Comedy"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Ensemble",
-      "glEvidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Ensemble representation; Renewed",
-          "prominence": "Ensemble"
-        }
-      ],
-      "sourceName": "Aria's WLW television database",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-      "endYear": null,
-      "episodes": null,
-      "episodeRuntime": null,
-      "runtimeHours": null,
-      "country": "Unknown",
-      "language": "Unknown",
-      "format": "Live action",
-      "imdbId": null,
-      "imdbUrl": "https://www.imdb.com/find/?q=Animal%20Control&s=tt&ttype=tv",
-      "image": "https://static.tvmaze.com/uploads/images/original_untouched/605/1513832.jpg",
-      "shortPlot": "A group of local animal control workers' lives are complicated by the fact that animals are simple, but humans are not. Leading the crew is Frank, an opinionated, eccentric animal control officer who may not have gone to college but is still the most well-read person in the room. In his past life as a cop, Frank tried to expose corruption in his department, but his efforts got him fired, leaving him cynical and curmu…",
-      "longPlot": "A group of local animal control workers' lives are complicated by the fact that animals are simple, but humans are not. Leading the crew is Frank, an opinionated, eccentric animal control officer who may not have gone to college but is still the most well-read person in the room. In his past life as a cop, Frank tried to expose corruption in his department, but his efforts got him fired, leaving him cynical and curmu… Inclusion evidence: Aria's WLW television database (Ensemble representation; Renewed).",
-      "status": "Ongoing",
-      "broadcaster": null,
-      "watched": false,
-      "imdbRating": null,
-      "imdbVotes": 0,
-      "qualityScore": null,
-      "rank": null,
-      "featured": false,
-      "imageSourceName": "TVmaze",
-      "imageSourceUrl": "https://www.tvmaze.com/shows/63266/animal-control",
-      "imageMatchScore": 105,
-      "imageLookupDate": "2026-08-18"
     },
     {
       "id": "gl-animal-warmth-2017",
@@ -11063,163 +10351,6 @@
       ],
       "sourceName": "Wikipedia GL drama list",
       "sourceUrl": "https://en.wikipedia.org/wiki/List_of_GL_dramas"
-    },
-    {
-      "id": "gl-apples-never-fall-unknown",
-      "title": "Apples Never Fall",
-      "year": null,
-      "genres": [
-        "Lesbian / GL",
-        "Drama"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Supporting",
-      "glEvidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Supporting representation; Limited series",
-          "prominence": "Supporting"
-        }
-      ],
-      "sourceName": "Aria's WLW television database",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-      "endYear": null,
-      "episodes": null,
-      "episodeRuntime": null,
-      "runtimeHours": null,
-      "country": "Unknown",
-      "language": "Unknown",
-      "format": "Live action",
-      "imdbId": null,
-      "imdbUrl": "https://www.imdb.com/find/?q=Apples%20Never%20Fall&s=tt&ttype=tv",
-      "image": "https://static.tvmaze.com/uploads/images/original_untouched/508/1272467.jpg",
-      "shortPlot": "Everyone in West Palm Beach knows the Delaney family because of their long-running tennis academy. But when Joy and Stan retire -- and when a wounded, young woman arrives on their doorstep -- the entire family's world is turned upside-down. And when Joy, the Delaney matriarch, suddenly goes missing, her four children are left to piece together everything they thought they knew about their parents.",
-      "longPlot": "Everyone in West Palm Beach knows the Delaney family because of their long-running tennis academy. But when Joy and Stan retire -- and when a wounded, young woman arrives on their doorstep -- the entire family's world is turned upside-down. And when Joy, the Delaney matriarch, suddenly goes missing, her four children are left to piece together everything they thought they knew about their parents. Inclusion evidence: Aria's WLW television database (Supporting representation; Limited series).",
-      "status": "Ended",
-      "broadcaster": null,
-      "watched": false,
-      "imdbRating": null,
-      "imdbVotes": 0,
-      "qualityScore": null,
-      "rank": null,
-      "featured": false,
-      "imageSourceName": "TVmaze",
-      "imageSourceUrl": "https://www.tvmaze.com/shows/60411/apples-never-fall",
-      "imageMatchScore": 105,
-      "imageLookupDate": "2026-08-18"
-    },
-    {
-      "id": "gl-arcane-unknown",
-      "title": "Arcane",
-      "year": null,
-      "genres": [
-        "Lesbian / GL",
-        "Animated Adventure"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Protagonist",
-      "glEvidence": [
-        {
-          "source": "Aria's WLW television database",
-          "url": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-          "detail": "Protagonist representation; Complete",
-          "prominence": "Protagonist"
-        }
-      ],
-      "sourceName": "Aria's WLW television database",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xfxTPC-fYnxhUKQeO00KFKW4wFI5I7Z074Er7MIIh9Y/edit?usp=drivesdk",
-      "endYear": null,
-      "episodes": null,
-      "episodeRuntime": null,
-      "runtimeHours": null,
-      "country": "Unknown",
-      "language": "Unknown",
-      "format": "Animation",
-      "imdbId": null,
-      "imdbUrl": "https://www.imdb.com/find/?q=Arcane&s=tt&ttype=tv",
-      "image": "https://static.tvmaze.com/uploads/images/original_untouched/536/1340287.jpg",
-      "shortPlot": "The origins of two iconic League champions, set in the utopian Piltover and the oppressed underground of Zaun.",
-      "longPlot": "The origins of two iconic League champions, set in the utopian Piltover and the oppressed underground of Zaun. Inclusion evidence: Aria's WLW television database (Protagonist representation; Complete).",
-      "status": "Ended",
-      "broadcaster": null,
-      "watched": false,
-      "imdbRating": null,
-      "imdbVotes": 0,
-      "qualityScore": null,
-      "rank": null,
-      "featured": false,
-      "imageSourceName": "TVmaze",
-      "imageSourceUrl": "https://www.tvmaze.com/shows/55138/arcane-league-of-legends",
-      "imageLookupDate": "2026-08-18",
-      "imageMatchScore": 105,
-      "imageLookupAlias": "Arcane: League of Legends"
-    },
-    {
-      "id": "gl-arrow-2012",
-      "title": "Arrow",
-      "year": 2012,
-      "genres": [
-        "Lesbian / GL",
-        "Sci-Fi",
-        "Fantasy"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Editorial top 100",
-      "glEvidence": [
-        {
-          "source": "Autostraddle 100 best queer sci-fi/fantasy shows",
-          "url": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-          "detail": "Editorial rank #74 of 100",
-          "prominence": "Editorial top 100"
-        }
-      ],
-      "sourceName": "Autostraddle 100 best queer sci-fi/fantasy shows",
-      "sourceUrl": "https://www.autostraddle.com/the-100-best-lesbian-bisexual-and-queer-sci-fi-and-fantasy-shows-of-all-time/",
-      "endYear": 2012,
-      "episodes": null,
-      "episodeRuntime": null,
-      "runtimeHours": null,
-      "country": "Unknown",
-      "language": "Unknown",
-      "format": "Live action",
-      "imdbId": null,
-      "imdbUrl": "https://www.imdb.com/find/?q=Arrow&s=tt&ttype=tv",
-      "image": "https://static.tvmaze.com/uploads/images/original_untouched/143/358967.jpg",
-      "shortPlot": "Arrow is a verified Lesbian / GL archive series, selected from an editorial or specialist queer-television source.",
-      "longPlot": "Arrow is a verified Lesbian / GL archive series, selected from an editorial or specialist queer-television source. Inclusion evidence: Autostraddle 100 best queer sci-fi/fantasy shows (Editorial rank #74 of 100).",
-      "status": "Ended",
-      "broadcaster": null,
-      "watched": false,
-      "imdbRating": null,
-      "imdbVotes": 0,
-      "qualityScore": null,
-      "rank": null,
-      "featured": false,
-      "imageSourceName": "TVmaze",
-      "imageSourceUrl": "https://www.tvmaze.com/shows/4/arrow",
-      "imageMatchScore": 140,
-      "imageLookupDate": "2026-08-18"
-    },
-    {
-      "id": "tt6315640",
-      "title": "Atypical",
-      "year": 2017,
-      "genres": [
-        "Lesbian / GL"
-      ],
-      "lesbianGlArchive": true,
-      "glProminence": "Loved",
-      "glEvidence": [
-        {
-          "source": "LezWatch.TV Shows We Love",
-          "url": "https://lezwatchtv.com/shows/?fwp_show_loved=yes",
-          "detail": "Editorially marked as a show LezWatch.TV loves.",
-          "prominence": "Loved"
-        }
-      ],
-      "sourceName": "LezWatch.TV Shows We Love",
-      "sourceUrl": "https://lezwatchtv.com/shows/?fwp_show_loved=yes"
     },
     {
       "id": "tt32576014",
@@ -24938,6 +24069,12 @@
           "url": "https://en.wikipedia.org/wiki/List_of_GL_dramas",
           "detail": "Dedicated GL drama · Thailand · 2025 · GMM 25, YouTube",
           "prominence": "GL lead"
+        },
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Us_(Thai_TV_series)",
+          "detail": "2025 Thai GL drama adapted from Chao Pla Noy novel; GMMTV third GL production; stars Emi and Bonnie; 12 episodes",
+          "prominence": "GL lead"
         }
       ],
       "sourceName": "Wikipedia GL drama list",
@@ -24965,7 +24102,10 @@
       "imageSourceName": "TVmaze",
       "imageSourceUrl": "https://www.tvmaze.com/shows/76333/us",
       "imageMatchScore": 150,
-      "imageLookupDate": "2026-08-18"
+      "imageLookupDate": "2026-08-18",
+      "aliases": [
+        "รักของเรา"
+      ]
     },
     {
       "id": "gl-utopia-falls-2020",
@@ -26307,14 +25447,404 @@
       "imageSourceUrl": "https://www.tvmaze.com/shows/66717/zlata-labut",
       "imageMatchScore": 105,
       "imageLookupDate": "2026-08-18"
+    },
+    {
+      "id": "tt12728882",
+      "title": "Adachi and Shimamura",
+      "year": 2020,
+      "genres": [
+        "Lesbian / GL"
+      ],
+      "lesbianGlArchive": true,
+      "glProminence": "GL lead",
+      "glEvidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Adachi_and_Shimamura",
+          "detail": "2020 Japanese yuri anime adaptation; 12 episodes; Sakura Adachi and Hougetsu Shimamura develop romantic relationship",
+          "prominence": "GL lead"
+        }
+      ],
+      "sourceName": "Web verification 2026",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Adachi_and_Shimamura"
+    },
+    {
+      "id": "gl-beguinas-2024",
+      "title": "Beguinas",
+      "year": 2024,
+      "genres": [
+        "Lesbian / GL"
+      ],
+      "lesbianGlArchive": true,
+      "glProminence": "GL lead",
+      "glEvidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Beguinas",
+          "detail": "2024 Spanish period drama; lesbian romance; 10 episodes; aired Atresplayer/Antena 3",
+          "prominence": "GL lead"
+        }
+      ],
+      "sourceName": "Web verification 2026",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Beguinas",
+      "endYear": 2024,
+      "episodes": 10,
+      "episodeRuntime": null,
+      "runtimeHours": null,
+      "country": "Spain",
+      "language": "Spanish",
+      "format": "Live action",
+      "imdbId": null,
+      "imdbUrl": "https://www.imdb.com/find/?q=Beguinas&s=tt&ttype=tv",
+      "image": "/assets/gl-covers/beguinas-2024.svg",
+      "shortPlot": "A young noblewoman leaves an arranged engagement behind after an unexpected letter draws her into the communities of the Beguines and an impossible romance. Inclusion evidence: Web verification 2026 (2024 Spanish period drama; lesbian romance; 10 episodes; aired Atresplayer/Antena 3).",
+      "longPlot": "Set in 1559 Segovia, Beguinas follows Lucía de Avellaneda, engaged to the Marquis of Peñarrosa, whose life changes after a letter from her mother connects her to the lay religious communities of the Beguines. Leaving her former life behind, she commits to a forbidden romance with another woman. Inclusion evidence: Web verification 2026 (2024 Spanish period drama; lesbian romance; 10 episodes; aired Atresplayer/Antena 3).",
+      "status": "Ended",
+      "broadcaster": "Atresplayer",
+      "watched": false,
+      "imdbRating": null,
+      "imdbVotes": 0,
+      "qualityScore": null,
+      "rank": null,
+      "featured": false,
+      "imageSourceName": "Morningstar generated fallback",
+      "imageSourceUrl": "local asset",
+      "imageLookupDate": "2026-08-19",
+      "imageMatchScore": null
+    },
+    {
+      "id": "gl-girls-band-cry-2024",
+      "title": "Girls Band Cry",
+      "year": 2024,
+      "genres": [
+        "Lesbian / GL"
+      ],
+      "lesbianGlArchive": true,
+      "glProminence": "GL lead",
+      "glEvidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Girls_Band_Cry",
+          "detail": "2024 Japanese anime; 13 episodes; band of five girls with yuri themes; Nina and Momoka sapphic focus",
+          "prominence": "GL lead"
+        }
+      ],
+      "sourceName": "Web verification 2026",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Girls_Band_Cry",
+      "endYear": 2024,
+      "episodes": 13,
+      "episodeRuntime": null,
+      "runtimeHours": null,
+      "country": "Japan",
+      "language": "Japanese",
+      "format": "Animation",
+      "imdbId": null,
+      "imdbUrl": "https://www.imdb.com/find/?q=Girls%20Band%20Cry&s=tt&ttype=tv",
+      "image": "/assets/gl-covers/girls-band-cry-2024.svg",
+      "shortPlot": "High school dropout Nina Iseri moves to Tokyo, meets guitarist Momoka Kawaragi, and the two form a band together as their prickly bond deepens. Inclusion evidence: Web verification 2026 (2024 Japanese anime; 13 episodes; band of five girls with yuri themes; Nina and Momoka sapphic focus).",
+      "longPlot": "High school dropout Nina Iseri moves to Tokyo and meets her favorite guitarist, Momoka Kawaragi, after a rough first day. The two decide to start a band with three other girls, and the yuri throughline follows Nina and Momoka's bond as it deepens from rivalry into something closer. Inclusion evidence: Web verification 2026 (2024 Japanese anime; 13 episodes; band of five girls with yuri themes; Nina and Momoka sapphic focus).",
+      "status": "Ended",
+      "broadcaster": "Crunchyroll",
+      "watched": false,
+      "imdbRating": null,
+      "imdbVotes": 0,
+      "qualityScore": null,
+      "rank": null,
+      "featured": false,
+      "imageSourceName": "Morningstar generated fallback",
+      "imageSourceUrl": "local asset",
+      "imageLookupDate": "2026-08-19",
+      "imageMatchScore": null
+    },
+    {
+      "id": "gl-gushing-over-magical-girls-2024",
+      "title": "Gushing Over Magical Girls",
+      "year": 2024,
+      "genres": [
+        "Lesbian / GL"
+      ],
+      "lesbianGlArchive": true,
+      "glProminence": "GL lead",
+      "glEvidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://japangayguide.com/lesbian-yuri-anime/lesbian-anime-of-2024-gushing-over-magical-girls/",
+          "detail": "2024 Japanese yuri anime with GL themes; premiered January 2024, 13 episodes",
+          "prominence": "GL lead"
+        }
+      ],
+      "sourceName": "Web verification 2026",
+      "sourceUrl": "https://japangayguide.com/lesbian-yuri-anime/lesbian-anime-of-2024-gushing-over-magical-girls/",
+      "endYear": 2024,
+      "episodes": 13,
+      "episodeRuntime": null,
+      "runtimeHours": null,
+      "country": "Japan",
+      "language": "Japanese",
+      "format": "Animation",
+      "imdbId": null,
+      "imdbUrl": "https://www.imdb.com/find/?q=Gushing%20Over%20Magical%20Girls&s=tt&ttype=tv",
+      "image": "/assets/gl-covers/gushing-over-magical-girls-2024.svg",
+      "shortPlot": "An ordinary girl who idolizes a trio of magical girls is misled into joining an evil organization and transformed into a villain by the magical girl she comes to adore. Inclusion evidence: Web verification 2026 (2024 Japanese yuri anime with GL themes; premiered January 2024, 13 episodes).",
+      "longPlot": "Hiiragi Utena is an incredibly average girl who deeply looks up to the Tres Magia, an organization of three magical girls, until she is misled into joining an evil organization by Venalita, who turns her into the villain Magia Baiser. Tagged Action, Comedy and Girls Love. Inclusion evidence: Web verification 2026 (2024 Japanese yuri anime with GL themes; premiered January 2024, 13 episodes).",
+      "status": "Ended",
+      "broadcaster": null,
+      "watched": false,
+      "imdbRating": null,
+      "imdbVotes": 0,
+      "qualityScore": null,
+      "rank": null,
+      "featured": false,
+      "aliases": [
+        "Mahou Shoujo ni Akogarete"
+      ],
+      "imageSourceName": "Morningstar generated fallback",
+      "imageSourceUrl": "local asset",
+      "imageLookupDate": "2026-08-19",
+      "imageMatchScore": null
+    },
+    {
+      "id": "gl-jellyfish-cant-swim-2024",
+      "title": "Jellyfish Can't Swim in the Night",
+      "year": 2024,
+      "genres": [
+        "Lesbian / GL"
+      ],
+      "lesbianGlArchive": true,
+      "glProminence": "GL lead",
+      "glEvidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Jellyfish_Can%27t_Swim_in_the_Night",
+          "detail": "2024 original anime by Doga Kobo; girl band with sapphic themes; aired April-June 2024",
+          "prominence": "GL lead"
+        }
+      ],
+      "sourceName": "Web verification 2026",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jellyfish_Can%27t_Swim_in_the_Night",
+      "endYear": 2024,
+      "episodes": null,
+      "episodeRuntime": null,
+      "runtimeHours": null,
+      "country": "Japan",
+      "language": "Japanese",
+      "format": "Animation",
+      "imdbId": null,
+      "imdbUrl": "https://www.imdb.com/find/?q=Jellyfish%20Can't%20Swim%20in%20the%20Night&s=tt&ttype=tv",
+      "image": "/assets/gl-covers/jellyfish-can-t-swim-in-the-night-2024.svg",
+      "shortPlot": "Four Shibuya girls -- an illustrator, an idol, a composer and a VTuber -- form the band JELEE, chasing a shot at going viral together. Inclusion evidence: Web verification 2026 (2024 original anime by Doga Kobo; girl band with sapphic themes; aired April-June 2024).",
+      "longPlot": "Set in Shibuya, an original anime produced by Doga Kobo for its 50th anniversary follows four Japanese girls -- an illustrator, an idol, a music composer and a VTuber -- who form the band JELEE in pursuit of becoming a global phenomenon. Their partnership carries a central sapphic thread between two of the members. Inclusion evidence: Web verification 2026 (2024 original anime by Doga Kobo; girl band with sapphic themes; aired April-June 2024).",
+      "status": "Ended",
+      "broadcaster": "HIDIVE",
+      "watched": false,
+      "imdbRating": null,
+      "imdbVotes": 0,
+      "qualityScore": null,
+      "rank": null,
+      "featured": false,
+      "aliases": [
+        "Yoru no Kurage wa Oyogenai"
+      ],
+      "imageSourceName": "Morningstar generated fallback",
+      "imageSourceUrl": "local asset",
+      "imageLookupDate": "2026-08-19",
+      "imageMatchScore": null
+    },
+    {
+      "id": "gl-kase-san-2018",
+      "title": "Kase-san and Morning Glories",
+      "year": 2018,
+      "genres": [
+        "Lesbian / GL"
+      ],
+      "lesbianGlArchive": true,
+      "glProminence": "GL lead",
+      "glEvidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Kase-san",
+          "detail": "2018 Japanese yuri OVA; 1 hour runtime; Kase-san and Yamada romance with explicit kiss scenes",
+          "prominence": "GL lead"
+        }
+      ],
+      "sourceName": "Web verification 2026",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kase-san",
+      "endYear": 2018,
+      "episodes": 1,
+      "episodeRuntime": 60,
+      "runtimeHours": 1,
+      "country": "Japan",
+      "language": "Japanese",
+      "format": "Animation",
+      "imdbId": null,
+      "imdbUrl": "https://www.imdb.com/find/?q=Kase-san%20and%20Morning%20Glories&s=tt&ttype=tv",
+      "image": "/assets/gl-covers/kase-san-and-morning-glories-2018.svg",
+      "shortPlot": "A romance between the clumsy, flower-adoring Yamada and exuberant track star Kase-san, explicit about the two actually dating. Inclusion evidence: Web verification 2026 (2018 Japanese yuri OVA; 1 hour runtime; Kase-san and Yamada romance with explicit kiss scenes).",
+      "longPlot": "An hour-long yuri OVA based on Hiromi Takashima's manga: the story follows a romance between the clumsy, flower-adoring Yamada and the exuberant Kase-san, a track and field star. The two are shown actively navigating their relationship on screen, including kiss scenes and dialogue confirming they are dating. Inclusion evidence: Web verification 2026 (2018 Japanese yuri OVA; 1 hour runtime; Kase-san and Yamada romance with explicit kiss scenes).",
+      "status": "Ended",
+      "broadcaster": null,
+      "watched": false,
+      "imdbRating": null,
+      "imdbVotes": 0,
+      "qualityScore": null,
+      "rank": null,
+      "featured": false,
+      "aliases": [
+        "Kase-san"
+      ],
+      "imageSourceName": "Morningstar generated fallback",
+      "imageSourceUrl": "local asset",
+      "imageLookupDate": "2026-08-19",
+      "imageMatchScore": null
+    },
+    {
+      "id": "gl-mayfly-angel-2024",
+      "title": "Mayfly Angel",
+      "year": 2024,
+      "genres": [
+        "Lesbian / GL"
+      ],
+      "lesbianGlArchive": true,
+      "glProminence": "GL lead",
+      "glEvidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://mydramalist.com/770395-mayfly-angel",
+          "detail": "2024 Korean GL miniseries; 4 episodes, 9 minutes each; lesbian female lead and romance",
+          "prominence": "GL lead"
+        }
+      ],
+      "sourceName": "Web verification 2026",
+      "sourceUrl": "https://mydramalist.com/770395-mayfly-angel",
+      "endYear": 2024,
+      "episodes": 4,
+      "episodeRuntime": 9,
+      "runtimeHours": 0.6,
+      "country": "South Korea",
+      "language": "Korean",
+      "format": "Live action",
+      "imdbId": null,
+      "imdbUrl": "https://www.imdb.com/find/?q=Mayfly%20Angel&s=tt&ttype=tv",
+      "image": "/assets/gl-covers/mayfly-angel-2024.svg",
+      "shortPlot": "Heartbroken by news of her unfaithful boyfriend, Hae Su finds solace in her best friend. Inclusion evidence: Web verification 2026 (2024 Korean GL miniseries; 4 episodes, 9 minutes each; lesbian female lead and romance).",
+      "longPlot": "A South Korean GL miniseries: heartbroken by news of her unfaithful boyfriend, Hae Su finds solace -- and an unfolding romance -- in her best friend. Inclusion evidence: Web verification 2026 (2024 Korean GL miniseries; 4 episodes, 9 minutes each; lesbian female lead and romance).",
+      "status": "Ended",
+      "broadcaster": null,
+      "watched": false,
+      "imdbRating": null,
+      "imdbVotes": 0,
+      "qualityScore": null,
+      "rank": null,
+      "featured": false,
+      "imageSourceName": "Morningstar generated fallback",
+      "imageSourceUrl": "local asset",
+      "imageLookupDate": "2026-08-19",
+      "imageMatchScore": null
+    },
+    {
+      "id": "gl-tendering-resignation-2024",
+      "title": "Tendering Resignation",
+      "year": 2024,
+      "genres": [
+        "Lesbian / GL"
+      ],
+      "lesbianGlArchive": true,
+      "glProminence": "GL lead",
+      "glEvidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://mydramalist.com/778222-tendering-resignation",
+          "detail": "2024 Korean GL web series; office romance with love triangle; 50 vertical episodes; lesbian female lead",
+          "prominence": "GL lead"
+        }
+      ],
+      "sourceName": "Web verification 2026",
+      "sourceUrl": "https://mydramalist.com/778222-tendering-resignation",
+      "endYear": 2024,
+      "episodes": 50,
+      "episodeRuntime": 2,
+      "runtimeHours": 1.7,
+      "country": "South Korea",
+      "language": "Korean",
+      "format": "Live action",
+      "imdbId": null,
+      "imdbUrl": "https://www.imdb.com/find/?q=Tendering%20Resignation&s=tt&ttype=tv",
+      "image": "/assets/gl-covers/tendering-resignation-2024.svg",
+      "shortPlot": "An office worker is dragged into a police investigation and a messy lesbian love triangle after her close friend's company is upended by a new arrival. Inclusion evidence: Web verification 2026 (2024 Korean GL web series; office romance with love triangle; 50 vertical episodes; lesbian female lead).",
+      "longPlot": "Adapted from a webtoon of the same name: Oh Geum-hui is a hardworking employee at the company of her long-time close friend Kang Tae-ri. When Bora arrives and stirs things up, Tae-ri goes into hiding and Geum-hui is thrown into a police investigation and a lesbian love triangle. Inclusion evidence: Web verification 2026 (2024 Korean GL web series; office romance with love triangle; 50 vertical episodes; lesbian female lead).",
+      "status": "Ended",
+      "broadcaster": "Vigloo",
+      "watched": false,
+      "imdbRating": null,
+      "imdbVotes": 0,
+      "qualityScore": null,
+      "rank": null,
+      "featured": false,
+      "imageSourceName": "Morningstar generated fallback",
+      "imageSourceUrl": "local asset",
+      "imageLookupDate": "2026-08-19",
+      "imageMatchScore": null
+    },
+    {
+      "id": "gl-xeque-mate-2024",
+      "title": "Xeque Mate",
+      "year": 2024,
+      "genres": [
+        "Lesbian / GL"
+      ],
+      "lesbianGlArchive": true,
+      "glProminence": "GL lead",
+      "glEvidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://lesbiansonscreen.com/xeque-mate-2024-review/",
+          "detail": "2024 Brazilian lesbian miniseries; political thriller with sapphic romance; desire and power themes",
+          "prominence": "GL lead"
+        }
+      ],
+      "sourceName": "Web verification 2026",
+      "sourceUrl": "https://lesbiansonscreen.com/xeque-mate-2024-review/",
+      "endYear": 2024,
+      "episodes": null,
+      "episodeRuntime": null,
+      "runtimeHours": null,
+      "country": "Brazil",
+      "language": "Portuguese",
+      "format": "Live action",
+      "imdbId": null,
+      "imdbUrl": "https://www.imdb.com/find/?q=Xeque%20Mate&s=tt&ttype=tv",
+      "image": "/assets/gl-covers/xeque-mate-2024.svg",
+      "shortPlot": "A cunning politician and a powerful businessman's wife are drawn into a game of attraction, manipulation and dangerous tension. Inclusion evidence: Web verification 2026 (2024 Brazilian lesbian miniseries; political thriller with sapphic romance; desire and power themes).",
+      "longPlot": "A Brazilian lesbian political-thriller miniseries: a cunning politician and a powerful businessman's wife are drawn into a game of attraction, manipulation and dangerous tension, from the team behind Stupid Wife. Inclusion evidence: Web verification 2026 (2024 Brazilian lesbian miniseries; political thriller with sapphic romance; desire and power themes).",
+      "status": "Ended",
+      "broadcaster": null,
+      "watched": false,
+      "imdbRating": null,
+      "imdbVotes": 0,
+      "qualityScore": null,
+      "rank": null,
+      "featured": false,
+      "aliases": [
+        "Checkmate"
+      ],
+      "imageSourceName": "Morningstar generated fallback",
+      "imageSourceUrl": "local asset",
+      "imageLookupDate": "2026-08-19",
+      "imageMatchScore": null
     }
   ],
   "coverAudit": {
-    "generatedAt": "2026-08-18T13:43:07.156Z",
-    "blankImagesBefore": 277,
-    "realPostersResolved": 250,
-    "generatedFallbacks": 27,
+    "generatedAt": "2026-08-19T04:06:34.154Z",
+    "blankImagesBefore": 8,
+    "realPostersResolved": 0,
+    "generatedFallbacks": 8,
     "blankImagesAfter": 0,
-    "report": "research/lesbian-gl-cover-audit-2026-08-18.json"
+    "report": "research/lesbian-gl-cover-audit-2026-08-18.json",
+    "previousPassSummary": {
+      "generatedAt": "2026-08-18T13:43:07.156Z",
+      "tvmazeResolved": 250,
+      "wikipediaResolved": 0,
+      "generatedFallbacks": 27
+    }
   }
 }
