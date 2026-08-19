@@ -11542,6 +11542,17 @@ function normaliseTitleKey(e) {
 function isLatinTitle(e) {
   return !!e && !/[^\p{Script=Latin}\p{N}\p{P}\p{S}\p{Zs}]/u.test(e);
 }
+function mdlUrlFrom(e) {
+  if (e.mdlUrl) return e.mdlUrl;
+  let t = e.sourceUrl || "";
+  return /mydramalist\.com\//i.test(t) ? t : "";
+}
+function mydramalistUrl(e) {
+  return (
+    mdlUrlFrom(e) ||
+    `https://mydramalist.com/search?q=${encodeURIComponent(e.originalTitle || e.title)}`
+  );
+}
 function sourceTitleAlias(e) {
   if ("MyDramaList" !== e.sourceName || !e.sourceUrl) return "";
   let t = e.sourceUrl.match(/mydramalist\.com\/(?:\d+-)?([^/?#]+)/i)?.[1] || "";
@@ -11714,6 +11725,7 @@ function mergeSeriesGroup(e) {
       (e) => !0 === e.catalogueMember || !0 === e.mainCatalogue,
     )),
     (n.aliasIds = [...r].filter((e) => e !== n.id)),
+    (n.mdlUrl = t.map(mdlUrlFrom).find(Boolean) || ""),
     n
   );
 }
@@ -12612,6 +12624,17 @@ function ie({
                           (0, p.jsx)(_, { name: "external", size: 17 }),
                           " ",
                           e.imdbId ? "IMDb" : "Find on IMDb",
+                        ],
+                      }),
+                      (0, p.jsxs)("a", {
+                        href: mydramalistUrl(e),
+                        target: "_blank",
+                        rel: "noreferrer",
+                        className: "mdl-action",
+                        children: [
+                          (0, p.jsx)(_, { name: "external", size: 15 }),
+                          " ",
+                          mdlUrlFrom(e) ? "MyDramaList" : "Find on MDL",
                         ],
                       }),
                       (0, p.jsxs)("a", {

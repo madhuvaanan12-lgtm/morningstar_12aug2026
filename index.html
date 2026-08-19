@@ -1093,6 +1093,35 @@
         }
       }
 
+      /* MyDramaList sits beside IMDb. Styled like the ChatGPT actions rather
+         than the white primary IMDb button, so the row keeps one clear
+         primary. Its icon takes MDL's blue instead of the amber those links
+         use, to read as a database link rather than an ask-ChatGPT one. */
+      .mdl-action {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        min-height: 41px;
+        padding: 0 14px;
+        border: 1px solid #ffffff47;
+        border-radius: 4px;
+        background: #16181db8;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .mdl-action svg {
+        color: #6bb3ff;
+      }
+
+      .mdl-action:hover {
+        background: #33363ed1;
+      }
+
       /* Genre and Curslick chips in the detail modal. A chip is a button only
          when there is existing research text to expand into — Curslick "why it
          belongs" copy, or Lesbian / GL inclusion evidence. Everything else is a

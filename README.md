@@ -62,6 +62,11 @@ and status on one fact line, then the plot. Where a title has a genuinely longer
 block expands; where it does not, it simply renders — there is no toggle that reveals the same
 sentence twice.
 
+The header carries an IMDb link and a MyDramaList link side by side. For the 2,927 K-drama archive
+titles sourced from MyDramaList directly, the merge preserves that real title-page URL even when a
+TVmaze record wins the rest of the card; every other title falls back to a MyDramaList search link
+for its exact title.
+
 Below the plot sits a row of chips: every Curslick collection the series belongs to, then its genres.
 A chip is a button only when there is already researched copy behind it — a collection's "why it
 belongs" write-up, or the Lesbian / GL archive's inclusion evidence — and clicking it expands that
