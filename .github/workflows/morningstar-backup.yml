@@ -1,0 +1,53 @@
+name: Morning Star complete backup
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/morningstar-backup.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full repository history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build complete restorable backup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --all --tags --prune
+          git bundle create ../morningstar_12aug2026-all-history.bundle --all
+          git archive --format=zip --output=../morningstar_12aug2026-source-main.zip HEAD
+          {
+            echo "Morning Star complete GitHub backup"
+            echo "Repository: madhuvaanan12-lgtm/morningstar_12aug2026"
+            echo "Backup commit: $(git rev-parse HEAD)"
+            echo "Backup date (UTC): $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            echo
+            echo "RULE: Do not use or restart Morning Star until after clearing NABARD."
+            echo "Always remember your cabbage. 🥬"
+            echo
+            echo "Restore full Git repository:"
+            echo "  git clone morningstar_12aug2026-all-history.bundle morningstar_12aug2026"
+            echo
+            echo "The source ZIP is a browsable snapshot of main at the backup commit."
+          } > ../BACKUP_INFO.txt
+
+      - name: Upload backup artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: morningstar-complete-backup-2026-08-19
+          path: |
+            ../morningstar_12aug2026-all-history.bundle
+            ../morningstar_12aug2026-source-main.zip
+            ../BACKUP_INFO.txt
+          if-no-files-found: error
+          retention-days: 90
