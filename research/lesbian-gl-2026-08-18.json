@@ -4,9 +4,9 @@
   "genre": "Lesbian / GL",
   "methodology": "Union of substantial recurring queer-woman representation and dedicated GL lists. Shows where sapphic narratives are PRIMARY — not secondary, supporting, or subtext in non-GL narratives — are included. Minor/occasional-only entries, reality/competition/documentary programmes, unreleased Thai projects and duplicate seasons were excluded. Verification pass (August 2026) removed 19 false positives that failed primary-genre criteria. The genre is broader than Curslick 04's ending-safe list, so endings and status vary.",
   "counts": {
-    "verifiedTitles": 461,
+    "verifiedTitles": 467,
     "matchedExistingTitles": 192,
-    "newArchiveTitles": 269,
+    "newArchiveTitles": 275,
     "thaiTitles": 67
   },
   "sourceCounts": {
@@ -9209,6 +9209,124 @@
           "source": "Web verification 2026",
           "url": "https://en.wikipedia.org/wiki/Kase-san",
           "detail": "2018 Japanese yuri OVA; 1 hour runtime; Kase-san and Yamada romance with explicit kiss scenes",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Tendering Resignation",
+      "aliases": [],
+      "year": 2024,
+      "country": "South Korea",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-tendering-resignation-2024",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://mydramalist.com/778222-tendering-resignation",
+          "detail": "2024 Korean GL web series; office romance with love triangle; 50 vertical episodes; lesbian female lead",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Mayfly Angel",
+      "aliases": [],
+      "year": 2024,
+      "country": "South Korea",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-mayfly-angel-2024",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://mydramalist.com/770395-mayfly-angel",
+          "detail": "2024 Korean GL miniseries; 4 episodes, 9 minutes each; lesbian female lead and romance",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Girls Band Cry",
+      "aliases": [],
+      "year": 2024,
+      "country": "Japan",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-girls-band-cry-2024",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Girls_Band_Cry",
+          "detail": "2024 Japanese anime; 13 episodes; band of five girls with yuri themes; Nina and Momoka sapphic focus",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Jellyfish Can't Swim in the Night",
+      "aliases": [
+        "Yoru no Kurage wa Oyogenai"
+      ],
+      "year": 2024,
+      "country": "Japan",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-jellyfish-cant-swim-2024",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Jellyfish_Can%27t_Swim_in_the_Night",
+          "detail": "2024 original anime by Doga Kobo; girl band with sapphic themes; aired April-June 2024",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "US",
+      "aliases": [
+        "รักของเรา"
+      ],
+      "year": 2025,
+      "country": "Thailand",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-us-2025",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Us_(Thai_TV_series)",
+          "detail": "2025 Thai GL drama adapted from Chao Pla Noy novel; GMMTV third GL production; stars Emi and Bonnie; 12 episodes",
+          "prominence": "GL lead"
+        }
+      ]
+    },
+    {
+      "title": "Beguinas",
+      "aliases": [],
+      "year": 2024,
+      "country": "Spain",
+      "prominence": "GL lead",
+      "status": "Ended",
+      "matchedExisting": false,
+      "matchId": null,
+      "archiveId": "gl-beguinas-2024",
+      "evidence": [
+        {
+          "source": "Web verification 2026",
+          "url": "https://en.wikipedia.org/wiki/Beguinas",
+          "detail": "2024 Spanish period drama; lesbian romance; 10 episodes; aired Atresplayer/Antena 3",
           "prominence": "GL lead"
         }
       ]
