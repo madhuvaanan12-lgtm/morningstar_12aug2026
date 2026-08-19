@@ -17,6 +17,7 @@ import gzip
 import hashlib
 import json
 import shutil
+import sqlite3
 import tempfile
 import urllib.request
 from collections import Counter
@@ -52,12 +53,6 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
-def imdb_number(tconst: str) -> int:
-    if not tconst.startswith("tt"):
-        raise RuntimeError(f"Unexpected IMDb title id: {tconst!r}")
-    return int(tconst[2:])
-
-
 def nullable_int(value: str) -> int | None:
     if not value or value == r"\N":
         return None
@@ -88,31 +83,29 @@ def load_archive(manifest: dict[str, object]) -> tuple[list[list[object]], set[s
     return records, series_ids
 
 
-def iter_target_episodes(path: Path, series_ids: set[str]):
-    previous = -1
-    with gzip.open(path, "rt", encoding="utf-8", newline="") as handle:
-        reader = csv.DictReader(handle, delimiter="\t")
-        for row in reader:
-            parent = row["parentTconst"]
-            if parent not in series_ids:
-                continue
-            number = imdb_number(row["tconst"])
-            if number < previous:
-                raise RuntimeError("title.episode.tsv.gz is not ordered by tconst as expected")
-            previous = number
-            yield number, row["tconst"], parent
+def flush_episode_rows(connection: sqlite3.Connection, rows: list[tuple[str, str]]) -> None:
+    if not rows:
+        return
+    connection.executemany("INSERT INTO episode_map(tconst, parent) VALUES (?, ?)", rows)
+    rows.clear()
 
 
-def iter_basics_runtimes(path: Path):
-    previous = -1
-    with gzip.open(path, "rt", encoding="utf-8", newline="") as handle:
-        reader = csv.DictReader(handle, delimiter="\t")
-        for row in reader:
-            number = imdb_number(row["tconst"])
-            if number < previous:
-                raise RuntimeError("title.basics.tsv.gz is not ordered by tconst as expected")
-            previous = number
-            yield number, row["tconst"], nullable_int(row["runtimeMinutes"])
+def apply_runtime_batch(
+    connection: sqlite3.Connection,
+    rows: list[tuple[str, int]],
+    known_count: Counter[str],
+    known_minutes: Counter[str],
+) -> None:
+    if not rows:
+        return
+    runtime_by_id = dict(rows)
+    ids = list(runtime_by_id)
+    placeholders = ",".join("?" for _ in ids)
+    query = f"SELECT tconst, parent FROM episode_map WHERE tconst IN ({placeholders})"
+    for tconst, parent in connection.execute(query, ids):
+        known_count[parent] += 1
+        known_minutes[parent] += runtime_by_id[tconst]
+    rows.clear()
 
 
 def main() -> None:
@@ -132,18 +125,39 @@ def main() -> None:
         download(BASICS_URL, basics_path)
         download(EPISODE_URL, episode_path)
 
-        basics_iter = iter_basics_runtimes(basics_path)
-        basics_current = next(basics_iter, None)
+        database_path = temp_dir / "episode-map.sqlite3"
+        connection = sqlite3.connect(database_path)
+        connection.execute("PRAGMA journal_mode=OFF")
+        connection.execute("PRAGMA synchronous=OFF")
+        connection.execute("PRAGMA temp_store=MEMORY")
+        connection.execute("CREATE TABLE episode_map(tconst TEXT PRIMARY KEY, parent TEXT NOT NULL) WITHOUT ROWID")
 
-        for episode_number, _episode_id, parent in iter_target_episodes(episode_path, series_ids):
-            episode_count[parent] += 1
-            while basics_current is not None and basics_current[0] < episode_number:
-                basics_current = next(basics_iter, None)
-            if basics_current is not None and basics_current[0] == episode_number:
-                runtime = basics_current[2]
-                if runtime is not None and runtime > 0:
-                    known_count[parent] += 1
-                    known_minutes[parent] += runtime
+        episode_rows: list[tuple[str, str]] = []
+        with gzip.open(episode_path, "rt", encoding="utf-8", newline="") as handle:
+            reader = csv.DictReader(handle, delimiter="\t")
+            for row in reader:
+                parent = row["parentTconst"]
+                if parent not in series_ids:
+                    continue
+                episode_count[parent] += 1
+                episode_rows.append((row["tconst"], parent))
+                if len(episode_rows) >= 50000:
+                    flush_episode_rows(connection, episode_rows)
+        flush_episode_rows(connection, episode_rows)
+        connection.commit()
+
+        runtime_rows: list[tuple[str, int]] = []
+        with gzip.open(basics_path, "rt", encoding="utf-8", newline="") as handle:
+            reader = csv.DictReader(handle, delimiter="\t")
+            for row in reader:
+                runtime = nullable_int(row["runtimeMinutes"])
+                if runtime is None or runtime <= 0:
+                    continue
+                runtime_rows.append((row["tconst"], runtime))
+                if len(runtime_rows) >= 500:
+                    apply_runtime_batch(connection, runtime_rows, known_count, known_minutes)
+        apply_runtime_batch(connection, runtime_rows, known_count, known_minutes)
+        connection.close()
 
         exact = partial = unknown = under_four = 0
         id_to_duration: dict[str, tuple[int | None, int, int, int]] = {}
