@@ -1,0 +1,1 @@
+Retrigger PR #11 deploy preview after TMDB_READ_ACCESS_TOKEN was configured in Netlify.
