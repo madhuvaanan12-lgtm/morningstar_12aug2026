@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
-"""Add discovery-filter metadata to Morningstar's generated IMDb TV archive.
+"""Add discovery metadata and remote cover URLs to Morningstar's IMDb archive.
 
-IMDb remains the canonical source for title IDs, title types, years, genres,
-ratings and episode-derived total duration. The free IMDb TSV set does not expose
-a canonical country/language field for a series, so this pass enriches the subset
-that TVmaze can map by exact IMDb ID.
+IMDb remains the source for title IDs, types, years, genres, ratings and episode-
+derived total duration. TVmaze is used only when a show has an exact external IMDb
+ID match. For those matches we add best-available country/language metadata, the
+primary poster URL, and the TVmaze show URL for attribution.
 
-TVmaze's public show index exposes language, external IMDb ID, and network or web
-channel country. Unmatched or ambiguous titles remain Unknown rather than guessed.
+Poster files are never downloaded into the repository or generated Netlify output;
+only remote TVmaze CDN URLs are stored in the compact archive records.
 """
 
 from __future__ import annotations
 
-import json
 import hashlib
+import json
 import time
 import urllib.error
 import urllib.request
@@ -27,9 +27,9 @@ MANIFEST_PATH = OUT_DIR / "manifest.json"
 REPORT_PATH = ROOT / "research" / "imdb-tv-import-report.json"
 TVMAZE_BASE = "https://api.tvmaze.com"
 TVMAZE_UPDATES_URL = f"{TVMAZE_BASE}/updates/shows"
-USER_AGENT = "Morningstar personal TV archive metadata enricher/1.0"
-APPENDED_FIELDS = ["countryCodes", "languages"]
+USER_AGENT = "Morningstar personal TV archive metadata enricher/1.1"
 BASE_WITH_DURATION_FIELDS = 15
+APPENDED_FIELDS = ["countryCodes", "languages", "posterUrl", "tvmazeUrl"]
 REQUEST_INTERVAL_SECONDS = 0.5
 
 
@@ -42,17 +42,21 @@ def sha256_file(path: Path) -> str:
 
 
 def write_json(path: Path, payload: object, *, pretty: bool = False) -> None:
-    if pretty:
-        text = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
-    else:
-        text = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+    text = (
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+        if pretty
+        else json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+    )
     path.write_text(text, encoding="utf-8")
 
 
 def fetch_json(url: str, *, retries: int = 8):
     last_error: Exception | None = None
     for attempt in range(retries):
-        request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
+        request = urllib.request.Request(
+            url,
+            headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
+        )
         try:
             with urllib.request.urlopen(request, timeout=45) as response:
                 return json.load(response)
@@ -60,7 +64,7 @@ def fetch_json(url: str, *, retries: int = 8):
             last_error = error
             if error.code == 404:
                 raise
-            if error.code != 429 and 500 > error.code:
+            if error.code != 429 and error.code < 500:
                 raise
             time.sleep(min(2 + attempt * 2, 15))
         except (urllib.error.URLError, TimeoutError) as error:
@@ -76,11 +80,16 @@ def clean_country_code(value) -> str | None:
     return value if len(value) == 2 and value.isalpha() else None
 
 
-def clean_language(value) -> str | None:
+def clean_text(value) -> str | None:
     if not isinstance(value, str):
         return None
     value = value.strip()
     return value or None
+
+
+def clean_https_url(value) -> str | None:
+    value = clean_text(value)
+    return value if value and value.startswith("https://") else None
 
 
 def show_country(show: dict) -> str | None:
@@ -94,10 +103,17 @@ def show_country(show: dict) -> str | None:
                     return code
     dvd_country = show.get("dvdCountry")
     if isinstance(dvd_country, dict):
-        code = clean_country_code(dvd_country.get("code"))
-        if code:
-            return code
+        return clean_country_code(dvd_country.get("code"))
     return None
+
+
+def show_poster(show: dict) -> str | None:
+    image = show.get("image")
+    if not isinstance(image, dict):
+        return None
+    # Medium is intentionally preferred: it is a poster-sized resized image and
+    # avoids loading the original artwork for catalogue rows.
+    return clean_https_url(image.get("medium")) or clean_https_url(image.get("original"))
 
 
 def load_archive(manifest: dict[str, object]) -> tuple[list[list[object]], set[str]]:
@@ -109,18 +125,18 @@ def load_archive(manifest: dict[str, object]) -> tuple[list[list[object]], set[s
         records.extend(chunk)
         title_ids.update(str(record[0]) for record in chunk)
     if len(records) != int(manifest["totalTitles"]):
-        raise RuntimeError("IMDb archive record count does not match manifest before filter enrichment")
+        raise RuntimeError("IMDb archive record count does not match manifest before TVmaze enrichment")
     return records, title_ids
 
 
-def tvmaze_mapping(title_ids: set[str]) -> tuple[dict[str, tuple[str | None, str | None]], int, int]:
+def tvmaze_mapping(title_ids: set[str]) -> tuple[dict[str, dict[str, str | None]], int, int]:
     updates = fetch_json(TVMAZE_UPDATES_URL)
     if not isinstance(updates, dict) or not updates:
         raise RuntimeError("TVmaze updates/shows did not return the expected show-id map")
 
     max_show_id = max(int(show_id) for show_id in updates.keys())
     max_page = max_show_id // 250
-    mapping: dict[str, tuple[str | None, str | None]] = {}
+    mapping: dict[str, dict[str, str | None]] = {}
     pages_read = 0
     shows_read = 0
 
@@ -143,22 +159,24 @@ def tvmaze_mapping(title_ids: set[str]) -> tuple[dict[str, tuple[str | None, str
             imdb_id = externals.get("imdb") if isinstance(externals, dict) else None
             if not imdb_id or imdb_id not in title_ids:
                 continue
-            country = show_country(show)
-            language = clean_language(show.get("language"))
+
+            candidate = {
+                "country": show_country(show),
+                "language": clean_text(show.get("language")),
+                "poster": show_poster(show),
+                "tvmaze": clean_https_url(show.get("url")),
+            }
             previous = mapping.get(imdb_id)
             if previous is None:
-                mapping[imdb_id] = (country, language)
+                mapping[imdb_id] = candidate
             else:
-                # Exact IMDb IDs should normally be unique in TVmaze. If duplicate
-                # records disagree, retain only values that are still unambiguous.
-                old_country, old_language = previous
-                mapping[imdb_id] = (
-                    old_country if old_country == country else old_country or country,
-                    old_language if old_language == language else old_language or language,
-                )
+                # Duplicate exact IMDb IDs are unusual. Prefer already-known values
+                # and fill only missing fields rather than overwriting them.
+                for key, value in candidate.items():
+                    if not previous.get(key) and value:
+                        previous[key] = value
 
-        # TVmaze documents at least 20 calls / 10 seconds. Keep the sync polite and
-        # deterministic even though show-index pages are heavily cached.
+        # Free API limit is documented as at least 20 calls / 10 seconds.
         time.sleep(REQUEST_INTERVAL_SECONDS)
 
     return mapping, pages_read, shows_read
@@ -175,22 +193,29 @@ def main() -> None:
     unknown_country = 0
     unknown_language = 0
     matched_tvmaze = 0
+    poster_count = 0
     exact_in_default_range = 0
 
     for record in records:
         if len(record) < BASE_WITH_DURATION_FIELDS:
-            raise RuntimeError("Filter enrichment requires duration enrichment to run first")
+            raise RuntimeError("TVmaze enrichment requires duration enrichment to run first")
         if len(record) > BASE_WITH_DURATION_FIELDS:
             del record[BASE_WITH_DURATION_FIELDS:]
 
         title_id = str(record[0])
-        country, language = mapping.get(title_id, (None, None))
+        meta = mapping.get(title_id) or {}
+        country = meta.get("country")
+        language = meta.get("language")
+        poster = meta.get("poster")
+        tvmaze_url = meta.get("tvmaze")
         countries = [country] if country else []
         languages = [language] if language else []
-        record.extend([countries, languages])
+        record.extend([countries, languages, poster, tvmaze_url])
 
         if title_id in mapping:
             matched_tvmaze += 1
+        if poster:
+            poster_count += 1
         if countries:
             country_counts.update(countries)
         else:
@@ -220,25 +245,27 @@ def main() -> None:
         new_entry["sha256"] = sha256_file(path)
         new_files.append(new_entry)
     if cursor != len(records):
-        raise RuntimeError("Filter rewrite did not consume all IMDb records")
+        raise RuntimeError("TVmaze rewrite did not consume all IMDb records")
 
     fields = list(manifest.get("fields") or [])
-    manifest["schemaVersion"] = 3
+    manifest["schemaVersion"] = 4
     manifest["generatedAt"] = datetime.now(timezone.utc).isoformat()
     manifest["fields"] = fields[:BASE_WITH_DURATION_FIELDS] + APPENDED_FIELDS
     manifest["files"] = new_files
 
     source = dict(manifest.get("source") or {})
-    source["countryLanguageSource"] = "TVmaze public API show index"
+    source["countryLanguageCoverSource"] = "TVmaze public API show index"
     source["tvmazeApiUrl"] = "https://api.tvmaze.com/shows?page=:num"
-    source["tvmazeAttribution"] = "Country/language enrichment courtesy of TVmaze (CC BY-SA)."
+    source["tvmazeAttribution"] = "Country/language/poster enrichment courtesy of TVmaze (CC BY-SA)."
+    source["coverStorage"] = "Remote TVmaze poster URLs only; image files are not stored by Morningstar."
     manifest["source"] = source
 
     manifest["originFilterEnrichment"] = {
-        "method": "Exact IMDb-ID match to TVmaze show index; country uses network country, then web-channel country, then DVD country; language uses TVmaze show language.",
+        "method": "Exact IMDb-ID match to TVmaze show index; country uses network/web-channel/DVD country, language uses TVmaze show language, poster uses TVmaze primary show image.",
         "countryFieldMeaning": "Best-available TV network/web-channel country, not guaranteed production country.",
         "languageFieldMeaning": "TVmaze show language for matched titles.",
         "matchedTvmazeTitles": matched_tvmaze,
+        "titlesWithPoster": poster_count,
         "titlesWithCountry": len(records) - unknown_country,
         "titlesWithLanguage": len(records) - unknown_language,
         "unknownCountry": unknown_country,
@@ -278,12 +305,14 @@ def main() -> None:
     report["filterEnrichment"] = {
         "source": "TVmaze public show index matched by exact IMDb ID",
         "tvmazeMatchedTitles": matched_tvmaze,
+        "titlesWithPoster": poster_count,
         "tvmazePagesRead": pages_read,
         "tvmazeShowsRead": shows_read,
         "genreCount": len(genre_counts),
         "countryOptionCount": len(country_counts),
         "languageOptionCount": len(language_counts),
         "defaultDurationRangeHours": [4, 60],
+        "coverStrategy": "Store only TVmaze medium poster URL and lazy-load visible results; no poster binaries in Git/Netlify.",
         "defaultDurationRule": "Exact total runtime must be between 4 and 60 hours inclusive. Unknown/partial totals stay excluded by default.",
         "categoryExclusions": {
             "cartoons": "Optional; IMDb genre-based Animation exclusion in UI.",
@@ -294,9 +323,10 @@ def main() -> None:
     write_json(REPORT_PATH, report, pretty=True)
 
     print(
-        f"IMDb filters enriched: {matched_tvmaze:,} TVmaze exact-ID matches, "
-        f"{len(country_counts)} countries, {len(language_counts)} languages, "
-        f"{len(genre_counts)} genres; {exact_in_default_range:,} exact-duration titles in 4-60h."
+        f"IMDb filters/covers enriched: {matched_tvmaze:,} TVmaze exact-ID matches, "
+        f"{poster_count:,} posters, {len(country_counts)} countries, "
+        f"{len(language_counts)} languages, {len(genre_counts)} genres; "
+        f"{exact_in_default_range:,} exact-duration titles in 4-60h."
     )
 
 
