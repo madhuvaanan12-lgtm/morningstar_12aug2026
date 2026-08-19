@@ -8,6 +8,10 @@ on:
       - "research/import-imdb-tv.py"
       - "imdb-archive.js"
       - ".github/workflows/build-imdb-tv-archive.yml"
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: write
