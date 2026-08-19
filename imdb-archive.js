@@ -4,6 +4,7 @@
   const MANIFEST_URL = "./data/imdb/manifest.json";
   const PAGE_SIZE = 100;
   const UNKNOWN = "__unknown__";
+
   const state = {
     manifest: null,
     records: [],
@@ -33,6 +34,8 @@
     knownRuntimeMinutes: 14,
     countries: 15,
     languages: 16,
+    poster: 17,
+    tvmazeUrl: 18,
   };
 
   const css = `
@@ -40,9 +43,9 @@
     #ms-imdb-open:hover{background:#0e1f12}
     #ms-imdb-shell{position:fixed;inset:0;z-index:9999;background:#050806f5;color:#edf7ef;font:14px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;display:none;overflow:auto}
     #ms-imdb-shell.ms-open{display:block}
-    #ms-imdb-panel{max-width:1220px;margin:0 auto;padding:20px 18px 48px}
+    #ms-imdb-panel{max-width:1280px;margin:0 auto;padding:20px 18px 48px}
     .ms-imdb-top{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;position:sticky;top:0;background:#050806f2;backdrop-filter:blur(10px);padding:10px 0 14px;z-index:2;border-bottom:1px solid #223426}
-    .ms-imdb-title{font-size:25px;font-weight:850;margin:0 0 4px}.ms-imdb-sub{color:#98ad9d;max-width:820px}
+    .ms-imdb-title{font-size:25px;font-weight:850;margin:0 0 4px}.ms-imdb-sub{color:#98ad9d;max-width:860px}
     #ms-imdb-close{border:1px solid #526557;background:#111a13;color:#fff;padding:9px 12px;border-radius:9px;cursor:pointer}
     .ms-imdb-progress{margin:16px 0 10px;background:#0f1711;border:1px solid #25372a;border-radius:12px;padding:12px}
     .ms-imdb-bar{height:7px;background:#1e2c21;border-radius:99px;overflow:hidden;margin-top:8px}.ms-imdb-bar>span{display:block;height:100%;background:#42ff63;width:0}
@@ -53,14 +56,18 @@
     .ms-imdb-duration-default{border-color:#42ff63!important;box-shadow:inset 0 0 0 1px #42ff6333}
     .ms-imdb-meta{display:flex;gap:12px;flex-wrap:wrap;color:#aebdb1;margin:10px 0 12px}.ms-imdb-meta strong{color:#fff}
     .ms-imdb-list{display:grid;gap:8px}
-    .ms-imdb-row{display:grid;grid-template-columns:minmax(0,2.25fr) 110px 90px 130px 110px;gap:12px;align-items:center;border:1px solid #243228;background:#09100b;border-radius:11px;padding:11px 12px}
+    .ms-imdb-row{display:grid;grid-template-columns:68px minmax(0,2.2fr) 105px 88px 130px 110px;gap:12px;align-items:center;border:1px solid #243228;background:#09100b;border-radius:11px;padding:9px 12px;min-height:94px}
+    .ms-imdb-poster-link,.ms-imdb-poster-box{display:block;width:60px;height:88px;border-radius:8px;overflow:hidden;background:#111a13;border:1px solid #28372c;text-decoration:none}
+    .ms-imdb-poster-img{display:block;width:100%;height:100%;object-fit:cover;background:#111a13}
+    .ms-imdb-poster-placeholder{display:flex;width:100%;height:100%;align-items:center;justify-content:center;text-align:center;font:850 24px/1 system-ui,sans-serif;color:#6f8774;background:linear-gradient(145deg,#0c120e,#172019)}
+    .ms-imdb-poster-placeholder[hidden]{display:none}
     .ms-imdb-main{min-width:0}.ms-imdb-name{font-weight:780;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ms-imdb-original{font-size:12px;color:#8da294;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}.ms-imdb-genres{font-size:12px;color:#b5c4b8;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ms-imdb-type{color:#bfffc8}.ms-imdb-rating{font-weight:750}.ms-imdb-link{color:#42ff63;text-decoration:none}.ms-imdb-link:hover{text-decoration:underline}.ms-imdb-warning{color:#ffd58a}
     .ms-imdb-pages{display:flex;align-items:center;justify-content:center;gap:10px;margin:18px 0}.ms-imdb-pages button{border:1px solid #39503e;background:#0d160f;color:#fff;border-radius:8px;padding:8px 12px;cursor:pointer}.ms-imdb-pages button:disabled{opacity:.35;cursor:default}
     .ms-imdb-note{margin-top:20px;color:#8fa094;font-size:12px;border-top:1px solid #223426;padding-top:14px}.ms-imdb-note a{color:#9dffa9}
     .ms-imdb-empty{padding:40px 10px;text-align:center;color:#9daf9f}
-    @media(max-width:980px){.ms-imdb-controls{grid-template-columns:1fr 1fr 1fr}.ms-imdb-controls .ms-imdb-search{grid-column:1/-1}.ms-imdb-row{grid-template-columns:minmax(0,1fr) 90px 105px}.ms-imdb-row .ms-hide-mobile{display:none}}
-    @media(max-width:620px){#ms-imdb-panel{padding:10px 10px 40px}.ms-imdb-title{font-size:20px}.ms-imdb-controls{grid-template-columns:1fr 1fr}.ms-imdb-controls .ms-imdb-search{grid-column:1/-1}.ms-imdb-row{grid-template-columns:minmax(0,1fr) 86px;padding:10px}.ms-imdb-row .ms-mobile-hide{display:none}#ms-imdb-open{right:10px;bottom:10px}}
-    @media(max-width:430px){.ms-imdb-controls{grid-template-columns:1fr}.ms-imdb-controls .ms-imdb-search{grid-column:auto}}
+    @media(max-width:980px){.ms-imdb-controls{grid-template-columns:1fr 1fr 1fr}.ms-imdb-controls .ms-imdb-search{grid-column:1/-1}.ms-imdb-row{grid-template-columns:60px minmax(0,1fr) 88px 105px}.ms-imdb-row .ms-hide-tablet{display:none}.ms-imdb-poster-link,.ms-imdb-poster-box{width:52px;height:76px}}
+    @media(max-width:620px){#ms-imdb-panel{padding:10px 10px 40px}.ms-imdb-title{font-size:20px}.ms-imdb-controls{grid-template-columns:1fr 1fr}.ms-imdb-controls .ms-imdb-search{grid-column:1/-1}.ms-imdb-row{grid-template-columns:54px minmax(0,1fr) 76px;gap:9px;padding:8px;min-height:82px}.ms-imdb-row .ms-hide-mobile{display:none}.ms-imdb-poster-link,.ms-imdb-poster-box{width:48px;height:70px}#ms-imdb-open{right:10px;bottom:10px}}
+    @media(max-width:430px){.ms-imdb-controls{grid-template-columns:1fr}.ms-imdb-controls .ms-imdb-search{grid-column:auto}.ms-imdb-row{grid-template-columns:50px minmax(0,1fr)}.ms-imdb-row .ms-year-mobile{display:none}.ms-imdb-poster-link,.ms-imdb-poster-box{width:44px;height:65px}}
   `;
 
   function number(value) {
@@ -134,6 +141,10 @@
     return Array.isArray(record[index]) ? record[index] : [];
   }
 
+  function stringValue(record, index) {
+    return typeof record[index] === "string" ? record[index] : "";
+  }
+
   function matchesArrayFilter(values, selected) {
     if (!selected || selected === "all") return true;
     if (selected === UNKNOWN) return !values.length;
@@ -155,6 +166,19 @@
     const year = record[idx.start] ? ` ${record[idx.start]}` : "";
     const query = `\"${record[idx.title]}\"${year} TV series country language total runtime episodes`;
     return `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+  }
+
+  function posterMarkup(record) {
+    const poster = stringValue(record, idx.poster);
+    const tvmazeUrl = stringValue(record, idx.tvmazeUrl) || "https://www.tvmaze.com/";
+    const initial = String(record[idx.title] || "?").trim().charAt(0).toUpperCase() || "?";
+    if (!poster) {
+      return `<div class="ms-imdb-poster-box" title="No cover available"><span class="ms-imdb-poster-placeholder">${escapeHtml(initial)}</span></div>`;
+    }
+    return `<a class="ms-imdb-poster-link" href="${escapeHtml(tvmazeUrl)}" target="_blank" rel="noopener noreferrer" title="Cover via TVmaze">
+      <img class="ms-imdb-poster-img" src="${escapeHtml(poster)}" alt="${escapeHtml(record[idx.title])} cover" loading="lazy" decoding="async" fetchpriority="low">
+      <span class="ms-imdb-poster-placeholder" hidden>${escapeHtml(initial)}</span>
+    </a>`;
   }
 
   function addOptions(select, options, labeler, includeUnknown, unknownCount) {
@@ -200,7 +224,7 @@
         <div class="ms-imdb-top">
           <div>
             <h2 class="ms-imdb-title">Complete IMDb TV Archive</h2>
-            <div class="ms-imdb-sub">All IMDb TV Series + TV Mini Series from the official non-commercial dataset snapshot. Default duration range is <strong>4–60 hours</strong>: shows under 4h and over 60h are hidden.</div>
+            <div class="ms-imdb-sub">All IMDb TV Series + TV Mini Series from the official non-commercial dataset snapshot. Default duration range is <strong>4–60 hours</strong>. Matching TVmaze covers are lazy-loaded only when result rows become visible.</div>
           </div>
           <button id="ms-imdb-close" type="button">Close</button>
         </div>
@@ -252,6 +276,7 @@
     const response = await fetch(MANIFEST_URL, { cache: "no-cache" });
     if (!response.ok) throw new Error(`IMDb manifest HTTP ${response.status}`);
     state.manifest = await response.json();
+
     const open = document.querySelector("#ms-imdb-open");
     if (open) open.textContent = `IMDb Archive · ${number(state.manifest.totalTitles)}`;
 
@@ -269,10 +294,11 @@
     document.querySelector("#ms-imdb-note").innerHTML = `
       ${escapeHtml(state.manifest.source.attribution)} Personal/non-commercial IMDb dataset use only.
       Total duration is the sum of IMDb-listed episode runtimes and is exact only when every listed episode has a runtime.
-      Unknown/partial totals are excluded by default; enable them for web-verification candidates.
-      Country/language are added only where TVmaze maps the exact IMDb ID; country means network/web-channel country and is not guaranteed production country. Unmatched titles remain Unknown.
+      Country/language and covers are added only where TVmaze maps the exact IMDb ID. Country means network/web-channel country and is not guaranteed production country.
+      TVmaze poster URLs are linked directly and lazy-loaded; Morningstar does not store the image files.
       ${duration.exactTitles ? `${number(duration.exactTitles)} titles have exact total runtime.` : ""}
       ${origin.matchedTvmazeTitles ? `${number(origin.matchedTvmazeTitles)} titles have an exact TVmaze match.` : ""}
+      ${origin.titlesWithPoster ? `${number(origin.titlesWithPoster)} titles have a TVmaze cover.` : ""}
       <a href="https://www.imdb.com/" target="_blank" rel="noopener noreferrer">IMDb</a> ·
       <a href="https://developer.imdb.com/non-commercial-datasets/" target="_blank" rel="noopener noreferrer">IMDb dataset source</a> ·
       <a href="https://www.tvmaze.com/api" target="_blank" rel="noopener noreferrer">TVmaze API (CC BY-SA)</a>.`;
@@ -367,6 +393,7 @@
       if (type !== "all" && record[idx.type] !== type) return false;
       if (!matchesArrayFilter(arrayValue(record, idx.countries), country)) return false;
       if (!matchesArrayFilter(arrayValue(record, idx.languages), language)) return false;
+
       const genres = arrayValue(record, idx.genres);
       if (genre !== "all" && !genres.includes(genre)) return false;
       if (excludeAnimation && genres.includes("Animation")) return false;
@@ -449,30 +476,51 @@
         const webLookup = needsVerification ? `<div class="ms-imdb-original"><a class="ms-imdb-link" href="${verificationSearchUrl(record)}" target="_blank" rel="noopener noreferrer">Verify on web ↗</a></div>` : "";
         const original = record[idx.original] && record[idx.original] !== record[idx.title]
           ? `<div class="ms-imdb-original">${escapeHtml(record[idx.original])}</div>` : "";
+        const tvmazeUrl = stringValue(record, idx.tvmazeUrl);
+        const tvmazeLink = tvmazeUrl ? `<a class="ms-imdb-link" href="${escapeHtml(tvmazeUrl)}" target="_blank" rel="noopener noreferrer">TVmaze ↗</a>` : "";
+
         return `<article class="ms-imdb-row">
+          ${posterMarkup(record)}
           <div class="ms-imdb-main">
             <div class="ms-imdb-name">${escapeHtml(record[idx.title])}${record[idx.adult] ? " · 18+ flag" : ""}</div>
             ${original}
             <div class="ms-imdb-genres">${escapeHtml(genres.join(" · ") || "Genre n/a")}</div>
             <div class="ms-imdb-original">${escapeHtml(countryText)} · ${escapeHtml(languageText)}</div>
           </div>
-          <div class="ms-imdb-type ms-mobile-hide">${typeLabel(record[idx.type])}</div>
-          <div>${escapeHtml(years(record))}</div>
+          <div class="ms-imdb-type ms-hide-tablet ms-hide-mobile">${typeLabel(record[idx.type])}</div>
+          <div class="ms-year-mobile">${escapeHtml(years(record))}</div>
           <div class="ms-hide-mobile${durationClass}"><strong>${escapeHtml(duration.text)}</strong><div class="ms-imdb-original">${escapeHtml(duration.detail)}</div>${webLookup}</div>
-          <div class="ms-hide-mobile"><span class="ms-imdb-rating">${escapeHtml(rating)}</span><div class="ms-imdb-original">${escapeHtml(votes)}</div><a class="ms-imdb-link" href="https://www.imdb.com/title/${encodeURIComponent(record[idx.id])}/" target="_blank" rel="noopener noreferrer">IMDb ↗</a></div>
+          <div class="ms-hide-tablet ms-hide-mobile"><span class="ms-imdb-rating">${escapeHtml(rating)}</span><div class="ms-imdb-original">${escapeHtml(votes)}</div><a class="ms-imdb-link" href="https://www.imdb.com/title/${encodeURIComponent(record[idx.id])}/" target="_blank" rel="noopener noreferrer">IMDb ↗</a>${tvmazeLink ? `<div class="ms-imdb-original">${tvmazeLink}</div>` : ""}</div>
         </article>`;
       }).join("");
+
+      list.querySelectorAll(".ms-imdb-poster-img").forEach((image) => {
+        image.addEventListener("error", () => {
+          image.hidden = true;
+          const fallback = image.nextElementSibling;
+          if (fallback) fallback.hidden = false;
+        }, { once: true });
+      });
     }
 
     pages.innerHTML = `
       <button id="ms-imdb-prev" type="button" ${state.page <= 1 ? "disabled" : ""}>Previous</button>
       <span>Page ${number(state.page)} / ${number(totalPages)}</span>
       <button id="ms-imdb-next" type="button" ${state.page >= totalPages ? "disabled" : ""}>Next</button>`;
+
     pages.querySelector("#ms-imdb-prev").addEventListener("click", () => {
-      if (state.page > 1) { state.page -= 1; renderResults(); document.querySelector("#ms-imdb-shell").scrollTo({ top: 0, behavior: "smooth" }); }
+      if (state.page > 1) {
+        state.page -= 1;
+        renderResults();
+        document.querySelector("#ms-imdb-shell").scrollTo({ top: 0, behavior: "smooth" });
+      }
     });
     pages.querySelector("#ms-imdb-next").addEventListener("click", () => {
-      if (state.page < totalPages) { state.page += 1; renderResults(); document.querySelector("#ms-imdb-shell").scrollTo({ top: 0, behavior: "smooth" }); }
+      if (state.page < totalPages) {
+        state.page += 1;
+        renderResults();
+        document.querySelector("#ms-imdb-shell").scrollTo({ top: 0, behavior: "smooth" });
+      }
     });
   }
 
