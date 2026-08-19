@@ -1,6 +1,4 @@
-# Netlify production deploy trigger: 2026-08-19T14:26+05:30
 [build]
-  command = "python3 research/import-imdb-tv.py && python3 research/enrich-imdb-duration.py && python3 research/enrich-imdb-filters.py"
   publish = "."
 
 [[headers]]
